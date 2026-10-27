@@ -182,6 +182,24 @@
     { cls: 's2', big: 'YUNXIU', sub: '《云秀行》下周首播 · 312 位粉丝在期待' },
     { cls: 's3', big: 'THANK YOU', sub: '本周收到 12 件粉丝创作' }
   ];
+  // 首页大号宠物「雾蝶」：点一下换动作，并说一句今天的提醒
+  const PET_LINES = [
+    ['wave', '早上好，一桐！今天有 3 条留言值得你看～'],
+    ['heart', '晚风来信今天生日，记得给 TA 写几句哦'],
+    ['cheer', '今天新增 1.23 万位粉丝，抖音涨得最快！'],
+    ['card', '还有 1 张小卡等你送出'],
+    ['mic', '《云秀行》首播夜，要不要开一场直播？'],
+    ['listen', '想知道粉丝在聊什么？问问小桐吧'],
+    ['think', '我在想……下周发什么内容好呢'],
+    ['sleep', 'Zzz……（偷偷打了个盹）']
+  ];
+  let petI = 0;
+  function petNext() {
+    const img = $('#petBig'), bub = $('#petBubble'); if (!img) return;
+    petI = (petI + 1) % PET_LINES.length; const [n, line] = PET_LINES[petI];
+    img.classList.remove('pop'); void img.offsetWidth; img.src = `assets/pet/${n}.png`; img.classList.add('pop');
+    bub.classList.remove('show'); void bub.offsetWidth; bub.textContent = line; bub.classList.add('show'); clearTimeout(bub._t); bub._t = setTimeout(() => { if (innerWidth <= 860) bub.classList.remove('show'); }, 3200);
+  }
   let slideI = 0, slideT;
   function renderToday() {
     const o = D.overview, pending = D.comments.filter((c) => c.prio && !S.replied[c.id]);
@@ -209,6 +227,11 @@
           <div class="pill" role="button" tabindex="0" data-drawer="risky"><div class="thumb">${chibi(1)}</div><div class="lbl"><b class="num">${D.risky.length}</b>棘手消息</div>${askBtn('棘手消息我该怎么处理？')}</div>
           <div class="pill" role="button" tabindex="0" data-view="more" data-tab="bday"><div class="thumb">${chibi(1)}</div><div class="lbl"><b class="num">2</b>今日生日</div>${askBtn('今天谁过生日？')}</div>
           <div class="pill" role="button" tabindex="0" data-view="cards"><div class="thumb">${chibi(1)}</div><div class="lbl"><b class="num">1</b>待送小卡</div>${askBtn('帮我做一张长情小卡')}</div>
+        </div>
+        <div class="pet-stage" role="button" tabindex="0" data-pet title="点我换个动作">
+          <div class="pet-bubble" id="petBubble">${PET_LINES[0][1]}</div>
+          <img class="pet-big" id="petBig" src="assets/pet/${PET_LINES[0][0]}.png" alt="雾蝶">
+          <div class="pet-shadow"></div>
         </div>
         <div class="ghost-word">Yitong</div>
       </div>
@@ -782,6 +805,7 @@
     const d = t.dataset;
     if (d.ask !== undefined) { e.stopPropagation(); openAgent(d.ask); return; }
     if (t.hasAttribute('data-agent')) { openAgent(); return; }
+    if (t.hasAttribute('data-pet')) { petNext(); return; }
     if (d.view) { closeDrawer(); go(d.view, { tab: d.tab, for: d.for, tier: d.tier }); return; }
     if (d.grange) { gRange = +d.grange; $('#growth').innerHTML = growthHTML(); return; }
     if (d.gmode) { gMode = d.gmode; $('#growth').innerHTML = growthHTML(); return; }
