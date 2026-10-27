@@ -1,0 +1,32 @@
+{
+  "canvas": [
+    1024,
+    1024
+  ],
+  "order": [
+    "hair-back",
+    "body",
+    "head",
+    "hair-front",
+    "earrings",
+    "eye-white-left",
+    "eye-white-right",
+    "pupil-left",
+    "pupil-right",
+    "blush",
+    "mouth-smile",
+    "butterfly"
+  ],
+  "closedEyesHide": [
+    "eye-white-left",
+    "eye-white-right",
+    "pupil-left",
+    "pupil-right"
+  ],
+  "mouths": [
+    "mouth-smile",
+    "mouth-open",
+    "mouth-o"
+  ],
+  "pupilMaxOffset": 3
+}

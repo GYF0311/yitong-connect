@@ -1,0 +1,10 @@
+# 参考图含第三方版权图片，不公开
+refs/
+# 素材源文件、生成工具、动画帧序列（体积大）
+assets/source/
+assets/tools/
+assets/chibi/anim/*/
+assets/verification.json
+assets/preview.jpg
+codex-图片生成提示词.md
+.DS_Store

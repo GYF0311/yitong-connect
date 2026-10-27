@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>一桐 · 连接</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<aside class="side" aria-label="主导航">
+  <div class="brand">
+    <img class="brand-mark" src="assets/logo/logo-a.svg" alt="">
+    <div class="brand-name">Yitong<small>CONNECT</small></div>
+  </div>
+  <nav class="nav" id="nav"></nav>
+  <div class="side-foot">
+    <div class="sync"><span class="dot"></span><span class="txt">数据同步于 2 小时前</span></div>
+    <button class="collapse-btn" id="collapse" aria-label="收起侧栏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m15 6-6 6 6 6"/></svg><span class="txt">收起</span></button>
+  </div>
+</aside>
+
+<div class="main">
+  <header class="top">
+    <div class="crumb">粉丝连接 / <b id="crumb">今日</b></div>
+    <button class="ask-bar" id="askBar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>问一问：今天粉丝在聊什么？<kbd>/</kbd></button>
+    <button class="icon-btn" id="bell" aria-label="提醒"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="pip"></span></button>
+    <div class="me">桐</div>
+    <div class="notif" id="notif"></div>
+  </header>
+
+  <main class="content">
+    <section class="view active" id="v-today"></section>
+    <section class="view" id="v-reply"></section>
+    <section class="view" id="v-cards"></section>
+    <section class="view" id="v-insight"></section>
+    <section class="view" id="v-more"></section>
+    <div class="foot"><span>Yitong Connect · 让每一份陪伴都被看见</span><span>演示数据 · 所有人物与留言均为虚构</span></div>
+  </main>
+</div>
+
+<nav class="tabbar" id="tabbar"></nav>
+
+<button class="agent-fab" id="fab" aria-label="打开助手"><span class="ping"></span></button>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="详情">
+  <div class="drawer-head"><h3 id="drawerTitle">详情</h3><button class="icon-btn" id="drawerClose" aria-label="关闭"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+
+<aside class="agent" id="agent" aria-label="助手">
+  <div class="agent-hero">
+    <div class="name">你的助手<b>小桐</b></div>
+    <div class="chibi-big" id="agentChibi"></div>
+    <div class="state" id="agentState"><i></i>在线 · 已读取今日数据</div>
+    <button class="icon-btn close" id="agentClose" aria-label="关闭"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="msgs" id="msgs"></div>
+  <div class="sugs" id="sugs"></div>
+  <form class="agent-input" id="agentForm">
+    <input id="agentInput" placeholder="问我任何关于粉丝的事…" autocomplete="off">
+    <button type="button" class="icon-btn" id="agentMic" aria-label="语音输入"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+    <button class="icon-btn send" aria-label="发送"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </form>
+</aside>
+
+<div class="modal" id="modal"><div id="modalBody"></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
