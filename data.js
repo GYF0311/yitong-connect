@@ -3,9 +3,9 @@
 (function () {
   const PLATFORMS = {
     wb: { name: '微博', short: '微', color: '#338BC9' },
-    dy: { name: '抖音', short: '抖', color: '#4F9BD1' },
-    xhs: { name: '小红书', short: '红', color: '#A1CFF0' },
-    mp: { name: '小程序', short: '程', color: '#C4DFF3' }
+    dy: { name: '抖音', short: '抖', color: '#8E9CEB' },
+    xhs: { name: '小红书', short: '红', color: '#7FC6EE' },
+    mp: { name: '小程序', short: '程', color: '#C9C4F2' }
   };
 
   const overview = {
@@ -42,10 +42,10 @@
   ];
 
   const tiers = [
-    { id: 'chuyu', name: '初遇', desc: '近 30 天新来的朋友', pct: 34, color: '#C4DFF3' },
-    { id: 'changban', name: '常伴', desc: '持续回访、常来互动', pct: 38, color: '#A1CFF0' },
-    { id: 'changqing', name: '长情', desc: '陪伴三年以上', pct: 21, color: '#4F9BD1' },
-    { id: 'gongchuang', name: '共创', desc: '投稿作品、参与活动', pct: 7, color: '#3076A8' }
+    { id: 'chuyu', name: '初遇', desc: '近 30 天新来的朋友', pct: 34, color: '#CFE6F6' },
+    { id: 'changban', name: '常伴', desc: '持续回访、常来互动', pct: 38, color: '#C9C4F2' },
+    { id: 'changqing', name: '长情', desc: '陪伴三年以上', pct: 21, color: '#7FC6EE' },
+    { id: 'gongchuang', name: '共创', desc: '投稿作品、参与活动', pct: 7, color: '#338BC9' }
   ];
 
   const audience = {

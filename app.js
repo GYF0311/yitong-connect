@@ -25,6 +25,8 @@
     gift: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="9" width="16" height="11" rx="2"/><path d="M12 9v11M4 13h16M12 9c-2-4-6-3-5-1s5 1 5 1zm0 0c2-4 6-3 5-1s-5 1-5 1z"/></svg>',
     shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/></svg>'
   };
+  const pet = (n, cls = '') => `<img class="pet ${cls}" src="assets/pet/${n}-256.png" alt="" loading="lazy">`;
+  const ic3 = (n, cls = '') => `<img class="ic3 ${cls}" src="assets/icons3d/${n}.png" alt="" loading="lazy">`;
   const askBtn = (q) => `<button class="ask" data-ask="${esc(q)}" title="问一问">${I.spark}</button>`;
   const platTag = (p) => `<span class="plat" style="background:${P[p].color}">${P[p].short}</span>`;
   const av = (t, big) => `<span class="av"${big ? ' style="width:54px;height:54px"' : ''}>${esc(t)}</span>`;
@@ -104,22 +106,40 @@
       const len = (it.pct / 100) * c; const s = `<circle cx="70" cy="70" r="${r}" fill="none" stroke="${it.color}" stroke-width="16" stroke-dasharray="${len - 2} ${c - len + 2}" stroke-dashoffset="${-off}" transform="rotate(-90 70 70)"/>`; off += len; return s;
     }).join('')}</svg>`;
   }
+  // 平滑曲线（Catmull-Rom 转贝塞尔）
+  const smooth = (pts) => pts.map((p, i, a) => {
+    if (!i) return `M${p[0].toFixed(1)} ${p[1].toFixed(1)}`;
+    const p0 = a[i - 2] || a[i - 1], p1 = a[i - 1], p3 = a[i + 1] || p, t = 0.18;
+    const c1 = [p1[0] + (p[0] - p0[0]) * t, p1[1] + (p[1] - p0[1]) * t], c2 = [p[0] - (p3[0] - p1[0]) * t, p[1] - (p3[1] - p1[1]) * t];
+    return `C${c1[0].toFixed(1)} ${c1[1].toFixed(1)} ${c2[0].toFixed(1)} ${c2[1].toFixed(1)} ${p[0].toFixed(1)} ${p[1].toFixed(1)}`;
+  }).join(' ');
+  let gid = 0;
   function lineChart(data) {
-    const W = 520, H = 230, pad = 30, max = Math.max(...data.map((d) => d.v)) * 1.15;
+    const W = 520, H = 230, pad = 30, max = Math.max(...data.map((d) => d.v)) * 1.15, id = 'lc' + gid++;
     const x = (i) => pad + (i * (W - pad * 2)) / (data.length - 1), y = (v) => H - pad - (v / max) * (H - pad * 2);
-    const pts = data.map((d, i) => [x(i), y(d.v)]);
-    const path = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+    const pts = data.map((d, i) => [x(i), y(d.v)]), path = smooth(pts), last = pts[pts.length - 1];
     return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
-      <defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3076A8" stop-opacity=".22"/><stop offset="1" stop-color="#3076A8" stop-opacity="0"/></linearGradient></defs>
-      ${[0.25, 0.5, 0.75].map((f) => `<line x1="${pad}" x2="${W - pad}" y1="${pad + f * (H - pad * 2)}" y2="${pad + f * (H - pad * 2)}" stroke="#E3EBF0" stroke-dasharray="3 5"/>`).join('')}
-      <path d="${path} L${x(data.length - 1)} ${H - pad} L${pad} ${H - pad}Z" fill="url(#lg)"/>
-      <path d="${path}" fill="none" stroke="#3076A8" stroke-width="2.4" stroke-linejoin="round"/>
-      ${pts.map((p, i) => `<circle cx="${p[0]}" cy="${p[1]}" r="${i === pts.length - 1 ? 5 : 3}" fill="${i === pts.length - 1 ? '#3076A8' : '#fff'}" stroke="#3076A8" stroke-width="2"/>`).join('')}
-      ${data.map((d, i) => `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="11" fill="#7C8F9D" font-family="Jost">${d.d}</text>`).join('')}
-      <text x="${pts[pts.length - 1][0] - 6}" y="${pts[pts.length - 1][1] - 12}" text-anchor="end" font-size="12" fill="#3076A8" font-family="Jost">${data[data.length - 1].v}k · 正向 ${Math.round(data[data.length - 1].pos * 100)}%</text>
+      <defs><linearGradient id="${id}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB8EC" stop-opacity=".38"/><stop offset=".6" stop-color="#C9C4F2" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+        <linearGradient id="${id}s" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9AA6EE"/><stop offset="1" stop-color="#338BC9"/></linearGradient></defs>
+      ${[0.25, 0.5, 0.75].map((f) => `<line x1="${pad}" x2="${W - pad}" y1="${pad + f * (H - pad * 2)}" y2="${pad + f * (H - pad * 2)}" stroke="#E6EDF5" stroke-dasharray="3 5"/>`).join('')}
+      <path d="${path} L${x(data.length - 1)} ${H - pad} L${pad} ${H - pad}Z" fill="url(#${id}a)"/>
+      <path d="${path}" fill="none" stroke="url(#${id}s)" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="${last[0]}" cy="${last[1]}" r="9" fill="#338BC9" opacity=".15"/><circle cx="${last[0]}" cy="${last[1]}" r="4.5" fill="#fff" stroke="#338BC9" stroke-width="2.4"/>
+      ${data.map((d, i) => `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="11" fill="#8E9BAD" font-family="Jost">${d.d}</text>`).join('')}
+      <text x="${last[0] - 8}" y="${last[1] - 14}" text-anchor="end" font-size="12" fill="#2A6F9F" font-family="Jost">${data[data.length - 1].v}k · 正向 ${Math.round(data[data.length - 1].pos * 100)}%</text>
     </svg>`;
   }
   const bars = (items, max) => `<div class="bars">${items.map((it) => `<div class="bar"><span>${esc(it.k)}</span><div class="track"><div class="fill" data-w="${(it.v / max) * 100}%"></div></div><span class="num">${it.v}%</span></div>`).join('')}</div>`;
+
+  // 进度阶梯（参考 Achievement Tiers）：steps=[{name,sub}], at=当前所在下标, prog=到下一级的进度 0-1
+  function stepper(steps, at, prog = 0.5, label = '') {
+    const pct = ((at + Math.min(prog, 0.98)) / (steps.length - 1)) * 100;
+    return `<div class="stepper">${label ? `<div class="st-lbl">${label}</div>` : ''}<div class="st-track"><div class="st-fill" style="--p:${Math.min(pct, 100)}%"></div>
+      ${steps.map((st, i) => `<i class="${i < at ? 'done' : i === at ? 'cur' : ''}" style="left:${(i / (steps.length - 1)) * 100}%"></i>`).join('')}</div>
+      <div class="st-names">${steps.map((st, i) => `<div class="${i === at ? 'cur' : ''}" style="left:${(i / (steps.length - 1)) * 100}%"><b>${st.name}</b><small>${st.sub}</small></div>`).join('')}</div></div>`;
+  }
+  const TIER_STEPS = [{ name: '初遇', sub: '第一次留言' }, { name: '常伴', sub: '每月常来' }, { name: '长情', sub: '陪伴满 3 年' }, { name: '共创', sub: '投稿作品' }];
+  const tierIdx = (id) => ['chuyu', 'changban', 'changqing', 'gongchuang'].indexOf(id);
 
   // ---------- 涨粉看板 ----------
   let gRange = 30, gMode = 'plat';
@@ -128,9 +148,11 @@
     const max = Math.max(...list.flatMap((l) => l.data)) * 1.12;
     const x = (i) => pl + (i * (W - pl - pr)) / (labels.length - 1), y = (v) => H - pb - (v / max) * (H - pt - pb);
     const step = Math.ceil(labels.length / 7);
-    const grid = [0, 0.25, 0.5, 0.75, 1].map((f) => { const v = max * f, yy = y(v); return `<line x1="${pl}" x2="${W - pr}" y1="${yy}" y2="${yy}" stroke="#E8EFF4" ${f ? 'stroke-dasharray="3 5"' : ''}/><text x="${pl - 8}" y="${yy + 4}" text-anchor="end" font-size="10" fill="#9AAAB5" font-family="Jost">${v >= 10000 ? (v / 10000).toFixed(1) + 'w' : Math.round(v / 100) / 10 + 'k'}</text>`; }).join('');
-    const lines = list.map((l, li) => { const d = l.data.map((v, i) => (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(v).toFixed(1)).join(' ');
-      return (list.length === 1 ? `<path d="${d} L${x(l.data.length - 1)} ${H - pb} L${pl} ${H - pb}Z" fill="${l.color}" opacity=".12"/>` : '') + `<path d="${d}" fill="none" stroke="${l.color}" stroke-width="${list.length === 1 ? 2.6 : 2}" stroke-linejoin="round" stroke-linecap="round"/><circle cx="${x(l.data.length - 1)}" cy="${y(l.data[l.data.length - 1])}" r="4" fill="${l.color}"/>`; }).join('');
+    const grid = [0, 0.25, 0.5, 0.75, 1].map((f) => { const v = max * f, yy = y(v); return `<line x1="${pl}" x2="${W - pr}" y1="${yy}" y2="${yy}" stroke="#E6EDF5" ${f ? 'stroke-dasharray="3 5"' : ''}/><text x="${pl - 8}" y="${yy + 4}" text-anchor="end" font-size="10" fill="#9AAAB5" font-family="Jost">${v >= 10000 ? (v / 10000).toFixed(1) + 'w' : Math.round(v / 100) / 10 + 'k'}</text>`; }).join('');
+    const id = 'ml' + gid++;
+    const defs = `<defs>${list.map((l, li) => `<linearGradient id="${id}${li}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${l.color}" stop-opacity="${list.length === 1 ? 0.35 : 0.22}"/><stop offset="1" stop-color="${l.color}" stop-opacity="0"/></linearGradient>`).join('')}</defs>`;
+    const lines = defs + list.map((l, li) => { const pts = l.data.map((v, i) => [x(i), y(v)]), d = smooth(pts), lp = pts[pts.length - 1];
+      return `<path d="${d} L${lp[0]} ${H - pb} L${pl} ${H - pb}Z" fill="url(#${id}${li})"/><path d="${d}" fill="none" stroke="${l.color}" stroke-width="${list.length === 1 ? 2.6 : 2.2}" stroke-linecap="round"/><circle cx="${lp[0]}" cy="${lp[1]}" r="4" fill="#fff" stroke="${l.color}" stroke-width="2.2"/>`; }).join('');
     const xl = labels.map((t, i) => (i % step === 0 || i === labels.length - 1) ? `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="10" fill="#9AAAB5" font-family="Jost">${t}</text>` : '').join('');
     return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="height:250px">${grid}${lines}${xl}</svg>`;
   }
@@ -138,7 +160,7 @@
     const g = D.growth[gRange], ids = ['wb', 'dy', 'xhs', 'mp'];
     const sum = (a) => a.reduce((m, v) => m + v, 0);
     const tot = g.labels.map((_, i) => ids.reduce((m, id) => m + g[id][i], 0));
-    const list = gMode === 'all' ? [{ name: '全平台', color: '#3387C4', data: tot }] : ids.map((id) => ({ name: P[id].name, color: P[id].color, data: g[id] }));
+    const list = gMode === 'all' ? [{ name: '全平台', color: '#338BC9', data: tot }] : ids.map((id) => ({ name: P[id].name, color: P[id].color, data: g[id] }));
     const rows = ids.map((id) => { const n = sum(g[id]), prev = n * g.prevRatio[id]; return { id, n, mom: Math.round((n / prev - 1) * 100), rate: (n / D.overview.platforms.find((p) => p.id === id).fans) * 100 }; });
     const allN = sum(tot), maxN = Math.max(...rows.map((r) => r.n));
     return `<div class="panel">${askBtn('最近涨粉主要来自哪里？')}
@@ -197,9 +219,9 @@
           <div class="panel kpi">${askBtn('解释一下今天的涨粉情况')}<div class="k">全平台粉丝</div><div class="v num">${fmt(o.totalFans)}</div>
             <div class="plat-bars">${o.platforms.map((p) => `<i style="flex:${p.fans};background:${P[p.id].color}"></i>`).join('')}</div>
             <div class="plat-legend">${o.platforms.map((p) => `<span><i style="background:${P[p.id].color}"></i>${P[p.id].name} ${wan(p.fans)}</span>`).join('')}</div></div>
-          <div class="panel kpi"><div class="k">今日新增</div><div class="v num">+${fmt(o.todayNew)}</div><div class="d">较昨日 +18%</div></div>
-          <div class="panel kpi"><div class="k">今日留言</div><div class="v num">${fmt(o.todayComments)}</div><div class="d">AI 已筛出 ${D.comments.length} 条精选</div></div>
-          <div class="panel kpi"><div class="k">今日已回应</div><div class="v num" id="kpiReplied">${Object.keys(S.replied).length}<small>次</small></div><div class="d">每一次都由你亲自确认</div></div>
+          <div class="panel kpi kpi-a">${ic3('star')}<div class="k">今日新增</div><div class="v num">+${fmt(o.todayNew)}</div><div class="d">较昨日 +18%</div></div>
+          <div class="panel kpi kpi-b">${ic3('reply')}<div class="k">今日留言</div><div class="v num">${fmt(o.todayComments)}</div><div class="d">AI 已筛出 ${D.comments.length} 条精选</div></div>
+          <div class="panel kpi">${ic3('send')}<div class="k">今日已回应</div><div class="v num" id="kpiReplied">${Object.keys(S.replied).length}<small>次</small></div><div class="d">每一次都由你亲自确认</div></div>
         </div>
         <div class="growth" id="growth">${growthHTML()}</div>
         <div class="five">${o.fiveThings.map((f) => `<button data-ask="粉丝在聊「${esc(f.t)}」，具体说了什么？"><span class="n">${f.n}</span>${esc(f.t)}</button>`).join('')}</div>
@@ -310,6 +332,7 @@
       <div class="fan-head">${av(c.av, 1)}<div><b>${esc(c.fan)}</b> ${platTag(c.p)}<small>${tierName(c.tier)} · 首次互动 ${c.firstSeen} · ♡ ${fmt(c.likes)}</small></div></div>
       <div class="quote">${esc(c.text)}</div>
       <div class="stats3"><div><b>${c.days}</b><span>陪伴天数</span></div><div><b>${c.total}</b><span>累计留言</span></div><div><b>${c.history.length}</b><span>重要时刻</span></div></div>
+      ${stepper(TIER_STEPS, tierIdx(c.tier), Math.min(c.days / 1100, 0.9), `陪伴阶梯 · 已陪伴 ${fmt(c.days)} 天`)}
       <ul class="tl">${c.history.map((h) => `<li>${esc(h)}</li>`).join('')}</ul>
       <div class="composer">
         <div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#3076A8"')}按你的口吻起草 · 可以随意修改<button class="regen" id="regen">换一种说法</button></div>
@@ -442,7 +465,7 @@
   }
   function renderPreview(loading) {
     const el = $('#cardPreview'); if (!el) return;
-    el.innerHTML = `<div style="position:relative">${cardHTML(currentCard())}${loading ? `<div class="gen"><div class="g"><div class="orbx"><i class="core"></i><i class="core"></i><span class="bub">${esc((D.portraitStyles.find((s) => s.id === W.style) || {}).name || '风格')}</span><span class="bub">${esc((D.cardThemes.find((t) => t.id === W.theme) || {}).name || '主题')}</span><span class="bub">${esc(W.hand)}</span></div>正在把它们揉进一张小卡…</div></div>` : ''}</div>`;
+    el.innerHTML = `<div style="position:relative">${cardHTML(currentCard())}${loading ? `<div class="gen"><div class="g"><div class="orbx"><img class="orbimg" src="assets/orb/orb-1.png" alt=""><img class="orbimg b" src="assets/orb/orb-3.png" alt=""><span class="bub">${esc((D.portraitStyles.find((s) => s.id === W.style) || {}).name || '风格')}</span><span class="bub">${esc((D.cardThemes.find((t) => t.id === W.theme) || {}).name || '主题')}</span><span class="bub">${esc(W.hand)}</span></div>正在把它们揉进一张小卡…</div></div>` : ''}</div>`;
     
   }
   function phonePreview() {
@@ -465,6 +488,7 @@
         <div class="panel"><h3>地域 Top 5</h3>${bars(D.audience.region, 15)}</div>
       </div>
       <div class="sec reveal"><div class="sec-head"><h2><em>01</em>成长与留存路径</h2><span class="muted" style="font-size:12px">新粉 → 活跃粉 → 核心粉 → 稳固</span></div>
+        ${stepper(D.funnel.map((f) => ({ name: f.stage, sub: wan(f.n) })), 2, 0.45, '成长路径 · 当前重点：稳住核心粉')}
         <div class="funnel">${D.funnel.map((f, i) => `<div class="fstage" style="--w:${100 - i * 12}%"><div class="fbar"><b>${f.stage}</b><span class="num">${wan(f.n)}</span></div><small>${f.desc}</small>${f.next ? `<div class="fnext">${f.next}</div>` : ''}</div>`).join('')}</div>
         <div class="moves">${D.moves.map((m) => `<div class="move"><div class="mv-h">${m.from} <span>→</span> ${m.to}</div><ul>${m.acts.map((a) => `<li>${a}</li>`).join('')}</ul></div>`).join('')}</div>
         <div class="churn panel"><div><div class="muted" style="font-size:12px">流失预警</div><div class="ch-n"><span class="num">${fmt(D.churn.core)}</span> ${D.churn.desc}</div>
@@ -507,7 +531,7 @@
     let compose;
     if (!canSelf(b)) {
       compose = `<div class="bd-compose panel white"><div class="fan-head">${av(b.av, 1)}<div><b>${esc(b.fan)}</b> ${platTag(b.p)}<small>${b.date === '今天' ? '今天' : b.date} · ${b.age}生日 · 陪伴 ${fmt(b.days)} 天</small></div></div>
-        <div class="bd-locked"><div class="mini-chibi">${chibi(1)}</div><div><b>TA 会在生日当天收到统一祝福</b><p class="muted">陪伴还没满 365 天。如果你想特别对待，也可以破例亲自写。</p></div></div>
+        <div class="bd-locked">${pet('heart', 'pet-md')}<div><b>TA 会在生日当天收到统一祝福</b><p class="muted">陪伴还没满 365 天。如果你想特别对待，也可以破例亲自写。</p></div></div>
         <div class="quote">${esc(A.text)}</div>
         <div class="send-row"><span class="muted" style="font-size:12px">${S.blessed[b.id] ? '已安排' : '生日当天 0 点发出'}</span><button class="btn ghost" data-bopen="${b.id}">${I.mic}破例亲自祝福</button></div></div>`;
     } else {
@@ -588,7 +612,7 @@
           <div class="lk-orb"><i></i><i></i><i></i></div>
           <div class="lk-head"><span>${platTag(s.p)} ${esc(s.title)}</span><span class="muted">${pz.name} × ${LT.n}</span></div>
           <div class="lk-count"><b class="num" id="lkElig">${fmt(eligible())}</b><span>位粉丝符合条件</span></div>
-          <div class="lk-roll" id="lkRoll">${last ? '恭喜以下幸运儿' : '准备好了就开始吧'}</div>
+          <div class="lk-roll" id="lkRoll">${last ? '恭喜以下幸运儿' : '准备好了就开始吧'}</div>${last ? pet('cheer', 'lk-pet') : ''}
           <div class="lk-winners" id="lkWin">${last ? last.winners.map((w, i) => `<div class="lk-w in" style="animation-delay:${i * 40}ms"><span class="av">${esc(w.name[0])}</span><b>${esc(w.name)}</b><small>${mask(w.id)}</small></div>`).join('') : ''}</div>
           ${last ? `<div class="lk-proof">公示编号 <b>#${last.seed}</b> · ${new Date(last.at).toLocaleString('zh-CN', { hour12: false })} · 随机种子与参与名单可公开核验</div>` : ''}
           <div class="lk-acts">${last ? `<button class="btn ghost" data-lnotify>${I.send}${last.winners[0].notified ? '已通知中奖者' : '起草中奖私信'}</button><button class="btn ghost" data-lpub>生成中奖公示</button><button class="btn" data-ldraw>再抽一轮</button>` : `<button class="btn big" data-ldraw>${I.spark}开始抽奖</button>`}</div>
@@ -630,13 +654,13 @@
   let moreTab = 'bday';
   function renderMore(opts = {}) {
     if (opts.tab) moreTab = opts.tab;
-    const tabs = [['bday', '生日祝福'], ['lucky', '幸运抽奖'], ['review', '注册审核'], ['live', '直播'], ['cal', '内容日历']];
+    const tabs = [['bday', '生日祝福', 'birthday'], ['lucky', '幸运抽奖', 'star'], ['review', '注册审核', 'review'], ['live', '直播', 'live'], ['cal', '内容日历', 'today']];
     let body = '';
     if (moreTab === 'bday') body = renderBday();
     if (moreTab === 'lucky') body = renderLucky();
     if (moreTab === 'review') body = `<div class="panel white"><div class="muted" style="font-size:12px;margin-bottom:6px">新注册需要答题，AI 先给出风险判断，最后由团队决定</div>${D.applicants.map((a) => `<div class="apply"><div><b style="font-weight:500">${esc(a.name)}</b><small>${esc(a.note)}</small></div><span class="score num">${a.score}<small class="muted" style="font-size:11px"> 分</small></span><span class="tag ${a.risk === '高' ? 'rose' : ''}">风险 ${a.risk}</span>
       <div style="display:flex;gap:8px">${S.approved[a.id] ? `<span class="tag">${S.approved[a.id] === 'ok' ? '已通过' : '已驳回'}</span>` : `<button class="btn sm" data-approve="${a.id}" data-ok="1">通过</button><button class="btn danger sm" data-approve="${a.id}" data-ok="0">驳回</button>`}</div></div>`).join('')}</div>`;
-    if (moreTab === 'live') body = `<div class="live"><div class="live-cover"><span class="onair">PRIVATE LIVE</span><div style="width:200px;height:220px">${chibi()}</div></div>
+    if (moreTab === 'live') body = `<div class="live"><div class="live-cover"><span class="onair">PRIVATE LIVE</span><div style="width:200px;height:220px">${chibi()}</div>${pet('mic', 'live-pet')}</div>
       <div class="panel"><h3>开一场私域直播</h3><div class="muted" style="font-size:12px">只对小程序里通过审核的粉丝开放</div>
         <label class="field">主题<input value="《云秀行》首播夜 · 一起看"></label><label class="field">时间<input value="11 月 3 日 20:00"></label>
         <label class="field">形式<select><option>线上小会（30 人连麦）</option><option>线上签售</option><option>公开直播</option></select></label>
@@ -648,7 +672,7 @@
         <div class="panel" style="margin-top:18px"><h3>一份内容，多个平台</h3><div class="muted" style="font-size:12px">输入一个想法，自动改写成各平台的版本</div>
           <label class="field"><input id="ideaIn" value="分享《云秀行》定妆那天的小故事"></label><button class="btn soft sm" style="margin-top:12px" id="multiBtn">${I.spark}生成三个版本</button><div class="multi" id="multiOut"></div></div>`;
     }
-    $('#v-more').innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>MORE</em>更多</h2></div><div class="more-tabs">${tabs.map(([k, n]) => `<button class="chip ${moreTab === k ? 'active' : ''}" data-mtab="${k}">${n}</button>`).join('')}</div>${body}`;
+    $('#v-more').innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>MORE</em>更多</h2></div><div class="more-tabs">${tabs.map(([k, n, ic]) => `<button class="chip mtab ${moreTab === k ? 'active' : ''}" data-mtab="${k}">${ic3(ic)}${n}</button>`).join('')}</div>${body}`;
     if (moreTab === 'bday') bindBday();
     if (moreTab === 'lucky') bindLucky();
     const mb = $('#multiBtn'); if (mb) mb.onclick = () => {
@@ -687,7 +711,7 @@
   function botSay(html, acts) { addMsg(html, 'bot', acts); }
   function ask(q) {
     addMsg(esc(q), 'me');
-    const t = addMsg('<span class="dots3"><i></i><i></i><i></i></span>', 'bot');
+    const t = addMsg(pet('think', 'pet-think') + '<span class="dots3"><i></i><i></i><i></i></span>', 'bot thinking');
     $('#agentState').innerHTML = '<i class="thinking"></i>思考中…'; chibiAct($('#agent'), 'think', 0);
     setTimeout(() => {
       t.remove(); $$('#agent .chibi').forEach((c) => c.classList.remove('think'));
@@ -744,7 +768,7 @@
   }
 
   // ---------- 杂项 ----------
-  function toast(t) { const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('on'), 2600); }
+  function toast(t) { const el = $('#toast'); el.innerHTML = pet('cheer') + '<span>' + esc(t) + '</span>'; el.classList.add('on'); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('on'), 2600); }
   function celebrate(kind) { chibiAct(document.body, kind === 'give' ? 'wave' : 'happy', 1500); chibiAct(document.body, 'happy', 1000); }
   function refreshCounts() {
     renderNav();
@@ -829,5 +853,13 @@
   // 支持 #reply 这类直达链接
   const start = location.hash.replace('#', '');
   go(VIEWS.some((v) => v.id === start) ? start : 'today');
+  // 开屏：品牌出现 → 后台从下方浮起（参考 UI动效参考.mp4）
+  (function splash() {
+    const sp = $('#splash'), b = document.body;
+    const finish = () => { if (!sp.isConnected || sp.classList.contains('out')) return; sp.classList.add('out'); b.classList.remove('booting'); b.classList.add('booted'); setTimeout(() => { sp.remove(); b.classList.remove('booted'); }, 1300); };
+    if (!sp) return b.classList.remove('booting');
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || /nosplash/.test(location.search)) { sp.remove(); b.classList.remove('booting'); return; }
+    sp.onclick = finish; setTimeout(finish, 2600);
+  })();
   window.demo = { go, openAgent, ask, openComment, reset: api.reset };
 })();

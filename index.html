@@ -9,7 +9,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="booting">
+
+<!-- 开屏动画：每次打开播放一次，点击可跳过 -->
+<div class="splash" id="splash" aria-hidden="true">
+  <div class="sp-glow"></div>
+  <div class="sp-mid">
+    <img class="sp-logo" src="assets/logo/logo-a.svg" alt="">
+    <div class="sp-name">Yitong<small>CONNECT</small></div>
+    <div class="sp-line">让每一份陪伴都被看见</div>
+    <div class="sp-bar"><i></i></div>
+  </div>
+  <img class="sp-pet" src="assets/pet/wave-256.png" alt="">
+</div>
 
 <aside class="side" aria-label="主导航">
   <div class="brand">
