@@ -2,9 +2,9 @@
    页面只通过下方 api 读写数据；之后接入数据库 / MCP 时只需替换 api 的实现。 */
 (function () {
   const PLATFORMS = {
-    wb: { name: '微博', short: '微', color: '#338BC9' },
+    wb: { name: '微博', short: '微', color: '#3C9CFA' },
     dy: { name: '抖音', short: '抖', color: '#8E9CEB' },
-    xhs: { name: '小红书', short: '红', color: '#7FC6EE' },
+    xhs: { name: '小红书', short: '红', color: '#7FD0FF' },
     mp: { name: '小程序', short: '程', color: '#C9C4F2' }
   };
 
@@ -42,10 +42,10 @@
   ];
 
   const tiers = [
-    { id: 'chuyu', name: '初遇', desc: '近 30 天新来的朋友', pct: 34, color: '#CFE6F6' },
+    { id: 'chuyu', name: '初遇', desc: '近 30 天新来的朋友', pct: 34, color: '#D6EBFF' },
     { id: 'changban', name: '常伴', desc: '持续回访、常来互动', pct: 38, color: '#C9C4F2' },
-    { id: 'changqing', name: '长情', desc: '陪伴三年以上', pct: 21, color: '#7FC6EE' },
-    { id: 'gongchuang', name: '共创', desc: '投稿作品、参与活动', pct: 7, color: '#338BC9' }
+    { id: 'changqing', name: '长情', desc: '陪伴三年以上', pct: 21, color: '#7FD0FF' },
+    { id: 'gongchuang', name: '共创', desc: '投稿作品、参与活动', pct: 7, color: '#3C9CFA' }
   ];
 
   const audience = {
@@ -273,8 +273,8 @@
   const segments = [
     { name: '新粉', pct: 34, need: '认识她、找到入口', strategy: '欢迎语 + 作品导览，第一条留言尽快得到回应', metric: '7 日留存', color: '#C4DFF3' },
     { name: '老粉', pct: 29, need: '被记得、有情感连接', strategy: '在生日、周年这些节点回应，送纪念卡', metric: '月回访率', color: '#A1CFF0' },
-    { name: '事业粉', pct: 17, need: '关心她的作品选择与成长', strategy: '分享角色幕后、表演思考，回应专业讨论', metric: '长评数量', color: '#4F9BD1' },
-    { name: '数据粉', pct: 13, need: '为作品出力、看到成果', strategy: '引导到作品口碑和正向讨论，同步官方数据并致谢；不做个人排名', metric: '正向讨论量', color: '#3076A8' },
+    { name: '事业粉', pct: 17, need: '关心她的作品选择与成长', strategy: '分享角色幕后、表演思考，回应专业讨论', metric: '长评数量', color: '#4AA5FF' },
+    { name: '数据粉', pct: 13, need: '为作品出力、看到成果', strategy: '引导到作品口碑和正向讨论，同步官方数据并致谢；不做个人排名', metric: '正向讨论量', color: '#1A6FD0' },
     { name: '氪金粉', pct: 7, need: '支持被看见', strategy: '用感谢和优先体验回馈，不诱导消费，未成年人不做付费引导', metric: '满意度、投诉率', color: '#235D86' }
   ];
   const churn = { core: 1240, desc: '位核心粉近 30 天没有回访', reasons: ['剧集空窗期', '最近一次留言未被回应', '转向其他平台活跃'] };

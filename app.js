@@ -120,11 +120,11 @@
     const pts = data.map((d, i) => [x(i), y(d.v)]), path = smooth(pts), last = pts[pts.length - 1];
     return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
       <defs><linearGradient id="${id}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB8EC" stop-opacity=".38"/><stop offset=".6" stop-color="#C9C4F2" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-        <linearGradient id="${id}s" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9AA6EE"/><stop offset="1" stop-color="#338BC9"/></linearGradient></defs>
+        <linearGradient id="${id}s" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9AA6EE"/><stop offset="1" stop-color="#3C9CFA"/></linearGradient></defs>
       ${[0.25, 0.5, 0.75].map((f) => `<line x1="${pad}" x2="${W - pad}" y1="${pad + f * (H - pad * 2)}" y2="${pad + f * (H - pad * 2)}" stroke="#E6EDF5" stroke-dasharray="3 5"/>`).join('')}
       <path d="${path} L${x(data.length - 1)} ${H - pad} L${pad} ${H - pad}Z" fill="url(#${id}a)"/>
       <path d="${path}" fill="none" stroke="url(#${id}s)" stroke-width="2.6" stroke-linecap="round"/>
-      <circle cx="${last[0]}" cy="${last[1]}" r="9" fill="#338BC9" opacity=".15"/><circle cx="${last[0]}" cy="${last[1]}" r="4.5" fill="#fff" stroke="#338BC9" stroke-width="2.4"/>
+      <circle cx="${last[0]}" cy="${last[1]}" r="9" fill="#3C9CFA" opacity=".15"/><circle cx="${last[0]}" cy="${last[1]}" r="4.5" fill="#fff" stroke="#3C9CFA" stroke-width="2.4"/>
       ${data.map((d, i) => `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="11" fill="#8E9BAD" font-family="Jost">${d.d}</text>`).join('')}
       <text x="${last[0] - 8}" y="${last[1] - 14}" text-anchor="end" font-size="12" fill="#2A6F9F" font-family="Jost">${data[data.length - 1].v}k · 正向 ${Math.round(data[data.length - 1].pos * 100)}%</text>
     </svg>`;
@@ -160,7 +160,7 @@
     const g = D.growth[gRange], ids = ['wb', 'dy', 'xhs', 'mp'];
     const sum = (a) => a.reduce((m, v) => m + v, 0);
     const tot = g.labels.map((_, i) => ids.reduce((m, id) => m + g[id][i], 0));
-    const list = gMode === 'all' ? [{ name: '全平台', color: '#338BC9', data: tot }] : ids.map((id) => ({ name: P[id].name, color: P[id].color, data: g[id] }));
+    const list = gMode === 'all' ? [{ name: '全平台', color: '#3C9CFA', data: tot }] : ids.map((id) => ({ name: P[id].name, color: P[id].color, data: g[id] }));
     const rows = ids.map((id) => { const n = sum(g[id]), prev = n * g.prevRatio[id]; return { id, n, mom: Math.round((n / prev - 1) * 100), rate: (n / D.overview.platforms.find((p) => p.id === id).fans) * 100 }; });
     const allN = sum(tot), maxN = Math.max(...rows.map((r) => r.n));
     return `<div class="panel">${askBtn('最近涨粉主要来自哪里？')}
@@ -358,7 +358,7 @@
       ${stepper(TIER_STEPS, tierIdx(c.tier), Math.min(c.days / 1100, 0.9), `陪伴阶梯 · 已陪伴 ${fmt(c.days)} 天`)}
       <ul class="tl">${c.history.map((h) => `<li>${esc(h)}</li>`).join('')}</ul>
       <div class="composer">
-        <div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#3076A8"')}按你的口吻起草 · 可以随意修改<button class="regen" id="regen">换一种说法</button></div>
+        <div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#1A6FD0"')}按你的口吻起草 · 可以随意修改<button class="regen" id="regen">换一种说法</button></div>
         <textarea id="replyText" placeholder="写下你想说的话…"></textarea>
         <div class="hint">${c.draft.includes('【') ? '<mark>【】</mark> 里的内容需要你补上真实经历，AI 不会替你编造。' : '草稿只是参考，最后的话由你来说。'}</div>
         <div class="tools"><button class="voice" id="recBtn">${I.mic}<span>录一段语音</span></button><span id="recOut"></span>
@@ -562,7 +562,7 @@
         <div class="fan-head">${av(b.av, 1)}<div><b>${esc(b.fan)}</b> ${platTag(b.p)}<small>${b.date === '今天' ? '今天' : b.date} · ${b.age}生日 · ${tierName(b.tier)} · 陪伴 ${fmt(b.days)} 天</small></div></div>
         <div class="bd-memo"><span class="lbl">${I.spark}小桐记得</span>${b.memo.map((m) => `<span class="tag">${esc(m)}</span>`).join('')}</div>
         <div class="composer">
-          <div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#3076A8"')}按你的口吻起草 · 可以随意修改
+          <div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#1A6FD0"')}按你的口吻起草 · 可以随意修改
             <span class="tone">${TONES.map(([k, n]) => `<button class="${BD.tone === k ? 'on' : ''}" data-btone="${k}">${n}</button>`).join('')}</span></div>
           <textarea id="bdText"></textarea>
           <div class="hint">草稿只用到 TA 公开留言里的信息，最后的话由你来说。</div>
@@ -666,7 +666,7 @@
     const last = LT.last; if (!last) return;
     openDrawer('通知中奖者', `<div class="muted" style="font-size:12px">将通过原活动平台私信，分别发送给 ${last.winners.length} 位中奖者</div>
       <div class="lk-chips">${last.winners.map((w) => `<span class="tag">${esc(w.name)}</span>`).join('')}</div>
-      <div class="composer"><div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#3076A8"')}按你的口吻起草 · 会自动替换成每位粉丝的昵称</div><textarea id="lkText"></textarea>
+      <div class="composer"><div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#1A6FD0"')}按你的口吻起草 · 会自动替换成每位粉丝的昵称</div><textarea id="lkText"></textarea>
       <div class="hint">领奖只需回复收件信息，<b>不会要求任何付款</b>；请提醒粉丝警惕冒充的中奖信息。</div></div>
       <div class="send-row"><span class="muted" style="font-size:12px">发送前由你确认</span><button class="btn" id="lkSend">${I.send}发送给 ${last.winners.length} 人</button></div>`);
     typeInto($('#lkText'), `{昵称}，恭喜你被抽中啦！「${last.prize}」会在 7 天内寄出，回复这条私信留下收件信息就好。谢谢你一直在，${last.source.includes('云秀行') ? '11 月 3 日《云秀行》' : '下次'}见～ —— 一桐`);
@@ -823,7 +823,7 @@
     if (d.cat) { replyCat = d.cat; $$('#v-reply [data-cat]').forEach((x) => x.classList.toggle('active', x === t)); fillReplyList(); return; }
     if (d.reveal) { const r = t.closest('.risk'); r.classList.toggle('show'); t.textContent = r.classList.contains('show') ? '隐藏内容' : '显示内容'; return; }
     if (d.risk) { const r = t.closest('.risk'); const m = { evidence: '已截图存档，附带时间与链接', studio: '已转交工作室处理', ignore: '已标记为不回应' }; toast(m[d.act]); if (d.act !== 'evidence') r.classList.add('gone'); return; }
-    if (d.dm) { const m = D.dms.find((x) => x.id === d.dm); openDrawer('私信', `<div class="fan-head">${av(m.av, 1)}<div><b>${esc(m.fan)}</b> ${platTag(m.p)}<small>${m.time}</small></div></div><div class="quote">${esc(m.text)}</div><div class="composer"><div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#3076A8"')}按你的口吻起草</div><textarea id="dmText"></textarea></div><div class="send-row"><span class="muted" style="font-size:12px">发送前由你确认</span><button class="btn" id="dmSend">${I.send}确认发送</button></div>`); typeInto($('#dmText'), m.id === 'd1' ? '一周年快乐！能因为一部剧遇见彼此，真好。祝你们一直这样幸福下去。' : '被你注意到啦！范云那身衣服的颜色和纹样都有讲究，播出后找机会跟大家细说。'); $('#dmSend').onclick = () => { closeDrawer(); toast('私信已发送'); celebrate('happy'); }; return; }
+    if (d.dm) { const m = D.dms.find((x) => x.id === d.dm); openDrawer('私信', `<div class="fan-head">${av(m.av, 1)}<div><b>${esc(m.fan)}</b> ${platTag(m.p)}<small>${m.time}</small></div></div><div class="quote">${esc(m.text)}</div><div class="composer"><div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#1A6FD0"')}按你的口吻起草</div><textarea id="dmText"></textarea></div><div class="send-row"><span class="muted" style="font-size:12px">发送前由你确认</span><button class="btn" id="dmSend">${I.send}确认发送</button></div>`); typeInto($('#dmText'), m.id === 'd1' ? '一周年快乐！能因为一部剧遇见彼此，真好。祝你们一直这样幸福下去。' : '被你注意到啦！范云那身衣服的颜色和纹样都有讲究，播出后找机会跟大家细说。'); $('#dmSend').onclick = () => { closeDrawer(); toast('私信已发送'); celebrate('happy'); }; return; }
     if (d.src) { W.src = d.src; $$('[data-src]').forEach((x) => x.classList.toggle('active', x === t)); renderSrc(); return; }
     if (d.tpl) { W.photo = d.tpl; $$('[data-tpl]').forEach((x) => x.classList.toggle('on', x === t)); const st = D.portraitStyles.find((s) => s.img === d.tpl); if (st) { W.style = st.id; $$('[data-style]').forEach((x) => x.classList.toggle('active', x.dataset.style === st.id)); } generate(); return; }
     if (d.style) { W.style = d.style; $$('[data-style]').forEach((x) => x.classList.toggle('active', x === t)); if (W.src === 'tpl') { W.photo = D.portraitStyles.find((s) => s.id === d.style).img; renderSrc(); } generate(); return; }
