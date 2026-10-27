@@ -107,3 +107,57 @@
 - `tools/`：素材对齐、编码、二维动作、预览和检查脚本，可供复核。脚本没有前端功能。
 
 当前工作目录不在 Git 仓库内，因此未创建 commit。
+
+## 第二批素材
+
+2026-10-28：使用内置 image_gen 生成，原图与实际提示词保存在 `source/batch2/`。只交付素材，本轮未修改网页代码。
+
+| 文件 | 像素尺寸 | 格式 |
+|---|---|---|
+| `pet/idle.png` | 1024×1024 | 透明 PNG（RGBA） |
+| `pet/idle-256.png` | 256×256 | 透明 PNG（RGBA） |
+| `pet/wave.png` | 1024×1024 | 透明 PNG（RGBA） |
+| `pet/wave-256.png` | 256×256 | 透明 PNG（RGBA） |
+| `pet/think.png` | 1024×1024 | 透明 PNG（RGBA） |
+| `pet/think-256.png` | 256×256 | 透明 PNG（RGBA） |
+| `pet/sleep.png` | 1024×1024 | 透明 PNG（RGBA） |
+| `pet/sleep-256.png` | 256×256 | 透明 PNG（RGBA） |
+| `pet/cheer.png` | 1024×1024 | 透明 PNG（RGBA） |
+| `pet/cheer-256.png` | 256×256 | 透明 PNG（RGBA） |
+| `pet/card.png` | 1024×1024 | 透明 PNG（RGBA） |
+| `pet/card-256.png` | 256×256 | 透明 PNG（RGBA） |
+| `pet/listen.png` | 1024×1024 | 透明 PNG（RGBA） |
+| `pet/listen-256.png` | 256×256 | 透明 PNG（RGBA） |
+| `pet/mic.png` | 1024×1024 | 透明 PNG（RGBA） |
+| `pet/mic-256.png` | 256×256 | 透明 PNG（RGBA） |
+| `pet/heart.png` | 1024×1024 | 透明 PNG（RGBA） |
+| `pet/heart-256.png` | 256×256 | 透明 PNG（RGBA） |
+| `pet/sheet.png` | 2048×1024 | PNG，浅灰白底 |
+| `icons3d/today.png` | 512×512 | 透明 PNG（RGBA） |
+| `icons3d/reply.png` | 512×512 | 透明 PNG（RGBA） |
+| `icons3d/card.png` | 512×512 | 透明 PNG（RGBA） |
+| `icons3d/insight.png` | 512×512 | 透明 PNG（RGBA） |
+| `icons3d/more.png` | 512×512 | 透明 PNG（RGBA） |
+| `icons3d/birthday.png` | 512×512 | 透明 PNG（RGBA） |
+| `icons3d/live.png` | 512×512 | 透明 PNG（RGBA） |
+| `icons3d/review.png` | 512×512 | 透明 PNG（RGBA） |
+| `icons3d/heart.png` | 512×512 | 透明 PNG（RGBA） |
+| `icons3d/star.png` | 512×512 | 透明 PNG（RGBA） |
+| `icons3d/plus.png` | 512×512 | 透明 PNG（RGBA） |
+| `icons3d/send.png` | 512×512 | 透明 PNG（RGBA） |
+| `bg/mist-agent.webp` | 1200×800 | WebP，质量 85 |
+| `bg/mist-wide.webp` | 3200×900 | WebP，质量 85 |
+| `bg/mist-card.webp` | 1200×1800 | WebP，质量 85 |
+| `orb/orb-1.png` | 1024×1024 | 透明 PNG（RGBA） |
+| `orb/orb-2.png` | 1024×1024 | 透明 PNG（RGBA） |
+| `orb/orb-3.png` | 1024×1024 | 透明 PNG（RGBA） |
+
+本批必做交付共 37 个文件：宠物三视图 1 张、9 个动作的 1024 与 256 版本共 18 张、图标 12 张、背景 3 张、雾球 3 张。
+
+- 宠物以同一三视图为角色依据；原生 Alpha 保留，等比缩放并居中留白；256 小图从对应 1024 交付图导出。
+- 图标统一为蓝白果冻 3D，左上柔光、圆润边缘与珍珠白高光。不同图形的几何结构和投影存在自然差异。
+- 交付尺寸通过重采样统一，并非全部为模型原生输出尺寸；三视图从约 2:1 原图重采样到精确 2048×1024。
+- 可选 `pet/anim/idle.webm`、`pet/anim/think.webm` 与 `orb/orb-loop.webm` 未制作。
+- 技术核验和视觉检查不等于先生已经审美批准，也不代表已在网页中接入或实测。
+
+核验结果：37/37 文件名、尺寸与格式通过；33 张透明 PNG 均为 RGBA，含真正透明与可见像素，四角全透明。已逐组查看宠物与图标预览、三张背景及三张雾球。`source/batch2/verification.json` 记录逐文件尺寸、字节数与 SHA-256。
