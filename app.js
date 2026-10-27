@@ -668,7 +668,7 @@
     if (q) setTimeout(() => ask(q), greeted ? 200 : 900);
     setTimeout(() => $('#agentInput').focus(), 300);
   }
-  function closeAgent() { agentOpen = false; $('#agent').classList.remove('on'); $('#fab').classList.remove('hidden'); }
+  function closeAgent() { $('#agent').classList.remove('vmode'); agentOpen = false; $('#agent').classList.remove('on'); $('#fab').classList.remove('hidden'); }
   function setSugs() {
     const map = {
       today: ['今天粉丝在聊什么？', '最近涨粉主要来自哪里？', '今天谁过生日？'],
@@ -688,7 +688,7 @@
   function ask(q) {
     addMsg(esc(q), 'me');
     const t = addMsg('<span class="dots3"><i></i><i></i><i></i></span>', 'bot');
-    $('#agentState').innerHTML = '<i style="background:#C9963F"></i>思考中…'; chibiAct($('#agent'), 'think', 0);
+    $('#agentState').innerHTML = '<i class="thinking"></i>思考中…'; chibiAct($('#agent'), 'think', 0);
     setTimeout(() => {
       t.remove(); $$('#agent .chibi').forEach((c) => c.classList.remove('think'));
       $('#agentState').innerHTML = '<i></i>在线 · 已读取今日数据';
@@ -801,7 +801,19 @@
   $('#askBar').onclick = () => openAgent();
   $('#agentClose').onclick = closeAgent;
   $('#agentForm').onsubmit = (e) => { e.preventDefault(); const v = $('#agentInput').value.trim(); if (!v) return; $('#agentInput').value = ''; ask(v); };
-  $('#agentMic').onclick = () => { $('#agentInput').value = '今天粉丝在聊什么？'; toast('语音已转为文字'); };
+  // 语音模式（参考 AI Music）：轻点开始说话 → 识别成文字 → 直接提问
+  $('#agent').insertAdjacentHTML('beforeend', `<div class="voice-stage" id="voiceStage"><div class="vorb"></div><div class="vt" id="vt">想问什么，直接说</div><div class="vs" id="vs">轻点开始说话</div><div class="vmodes"><button data-vmode="text">文字</button><button class="on">语音</button></div></div>`);
+  const VQ = ['今天粉丝在聊什么？', '今天谁过生日？', '帮我抽 10 位幸运粉丝', '哪些核心粉快流失了？'];
+  let vqi = 0;
+  $('#agentMic').onclick = () => { $('#agent').classList.add('vmode'); $('#vt').textContent = '想问什么，直接说'; $('#vs').textContent = '轻点开始说话'; };
+  $('#voiceStage').onclick = (e) => {
+    if (e.target.closest('[data-vmode]')) { $('#agent').classList.remove('vmode'); $('#agentInput').focus(); return; }
+    const st = $('#voiceStage'); if (st.classList.contains('listening')) return;
+    st.classList.add('listening'); $('#vs').textContent = '正在听…';
+    const q = VQ[vqi++ % VQ.length];
+    setTimeout(() => { $('#vt').textContent = '“' + q + '”'; }, 900);
+    setTimeout(() => { st.classList.remove('listening'); $('#agent').classList.remove('vmode'); ask(q); }, 1700);
+  };
   $('#drawerClose').onclick = closeDrawer;
   $('#scrim').onclick = closeDrawer;
   $('#modal').onclick = (e) => { if (e.target.id === 'modal') $('#modal').classList.remove('on'); };
