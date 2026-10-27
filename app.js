@@ -395,6 +395,8 @@
     $('#drawerTitle').textContent = title; $('#drawerBody').innerHTML = html;
     $('#drawer').classList.add('on'); $('#scrim').classList.add('on');
     $('#drawerBody').scrollTop = 0;
+    // 助手开着时：宽屏把抽屉放在助手左边，窄屏先收起助手，避免叠在一起
+    if (agentOpen) { if (innerWidth >= 1100) $('#drawer').classList.add('beside'); else closeAgent(); }
   }
   function closeDrawer() { $('#drawer').classList.remove('on'); $('#scrim').classList.remove('on'); stopRec(); }
   function openComment(id) {
@@ -758,14 +760,14 @@
   // ---------- 助手 ----------
   let agentOpen = false, ctxComment = null, greeted = false;
   function openAgent(q) {
-    agentOpen = true; $('#agent').classList.add('on'); $('#fab').classList.add('hidden');
+    agentOpen = true; if ($('#drawer').classList.contains('on') && innerWidth >= 1100) $('#drawer').classList.add('beside'); $('#agent').classList.add('on'); $('#fab').classList.add('hidden');
     if (!$('#agentChibi').innerHTML) $('#agentChibi').innerHTML = chibi();
     if (!greeted) { greeted = true; botSay(`早上好，一桐。我读完了今天的 1,286 条留言：\n<ol><li>3 条值得你亲自回</li><li>2 条棘手消息，我已经先帮你模糊处理</li><li>2 位粉丝今天生日</li></ol>想先看哪个？`, [['看值得回的留言', 'drawer:pending'], ['看棘手消息', 'drawer:risky']]); chibiAct($('#agent'), 'wave'); }
     setSugs();
     if (q) setTimeout(() => ask(q), greeted ? 200 : 900);
     setTimeout(() => $('#agentInput').focus(), 300);
   }
-  function closeAgent() { $('#agent').classList.remove('vmode'); agentOpen = false; $('#agent').classList.remove('on'); $('#fab').classList.remove('hidden'); }
+  function closeAgent() { $('#drawer').classList.remove('beside'); $('#agent').classList.remove('vmode'); agentOpen = false; $('#agent').classList.remove('on'); $('#fab').classList.remove('hidden'); }
   function setSugs() {
     const map = {
       today: ['今天粉丝在聊什么？', '最近涨粉主要来自哪里？', '今天谁过生日？'],

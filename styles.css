@@ -1107,3 +1107,17 @@ html{background:#F4F8FD!important}
 .slide .sub{color:rgba(255,255,255,.92);text-shadow:none}
 .hero-arrow{background:#fff!important;border:0!important;box-shadow:none!important;color:#4467AE!important;backdrop-filter:none!important}
 .dots i{background:rgba(255,255,255,.5)}.dots i.on{background:#fff}
+
+/* v10：横幅换回 Codex 最新的三张浅色图（外框保持最初版的浅灰平涂）；抽屉与助手并排；助手输入框只留一层描边 */
+.slide.s1{background:url(assets/banner/banner-1.webp) center/cover}
+.slide.s2{background:url(assets/banner/banner-2.webp) center/cover}
+.slide.s3{background:url(assets/banner/banner-3.webp) center/cover}
+.slide .big{color:#2A5C9A;text-shadow:0 0 18px rgba(255,255,255,.85)}
+.slide .sub{color:#35689F;text-shadow:0 0 10px rgba(255,255,255,.9)}
+.dots i{background:rgba(42,92,154,.25)}.dots i.on{background:#3C7FC4}
+.drawer{transition:transform .4s cubic-bezier(.2,.8,.2,1),right .4s cubic-bezier(.2,.8,.2,1),visibility 0s .4s}
+.drawer.on{transition:transform .4s cubic-bezier(.2,.8,.2,1),right .4s cubic-bezier(.2,.8,.2,1)}
+.drawer.beside{right:438px;width:min(520px,calc(100vw - 460px));border-radius:0 0 0 0;box-shadow:0 20px 60px -20px rgba(25,53,73,.25)}
+.agent-input{overflow:hidden}
+.agent-input input,.agent-input input:focus,.agent-input input:focus-visible{outline:none!important;box-shadow:none!important;border:0!important;border-radius:0}
+.agent-input:focus-within{box-shadow:0 0 0 2px rgba(60,156,250,.35);background:#fff}
