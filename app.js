@@ -110,13 +110,13 @@
     const pts = data.map((d, i) => [x(i), y(d.v)]);
     const path = pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
     return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
-      <defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4366AE" stop-opacity=".22"/><stop offset="1" stop-color="#4366AE" stop-opacity="0"/></linearGradient></defs>
-      ${[0.25, 0.5, 0.75].map((f) => `<line x1="${pad}" x2="${W - pad}" y1="${pad + f * (H - pad * 2)}" y2="${pad + f * (H - pad * 2)}" stroke="#E4E8EF" stroke-dasharray="3 5"/>`).join('')}
+      <defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3076A8" stop-opacity=".22"/><stop offset="1" stop-color="#3076A8" stop-opacity="0"/></linearGradient></defs>
+      ${[0.25, 0.5, 0.75].map((f) => `<line x1="${pad}" x2="${W - pad}" y1="${pad + f * (H - pad * 2)}" y2="${pad + f * (H - pad * 2)}" stroke="#E3EBF0" stroke-dasharray="3 5"/>`).join('')}
       <path d="${path} L${x(data.length - 1)} ${H - pad} L${pad} ${H - pad}Z" fill="url(#lg)"/>
-      <path d="${path}" fill="none" stroke="#4366AE" stroke-width="2.4" stroke-linejoin="round"/>
-      ${pts.map((p, i) => `<circle cx="${p[0]}" cy="${p[1]}" r="${i === pts.length - 1 ? 5 : 3}" fill="${i === pts.length - 1 ? '#4366AE' : '#fff'}" stroke="#4366AE" stroke-width="2"/>`).join('')}
-      ${data.map((d, i) => `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="11" fill="#8B94A8" font-family="Jost">${d.d}</text>`).join('')}
-      <text x="${pts[pts.length - 1][0] - 6}" y="${pts[pts.length - 1][1] - 12}" text-anchor="end" font-size="12" fill="#4366AE" font-family="Jost">${data[data.length - 1].v}k · 正向 ${Math.round(data[data.length - 1].pos * 100)}%</text>
+      <path d="${path}" fill="none" stroke="#3076A8" stroke-width="2.4" stroke-linejoin="round"/>
+      ${pts.map((p, i) => `<circle cx="${p[0]}" cy="${p[1]}" r="${i === pts.length - 1 ? 5 : 3}" fill="${i === pts.length - 1 ? '#3076A8' : '#fff'}" stroke="#3076A8" stroke-width="2"/>`).join('')}
+      ${data.map((d, i) => `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="11" fill="#7C8F9D" font-family="Jost">${d.d}</text>`).join('')}
+      <text x="${pts[pts.length - 1][0] - 6}" y="${pts[pts.length - 1][1] - 12}" text-anchor="end" font-size="12" fill="#3076A8" font-family="Jost">${data[data.length - 1].v}k · 正向 ${Math.round(data[data.length - 1].pos * 100)}%</text>
     </svg>`;
   }
   const bars = (items, max) => `<div class="bars">${items.map((it) => `<div class="bar"><span>${esc(it.k)}</span><div class="track"><div class="fill" data-w="${(it.v / max) * 100}%"></div></div><span class="num">${it.v}%</span></div>`).join('')}</div>`;
@@ -128,17 +128,17 @@
     const max = Math.max(...list.flatMap((l) => l.data)) * 1.12;
     const x = (i) => pl + (i * (W - pl - pr)) / (labels.length - 1), y = (v) => H - pb - (v / max) * (H - pt - pb);
     const step = Math.ceil(labels.length / 7);
-    const grid = [0, 0.25, 0.5, 0.75, 1].map((f) => { const v = max * f, yy = y(v); return `<line x1="${pl}" x2="${W - pr}" y1="${yy}" y2="${yy}" stroke="#E9EDF3" ${f ? 'stroke-dasharray="3 5"' : ''}/><text x="${pl - 8}" y="${yy + 4}" text-anchor="end" font-size="10" fill="#9AA3B5" font-family="Jost">${v >= 10000 ? (v / 10000).toFixed(1) + 'w' : Math.round(v / 100) / 10 + 'k'}</text>`; }).join('');
+    const grid = [0, 0.25, 0.5, 0.75, 1].map((f) => { const v = max * f, yy = y(v); return `<line x1="${pl}" x2="${W - pr}" y1="${yy}" y2="${yy}" stroke="#E8EFF4" ${f ? 'stroke-dasharray="3 5"' : ''}/><text x="${pl - 8}" y="${yy + 4}" text-anchor="end" font-size="10" fill="#9AAAB5" font-family="Jost">${v >= 10000 ? (v / 10000).toFixed(1) + 'w' : Math.round(v / 100) / 10 + 'k'}</text>`; }).join('');
     const lines = list.map((l, li) => { const d = l.data.map((v, i) => (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(v).toFixed(1)).join(' ');
       return (list.length === 1 ? `<path d="${d} L${x(l.data.length - 1)} ${H - pb} L${pl} ${H - pb}Z" fill="${l.color}" opacity=".12"/>` : '') + `<path d="${d}" fill="none" stroke="${l.color}" stroke-width="${list.length === 1 ? 2.6 : 2}" stroke-linejoin="round" stroke-linecap="round"/><circle cx="${x(l.data.length - 1)}" cy="${y(l.data[l.data.length - 1])}" r="4" fill="${l.color}"/>`; }).join('');
-    const xl = labels.map((t, i) => (i % step === 0 || i === labels.length - 1) ? `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="10" fill="#9AA3B5" font-family="Jost">${t}</text>` : '').join('');
+    const xl = labels.map((t, i) => (i % step === 0 || i === labels.length - 1) ? `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="10" fill="#9AAAB5" font-family="Jost">${t}</text>` : '').join('');
     return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="height:250px">${grid}${lines}${xl}</svg>`;
   }
   function growthHTML() {
     const g = D.growth[gRange], ids = ['wb', 'dy', 'xhs', 'mp'];
     const sum = (a) => a.reduce((m, v) => m + v, 0);
     const tot = g.labels.map((_, i) => ids.reduce((m, id) => m + g[id][i], 0));
-    const list = gMode === 'all' ? [{ name: '全平台', color: '#5076C0', data: tot }] : ids.map((id) => ({ name: P[id].name, color: P[id].color, data: g[id] }));
+    const list = gMode === 'all' ? [{ name: '全平台', color: '#3387C4', data: tot }] : ids.map((id) => ({ name: P[id].name, color: P[id].color, data: g[id] }));
     const rows = ids.map((id) => { const n = sum(g[id]), prev = n * g.prevRatio[id]; return { id, n, mom: Math.round((n / prev - 1) * 100), rate: (n / D.overview.platforms.find((p) => p.id === id).fans) * 100 }; });
     const allN = sum(tot), maxN = Math.max(...rows.map((r) => r.n));
     return `<div class="panel">${askBtn('最近涨粉主要来自哪里？')}
@@ -312,7 +312,7 @@
       <div class="stats3"><div><b>${c.days}</b><span>陪伴天数</span></div><div><b>${c.total}</b><span>累计留言</span></div><div><b>${c.history.length}</b><span>重要时刻</span></div></div>
       <ul class="tl">${c.history.map((h) => `<li>${esc(h)}</li>`).join('')}</ul>
       <div class="composer">
-        <div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#4366AE"')}按你的口吻起草 · 可以随意修改<button class="regen" id="regen">换一种说法</button></div>
+        <div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#3076A8"')}按你的口吻起草 · 可以随意修改<button class="regen" id="regen">换一种说法</button></div>
         <textarea id="replyText" placeholder="写下你想说的话…"></textarea>
         <div class="hint">${c.draft.includes('【') ? '<mark>【】</mark> 里的内容需要你补上真实经历，AI 不会替你编造。' : '草稿只是参考，最后的话由你来说。'}</div>
         <div class="tools"><button class="voice" id="recBtn">${I.mic}<span>录一段语音</span></button><span id="recOut"></span>
@@ -408,7 +408,7 @@
   function renderSrc() {
     const box = $('#srcBox'); stopCam();
     if (W.src === 'tpl') {
-      box.innerHTML = `<div class="tpl-grid">${D.portraitStyles.map((s) => `<button class="tpl ${W.photo === s.img ? 'on' : ''}" data-tpl="${s.img}" style="background-image:url(${s.img}),linear-gradient(160deg,#EEF3FA,#A9C7E8)"><span>${s.name}</span></button>`).join('')}</div>`;
+      box.innerHTML = `<div class="tpl-grid">${D.portraitStyles.map((s) => `<button class="tpl ${W.photo === s.img ? 'on' : ''}" data-tpl="${s.img}" style="background-image:url(${s.img}),linear-gradient(160deg,#ECF5FB,#A1CFF0)"><span>${s.name}</span></button>`).join('')}</div>`;
     } else if (W.src === 'upload') {
       box.innerHTML = `<label class="upload">${I.plus.replace('<svg', '<svg width="28" height="28"')}点击上传一张照片<br><small>只在你的设备上处理</small><input type="file" accept="image/*" id="fileIn" hidden></label>`;
       $('#fileIn').onchange = (e) => { const f = e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { W.photo = r.result; generate(); }; r.readAsDataURL(f); };
@@ -515,7 +515,7 @@
         <div class="fan-head">${av(b.av, 1)}<div><b>${esc(b.fan)}</b> ${platTag(b.p)}<small>${b.date === '今天' ? '今天' : b.date} · ${b.age}生日 · ${tierName(b.tier)} · 陪伴 ${fmt(b.days)} 天</small></div></div>
         <div class="bd-memo"><span class="lbl">${I.spark}小桐记得</span>${b.memo.map((m) => `<span class="tag">${esc(m)}</span>`).join('')}</div>
         <div class="composer">
-          <div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#4366AE"')}按你的口吻起草 · 可以随意修改
+          <div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#3076A8"')}按你的口吻起草 · 可以随意修改
             <span class="tone">${TONES.map(([k, n]) => `<button class="${BD.tone === k ? 'on' : ''}" data-btone="${k}">${n}</button>`).join('')}</span></div>
           <textarea id="bdText"></textarea>
           <div class="hint">草稿只用到 TA 公开留言里的信息，最后的话由你来说。</div>
@@ -619,7 +619,7 @@
     const last = LT.last; if (!last) return;
     openDrawer('通知中奖者', `<div class="muted" style="font-size:12px">将通过原活动平台私信，分别发送给 ${last.winners.length} 位中奖者</div>
       <div class="lk-chips">${last.winners.map((w) => `<span class="tag">${esc(w.name)}</span>`).join('')}</div>
-      <div class="composer"><div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#4366AE"')}按你的口吻起草 · 会自动替换成每位粉丝的昵称</div><textarea id="lkText"></textarea>
+      <div class="composer"><div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#3076A8"')}按你的口吻起草 · 会自动替换成每位粉丝的昵称</div><textarea id="lkText"></textarea>
       <div class="hint">领奖只需回复收件信息，<b>不会要求任何付款</b>；请提醒粉丝警惕冒充的中奖信息。</div></div>
       <div class="send-row"><span class="muted" style="font-size:12px">发送前由你确认</span><button class="btn" id="lkSend">${I.send}发送给 ${last.winners.length} 人</button></div>`);
     typeInto($('#lkText'), `{昵称}，恭喜你被抽中啦！「${last.prize}」会在 7 天内寄出，回复这条私信留下收件信息就好。谢谢你一直在，${last.source.includes('云秀行') ? '11 月 3 日《云秀行》' : '下次'}见～ —— 一桐`);
@@ -769,7 +769,7 @@
     if (d.cat) { replyCat = d.cat; $$('#v-reply [data-cat]').forEach((x) => x.classList.toggle('active', x === t)); fillReplyList(); return; }
     if (d.reveal) { const r = t.closest('.risk'); r.classList.toggle('show'); t.textContent = r.classList.contains('show') ? '隐藏内容' : '显示内容'; return; }
     if (d.risk) { const r = t.closest('.risk'); const m = { evidence: '已截图存档，附带时间与链接', studio: '已转交工作室处理', ignore: '已标记为不回应' }; toast(m[d.act]); if (d.act !== 'evidence') r.classList.add('gone'); return; }
-    if (d.dm) { const m = D.dms.find((x) => x.id === d.dm); openDrawer('私信', `<div class="fan-head">${av(m.av, 1)}<div><b>${esc(m.fan)}</b> ${platTag(m.p)}<small>${m.time}</small></div></div><div class="quote">${esc(m.text)}</div><div class="composer"><div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#4366AE"')}按你的口吻起草</div><textarea id="dmText"></textarea></div><div class="send-row"><span class="muted" style="font-size:12px">发送前由你确认</span><button class="btn" id="dmSend">${I.send}确认发送</button></div>`); typeInto($('#dmText'), m.id === 'd1' ? '一周年快乐！能因为一部剧遇见彼此，真好。祝你们一直这样幸福下去。' : '被你注意到啦！范云那身衣服的颜色和纹样都有讲究，播出后找机会跟大家细说。'); $('#dmSend').onclick = () => { closeDrawer(); toast('私信已发送'); celebrate('happy'); }; return; }
+    if (d.dm) { const m = D.dms.find((x) => x.id === d.dm); openDrawer('私信', `<div class="fan-head">${av(m.av, 1)}<div><b>${esc(m.fan)}</b> ${platTag(m.p)}<small>${m.time}</small></div></div><div class="quote">${esc(m.text)}</div><div class="composer"><div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#3076A8"')}按你的口吻起草</div><textarea id="dmText"></textarea></div><div class="send-row"><span class="muted" style="font-size:12px">发送前由你确认</span><button class="btn" id="dmSend">${I.send}确认发送</button></div>`); typeInto($('#dmText'), m.id === 'd1' ? '一周年快乐！能因为一部剧遇见彼此，真好。祝你们一直这样幸福下去。' : '被你注意到啦！范云那身衣服的颜色和纹样都有讲究，播出后找机会跟大家细说。'); $('#dmSend').onclick = () => { closeDrawer(); toast('私信已发送'); celebrate('happy'); }; return; }
     if (d.src) { W.src = d.src; $$('[data-src]').forEach((x) => x.classList.toggle('active', x === t)); renderSrc(); return; }
     if (d.tpl) { W.photo = d.tpl; $$('[data-tpl]').forEach((x) => x.classList.toggle('on', x === t)); const st = D.portraitStyles.find((s) => s.img === d.tpl); if (st) { W.style = st.id; $$('[data-style]').forEach((x) => x.classList.toggle('active', x.dataset.style === st.id)); } generate(); return; }
     if (d.style) { W.style = d.style; $$('[data-style]').forEach((x) => x.classList.toggle('active', x === t)); if (W.src === 'tpl') { W.photo = D.portraitStyles.find((s) => s.id === d.style).img; renderSrc(); } generate(); return; }
