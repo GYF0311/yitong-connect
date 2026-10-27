@@ -161,3 +161,19 @@
 - 技术核验和视觉检查不等于先生已经审美批准，也不代表已在网页中接入或实测。
 
 核验结果：37/37 文件名、尺寸与格式通过；33 张透明 PNG 均为 RGBA，含真正透明与可见像素，四角全透明。已逐组查看宠物与图标预览、三张背景及三张雾球。`source/batch2/verification.json` 记录逐文件尺寸、字节数与 SHA-256。
+
+
+## 第三批：应援色调整
+
+2026-10-28，按 `../codex-图片生成提示词-第三批-应援色.md` 执行。所有替换前原文件已按目录结构备份到 `source/backup-royal-blue/`，包含原动画帧和 README。
+
+- **重新生成**：`banner/banner-1.webp`（花墙）、`banner/banner-2.webp`（冰雪）、`banner/banner-3.webp`（云朵）。使用内置 image_gen，生成后裁切重采样为 3200×900，WebP quality 85。原图和提示词见 `source/batch3/`。
+- **蓝色区域调色**：`cards/card-*.webp` 4 张、`portraits/portrait-*.webp` 3 张、`live-cover.webp`；`chibi/` 的全部 21 张静态/分层 PNG 和 240 张动画 PNG 序列帧；第二批 `pet/*.png` 19 张、`icons3d/*.png` 12 张、`bg/*.webp` 3 张、`orb/*.png` 3 张。
+- 方法：只选 HSV 色相 200°–260°、饱和度 >0.15 的蓝色像素，蒙版内缘平滑过渡至约 205°；小卡、背景与直播封面同时提亮、降低蓝色饱和度。非蓝色像素和原 Alpha 均逐像素保持不变。PNG 画布与坐标不变；调色 WebP 使用无损编码，避免二次有损压缩改变肤色等保护区域（体积会增加）。
+- **动画重新导出**：`chibi/anim/idle.webm`、`wave.webm`、`think.webm`、`happy.webm`、`give-card.webm`，由调色后帧序列导出透明 VP9，保持 1024×1024、24fps、48 帧、2 秒；实际解码检查透明通道，首尾帧一致。
+- 技术核验覆盖 309 张图片及 5 段动画；尺寸保持一致，所有调色图片的非蓝像素与 Alpha 改变量均为 0。按 `rig.json` 重合成后，Alpha 与完整图逐像素一致、无坐标错位。独立调色图层与完整图在 371 个半透明叠加边缘像素存在色彩舍入差异；重合成预览为 `source/batch3/rig-recomposed.png`。
+- `logo/*.svg`、`deco/*.svg` 未修改。此次工具只写入 `assets/`；执行期间发现其他进程更新前端，相关前端改动保留且不纳入本次素材提交。
+
+文件清单、SHA-256、尺寸和校验结果：`source/batch3/verification.json`。新版总览：`source/batch3/preview.jpg`。原有 `verification.json` 和 `preview.jpg` 是旧批次记录，不代表本批最新状态。
+
+视觉检查未见明显发灰、发脏或人物肤色偏移。胶片人物图按原图保留较深背景，仅调整蓝色色相；未对人物图整体提亮。最终审美及白字在实际页面上的可读性仍由页面接入后确认，本次未修改页面或宣称完成浏览器接入验收。
