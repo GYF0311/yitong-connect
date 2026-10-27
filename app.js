@@ -114,6 +114,8 @@
     return `C${c1[0].toFixed(1)} ${c1[1].toFixed(1)} ${c2[0].toFixed(1)} ${c2[1].toFixed(1)} ${p[0].toFixed(1)} ${p[1].toFixed(1)}`;
   }).join(' ');
   let gid = 0;
+  // 状态卡配图：优先用 assets/status/ 新图，没有时退回现有图标
+  const stImg = (n, fb) => `<img class="st-img" src="assets/status/${n}.webp" alt="" onerror="this.onerror=null;this.src='assets/${fb}'">`;
   // 图表按容器真实宽度绘制，避免被拉伸变形
   const CH = {};
   const chartBox = (render, w0) => { const id = 'cb' + gid++; CH[id] = render; return `<div class="chart-box" data-ch="${id}" data-w="${w0}">${render(w0)}</div>`; };
@@ -211,6 +213,37 @@
     ['sleep', 'Zzz……（偷偷打了个盹）']
   ];
   let petI = 0;
+  // 雾蝶支持拖动：按住拖到任意位置，松手后记住；轻点仍是换动作
+  const PET_KEY = 'yt-pet-pos';
+  let petDragged = false;
+  function placePet(st) {
+    if (!st || st.dataset.placed) return; st.dataset.placed = 1;
+    try { const v = JSON.parse(localStorage.getItem(PET_KEY) || 'null'); if (v) { st.style.left = (v.x * 100) + '%'; st.style.top = v.y + 'px'; st.style.right = 'auto'; } } catch (e) {}
+  }
+  new MutationObserver(() => placePet(document.querySelector('.pet-stage'))).observe(document.body, { childList: true, subtree: true });
+  document.addEventListener('pointerdown', (e) => {
+    const st = e.target.closest('.pet-stage'); if (!st || e.button > 0) return;
+    const par = st.offsetParent || st.parentElement, r0 = st.getBoundingClientRect();
+    const ox = e.clientX - r0.left, oy = e.clientY - r0.top, sx = e.clientX, sy = e.clientY;
+    petDragged = false;
+    const move = (ev) => {
+      if (!petDragged && Math.hypot(ev.clientX - sx, ev.clientY - sy) < 6) return;
+      if (!petDragged) { petDragged = true; st.classList.add('dragging'); try { st.setPointerCapture(e.pointerId); } catch (_) {} }
+      ev.preventDefault();
+      const pr2 = par.getBoundingClientRect();
+      const x = Math.min(Math.max(ev.clientX - pr2.left - ox, -20), pr2.width - st.offsetWidth + 20);
+      const y = Math.min(Math.max(ev.clientY - pr2.top - oy, -40), pr2.height - st.offsetHeight + 40);
+      st.style.left = x + 'px'; st.style.top = y + 'px'; st.style.right = 'auto';
+    };
+    const up = () => {
+      document.removeEventListener('pointermove', move); document.removeEventListener('pointerup', up); document.removeEventListener('pointercancel', up);
+      st.classList.remove('dragging');
+      if (petDragged) { const w = par.getBoundingClientRect().width; try { localStorage.setItem(PET_KEY, JSON.stringify({ x: st.offsetLeft / w, y: st.offsetTop })); } catch (_) {} }
+    };
+    document.addEventListener('pointermove', move, { passive: false }); document.addEventListener('pointerup', up); document.addEventListener('pointercancel', up);
+  });
+  // 拖动结束时不触发"换动作"
+  document.addEventListener('click', (e) => { if (petDragged && e.target.closest('.pet-stage')) { e.stopImmediatePropagation(); e.preventDefault(); petDragged = false; } }, true);
   function petNext() {
     const img = $('#petBig'), bub = $('#petBubble'); if (!img) return;
     petI = (petI + 1) % PET_LINES.length; const [n, line] = PET_LINES[petI];
@@ -232,7 +265,7 @@
       <div class="greet">
         <div>
           <h1 class="greet-title">Good morning,<br><span>一桐</span></h1>
-          <div class="greet-brief"><div class="mini-chibi" data-agent>${chibi(1)}</div>
+          <div class="greet-brief"><div class="mini-chibi" data-agent>${stImg('brief','pet/idle-256.png')}</div>
             <p>今天有 <b>${pending.length} 条</b>值得你看的留言，<b>2 位</b>粉丝过生日，全平台粉丝新增 <b>${wan(o.todayNew)}</b>。大家最关心的是《云秀行》下周首播。</p></div>
         </div>
         <div class="stack-wrap">
@@ -240,10 +273,10 @@
           <div class="stack" style="margin-top:22px"><div class="stack-labels" style="margin-left:4px"><span>Waiting<br>for you</span><span>Special<br>people</span></div></div>
         </div>
         <div class="pills">
-          <div class="pill on" role="button" tabindex="0" data-drawer="pending"><div class="thumb">${chibi(1)}</div><div class="lbl"><b class="num">${pending.length}</b>待回应</div>${askBtn('今天哪些留言最值得我回？')}</div>
-          <div class="pill" role="button" tabindex="0" data-drawer="risky"><div class="thumb">${chibi(1)}</div><div class="lbl"><b class="num">${D.risky.length}</b>棘手消息</div>${askBtn('棘手消息我该怎么处理？')}</div>
-          <div class="pill" role="button" tabindex="0" data-view="more" data-tab="bday"><div class="thumb">${chibi(1)}</div><div class="lbl"><b class="num">2</b>今日生日</div>${askBtn('今天谁过生日？')}</div>
-          <div class="pill" role="button" tabindex="0" data-view="cards"><div class="thumb">${chibi(1)}</div><div class="lbl"><b class="num">1</b>待送小卡</div>${askBtn('帮我做一张长情小卡')}</div>
+          <div class="pill on" role="button" tabindex="0" data-drawer="pending"><div class="thumb">${stImg('pending','icons3d/reply.png')}</div><div class="lbl"><b class="num">${pending.length}</b>待回应</div>${askBtn('今天哪些留言最值得我回？')}</div>
+          <div class="pill" role="button" tabindex="0" data-drawer="risky"><div class="thumb">${stImg('risky','icons3d/review.png')}</div><div class="lbl"><b class="num">${D.risky.length}</b>棘手消息</div>${askBtn('棘手消息我该怎么处理？')}</div>
+          <div class="pill" role="button" tabindex="0" data-view="more" data-tab="bday"><div class="thumb">${stImg('birthday','icons3d/birthday.png')}</div><div class="lbl"><b class="num">2</b>今日生日</div>${askBtn('今天谁过生日？')}</div>
+          <div class="pill" role="button" tabindex="0" data-view="cards"><div class="thumb">${stImg('card','icons3d/card.png')}</div><div class="lbl"><b class="num">1</b>待送小卡</div>${askBtn('帮我做一张长情小卡')}</div>
         </div>
         <div class="pet-stage" role="button" tabindex="0" data-pet title="点我换个动作">
           <div class="pet-bubble" id="petBubble">${PET_LINES[0][1]}</div>

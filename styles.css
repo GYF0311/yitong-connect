@@ -1081,3 +1081,29 @@ html{background:
 .chart-box .chart{width:100%;height:auto;display:block}
 html{background:#F4F8FD!important}
 @media (min-width:861px){.top{padding-left:max(48px,calc((100% - 1400px)/2 + 48px));padding-right:max(48px,calc((100% - 1400px)/2 + 48px))}}
+/* v8：雾蝶默认放到中间列下方的空白处，可拖动 */
+@media (min-width:1281px){
+  .greet{min-height:370px}
+  .pet-stage{left:calc(49% - 90px);top:150px;width:180px}
+  .pet-big{width:180px;height:180px}
+  .pet-bubble{right:calc(100% - 10px);top:56px;left:auto;border-radius:18px 18px 4px 18px}
+}
+.pet-stage{cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;z-index:3}
+.pet-stage img{-webkit-user-drag:none;pointer-events:none}
+.pet-stage.dragging{cursor:grabbing}
+.pet-stage.dragging .pet-big{animation:none;transform:scale(1.08) rotate(-4deg);filter:drop-shadow(0 26px 26px rgba(47,141,245,.3))}
+.pet-stage.dragging .pet-bubble{opacity:0}
+
+.pill .thumb{display:grid;place-items:center;overflow:hidden}
+.pill .st-img{width:100%;height:100%;object-fit:cover}
+.mini-chibi .st-img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+
+/* v9：只把横幅区恢复成最初版 —— 原版皇家蓝横幅、浅灰平涂外框、白色箭头、白字，无阴影无玻璃 */
+.hero-wrap{background:#F9F9F9!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.slide.s1{background:url(assets/banner/royal-1.webp) center/cover}
+.slide.s2{background:url(assets/banner/royal-2.webp) center/cover}
+.slide.s3{background:url(assets/banner/royal-3.webp) center/cover}
+.slide .big{color:#fff;text-shadow:none}
+.slide .sub{color:rgba(255,255,255,.92);text-shadow:none}
+.hero-arrow{background:#fff!important;border:0!important;box-shadow:none!important;color:#4467AE!important;backdrop-filter:none!important}
+.dots i{background:rgba(255,255,255,.5)}.dots i.on{background:#fff}
