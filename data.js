@@ -151,12 +151,61 @@
     { id: 'd2', fan: '鹿角', av: '鹿', p: 'xhs', text: '想问问《云秀行》里范云的那身衣服是不是有特别的设计含义？', time: '09:30' }
   ];
 
+  // 生日：memo 是 AI 从历史互动里整理的「记得的事」，drafts 是按语气起草的祝福
   const birthdays = [
-    { id: 'b1', fan: '晚风来信', av: '晚', tier: 'changqing', date: '今天', qualified: true, days: 1286 },
-    { id: 'b2', fan: '橘子汽水', av: '橘', tier: 'changban', date: '今天', qualified: false, days: 236 },
-    { id: 'b3', fan: '小岛放映室', av: '岛', tier: 'gongchuang', date: '10.30', qualified: true, days: 682 },
-    { id: 'b4', fan: '纸飞机', av: '纸', tier: 'gongchuang', date: '11.02', qualified: false, days: 415 }
+    { id: 'b1', fan: '晚风来信', av: '晚', p: 'wb', tier: 'changqing', date: '今天', qualified: true, days: 1286, age: '26 岁',
+      memo: ['大学宿舍里第一次听你的歌', '去年搬到新城市工作', '昨天留言说加班回家路上被治愈'],
+      drafts: {
+        warm: '晚风，生日快乐。记得你说从大学宿舍开始听我的歌，现在一个人在新的城市也走得很好。新的一岁，别太累，加班回家的路上，也有我在。',
+        light: '晚风！生日快乐呀～听说你最近天天加班，今天必须给自己放个假，蛋糕要吃最大块的那种！',
+        short: '晚风，生日快乐。谢谢你这 1,286 天，新的一岁也要好好的。'
+      } },
+    { id: 'b2', fan: '橘子汽水', av: '橘', p: 'dy', tier: 'changban', date: '今天', qualified: false, days: 236, age: '19 岁',
+      memo: ['每条视频都会留言', '最喜欢宋一梦这个角色'],
+      drafts: {
+        warm: '橘子汽水，生日快乐。谢谢你每一次都来留言，新的一岁，愿你像宋一梦一样勇敢。',
+        light: '生日快乐橘子汽水！今天的你也是冒着气泡的快乐汽水～',
+        short: '橘子汽水，生日快乐，新的一岁继续闪闪发光。'
+      } },
+    { id: 'b3', fan: '小岛放映室', av: '岛', p: 'xhs', tier: 'gongchuang', date: '10.30', qualified: true, days: 682, age: '23 岁',
+      memo: ['画过 12 幅角色插画', '《长安》的手绘海报被转发 3,000 次'],
+      drafts: {
+        warm: '小岛，生日快乐。你画的每一幅我都看过，《长安》那张海报我存在手机里很久。新的一岁，继续画你喜欢的东西。',
+        light: '小岛生日快乐！今年的生日礼物，是我偷偷收藏了你的全部插画（不是）',
+        short: '小岛，生日快乐，谢谢你的每一笔。'
+      } },
+    { id: 'b4', fan: '纸飞机', av: '纸', p: 'mp', tier: 'gongchuang', date: '11.02', qualified: false, days: 415, age: '21 岁',
+      memo: ['做过一期角色手账', '首播日会到场应援'],
+      drafts: {
+        warm: '纸飞机，生日快乐。谢谢你的手账，也谢谢你一直把我们的故事认真记下来。',
+        light: '纸飞机生日快乐！愿你今年飞得又高又远～',
+        short: '纸飞机，生日快乐。'
+      } }
   ];
+  // 未达到「亲自祝福」条件的粉丝，在生日当天 0 点自动收到统一祝福
+  const bdayAuto = { today: 1286, week: 8420, text: '生日快乐！谢谢你在这里，愿你新的一岁被温柔以待。—— 一桐' };
+
+  // 幸运抽奖（演示：参与者均为虚构昵称）
+  const lottery = {
+    sources: [
+      { id: 'L1', p: 'wb', title: '《云秀行》定档海报 · 转发抽奖', total: 18642, at: '10.25 发布' },
+      { id: 'L2', p: 'dy', title: '片场 vlog · 评论区抽奖', total: 9311, at: '10.26 发布' },
+      { id: 'L3', p: 'mp', title: '小程序 · 首播应援打卡', total: 4260, at: '进行中' }
+    ],
+    rules: [
+      { id: 'follow', name: '关注满 30 天', cut: 0.18, on: true },
+      { id: 'bot', name: '排除疑似机器号、营销号', cut: 0.09, on: true },
+      { id: 'risk', name: '排除有越界记录的账号', cut: 0.01, on: true },
+      { id: 'repeat', name: '近 3 个月中过奖的不再参与', cut: 0.02, on: true },
+      { id: 'once', name: '同一人只算一次', cut: 0.06, on: true }
+    ],
+    prizes: [
+      { id: 'sign', name: '亲笔签名照', n: 3 },
+      { id: 'card', name: '定制纪念小卡', n: 10 },
+      { id: 'voice', name: '专属语音祝福', n: 5 }
+    ],
+    pool: ['南风知我意', '月亮邮递员', '一颗柚子', '山海有归期', '橙子味的风', '小熊软糖', '今天也很乖', '雾里看花', '星星打烊了', '鲸落', '松间照', '岛屿心情', '半糖去冰', '慢慢来', '云朵收藏家', '十一月的雨', '夏日限定', '温柔本身', '一只小狐狸', '晚安喵', '海盐芝士', '风吹麦浪', '白鹭', '青柠薄荷', '人间小满', '春日信笺', '栀子', '小鹿乱撞', '日落大道', '桃桃乌龙']
+  };
 
   const applicants = [
     { id: 'a1', name: '星河入梦', score: 95, risk: '低', note: '答题全对，填写了喜欢的三部作品' },
@@ -230,11 +279,11 @@
   ];
   const churn = { core: 1240, desc: '位核心粉近 30 天没有回访', reasons: ['剧集空窗期', '最近一次留言未被回应', '转向其他平台活跃'] };
 
-  const DATA = { PLATFORMS, growth, funnel, moves, segments, churn, overview, keywords, tiers, audience, personas, insightsTips, comments, risky, dms, birthdays, applicants, ideas, calendar, cardThemes, portraitStyles };
+  const DATA = { PLATFORMS, growth, funnel, moves, segments, churn, overview, keywords, tiers, audience, personas, insightsTips, comments, risky, dms, birthdays, bdayAuto, lottery, applicants, ideas, calendar, cardThemes, portraitStyles };
 
   // —— 本地状态（仅当前浏览器，演示用）——
   const KEY = 'yt-connect-demo-v1';
-  let state = { replied: {}, sent: [], cards: [], approved: {}, blessed: {} };
+  let state = { replied: {}, sent: [], cards: [], approved: {}, blessed: {}, draws: [] };
   try { const s = localStorage.getItem(KEY); if (s) state = Object.assign(state, JSON.parse(s)); } catch (e) {}
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
 
@@ -257,7 +306,17 @@
     },
     saveCard: (card) => { state.cards.unshift(card); save(); return wait(card); },
     approve: (id, ok) => { state.approved[id] = ok ? 'ok' : 'no'; save(); return wait(true); },
-    bless: (id, mode) => { state.blessed[id] = mode; save(); return wait(true); },
+    // 祝福：mode = self（亲自）/ auto（统一）；payload 含文字、是否有语音、定时
+    bless: (id, mode, payload) => { state.blessed[id] = mode; if (payload) (state.blessLog = state.blessLog || []).unshift({ id, ...payload, at: Date.now() }); save(); return wait(true); },
+    // 抽奖：随机种子 + 时间戳公示，便于事后核验
+    draw: ({ source, prize, n, eligible }) => {
+      const seed = Math.random().toString(16).slice(2, 10).toUpperCase();
+      const pool = [...lottery.pool].sort(() => Math.random() - 0.5);
+      const winners = pool.slice(0, n).map((name, i) => ({ name, id: 'U' + (100000 + Math.floor(Math.random() * 899999)), notified: false }));
+      const rec = { source, prize, n, eligible, seed, winners, at: Date.now() };
+      state.draws.unshift(rec); save(); return wait(rec);
+    },
+    notifyWinners: (i) => { state.draws[i].winners.forEach((w) => (w.notified = true)); save(); return wait(true); },
     reset: () => { try { localStorage.removeItem(KEY); } catch (e) {} location.reload(); }
   };
 })();

@@ -365,7 +365,7 @@
     } catch (e) {
       // 无麦克风权限时模拟一段录音，保证演示流程可以继续
       btn.classList.add('rec'); btn.innerHTML = '<span class="wave"><i></i><i></i><i></i><i></i><i></i></span><span>录音中…</span>';
-      setTimeout(() => { recBlob = new Blob(['demo'], { type: 'audio/webm' }); btn.classList.remove('rec'); btn.innerHTML = I.mic + '<span>重新录制</span>'; $('#recOut').innerHTML = '<span class="tag">🎙 语音 0:08</span>'; }, 1800);
+      setTimeout(() => { if (!btn.isConnected) return; recBlob = new Blob(['demo'], { type: 'audio/webm' }); btn.classList.remove('rec'); btn.innerHTML = I.mic + '<span>重新录制</span>'; const o = $('#recOut'); if (o) o.innerHTML = '<span class="tag">🎙 语音 0:08</span>'; }, 1800);
     }
   }
   function stopRec() { if (rec && rec.state === 'recording') rec.stop(); }
@@ -442,8 +442,8 @@
   }
   function renderPreview(loading) {
     const el = $('#cardPreview'); if (!el) return;
-    el.innerHTML = `<div style="position:relative">${cardHTML(currentCard())}${loading ? `<div class="gen"><div class="g"><div>${chibi()}</div>正在生成风格…</div></div>` : ''}</div>`;
-    if (loading) chibiAct(el, 'think', 0);
+    el.innerHTML = `<div style="position:relative">${cardHTML(currentCard())}${loading ? `<div class="gen"><div class="g"><div class="orbx"><i class="core"></i><i class="core"></i><span class="bub">${esc((D.portraitStyles.find((s) => s.id === W.style) || {}).name || '风格')}</span><span class="bub">${esc((D.cardThemes.find((t) => t.id === W.theme) || {}).name || '主题')}</span><span class="bub">${esc(W.hand)}</span></div>正在把它们揉进一张小卡…</div></div>` : ''}</div>`;
+    
   }
   function phonePreview() {
     const k = currentCard();
@@ -484,14 +484,156 @@
   }
   const fanRows = (fans) => fans.map((c) => `<tr><td>${av(c.av)}${esc(c.fan)}</td><td><span class="tag">${tierName(c.tier)}</span></td><td class="num">${c.days} 天</td><td class="num">${c.total}</td><td>${platTag(c.p)}</td><td><button class="btn ghost sm" data-comment="${c.id}">查看</button></td></tr>`).join('');
 
+  // ---------- 生日祝福 ----------
+  const BD = { sel: 'b1', tone: 'warm', card: true, when: 'midnight', ch: 'dm', open: {} };
+  const TONES = [['warm', '温柔'], ['light', '俏皮'], ['short', '简短']];
+  const canSelf = (b) => b.qualified || BD.open[b.id];
+  function bdayStatus(b) {
+    const m = S.blessed[b.id];
+    if (m) return `<span class="tag ok">已${m === 'self' ? '亲自' : '统一'}祝福</span>`;
+    return b.qualified ? '<span class="tag rose">可亲自祝福</span>' : '<span class="tag">统一祝福</span>';
+  }
+  function renderBday() {
+    const b = D.birthdays.find((x) => x.id === BD.sel), A = D.bdayAuto;
+    const today = D.birthdays.filter((x) => x.date === '今天').length;
+    const list = `<div class="bd-list">
+        <div class="bd-sum"><div><b class="num">${today}</b><span>今天亲自祝福</span></div><div><b class="num">${D.birthdays.length}</b><span>本周可亲自祝福</span></div><div><b class="num">${fmt(A.today)}</b><span>今天统一祝福</span></div></div>
+        ${D.birthdays.map((x) => `<button class="bd-item ${x.id === BD.sel ? 'on' : ''}" data-bsel="${x.id}">${av(x.av)}<div><b>${esc(x.fan)}</b> ${platTag(x.p)}<small>${x.date === '今天' ? '今天生日' : x.date + ' 生日'} · ${tierName(x.tier)} · 陪伴 ${fmt(x.days)} 天</small></div>${bdayStatus(x)}</button>`).join('')}
+        <div class="bd-auto"><div class="bd-auto-h">${I.gift}<b>统一祝福</b><span class="muted">${fmt(A.today)} 人 · 生日当天 0 点自动发出</span></div>
+          <p>${esc(A.text)}</p>
+          ${S.blessed.auto ? '<span class="tag ok">今天的统一祝福已安排</span>' : `<button class="btn ghost sm" data-bauto>${I.send}确认今天的统一祝福</button>`}</div>
+        <div class="muted" style="font-size:11px;margin-top:10px">亲自祝福条件：陪伴满 365 天，或是共创粉丝。生日只用于祝福，不对外展示。</div>
+      </div>`;
+    let compose;
+    if (!canSelf(b)) {
+      compose = `<div class="bd-compose panel white"><div class="fan-head">${av(b.av, 1)}<div><b>${esc(b.fan)}</b> ${platTag(b.p)}<small>${b.date === '今天' ? '今天' : b.date} · ${b.age}生日 · 陪伴 ${fmt(b.days)} 天</small></div></div>
+        <div class="bd-locked"><div class="mini-chibi">${chibi(1)}</div><div><b>TA 会在生日当天收到统一祝福</b><p class="muted">陪伴还没满 365 天。如果你想特别对待，也可以破例亲自写。</p></div></div>
+        <div class="quote">${esc(A.text)}</div>
+        <div class="send-row"><span class="muted" style="font-size:12px">${S.blessed[b.id] ? '已安排' : '生日当天 0 点发出'}</span><button class="btn ghost" data-bopen="${b.id}">${I.mic}破例亲自祝福</button></div></div>`;
+    } else {
+      compose = `<div class="bd-compose panel white">
+        <div class="fan-head">${av(b.av, 1)}<div><b>${esc(b.fan)}</b> ${platTag(b.p)}<small>${b.date === '今天' ? '今天' : b.date} · ${b.age}生日 · ${tierName(b.tier)} · 陪伴 ${fmt(b.days)} 天</small></div></div>
+        <div class="bd-memo"><span class="lbl">${I.spark}小桐记得</span>${b.memo.map((m) => `<span class="tag">${esc(m)}</span>`).join('')}</div>
+        <div class="composer">
+          <div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#4366AE"')}按你的口吻起草 · 可以随意修改
+            <span class="tone">${TONES.map(([k, n]) => `<button class="${BD.tone === k ? 'on' : ''}" data-btone="${k}">${n}</button>`).join('')}</span></div>
+          <textarea id="bdText"></textarea>
+          <div class="hint">草稿只用到 TA 公开留言里的信息，最后的话由你来说。</div>
+          <div class="tools"><button class="voice" id="recBtn">${I.mic}<span>录一段生日语音</span></button><span id="recOut"></span></div>
+        </div>
+        <div class="bd-opts">
+          <label class="sw"><input type="checkbox" id="bdCard" ${BD.card ? 'checked' : ''}><i></i>附一张生日小卡（「${(D.cardThemes.find((t) => t.id === b.tier) || D.cardThemes[0]).name}」主题）</label>
+          <div class="seg">${[['midnight', '生日 0 点准时送达'], ['now', '现在发送']].map(([k, n]) => `<button class="${BD.when === k ? 'on' : ''}" data-bwhen="${k}">${n}</button>`).join('')}</div>
+          <div class="seg">${[['dm', P[b.p].name + '私信'], ['mp', '小程序站内信']].map(([k, n]) => `<button class="${BD.ch === k ? 'on' : ''}" data-bch="${k}">${n}</button>`).join('')}</div>
+        </div>
+        <div class="send-row"><button class="btn ghost" id="bdPreview">看看 TA 收到的样子</button><button class="btn" id="bdSend">${I.gift}${S.blessed[b.id] === 'self' ? '再发一次' : '送出祝福'}</button></div>
+      </div>`;
+    }
+    return `<div class="bd-page">${list}${compose}</div>`;
+  }
+  function bindBday() {
+    const b = D.birthdays.find((x) => x.id === BD.sel); recBlob = null;
+    if (!$('#bdText')) return;
+    typeInto($('#bdText'), b.drafts[BD.tone]);
+    $('#recBtn').onclick = toggleRec;
+    $('#bdCard').onchange = (e) => (BD.card = e.target.checked);
+    $('#bdPreview').onclick = () => bdayPhone(b);
+    $('#bdSend').onclick = () => sendBday(b);
+  }
+  function bdayPhone(b) {
+    const text = $('#bdText').value.trim(), th = D.cardThemes.find((t) => t.id === b.tier) || D.cardThemes[0];
+    $('#modalBody').innerHTML = `<div class="phone bd-phone"><div class="bar">00:00</div>
+      <div class="noti"><b>一桐给你送来生日祝福</b>${BD.ch === 'dm' ? P[b.p].name + '私信' : '小程序站内信'} · 刚刚</div>
+      <div class="bletter"><div class="bl-top">HAPPY BIRTHDAY</div><div class="bl-to">致 ${esc(b.fan)}</div>
+        <p>${esc(text || '（还没写文字）')}</p>
+        ${recBlob || $('#recOut').textContent ? `<div class="vbar"><span class="play">▶</span><span class="wv">${Array.from({ length: 22 }, (_, i) => `<i style="height:${6 + ((i * 7) % 15)}px"></i>`).join('')}</span><span>0:12</span></div>` : ''}
+        <div class="bl-sign">— 一桐</div></div>
+      ${BD.card ? `<div class="pcard" style="width:150px">${cardHTML({ theme: th.id, style: 'watercolor', photo: null, hand: '生日快乐', n: W.n, toName: b.fan, daysText: '' })}</div>` : ''}
+      </div><div class="modal-acts"><button class="btn ghost" data-close>返回修改</button><button class="btn" id="mBless">${I.gift}就这样，送出</button></div>`;
+    $('#modal').classList.add('on'); $('#mBless').onclick = () => { $('#modal').classList.remove('on'); sendBday(b); };
+  }
+  async function sendBday(b) {
+    const text = $('#bdText').value.trim();
+    if (!text && !recBlob) return toast('先写几句话，或录一段语音');
+    await api.bless(b.id, 'self', { text, voice: !!recBlob, card: BD.card, when: BD.when, ch: BD.ch });
+    if (BD.card) { await api.saveCard({ theme: b.tier, style: 'watercolor', photo: null, hand: '生日快乐', n: W.n++, toName: b.fan, daysText: '生日快乐' }); }
+    toast(BD.when === 'midnight' ? `已安排，${b.fan} 会在生日 0 点收到` : `祝福已送给 ${b.fan}`);
+    celebrate('give');
+    const next = D.birthdays.find((x) => !S.blessed[x.id] && canSelf(x)); if (next) BD.sel = next.id;
+    renderMore();
+  }
+
+  // ---------- 幸运抽奖 ----------
+  const LT = { src: 'L1', prize: 'card', n: 10, rules: Object.fromEntries(D.lottery.rules.map((r) => [r.id, r.on])), last: null, rolling: false };
+  function eligible() {
+    const s = D.lottery.sources.find((x) => x.id === LT.src);
+    return Math.round(D.lottery.rules.reduce((n, r) => n * (LT.rules[r.id] ? 1 - r.cut : 1), s.total));
+  }
+  const mask = (id) => id.slice(0, 3) + '***' + id.slice(-2);
+  function renderLucky() {
+    const L = D.lottery, s = L.sources.find((x) => x.id === LT.src), pz = L.prizes.find((x) => x.id === LT.prize), last = LT.last;
+    return `<div class="lucky">
+      <div class="lk-set">
+        <div class="step"><h3><i>1</i>选一个抽奖活动</h3>
+          <div class="lk-src">${L.sources.map((x) => `<button class="${x.id === LT.src ? 'on' : ''}" data-lsrc="${x.id}">${platTag(x.p)}<b>${esc(x.title)}</b><small>${fmt(x.total)} 人参与 · ${x.at}</small></button>`).join('')}</div></div>
+        <div class="step"><h3><i>2</i>筛选规则 <small class="muted" style="font-weight:400;font-size:11px">AI 先过滤，结果可复核</small></h3>
+          ${L.rules.map((r) => `<label class="sw row"><input type="checkbox" data-lrule="${r.id}" ${LT.rules[r.id] ? 'checked' : ''}><i></i>${r.name}<span class="muted num">−${fmt(Math.round(s.total * r.cut))}</span></label>`).join('')}</div>
+        <div class="step"><h3><i>3</i>奖品与人数</h3>
+          <div class="style-row">${L.prizes.map((p) => `<button class="chip ${p.id === LT.prize ? 'active' : ''}" data-lprize="${p.id}">${p.name}</button>`).join('')}</div>
+          <label class="field">抽取人数<input type="number" id="lkN" min="1" max="30" value="${LT.n}"></label>
+          <div class="muted" style="font-size:11px;margin-top:12px">不设任何消费门槛；未成年人中奖由监护人确认领取。</div></div>
+      </div>
+      <div class="lk-stage">
+        <div class="lk-glass">
+          <div class="lk-orb"><i></i><i></i><i></i></div>
+          <div class="lk-head"><span>${platTag(s.p)} ${esc(s.title)}</span><span class="muted">${pz.name} × ${LT.n}</span></div>
+          <div class="lk-count"><b class="num" id="lkElig">${fmt(eligible())}</b><span>位粉丝符合条件</span></div>
+          <div class="lk-roll" id="lkRoll">${last ? '恭喜以下幸运儿' : '准备好了就开始吧'}</div>
+          <div class="lk-winners" id="lkWin">${last ? last.winners.map((w, i) => `<div class="lk-w in" style="animation-delay:${i * 40}ms"><span class="av">${esc(w.name[0])}</span><b>${esc(w.name)}</b><small>${mask(w.id)}</small></div>`).join('') : ''}</div>
+          ${last ? `<div class="lk-proof">公示编号 <b>#${last.seed}</b> · ${new Date(last.at).toLocaleString('zh-CN', { hour12: false })} · 随机种子与参与名单可公开核验</div>` : ''}
+          <div class="lk-acts">${last ? `<button class="btn ghost" data-lnotify>${I.send}${last.winners[0].notified ? '已通知中奖者' : '起草中奖私信'}</button><button class="btn ghost" data-lpub>生成中奖公示</button><button class="btn" data-ldraw>再抽一轮</button>` : `<button class="btn big" data-ldraw>${I.spark}开始抽奖</button>`}</div>
+        </div>
+        ${S.draws.length ? `<div class="lk-hist"><div class="muted" style="font-size:12px;margin-bottom:8px">抽奖记录</div>${S.draws.slice(0, 4).map((d) => `<div><b>${esc(d.source)}</b><span>${esc(d.prize)} × ${d.n}</span><span class="muted">#${d.seed}</span><span class="tag ${d.winners[0].notified ? 'ok' : ''}">${d.winners[0].notified ? '已通知' : '待通知'}</span></div>`).join('')}</div>` : ''}
+      </div></div>`;
+  }
+  function bindLucky() {
+    const n = $('#lkN'); if (n) n.onchange = () => { LT.n = Math.max(1, Math.min(30, +n.value || 1)); renderMore(); };
+  }
+  async function runDraw() {
+    if (LT.rolling) return; LT.rolling = true;
+    const s = D.lottery.sources.find((x) => x.id === LT.src), pz = D.lottery.prizes.find((x) => x.id === LT.prize);
+    LT.last = null; renderMore();
+    const roll = $('#lkRoll'), pool = D.lottery.pool; roll.classList.add('rolling'); $('.lk-glass').classList.add('drawing');
+    chibiAct(document.body, 'think', 0);
+    let i = 0, delay = 50;
+    const rec = await api.draw({ source: s.title, prize: pz.name, n: LT.n, eligible: eligible() });
+    await new Promise((done) => { (function tick() { roll.textContent = pool[(i++ * 7) % pool.length]; delay *= 1.07; if (delay < 260) setTimeout(tick, delay); else done(); })(); });
+    $$('.chibi').forEach((c) => c.classList.remove('think'));
+    roll.classList.remove('rolling'); roll.textContent = '恭喜以下幸运儿';
+    const box = $('#lkWin');
+    for (const w of rec.winners) { box.insertAdjacentHTML('beforeend', `<div class="lk-w in"><span class="av">${esc(w.name[0])}</span><b>${esc(w.name)}</b><small>${mask(w.id)}</small></div>`); await new Promise((r) => setTimeout(r, 120)); }
+    LT.last = rec; LT.rolling = false; celebrate('happy');
+    setTimeout(() => { if (current === 'more' && moreTab === 'lucky') renderMore(); }, 500);
+  }
+  function luckyNotify() {
+    const last = LT.last; if (!last) return;
+    openDrawer('通知中奖者', `<div class="muted" style="font-size:12px">将通过原活动平台私信，分别发送给 ${last.winners.length} 位中奖者</div>
+      <div class="lk-chips">${last.winners.map((w) => `<span class="tag">${esc(w.name)}</span>`).join('')}</div>
+      <div class="composer"><div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#4366AE"')}按你的口吻起草 · 会自动替换成每位粉丝的昵称</div><textarea id="lkText"></textarea>
+      <div class="hint">领奖只需回复收件信息，<b>不会要求任何付款</b>；请提醒粉丝警惕冒充的中奖信息。</div></div>
+      <div class="send-row"><span class="muted" style="font-size:12px">发送前由你确认</span><button class="btn" id="lkSend">${I.send}发送给 ${last.winners.length} 人</button></div>`);
+    typeInto($('#lkText'), `{昵称}，恭喜你被抽中啦！「${last.prize}」会在 7 天内寄出，回复这条私信留下收件信息就好。谢谢你一直在，${last.source.includes('云秀行') ? '11 月 3 日《云秀行》' : '下次'}见～ —— 一桐`);
+    $('#lkSend').onclick = async () => { await api.notifyWinners(0); closeDrawer(); toast(`已私信通知 ${last.winners.length} 位中奖者`); celebrate('give'); renderMore(); };
+  }
+
   // ---------- 更多 ----------
   let moreTab = 'bday';
   function renderMore(opts = {}) {
     if (opts.tab) moreTab = opts.tab;
-    const tabs = [['bday', '生日关怀'], ['review', '注册审核'], ['live', '直播'], ['cal', '内容日历']];
+    const tabs = [['bday', '生日祝福'], ['lucky', '幸运抽奖'], ['review', '注册审核'], ['live', '直播'], ['cal', '内容日历']];
     let body = '';
-    if (moreTab === 'bday') body = `<div class="muted" style="font-size:12px;margin-bottom:14px">陪伴达标的粉丝可以收到你亲自写的祝福，其余粉丝自动收到统一祝福</div>` + D.birthdays.map((b) => `<div class="bday">${av(b.av)}<div><b>${esc(b.fan)}</b> <span class="tag">${tierName(b.tier)}</span>${b.qualified ? ' <span class="tag rose">可亲自祝福</span>' : ''}<small>${b.date === '今天' ? '今天生日' : b.date + ' 生日'} · 陪伴 ${b.days} 天</small></div>
-      <div style="display:flex;gap:8px">${S.blessed[b.id] ? `<span class="tag">已发送${S.blessed[b.id] === 'self' ? '亲自' : '统一'}祝福</span>` : `${b.qualified ? `<button class="btn sm" data-bless="${b.id}" data-mode="self">${I.mic}亲自祝福</button>` : ''}<button class="btn ghost sm" data-bless="${b.id}" data-mode="auto">统一祝福</button>`}</div></div>`).join('');
+    if (moreTab === 'bday') body = renderBday();
+    if (moreTab === 'lucky') body = renderLucky();
     if (moreTab === 'review') body = `<div class="panel white"><div class="muted" style="font-size:12px;margin-bottom:6px">新注册需要答题，AI 先给出风险判断，最后由团队决定</div>${D.applicants.map((a) => `<div class="apply"><div><b style="font-weight:500">${esc(a.name)}</b><small>${esc(a.note)}</small></div><span class="score num">${a.score}<small class="muted" style="font-size:11px"> 分</small></span><span class="tag ${a.risk === '高' ? 'rose' : ''}">风险 ${a.risk}</span>
       <div style="display:flex;gap:8px">${S.approved[a.id] ? `<span class="tag">${S.approved[a.id] === 'ok' ? '已通过' : '已驳回'}</span>` : `<button class="btn sm" data-approve="${a.id}" data-ok="1">通过</button><button class="btn danger sm" data-approve="${a.id}" data-ok="0">驳回</button>`}</div></div>`).join('')}</div>`;
     if (moreTab === 'live') body = `<div class="live"><div class="live-cover"><span class="onair">PRIVATE LIVE</span><div style="width:200px;height:220px">${chibi()}</div></div>
@@ -507,6 +649,8 @@
           <label class="field"><input id="ideaIn" value="分享《云秀行》定妆那天的小故事"></label><button class="btn soft sm" style="margin-top:12px" id="multiBtn">${I.spark}生成三个版本</button><div class="multi" id="multiOut"></div></div>`;
     }
     $('#v-more').innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>MORE</em>更多</h2></div><div class="more-tabs">${tabs.map(([k, n]) => `<button class="chip ${moreTab === k ? 'active' : ''}" data-mtab="${k}">${n}</button>`).join('')}</div>${body}`;
+    if (moreTab === 'bday') bindBday();
+    if (moreTab === 'lucky') bindLucky();
     const mb = $('#multiBtn'); if (mb) mb.onclick = () => {
       $('#multiOut').innerHTML = `<div><b>${platTag('wb')}微博</b>定妆那天在镜子前坐了四个小时，最后看到范云的那一刻，突然就懂她了。11 月 3 日，一起见她。#云秀行#</div>
         <div><b>${platTag('dy')}抖音</b>四小时，从我变成范云 ✦ 定妆幕后第一次公开（配 15 秒变装视频）</div>
@@ -531,7 +675,7 @@
       reply: ctxComment && $('#drawer').classList.contains('on') ? [`帮我回复「${ctxComment.fan}」`, '这位粉丝是谁？', '语气再轻松一点'] : ['哪些留言最值得回？', '棘手消息怎么处理？', '大家最常问什么？'],
       cards: ['帮我做一张长情小卡', '这周送了几张卡？', '推荐几位该送卡的粉丝'],
       insight: ['新粉怎么变成核心粉？', '哪些核心粉快流失了？', '数据粉该怎么运营？'],
-      more: ['今天谁过生日？', '帮我规划下周的内容', '审核里有可疑的人吗？']
+      more: ['今天谁过生日？', '帮我抽 10 位幸运粉丝', '审核里有可疑的人吗？']
     };
     $('#sugs').innerHTML = map[current].map((s) => `<button data-q="${esc(s)}">${esc(s)}</button>`).join('');
   }
@@ -563,7 +707,8 @@
     if (has('运营', '转化', '新粉', '老粉', '核心粉', '数据粉', '氪金', '事业粉')) return [`五类粉丝的重点各不相同：\n<ol>${D.segments.map((g) => `<li><b>${g.name}</b>：${g.strategy}</li>`).join('')}</ol>转化主线是 新粉 → 活跃粉 → 核心粉 → 稳固，关键动作是「第一条留言尽快被回应」和「记住重要时刻」。`, [['打开分层运营', 'view:insight']]];
     if (has('涨粉', '平台', '来自哪')) return [`近 30 天全平台新增约 ${wan(D.growth[30].labels.reduce((m, _, i) => m + ['wb', 'dy', 'xhs', 'mp'].reduce((k, id) => k + D.growth[30][id][i], 0), 0))}：\n<ol><li>微博贡献最多，增长稳定</li><li>抖音环比增长最快（+41%），来自宋一梦切换那场戏的片段</li><li>小红书新增主要是插画、手账等共创内容带来的</li></ol>建议趁抖音热度再发一条幕后。`, [['看那条高赞留言', 'comment:c3']]];
     if (has('涨粉', '数据', '大白话', '为什么上涨')) return [`用大白话说：\n今天新增 ${fmt(D.overview.todayNew)} 位粉丝，比昨天多 18%，主要来自抖音上宋一梦切换那场戏的片段（单条 2,341 赞）。\n建议：趁热度再发一条这场戏的幕后，效果会比平时好。`, [['看那条高赞留言', 'comment:c3']]];
-    if (has('生日')) return [`今天有 2 位粉丝过生日：\n<ol><li>晚风来信 · 长情 · 陪伴 1,286 天（可以亲自祝福）</li><li>橘子汽水 · 常伴（发送统一祝福）</li></ol>要不要给晚风来信录一段语音？`, [['去生日关怀', 'more:bday']]];
+    if (has('抽奖', '幸运')) return [`可以从这 3 个活动里抽：\n<ol>${D.lottery.sources.map((x) => `<li>${esc(x.title)}（${fmt(x.total)} 人）</li>`).join('')}</ol>我会先排除机器号、营销号和有越界记录的账号，再随机抽取，并生成可核验的公示编号。`, [['去幸运抽奖', 'more:lucky']]];
+    if (has('生日')) return [`今天有 2 位粉丝过生日：\n<ol><li>晚风来信 · 长情 · 陪伴 1,286 天（可以亲自祝福）。我记得她去年搬到新城市，最近常加班。</li><li>橘子汽水 · 常伴（发送统一祝福）</li></ol>另外还有 ${fmt(D.bdayAuto.today)} 位粉丝会收到统一祝福。要不要给晚风来信录一段语音？`, [['去写生日祝福', 'more:bday']]];
     if (has('小卡', '送卡', '该送')) return [`推荐这几位：\n<ol><li>晚风来信 · 今天生日，陪伴 1,286 天 → 「长情」</li><li>小岛放映室 · 刚投稿插画 → 「共创」</li><li>春天的回声 · 第一次来 → 「初遇」</li></ol>`, [['给晚风来信做一张', 'card:c1'], ['给小岛放映室做一张', 'card:c4']]];
     if (has('分层', '维护')) return [`四类粉丝各有侧重：\n<ol><li>初遇（34%）：欢迎和被看见最重要</li><li>常伴（38%）：保持回应节奏</li><li>长情（21%）：记得重要节点，比如生日</li><li>共创（7%）：贡献了 41% 的高赞内容，每周固定点评几件</li></ol>`, [['打开洞察', 'view:insight']]];
     if (has('策划', '规划', '内容', 'vlog')) return [`可以这样安排下周：\n<ol><li>周一：首播前预热，发角色海报</li><li>周三：《云秀行》首播当晚，开私域直播一起看</li><li>周五：「片场的一天」vlog，顺便回应想看日常的留言</li></ol>`, [['看内容日历', 'more:cal'], ['创建直播', 'more:live']]];
@@ -592,6 +737,7 @@
       [I.reply, '3 条高优留言等你回应', '晚风来信、橘子汽水、小满', 'drawer:pending'],
       [I.shield, '1 条越界私信', '已模糊处理，建议转交工作室', 'drawer:risky'],
       [I.gift, '晚风来信今天生日', '陪伴 1,286 天，可以亲自祝福', 'more:bday'],
+      [I.spark, '定档海报抽奖今天截止', '18,642 人参与，可以开奖了', 'more:lucky'],
       [I.today, '《云秀行》下周首播', '讨论量本周上涨 64%', 'q:帮我规划下周的内容']
     ];
     $('#notif').innerHTML = items.map(([ic, t, s, a]) => `<button data-nact="${a}"><span class="ic">${ic}</span><span>${t}<small>${s}</small></span></button>`).join('');
@@ -631,6 +777,17 @@
     if (d.close !== undefined) { $('#modal').classList.remove('on'); return; }
     if (d.mtab) { go('more', { tab: d.mtab }); return; }
     if (d.bless) { await api.bless(d.bless, d.mode); toast(d.mode === 'self' ? '已录制并发送亲自祝福' : '已发送统一祝福'); celebrate('happy'); renderMore(); return; }
+    if (d.bsel) { BD.sel = d.bsel; stopRec(); renderMore(); return; }
+    if (d.btone) { BD.tone = d.btone; $$('[data-btone]').forEach((x) => x.classList.toggle('on', x === t)); typeInto($('#bdText'), D.birthdays.find((x) => x.id === BD.sel).drafts[d.btone]); return; }
+    if (d.bwhen) { BD.when = d.bwhen; $$('[data-bwhen]').forEach((x) => x.classList.toggle('on', x === t)); return; }
+    if (d.bch) { BD.ch = d.bch; $$('[data-bch]').forEach((x) => x.classList.toggle('on', x === t)); return; }
+    if (d.bopen) { BD.open[d.bopen] = true; renderMore(); return; }
+    if (d.bauto !== undefined) { await api.bless('auto', 'auto'); D.birthdays.filter((x) => x.date === '今天' && !x.qualified && !S.blessed[x.id]).forEach((x) => api.bless(x.id, 'auto')); toast(`已安排 ${fmt(D.bdayAuto.today)} 位粉丝的统一祝福`); celebrate('happy'); setTimeout(renderMore, 150); return; }
+    if (d.lsrc) { LT.src = d.lsrc; LT.last = null; renderMore(); return; }
+    if (d.lprize) { LT.prize = d.lprize; LT.n = D.lottery.prizes.find((x) => x.id === d.lprize).n; renderMore(); return; }
+    if (d.ldraw !== undefined) { runDraw(); return; }
+    if (d.lnotify !== undefined) { luckyNotify(); return; }
+    if (d.lpub !== undefined) { toast('中奖公示图已生成，可直接发布到原活动下'); return; }
     if (d.approve) { await api.approve(d.approve, d.ok === '1'); toast(d.ok === '1' ? '已通过，欢迎加入' : '已驳回'); renderMore(); return; }
     if (d.ftier) { $$('[data-ftier]').forEach((x) => x.classList.toggle('active', x === t)); const tid = (D.tiers.find((x) => x.name === d.ftier) || {}).id; $('#ftbody').innerHTML = fanRows(D.comments.filter((c) => !tid || c.tier === tid).sort((a, b) => b.days - a.days)); return; }
     if (d.toast) { toast(d.toast); celebrate('happy'); return; }
@@ -638,6 +795,7 @@
     if (d.act && t.closest('.msg')) { runAct(d.act); return; }
     if (d.nact) { $('#notif').classList.remove('on'); runAct(d.nact); return; }
   });
+  document.addEventListener('change', (e) => { const r = e.target.dataset && e.target.dataset.lrule; if (r) { LT.rules[r] = e.target.checked; const el = $('#lkElig'); if (el) el.textContent = fmt(eligible()); } });
   $('#fab').innerHTML += chibi(1);
   $('#fab').onclick = () => openAgent();
   $('#askBar').onclick = () => openAgent();
