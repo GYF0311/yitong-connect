@@ -1072,3 +1072,12 @@ html{background:
 .hero-arrow{background:#fff!important;color:var(--blue-d)!important;border:0!important;box-shadow:0 8px 20px -8px rgba(10,40,100,.4)!important}
 @media (max-width:860px){.hero-wrap{padding:12px!important;border-radius:34px}.hero-wrap .hero,.hero-wrap .slide{border-radius:26px}}
 .dots i{background:rgba(255,255,255,.5)}.dots i.on{background:#fff}
+
+/* ======================================================================
+   v7：内容居中限宽 / 图表按真实宽度绘制 / 背景改纯色
+   ====================================================================== */
+.content{max-width:1400px;margin:0 auto;box-sizing:border-box}
+.chart-box{width:100%}
+.chart-box .chart{width:100%;height:auto;display:block}
+html{background:#F4F8FD!important}
+@media (min-width:861px){.top{padding-left:max(48px,calc((100% - 1400px)/2 + 48px));padding-right:max(48px,calc((100% - 1400px)/2 + 48px))}}

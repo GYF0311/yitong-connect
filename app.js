@@ -114,11 +114,26 @@
     return `C${c1[0].toFixed(1)} ${c1[1].toFixed(1)} ${c2[0].toFixed(1)} ${c2[1].toFixed(1)} ${p[0].toFixed(1)} ${p[1].toFixed(1)}`;
   }).join(' ');
   let gid = 0;
-  function lineChart(data) {
-    const W = 520, H = 230, pad = 30, max = Math.max(...data.map((d) => d.v)) * 1.15, id = 'lc' + gid++;
+  // 图表按容器真实宽度绘制，避免被拉伸变形
+  const CH = {};
+  const chartBox = (render, w0) => { const id = 'cb' + gid++; CH[id] = render; return `<div class="chart-box" data-ch="${id}" data-w="${w0}">${render(w0)}</div>`; };
+  function fitCharts() {
+    document.querySelectorAll('.chart-box[data-ch]').forEach((b) => {
+      const w = Math.round(b.clientWidth); if (!w || Math.abs(w - +b.dataset.w) < 4 || !CH[b.dataset.ch]) return;
+      b.dataset.w = w; b.innerHTML = CH[b.dataset.ch](w);
+    });
+  }
+  let fitRaf = 0; const fitSoon = () => { cancelAnimationFrame(fitRaf); fitRaf = requestAnimationFrame(fitCharts); };
+  window.addEventListener('resize', fitSoon);
+  new MutationObserver(fitSoon).observe(document.body, { childList: true, subtree: true });
+  // 数据点很多时做轻度平滑（3 点滑动平均），只影响曲线形状
+  const soften = (a) => a.length < 40 ? a : a.map((v, i) => { const w = a.slice(Math.max(0, i - 2), i + 3); return w.reduce((m, x) => m + x, 0) / w.length; });
+  function lineChart(data) { return chartBox((w) => lineChartSvg(data, w), 520); }
+  function lineChartSvg(data, W) {
+    const H = 230, pad = 30, max = Math.max(...data.map((d) => d.v)) * 1.15, id = 'lc' + gid++;
     const x = (i) => pad + (i * (W - pad * 2)) / (data.length - 1), y = (v) => H - pad - (v / max) * (H - pad * 2);
     const pts = data.map((d, i) => [x(i), y(d.v)]), path = smooth(pts), last = pts[pts.length - 1];
-    return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+    return `<svg class="chart" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
       <defs><linearGradient id="${id}a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7FB8EC" stop-opacity=".38"/><stop offset=".6" stop-color="#C9C4F2" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
         <linearGradient id="${id}s" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9AA6EE"/><stop offset="1" stop-color="#3C9CFA"/></linearGradient></defs>
       ${[0.25, 0.5, 0.75].map((f) => `<line x1="${pad}" x2="${W - pad}" y1="${pad + f * (H - pad * 2)}" y2="${pad + f * (H - pad * 2)}" stroke="#E6EDF5" stroke-dasharray="3 5"/>`).join('')}
@@ -143,18 +158,20 @@
 
   // ---------- 涨粉看板 ----------
   let gRange = 30, gMode = 'plat';
-  function multiLine(labels, list) {
-    const W = 640, H = 250, pl = 46, pr = 16, pt = 18, pb = 30;
+  function multiLine(labels, list) { return chartBox((w) => multiLineSvg(labels, list, w), 640); }
+  function multiLineSvg(labels, list0, W) {
+    const list = list0.map((l) => ({ ...l, data: soften(l.data) }));
+    const H = 260, pl = 46, pr = 16, pt = 18, pb = 30;
     const max = Math.max(...list.flatMap((l) => l.data)) * 1.12;
     const x = (i) => pl + (i * (W - pl - pr)) / (labels.length - 1), y = (v) => H - pb - (v / max) * (H - pt - pb);
-    const step = Math.ceil(labels.length / 7);
+    const step = Math.ceil(labels.length / Math.max(4, Math.min(10, Math.floor(W / 110))));
     const grid = [0, 0.25, 0.5, 0.75, 1].map((f) => { const v = max * f, yy = y(v); return `<line x1="${pl}" x2="${W - pr}" y1="${yy}" y2="${yy}" stroke="#E6EDF5" ${f ? 'stroke-dasharray="3 5"' : ''}/><text x="${pl - 8}" y="${yy + 4}" text-anchor="end" font-size="10" fill="#9AAAB5" font-family="Jost">${v >= 10000 ? (v / 10000).toFixed(1) + 'w' : Math.round(v / 100) / 10 + 'k'}</text>`; }).join('');
     const id = 'ml' + gid++;
     const defs = `<defs>${list.map((l, li) => `<linearGradient id="${id}${li}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${l.color}" stop-opacity="${list.length === 1 ? 0.35 : 0.22}"/><stop offset="1" stop-color="${l.color}" stop-opacity="0"/></linearGradient>`).join('')}</defs>`;
     const lines = defs + list.map((l, li) => { const pts = l.data.map((v, i) => [x(i), y(v)]), d = smooth(pts), lp = pts[pts.length - 1];
-      return `<path d="${d} L${lp[0]} ${H - pb} L${pl} ${H - pb}Z" fill="url(#${id}${li})"/><path d="${d}" fill="none" stroke="${l.color}" stroke-width="${list.length === 1 ? 2.6 : 2.2}" stroke-linecap="round"/><circle cx="${lp[0]}" cy="${lp[1]}" r="4" fill="#fff" stroke="${l.color}" stroke-width="2.2"/>`; }).join('');
+      return `<path d="${d} L${lp[0]} ${H - pb} L${pl} ${H - pb}Z" fill="url(#${id}${li})"/><path d="${d}" fill="none" stroke="${l.color}" stroke-width="${list.length === 1 ? 2.4 : 1.8}" stroke-linecap="round" stroke-linejoin="round"/><circle cx="${lp[0]}" cy="${lp[1]}" r="3.5" fill="#fff" stroke="${l.color}" stroke-width="2"/>`; }).join('');
     const xl = labels.map((t, i) => (i % step === 0 || i === labels.length - 1) ? `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="10" fill="#9AAAB5" font-family="Jost">${t}</text>` : '').join('');
-    return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="height:250px">${grid}${lines}${xl}</svg>`;
+    return `<svg class="chart" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">${grid}${lines}${xl}</svg>`;
   }
   function growthHTML() {
     const g = D.growth[gRange], ids = ['wb', 'dy', 'xhs', 'mp'];
