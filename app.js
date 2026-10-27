@@ -800,6 +800,12 @@
   }
 
   // ---------- 事件委托 ----------
+  // 点击助手面板以外的区域时收起
+  document.addEventListener('pointerdown', (e) => {
+    if (!agentOpen) return;
+    if (e.target.closest('#agent,#fab,#askBar,[data-ask],[data-agent],#modal,#drawer,#toast,#notif,#bell')) return;
+    closeAgent();
+  });
   document.addEventListener('click', async (e) => {
     const t = e.target.closest('button,[data-agent],a,[role=button]'); if (!t) { if (!e.target.closest('#notif,#bell')) $('#notif').classList.remove('on'); return; }
     const d = t.dataset;
