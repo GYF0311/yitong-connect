@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Ma+Shan+Zheng&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20">
+<link rel="stylesheet" href="styles.css?v=22">
 </head>
 <body class="booting">
 
@@ -21,6 +21,28 @@
     <div class="sp-bar"><i></i></div>
   </div>
   <img class="sp-pet" src="assets/pet/wave-256.png" alt="">
+</div>
+
+
+<!-- 手机端展示：大背景不变，中间放 iPhone 机身，里面加载手机版页面 -->
+<div class="pv" id="pv" aria-hidden="true">
+  <div class="pv-bar">
+    <div class="pv-models" id="pvModels">
+      <button data-pvm="17" >iPhone 17</button><button data-pvm="17pm" class="on">iPhone 17 Pro Max</button>
+    </div>
+    <button class="pv-exit" id="pvExit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></svg>返回电脑端</button>
+  </div>
+  <div class="pv-stage" id="pvStage">
+    <div class="pv-phone" id="pvPhone">
+      <i class="pv-btn pv-act"></i><i class="pv-btn pv-vu"></i><i class="pv-btn pv-vd"></i><i class="pv-btn pv-pw"></i><i class="pv-btn pv-cam"></i>
+      <div class="pv-screen">
+        <div class="pv-status"><b>9:41</b><span class="pv-island"></span><span class="pv-icons"><svg viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12" fill="currentColor"><path d="M8 2.2c2.4 0 4.6.9 6.2 2.5l1.3-1.3A10.6 10.6 0 0 0 8 .4 10.6 10.6 0 0 0 .5 3.4l1.3 1.3A8.7 8.7 0 0 1 8 2.2Zm0 3.6c1.4 0 2.7.5 3.7 1.5l1.3-1.3a7 7 0 0 0-10 0l1.3 1.3c1-1 2.3-1.5 3.7-1.5Zm0 3.6c.5 0 1 .2 1.3.5L8 11.2 6.7 9.9c.3-.3.8-.5 1.3-.5Z"/></svg><svg class="pv-bat" viewBox="0 0 27 13" fill="none"><rect x=".5" y=".5" width="23" height="12" rx="3.5" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2.2" fill="currentColor"/><path d="M25 4.5v4c.8-.3 1.5-1 1.5-2s-.7-1.7-1.5-2Z" fill="currentColor" opacity=".45"/></svg></span></div>
+        <iframe id="pvFrame" title="手机端展示" loading="lazy"></iframe>
+        <span class="pv-home"></span>
+      </div>
+    </div>
+    <div class="pv-name" id="pvName">iPhone 17 Pro Max · 440 × 956</div>
+  </div>
 </div>
 
 <aside class="side" aria-label="主导航">
@@ -43,6 +65,7 @@
       <div class="fs-pop" id="fsPop"><div class="fs-top"><b>字号</b><span id="fsVal">自动</span></div>
         <div class="fs-row"><small>A</small><input type="range" id="fsRange" min="90" max="130" step="5" value="100" aria-label="字号"><big>A</big></div>
         <button class="fs-auto" id="fsAuto">跟随屏幕自动调整</button></div></div>
+    <button class="icon-btn" id="phoneBtn" aria-label="手机端展示" title="手机端展示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/><path d="M10.5 5h3"/></svg></button>
     <button class="icon-btn" id="bell" aria-label="提醒"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="pip"></span></button>
     <div class="me">桐</div>
     <div class="notif" id="notif"></div>
@@ -54,7 +77,7 @@
     <section class="view" id="v-cards"></section>
     <section class="view" id="v-insight"></section>
     <section class="view" id="v-more"></section>
-    <div class="foot"><span>Yitong Connect · 一路桐行，一往而深</span><span>演示数据 · 所有人物与留言均为虚构</span></div>
+    <div class="foot"><span>Yitong Connect · 一路桐行，一往而深</span><span>演示数据 · 所有人物与留言均为虚构 · 粉丝头像 <a href="https://www.dicebear.com/styles/adventurer/" target="_blank" rel="noopener">Adventurer</a> by Lisa Wischofsky, CC BY 4.0</span></div>
   </main>
 </div>
 
@@ -87,7 +110,7 @@
 <div class="modal" id="modal"><div id="modalBody"></div></div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20"></script>
-<script src="app.js?v=20"></script>
+<script src="data.js?v=22"></script>
+<script src="app.js?v=22"></script>
 </body>
 </html>

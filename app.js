@@ -29,7 +29,10 @@
   const ic3 = (n, cls = '') => `<img class="ic3 ${cls}" src="assets/icons3d/${n}.png" alt="" loading="lazy">`;
   const askBtn = (q) => `<button class="ask" data-ask="${esc(q)}" title="问一问">${I.spark}</button>`;
   const platTag = (p) => `<span class="plat plat-${p}" title="${P[p].name}"><img src="assets/platform/${p}.svg" alt="${P[p].name}"></span>`;
-  const av = (t, big) => `<span class="av"${big ? ' style="width:54px;height:54px"' : ''}>${esc(t)}</span>`;
+  // 粉丝头像：assets/avatars/<首字 Unicode>.svg（DiceBear Lorelei，CC0），缺图时退回首字
+  const avSrc = (t) => `assets/avatars/${(t || '·').codePointAt(0).toString(16)}.svg`;
+  const avImg = (t) => `<img src="${avSrc(t)}" alt="" loading="lazy" onerror="this.remove()">`;
+  const av = (t, big) => `<span class="av has-img"${big ? ' style="width:54px;height:54px"' : ''}>${esc((t || '·')[0])}${avImg(t)}</span>`;
 
   // ---------- 小桐 / 肉肉：逐帧动画播放器 ----------
   // 素材：assets/xiaotong/web（全身动作帧 + 半身注视帧）、assets/pet/web（肉肉动作帧）
@@ -281,7 +284,7 @@
   // ---------- 今日 ----------
   const slides = [
     { cls: 's1', big: '心之所向', sub: '今日 1,286 条留言 · 3 条值得你看' },
-    { cls: 's2', big: 'YUNXIU', sub: '《云秀行》下周首播 · 312 位粉丝在期待' },
+    { cls: 's2', big: 'YU MENG', sub: '《美人余》收官 · 312 位粉丝在聊余梦的成长' },
     { cls: 's3', big: 'THANK YOU', sub: '本周收到 12 件粉丝创作' }
   ];
   // 首页肉肉：点一下换动作，并说一句今天的提醒（anim: 开头的是动作帧，其余是单张姿势）
@@ -291,14 +294,14 @@
     ['anim:hop', '今天新增 1.23 万位粉丝，抖音涨得最快！'],
     ['card', '还有 1 张小卡等你送出'],
     ['anim:lick', '舔舔鼻子～今天也要好好吃饭'],
-    ['mic', '《云秀行》首播夜，要不要开一场直播？'],
+    ['mic', '《美人余》收官啦，要不要开一场直播和大家聊聊余梦？'],
     ['listen', '想知道粉丝在聊什么？问问小桐吧'],
     ['think', '我在想……下周发什么内容好呢'],
     ['anim:sleep', 'Zzz……（偷偷打了个盹）']
   ];
   let petI = 0;
   // 肉肉支持拖动：按住拖到任意位置，松手后记住；轻点仍是换动作
-  const PET_KEY = 'yt-pet-pos-v2'; // 换成双人舞台后作废旧位置
+  const PET_KEY = 'yt-pet-pos-v3'; // 换成双人舞台后作废旧位置
   try { localStorage.removeItem('yt-pet-pos'); } catch (_) {}
   let petDragged = false;
   function placePet(st) {
@@ -354,10 +357,10 @@
         <div>
           <h1 class="greet-title">Good morning,<br><span>一桐</span></h1>
           <div class="greet-brief"><div class="mini-chibi" data-agent>${stImg('brief','pet/idle-256.png')}</div>
-            <p>今天有 <b>${pending.length} 条</b>值得你看的留言，<b>2 位</b>粉丝过生日，全平台粉丝新增 <b>${wan(o.todayNew)}</b>。大家最关心的是《云秀行》下周首播。</p></div>
+            <p>今天有 <b>${pending.length} 条</b>值得你看的留言，<b>2 位</b>粉丝过生日，全平台粉丝新增 <b>${wan(o.todayNew)}</b>。大家最关心的是余梦的结局，还有《金枝》什么时候来。</p></div>
         </div>
         <div class="stack-wrap">
-          <div class="stack">${pending.slice(0, 3).map((c) => `<span class="av" title="${esc(c.fan)}">${esc(c.av)}</span>`).join('')}<button class="plus" data-view="reply" aria-label="查看全部待回应">${I.plus}</button></div>
+          <div class="stack">${pending.slice(0, 3).map((c) => `<span class="av has-img" title="${esc(c.fan)}">${esc(c.av)}${avImg(c.av)}</span>`).join('')}<button class="plus" data-view="reply" aria-label="查看全部待回应">${I.plus}</button></div>
           <div class="stack" style="margin-top:22px"><div class="stack-labels" style="margin-left:4px"><span>Waiting<br>for you</span><span>Special<br>people</span></div></div>
         </div>
         <div class="pills">
@@ -366,8 +369,7 @@
           <div class="pill" role="button" tabindex="0" data-view="more" data-tab="bday"><div class="thumb">${stImg('birthday','icons3d/birthday.png')}</div><div class="lbl"><b class="num">2</b>今日生日</div>${askBtn('今天谁过生日？')}</div>
           <div class="pill" role="button" tabindex="0" data-view="cards"><div class="thumb">${stImg('card','icons3d/card.png')}</div><div class="lbl"><b class="num">1</b>待送小卡</div>${askBtn('帮我做一张长情小卡')}</div>
         </div>
-        <div class="pet-stage duo" role="button" tabindex="0" data-pet title="点我换个动作">
-          <div class="duo-xt">${chibi()}</div>
+        <div class="pet-stage" role="button" tabindex="0" data-pet title="点我换个动作">
           <div class="pet-bubble" id="petBubble">${PET_LINES[0][1]}</div>
           <img class="pet-big" id="petBig" src="${pf('idle', 1)}" alt="肉肉" draggable="false">
           <div class="pet-shadow"></div>
@@ -903,7 +905,7 @@
           <div class="lk-head"><span>${platTag(s.p)} ${esc(s.title)}</span><span class="muted">${pz.name} × ${LT.n}</span></div>
           <div class="lk-count"><b class="num" id="lkElig">${fmt(eligible())}</b><span>位粉丝符合条件</span></div>
           <div class="lk-roll" id="lkRoll">${last ? '恭喜以下幸运儿' : '准备好了就开始吧'}</div>${last ? pet('cheer', 'lk-pet') : ''}
-          <div class="lk-winners" id="lkWin">${last ? last.winners.map((w, i) => `<div class="lk-w in" style="animation-delay:${i * 40}ms"><span class="av">${esc(w.name[0])}</span><b>${esc(w.name)}</b><small>${mask(w.id)}</small></div>`).join('') : ''}</div>
+          <div class="lk-winners" id="lkWin">${last ? last.winners.map((w, i) => `<div class="lk-w in" style="animation-delay:${i * 40}ms"><span class="av has-img">${esc(w.name[0])}${avImg(w.name)}</span><b>${esc(w.name)}</b><small>${mask(w.id)}</small></div>`).join('') : ''}</div>
           ${last ? `<div class="lk-proof">公示编号 <b>#${last.seed}</b> · ${new Date(last.at).toLocaleString('zh-CN', { hour12: false })} · 随机种子与参与名单可公开核验</div>` : ''}
           <div class="lk-acts">${last ? `<button class="btn ghost" data-lnotify>${I.send}${last.winners[0].notified ? '已通知中奖者' : '起草中奖私信'}</button><button class="btn ghost" data-lpub>生成中奖公示</button><button class="btn" data-ldraw>再抽一轮</button>` : `<button class="btn big" data-ldraw>${I.spark}开始抽奖</button>`}</div>
         </div>
@@ -925,7 +927,7 @@
     $$('.chibi').forEach((c) => c.classList.remove('think'));
     roll.classList.remove('rolling'); roll.textContent = '恭喜以下幸运儿';
     const box = $('#lkWin');
-    for (const w of rec.winners) { box.insertAdjacentHTML('beforeend', `<div class="lk-w in"><span class="av">${esc(w.name[0])}</span><b>${esc(w.name)}</b><small>${mask(w.id)}</small></div>`); await new Promise((r) => setTimeout(r, 120)); }
+    for (const w of rec.winners) { box.insertAdjacentHTML('beforeend', `<div class="lk-w in"><span class="av has-img">${esc(w.name[0])}${avImg(w.name)}</span><b>${esc(w.name)}</b><small>${mask(w.id)}</small></div>`); await new Promise((r) => setTimeout(r, 120)); }
     LT.last = rec; LT.rolling = false; celebrate('happy');
     setTimeout(() => { if (current === 'more' && moreTab === 'lucky') renderMore(); }, 500);
   }
@@ -936,7 +938,7 @@
       <div class="composer"><div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#1A6FD0"')}按你的口吻起草 · 会自动替换成每位粉丝的昵称</div><textarea id="lkText"></textarea>
       <div class="hint">领奖只需回复收件信息，<b>不会要求任何付款</b>；请提醒粉丝警惕冒充的中奖信息。</div></div>
       <div class="send-row"><span class="muted" style="font-size:12px">发送前由你确认</span><button class="btn" id="lkSend">${I.send}发送给 ${last.winners.length} 人</button></div>`);
-    typeInto($('#lkText'), `{昵称}，恭喜你被抽中啦！「${last.prize}」会在 7 天内寄出，回复这条私信留下收件信息就好。谢谢你一直在，${last.source.includes('云秀行') ? '11 月 3 日《云秀行》' : '下次'}见～ —— 一桐`);
+    typeInto($('#lkText'), `{昵称}，恭喜你被抽中啦！「${last.prize}」会在 7 天内寄出，回复这条私信留下收件信息就好。谢谢你一直在，${last.source.includes('美人余') ? '《金枝》' : '下次'}见～ —— 一桐`);
     $('#lkSend').onclick = async () => { await api.notifyWinners(0); closeDrawer(); toast(`已私信通知 ${last.winners.length} 位中奖者`); celebrate('give'); renderMore(); };
   }
 
@@ -950,26 +952,26 @@
     if (moreTab === 'lucky') body = renderLucky();
     if (moreTab === 'review') body = `<div class="panel white"><div class="muted" style="font-size:12px;margin-bottom:6px">新注册需要答题，AI 先给出风险判断，最后由团队决定</div>${D.applicants.every((a) => S.approved[a.id]) ? emptyHTML('all-done', '今天的注册申请都审完啦', '新申请会先由 AI 打分，再交给团队') : ''}${D.applicants.map((a) => `<div class="apply"><div><b style="font-weight:500">${esc(a.name)}</b><small>${esc(a.note)}</small></div><span class="score num">${a.score}<small class="muted" style="font-size:11px"> 分</small></span><span class="tag ${a.risk === '高' ? 'rose' : ''}">风险 ${a.risk}</span>
       <div style="display:flex;gap:8px">${S.approved[a.id] ? `<span class="tag">${S.approved[a.id] === 'ok' ? '已通过' : '已驳回'}</span>` : `<button class="btn sm" data-approve="${a.id}" data-ok="1">通过</button><button class="btn danger sm" data-approve="${a.id}" data-ok="0">驳回</button>`}</div></div>`).join('')}</div>`;
-    if (moreTab === 'live') body = `<div class="live"><div class="live-cover"><span class="onair">PRIVATE LIVE</span><div class="live-title"><em>私享直播</em><b>《云秀行》首播夜</b><small>11 月 3 日 20:00 · 2,318 人已预约</small></div></div>
+    if (moreTab === 'live') body = `<div class="live"><div class="live-cover"><span class="onair">PRIVATE LIVE</span><div class="live-title"><em>私享直播</em><b>《美人余》收官夜</b><small>本周六 20:00 · 2,318 人已预约</small></div></div>
       <div class="panel"><h3>开一场私域直播</h3><div class="muted" style="font-size:12px">只对小程序里通过审核的粉丝开放</div>
-        <label class="field">主题<input value="《云秀行》首播夜 · 一起看"></label><label class="field">时间<input value="11 月 3 日 20:00"></label>
+        <label class="field">主题<input value="《美人余》收官夜 · 聊聊余梦"></label><label class="field">时间<input value="本周六 20:00"></label>
         <label class="field">形式<select><option>线上小会（30 人连麦）</option><option>线上签售</option><option>公开直播</option></select></label>
         <div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px"><span class="muted" style="font-size:12px">已有 <b class="num" style="color:var(--blue)">2,318</b> 人预约</span><button class="btn" data-toast="直播已创建，将提醒预约的粉丝">创建直播</button></div></div></div>
-      <div class="panel" style="margin-top:18px"><h3>直播回放</h3>${emptyHTML('offline', '暂时还没有回放', '首播夜结束后，回放和高光片段会自动整理到这里')}</div>`;
+      <div class="panel" style="margin-top:18px"><h3>直播回放</h3>${emptyHTML('offline', '暂时还没有回放', '收官夜结束后，回放和高光片段会自动整理到这里')}</div>`;
     if (moreTab === 'cal') {
       const days = Array.from({ length: 35 }, (_, i) => i - 5);
       body = `<div class="panel"><h3>11 月内容日历</h3><div class="muted" style="font-size:12px;margin-bottom:14px">按播出节点，AI 给出的发布建议</div>
         <div class="cal">${['一', '二', '三', '四', '五', '六', '日'].map((d) => `<div class="h">${d}</div>`).join('')}${days.map((d) => { const ev = D.calendar.filter((e) => e.d === d); return d < 1 || d > 30 ? '<div></div>' : `<div class="d ${ev.length ? 'ev' : ''} ${d === 1 ? 'today' : ''}">${d}${ev.map((e) => `<span>${e.tag} · ${esc(e.t)}</span>`).join('')}</div>`; }).join('')}</div></div>
         <div class="panel" style="margin-top:18px"><h3>一份内容，多个平台</h3><div class="muted" style="font-size:12px">输入一个想法，自动改写成各平台的版本</div>
-          <label class="field"><input id="ideaIn" value="分享《云秀行》定妆那天的小故事"></label><button class="btn soft sm" style="margin-top:12px" id="multiBtn">${I.spark}生成三个版本</button><div class="multi" id="multiOut"></div></div>`;
+          <label class="field"><input id="ideaIn" value="分享《金枝》定妆那天的小故事"></label><button class="btn soft sm" style="margin-top:12px" id="multiBtn">${I.spark}生成三个版本</button><div class="multi" id="multiOut"></div></div>`;
     }
     $('#v-more').innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>MORE</em>更多<img class="head-xt" src="${XT}pose/${({ bday: 'cake', lucky: 'gift', review: 'shh', live: 'mic', cal: 'read' })[moreTab]}.webp" alt=""></h2></div><div class="more-tabs">${tabs.map(([k, n, ic]) => `<button class="chip mtab ${moreTab === k ? 'active' : ''}" data-mtab="${k}">${ic3(ic)}${n}</button>`).join('')}</div>${body}`;
     if (moreTab === 'bday') bindBday();
     if (moreTab === 'lucky') bindLucky();
     const mb = $('#multiBtn'); if (mb) mb.onclick = () => {
-      $('#multiOut').innerHTML = `<div><b>${platTag('wb')}微博</b>定妆那天在镜子前坐了四个小时，最后看到范云的那一刻，突然就懂她了。11 月 3 日，一起见她。#云秀行#</div>
-        <div><b>${platTag('dy')}抖音</b>四小时，从我变成范云 ✦ 定妆幕后第一次公开（配 15 秒变装视频）</div>
-        <div><b>${platTag('xhs')}小红书</b>《云秀行》定妆日记｜范云的发髻藏着一个小秘密，第三张图你发现了吗？</div>`;
+      $('#multiOut').innerHTML = `<div><b>${platTag('wb')}微博</b>定妆那天在镜子前坐了四个小时，最后看到陈雀儿的那一刻，突然就懂她了。《金枝》，等她。#金枝#</div>
+        <div><b>${platTag('dy')}抖音</b>四小时，从我变成陈雀儿 ✦ 定妆幕后第一次公开（配 15 秒变装视频）</div>
+        <div><b>${platTag('xhs')}小红书</b>《金枝》定妆日记｜陈雀儿的针线盒藏着一个小秘密，第三张图你发现了吗？</div>`;
     };
   }
 
@@ -1015,19 +1017,19 @@
     const fan = D.comments.find((c) => q.includes(c.fan)) || (has('这位', '这条') && ctxComment);
     if (fan && has('回复', '回', '草稿')) return [`按你的口吻给「${fan.fan}」写了一版：\n\n“${esc(fan.draft)}”\n\n${fan.draft.includes('【') ? '【】里需要你补一句真实经历，我不替你编。' : '可以直接改，确认后再发。'}`, [['打开回复', 'comment:' + fan.id]]];
     if (fan || has('这位粉丝', '是谁')) { const c = fan || ctxComment || D.comments[0]; return [`「${c.fan}」是${tierName(c.tier)}粉丝，陪伴了 ${c.days} 天，累计留言 ${c.total} 条。\n最近的重要时刻：${esc(c.history[c.history.length - 1])}。`, [['查看详情', 'comment:' + c.id]]]; }
-    if (has('在聊', '说什么', '说了什么', '关键词', '常问')) return [`今天大家主要在聊这 5 件事：\n<ol>${D.overview.fiveThings.map((f) => `<li>${esc(f.t)}（${f.n} 条）</li>`).join('')}</ol>整体情绪 89% 是正向的，比上周高 3 个点。`, [['看「云秀行」相关留言', 'kw:云秀行'], ['看「肉肉」相关留言', 'kw:肉肉']]];
+    if (has('在聊', '说什么', '说了什么', '关键词', '常问')) return [`今天大家主要在聊这 5 件事：\n<ol>${D.overview.fiveThings.map((f) => `<li>${esc(f.t)}（${f.n} 条）</li>`).join('')}</ol>整体情绪 89% 是正向的，比上周高 3 个点。`, [['看「美人余」相关留言', 'kw:美人余'], ['看「肉肉」相关留言', 'kw:肉肉']]];
     if (has('值得', '高优', '最该回')) return [`这 3 条我建议你亲自回：\n<ol>${D.comments.filter((c) => c.prio).slice(0, 3).map((c) => `<li>${esc(c.fan)}：${esc(c.sum)}</li>`).join('')}</ol>草稿都按你的口吻备好了。`, D.comments.filter((c) => c.prio).slice(0, 3).map((c) => ['回复 ' + c.fan, 'comment:' + c.id])];
     if (has('棘手', '恶评', '可疑', '私信')) return [`有 2 条需要注意：\n<ol><li>一条情绪化差评，没有具体威胁，建议不回应。</li><li>一条私信提到你明天的片场位置，属于越界行为，建议截图留证并转交工作室。</li></ol>审核里还有 1 位高风险申请者，我建议驳回。`, [['看棘手消息', 'drawer:risky'], ['去注册审核', 'more:review']]];
-    if (has('流失', '没回访', '关怀')) return [`近 30 天有 ${fmt(D.churn.core)} 位核心粉没回访，主要原因：剧集空窗期、上一条留言没被回应、转去其他平台活跃。\n我起草了一段关怀，可以群发到小程序站内：\n\n“好久没见到你啦，最近还好吗？《云秀行》11 月 3 日见，想和你一起看。”`, [['批量送「长情」卡', 'tier:changqing'], ['看成长路径', 'view:insight']]];
+    if (has('流失', '没回访', '关怀')) return [`近 30 天有 ${fmt(D.churn.core)} 位核心粉没回访，主要原因：剧集空窗期、上一条留言没被回应、转去其他平台活跃。\n我起草了一段关怀，可以群发到小程序站内：\n\n“好久没见到你啦，最近还好吗？《金枝》快来了，想和你一起等她。”`, [['批量送「长情」卡', 'tier:changqing'], ['看成长路径', 'view:insight']]];
     if (has('运营', '转化', '新粉', '老粉', '核心粉', '数据粉', '氪金', '事业粉')) return [`五类粉丝的重点各不相同：\n<ol>${D.segments.map((g) => `<li><b>${g.name}</b>：${g.strategy}</li>`).join('')}</ol>转化主线是 新粉 → 活跃粉 → 核心粉 → 稳固，关键动作是「第一条留言尽快被回应」和「记住重要时刻」。`, [['打开分层运营', 'view:insight']]];
-    if (has('涨粉', '平台', '来自哪')) return [`近 30 天全平台新增约 ${wan(D.growth[30].labels.reduce((m, _, i) => m + ['wb', 'dy', 'xhs', 'mp'].reduce((k, id) => k + D.growth[30][id][i], 0), 0))}：\n<ol><li>微博贡献最多，增长稳定</li><li>抖音环比增长最快（+41%），来自宋一梦切换那场戏的片段</li><li>小红书新增主要是插画、手账等共创内容带来的</li></ol>建议趁抖音热度再发一条幕后。`, [['看那条高赞留言', 'comment:c3']]];
-    if (has('涨粉', '数据', '大白话', '为什么上涨')) return [`用大白话说：\n今天新增 ${fmt(D.overview.todayNew)} 位粉丝，比昨天多 18%，主要来自抖音上宋一梦切换那场戏的片段（单条 2,341 赞）。\n建议：趁热度再发一条这场戏的幕后，效果会比平时好。`, [['看那条高赞留言', 'comment:c3']]];
+    if (has('涨粉', '平台', '来自哪')) return [`近 30 天全平台新增约 ${wan(D.growth[30].labels.reduce((m, _, i) => m + ['wb', 'dy', 'xhs', 'mp'].reduce((k, id) => k + D.growth[30][id][i], 0), 0))}：\n<ol><li>微博贡献最多，增长稳定</li><li>抖音环比增长最快（+41%），来自余梦撞破骗局那场戏的片段</li><li>小红书新增主要是插画、手账等共创内容带来的</li></ol>建议趁抖音热度再发一条幕后。`, [['看那条高赞留言', 'comment:c3']]];
+    if (has('涨粉', '数据', '大白话', '为什么上涨')) return [`用大白话说：\n今天新增 ${fmt(D.overview.todayNew)} 位粉丝，比昨天多 18%，主要来自抖音上余梦撞破骗局那场戏的片段（单条 2,341 赞）。\n建议：趁热度再发一条这场戏的幕后，效果会比平时好。`, [['看那条高赞留言', 'comment:c3']]];
     if (has('抽奖', '幸运')) return [`可以从这 3 个活动里抽：\n<ol>${D.lottery.sources.map((x) => `<li>${esc(x.title)}（${fmt(x.total)} 人）</li>`).join('')}</ol>我会先排除机器号、营销号和有越界记录的账号，再随机抽取，并生成可核验的公示编号。`, [['去幸运抽奖', 'more:lucky']]];
     if (has('生日')) return [`今天有 2 位粉丝过生日：\n<ol><li>晚风来信 · 长情 · 陪伴 1,286 天（可以亲自祝福）。我记得她去年搬到新城市，最近常加班。</li><li>橘子汽水 · 常伴（发送统一祝福）</li></ol>另外还有 ${fmt(D.bdayAuto.today)} 位粉丝会收到统一祝福。要不要给晚风来信录一段语音？`, [['去写生日祝福', 'more:bday']]];
     if (has('新发', '发的图', '做什么卡', '小卡 agent', '出卡')) return [`你最近发的 3 组图，我挑好了适合做卡的：\n<ol>${D.newPosts.map((p) => `<li>${esc(p.text)} → 「${D.cardLayouts.find((l) => l.id === p.ai.layout).name}」版式，发给${esc(p.ai.who)}</li>`).join('')}</ol>每组都可以一键出卡，发出前逐张给你确认。`, [['去小卡工坊', 'view:cards']]];
     if (has('小卡', '送卡', '该送')) return [`推荐这几位：\n<ol><li>晚风来信 · 今天生日，陪伴 1,286 天 → 「长情」</li><li>小岛放映室 · 刚投稿插画 → 「共创」</li><li>春天的回声 · 第一次来 → 「初遇」</li></ol>`, [['给晚风来信做一张', 'card:c1'], ['给小岛放映室做一张', 'card:c4']]];
     if (has('分层', '维护')) return [`四类粉丝各有侧重：\n<ol><li>初遇（34%）：欢迎和被看见最重要</li><li>常伴（38%）：保持回应节奏</li><li>长情（21%）：记得重要节点，比如生日</li><li>共创（7%）：贡献了 41% 的高赞内容，每周固定点评几件</li></ol>`, [['打开洞察', 'view:insight']]];
-    if (has('策划', '规划', '内容', 'vlog')) return [`可以这样安排下周：\n<ol><li>周一：首播前预热，发角色海报</li><li>周三：《云秀行》首播当晚，开私域直播一起看</li><li>周五：「片场的一天」vlog，顺便回应想看日常的留言</li></ol>`, [['看内容日历', 'more:cal'], ['创建直播', 'more:live']]];
+    if (has('策划', '规划', '内容', 'vlog')) return [`可以这样安排下周：\n<ol><li>周一：《美人余》收官感谢，发余梦角色海报</li><li>周三：开一场收官夜私域直播，聊聊余梦</li><li>周五：「片场的一天」vlog，顺便回应想看日常的留言</li></ol>`, [['看内容日历', 'more:cal'], ['创建直播', 'more:live']]];
     if (has('轻松')) return ['好的，换个轻松点的说法：\n“哈哈被你发现了！谢谢你看得这么仔细，下次直播细讲～”', ctxComment ? [['用这版', 'comment:' + ctxComment.id]] : []];
     return ['我可以帮你：看今天粉丝在聊什么、找出值得回的留言、按你的口吻起草回复、提醒生日、做纪念小卡。你想先做哪件？', [['今天粉丝在聊什么', 'q:今天粉丝在聊什么？'], ['哪些最值得回', 'q:哪些留言最值得回？']]];
   }
@@ -1054,7 +1056,7 @@
       [I.shield, '1 条越界私信', '已模糊处理，建议转交工作室', 'drawer:risky'],
       [I.gift, '晚风来信今天生日', '陪伴 1,286 天，可以亲自祝福', 'more:bday'],
       [I.spark, '定档海报抽奖今天截止', '18,642 人参与，可以开奖了', 'more:lucky'],
-      [I.today, '《云秀行》下周首播', '讨论量本周上涨 64%', 'q:帮我规划下周的内容']
+      [I.today, '《美人余》收官讨论仍在高位', '讨论量本周上涨 64%', 'q:帮我规划下周的内容']
     ];
     $('#notif').innerHTML = items.map(([ic, t, s, a]) => `<button data-nact="${a}"><span class="ic">${ic}</span><span>${t}<small>${s}</small></span></button>`).join('');
   }
@@ -1097,7 +1099,7 @@
     if (d.cat) { replyCat = d.cat; $$('#v-reply [data-cat]').forEach((x) => x.classList.toggle('active', x === t)); fillReplyList(); return; }
     if (d.reveal) { const r = t.closest('.risk'); r.classList.toggle('show'); t.textContent = r.classList.contains('show') ? '隐藏内容' : '显示内容'; return; }
     if (d.risk) { const r = t.closest('.risk'); const m = { evidence: '已截图存档，附带时间与链接', studio: '已转交工作室处理', ignore: '已标记为不回应' }; toast(m[d.act]); if (d.act !== 'evidence') r.classList.add('gone'); return; }
-    if (d.dm) { const m = D.dms.find((x) => x.id === d.dm); openDrawer('私信', `<div class="fan-head">${av(m.av, 1)}<div><b>${esc(m.fan)}</b> ${platTag(m.p)}<small>${m.time}</small></div></div><div class="quote">${esc(m.text)}</div><div class="composer"><div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#1A6FD0"')}按你的口吻起草</div><textarea id="dmText"></textarea></div><div class="send-row"><span class="muted" style="font-size:12px">发送前由你确认</span><button class="btn" id="dmSend">${I.send}确认发送</button></div>`); typeInto($('#dmText'), m.id === 'd1' ? '一周年快乐！能因为一部剧遇见彼此，真好。祝你们一直这样幸福下去。' : '被你注意到啦！范云那身衣服的颜色和纹样都有讲究，播出后找机会跟大家细说。'); $('#dmSend').onclick = () => { closeDrawer(); toast('私信已发送'); celebrate('happy'); }; return; }
+    if (d.dm) { const m = D.dms.find((x) => x.id === d.dm); openDrawer('私信', `<div class="fan-head">${av(m.av, 1)}<div><b>${esc(m.fan)}</b> ${platTag(m.p)}<small>${m.time}</small></div></div><div class="quote">${esc(m.text)}</div><div class="composer"><div class="composer-top">${I.spark.replace('<svg', '<svg width="14" height="14" style="color:#1A6FD0"')}按你的口吻起草</div><textarea id="dmText"></textarea></div><div class="send-row"><span class="muted" style="font-size:12px">发送前由你确认</span><button class="btn" id="dmSend">${I.send}确认发送</button></div>`); typeInto($('#dmText'), m.id === 'd1' ? '一周年快乐！能因为一部剧遇见彼此，真好。祝你们一直这样幸福下去。' : '被你注意到啦！余梦前后的穿搭确实是一点点变的，从柔软到利落，跟她的心境一起走。改天找机会跟大家细说。'); $('#dmSend').onclick = () => { closeDrawer(); toast('私信已发送'); celebrate('happy'); }; return; }
     if (d.src) { W.src = d.src; $$('[data-src]').forEach((x) => x.classList.toggle('active', x === t)); renderSrc(); return; }
     if (d.tpl) { W.photo = d.tpl; $$('[data-tpl]').forEach((x) => x.classList.toggle('on', x === t)); const st = D.portraitStyles.find((s) => s.img === d.tpl); if (st) { W.style = st.id; $$('[data-style]').forEach((x) => x.classList.toggle('active', x.dataset.style === st.id)); } generate(); return; }
     if (d.style) { W.style = d.style; $$('[data-style]').forEach((x) => x.classList.toggle('active', x === t)); if (W.src === 'tpl') { W.photo = D.portraitStyles.find((s) => s.id === d.style).img; renderSrc(); } generate(); return; }
@@ -1164,6 +1166,30 @@
   const start = location.hash.replace('#', '');
   go(VIEWS.some((v) => v.id === start) ? start : 'today');
   // 开屏：品牌出现 → 后台从下方浮起（参考 UI动效参考.mp4）
+  // 手机端展示：iframe 加载手机版（?embed=1），外面套 iPhone 机身，按窗口高度缩放
+  (function phoneView() {
+    if (/embed=1/.test(location.search)) { document.documentElement.classList.add('embed'); return; }
+    const pv = $('#pv'), ph = $('#pvPhone'), fr = $('#pvFrame');
+    if (!pv) return;
+    const M = { '17': ['iPhone 17', 402, 874], '17pm': ['iPhone 17 Pro Max', 440, 956] };
+    let cur = '17pm';
+    function fit() {
+      const [name, w, h] = M[cur];
+      ph.style.setProperty('--w', w + 'px'); ph.style.setProperty('--h', h + 'px');
+      const k = Math.min(1, (innerHeight - 150) / (h + 24), (innerWidth - 32) / (w + 24));
+      ph.style.transform = `scale(${k})`; $('#pvStage').style.height = ((h + 24) * k + 40) + 'px';
+      $('#pvName').textContent = `${name} · ${w} × ${h}`;
+    }
+    function open() {
+      if (!fr.getAttribute('src')) fr.src = 'index.html?embed=1&nosplash=1';
+      document.body.classList.add('pv-on'); pv.setAttribute('aria-hidden', 'false'); fit();
+    }
+    function close() { document.body.classList.remove('pv-on'); pv.setAttribute('aria-hidden', 'true'); }
+    $('#phoneBtn').onclick = open; $('#pvExit').onclick = close;
+    $('#pvModels').onclick = (e) => { const b = e.target.closest('[data-pvm]'); if (!b) return; cur = b.dataset.pvm; $$('[data-pvm]').forEach((x) => x.classList.toggle('on', x === b)); fit(); };
+    addEventListener('resize', () => { if (document.body.classList.contains('pv-on')) fit(); });
+    addEventListener('keydown', (e) => { if (e.key === 'Escape' && document.body.classList.contains('pv-on')) close(); });
+  })();
   (function splash() {
     const sp = $('#splash'), b = document.body;
     const finish = () => { if (!sp.isConnected || sp.classList.contains('out')) return; sp.classList.add('out'); b.classList.remove('booting'); b.classList.add('booted'); setTimeout(() => { sp.remove(); b.classList.remove('booted'); }, 1300); };
