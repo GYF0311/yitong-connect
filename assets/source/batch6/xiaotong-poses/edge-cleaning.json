@@ -1,0 +1,74 @@
+[
+  {
+    "file": "xiaotong/full.png",
+    "saturated_edge_pixels_removed": 1016
+  },
+  {
+    "file": "xiaotong/avatar-256.png",
+    "saturated_edge_pixels_removed": 238
+  },
+  {
+    "file": "xiaotong/pose/cake.png",
+    "saturated_edge_pixels_removed": 535
+  },
+  {
+    "file": "xiaotong/pose/card.png",
+    "saturated_edge_pixels_removed": 218
+  },
+  {
+    "file": "xiaotong/pose/gift.png",
+    "saturated_edge_pixels_removed": 709
+  },
+  {
+    "file": "xiaotong/pose/happy.png",
+    "saturated_edge_pixels_removed": 694
+  },
+  {
+    "file": "xiaotong/pose/heart.png",
+    "saturated_edge_pixels_removed": 865
+  },
+  {
+    "file": "xiaotong/pose/hello.png",
+    "saturated_edge_pixels_removed": 951
+  },
+  {
+    "file": "xiaotong/pose/hug-rourou.png",
+    "saturated_edge_pixels_removed": 647
+  },
+  {
+    "file": "xiaotong/pose/idle.png",
+    "saturated_edge_pixels_removed": 748
+  },
+  {
+    "file": "xiaotong/pose/listen.png",
+    "saturated_edge_pixels_removed": 656
+  },
+  {
+    "file": "xiaotong/pose/mic.png",
+    "saturated_edge_pixels_removed": 691
+  },
+  {
+    "file": "xiaotong/pose/read.png",
+    "saturated_edge_pixels_removed": 551
+  },
+  {
+    "file": "xiaotong/pose/reply.png",
+    "saturated_edge_pixels_removed": 720
+  },
+  {
+    "file": "xiaotong/pose/shh.png",
+    "saturated_edge_pixels_removed": 1120
+  },
+  {
+    "file": "xiaotong/pose/sleep.png",
+    "saturated_edge_pixels_removed": 514
+  },
+  {
+    "file": "xiaotong/pose/think.png",
+    "saturated_edge_pixels_removed": 938
+  },
+  {
+    "file": "xiaotong/pose/write.png",
+    "saturated_edge_pixels_removed": 615
+  }
+]

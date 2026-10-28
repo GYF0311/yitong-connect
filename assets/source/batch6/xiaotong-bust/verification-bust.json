@@ -1,0 +1,544 @@
+[
+  {
+    "file": "xiaotong/bust/gaze-c.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      10,
+      1013,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": null,
+    "changed_pixels_threshold20": 0,
+    "shoulder_changed_pixels_threshold20": 0,
+    "shoulder_changed_fraction_threshold20": 0.0,
+    "local_region": null,
+    "local_change_fraction": null
+  },
+  {
+    "file": "xiaotong/bust/gaze-l.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      12,
+      10,
+      1013,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      19,
+      17,
+      1004,
+      1024
+    ],
+    "changed_pixels_threshold20": 117377,
+    "shoulder_changed_pixels_threshold20": 10050,
+    "shoulder_changed_fraction_threshold20": 0.02853,
+    "local_region": null,
+    "local_change_fraction": null
+  },
+  {
+    "file": "xiaotong/bust/gaze-r.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      10,
+      7,
+      1014,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      18,
+      19,
+      1008,
+      1024
+    ],
+    "changed_pixels_threshold20": 234630,
+    "shoulder_changed_pixels_threshold20": 57151,
+    "shoulder_changed_fraction_threshold20": 0.16224,
+    "local_region": null,
+    "local_change_fraction": null
+  },
+  {
+    "file": "xiaotong/bust/gaze-u.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      13,
+      1013,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      16,
+      20,
+      1007,
+      1024
+    ],
+    "changed_pixels_threshold20": 115847,
+    "shoulder_changed_pixels_threshold20": 13534,
+    "shoulder_changed_fraction_threshold20": 0.03842,
+    "local_region": null,
+    "local_change_fraction": null
+  },
+  {
+    "file": "xiaotong/bust/gaze-d.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      8,
+      1013,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      17,
+      14,
+      1008,
+      1024
+    ],
+    "changed_pixels_threshold20": 85617,
+    "shoulder_changed_pixels_threshold20": 12625,
+    "shoulder_changed_fraction_threshold20": 0.03584,
+    "local_region": null,
+    "local_change_fraction": null
+  },
+  {
+    "file": "xiaotong/bust/gaze-ul.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      13,
+      1024,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      15,
+      20,
+      1012,
+      1024
+    ],
+    "changed_pixels_threshold20": 192460,
+    "shoulder_changed_pixels_threshold20": 40601,
+    "shoulder_changed_fraction_threshold20": 0.11526,
+    "local_region": null,
+    "local_change_fraction": null
+  },
+  {
+    "file": "xiaotong/bust/gaze-ur.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      9,
+      1024,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      16,
+      14,
+      1019,
+      1024
+    ],
+    "changed_pixels_threshold20": 231651,
+    "shoulder_changed_pixels_threshold20": 67699,
+    "shoulder_changed_fraction_threshold20": 0.19219,
+    "local_region": null,
+    "local_change_fraction": null
+  },
+  {
+    "file": "xiaotong/bust/gaze-dl.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      11,
+      1024,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      15,
+      14,
+      1011,
+      1024
+    ],
+    "changed_pixels_threshold20": 165172,
+    "shoulder_changed_pixels_threshold20": 38150,
+    "shoulder_changed_fraction_threshold20": 0.1083,
+    "local_region": null,
+    "local_change_fraction": null
+  },
+  {
+    "file": "xiaotong/bust/gaze-dr.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      1,
+      1021,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      20,
+      15,
+      1007,
+      1024
+    ],
+    "changed_pixels_threshold20": 147279,
+    "shoulder_changed_pixels_threshold20": 27269,
+    "shoulder_changed_fraction_threshold20": 0.07741,
+    "local_region": null,
+    "local_change_fraction": null
+  },
+  {
+    "file": "xiaotong/bust/blink-1.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      8,
+      1013,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      17,
+      18,
+      1006,
+      1024
+    ],
+    "changed_pixels_threshold20": 29715,
+    "shoulder_changed_pixels_threshold20": 9677,
+    "shoulder_changed_fraction_threshold20": 0.02747,
+    "local_region": [
+      300,
+      240,
+      700,
+      410
+    ],
+    "local_change_fraction": 0.16907
+  },
+  {
+    "file": "xiaotong/bust/blink-2.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      11,
+      9,
+      1013,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      18,
+      16,
+      1007,
+      1024
+    ],
+    "changed_pixels_threshold20": 35247,
+    "shoulder_changed_pixels_threshold20": 9325,
+    "shoulder_changed_fraction_threshold20": 0.02647,
+    "local_region": [
+      300,
+      240,
+      700,
+      410
+    ],
+    "local_change_fraction": 0.23537
+  },
+  {
+    "file": "xiaotong/bust/talk-1.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      11,
+      10,
+      1013,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      17,
+      18,
+      1005,
+      1024
+    ],
+    "changed_pixels_threshold20": 26931,
+    "shoulder_changed_pixels_threshold20": 9143,
+    "shoulder_changed_fraction_threshold20": 0.02596,
+    "local_region": [
+      360,
+      410,
+      640,
+      550
+    ],
+    "local_change_fraction": 0.09164
+  },
+  {
+    "file": "xiaotong/bust/talk-2.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      10,
+      1013,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      18,
+      20,
+      1002,
+      1024
+    ],
+    "changed_pixels_threshold20": 27957,
+    "shoulder_changed_pixels_threshold20": 8858,
+    "shoulder_changed_fraction_threshold20": 0.02515,
+    "local_region": [
+      360,
+      410,
+      640,
+      550
+    ],
+    "local_change_fraction": 0.14923
+  },
+  {
+    "file": "xiaotong/bust/talk-3.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      9,
+      1012,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      20,
+      18,
+      1005,
+      1024
+    ],
+    "changed_pixels_threshold20": 26532,
+    "shoulder_changed_pixels_threshold20": 9035,
+    "shoulder_changed_fraction_threshold20": 0.02565,
+    "local_region": [
+      360,
+      410,
+      640,
+      550
+    ],
+    "local_change_fraction": 0.10764
+  },
+  {
+    "file": "xiaotong/bust/hello.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      11,
+      9,
+      1013,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      15,
+      15,
+      1008,
+      1024
+    ],
+    "changed_pixels_threshold20": 123618,
+    "shoulder_changed_pixels_threshold20": 62749,
+    "shoulder_changed_fraction_threshold20": 0.17813,
+    "local_region": null,
+    "local_change_fraction": null
+  },
+  {
+    "file": "xiaotong/bust/happy.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      8,
+      1013,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      14,
+      15,
+      1007,
+      1024
+    ],
+    "changed_pixels_threshold20": 46707,
+    "shoulder_changed_pixels_threshold20": 14157,
+    "shoulder_changed_fraction_threshold20": 0.04019,
+    "local_region": null,
+    "local_change_fraction": null
+  },
+  {
+    "file": "xiaotong/bust/think.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      0,
+      1024,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      13,
+      16,
+      1010,
+      1024
+    ],
+    "changed_pixels_threshold20": 180502,
+    "shoulder_changed_pixels_threshold20": 123562,
+    "shoulder_changed_fraction_threshold20": 0.35077,
+    "local_region": null,
+    "local_change_fraction": null
+  },
+  {
+    "file": "xiaotong/bust/card.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox": [
+      0,
+      0,
+      1014,
+      1024
+    ],
+    "visible_diff_bbox_threshold20": [
+      16,
+      15,
+      1008,
+      1024
+    ],
+    "changed_pixels_threshold20": 145455,
+    "shoulder_changed_pixels_threshold20": 100422,
+    "shoulder_changed_fraction_threshold20": 0.28508,
+    "local_region": null,
+    "local_change_fraction": null
+  }
+]

@@ -1,0 +1,296 @@
+[
+  {
+    "file": "xiaotong/anim/talk/01.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-72b7582c-5604-474e-99cf-3adbe564e6eb.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      347,
+      91,
+      676,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "ee2253ab0656559a23fbbcb57cbe4fb86a04dfa73d85578a5d03261adf9cdf7e"
+  },
+  {
+    "file": "xiaotong/anim/sign/01.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-fb69f43b-70b4-4ce4-a305-8ec5851a04d0.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      356,
+      231,
+      667,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "defff262d0c50fc35342144bbb623a000cfda70c66ad6d75d2bb5c2fc60f2395"
+  },
+  {
+    "file": "xiaotong/anim/sign/02.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-6e94ea93-b8d2-41ca-8a44-5feacf7a698e.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      356,
+      231,
+      668,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "87af1abeb2d4638f9aa6ef2f5d5ba94c156e36fe365a3a6e884c7de3a64f67e8"
+  },
+  {
+    "file": "xiaotong/anim/sign/03.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-fc48c86b-3b61-41e4-b543-e1101b082109.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      356,
+      231,
+      668,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "0c8c1dc2e3b76cdca8d69536e9c75f7bd36714cbb2e6b7f41df1c82f9a156233"
+  },
+  {
+    "file": "xiaotong/anim/sign/04.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-f7cebb65-50b0-46c7-bcf8-2cf5b5c70f9e.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      356,
+      231,
+      667,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "7894b68bd7ac25f58a301af70dc38372596092cf898f55044ab96ea5a79e72f1"
+  },
+  {
+    "file": "xiaotong/anim/sign/05.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-a722cc1e-0858-41a3-9443-4dc2bfa67db8.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      357,
+      231,
+      667,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "8fa92d6237061d931571d78fc4d471574e53df7703e91dd9ccecf0a97f515bf8"
+  },
+  {
+    "file": "xiaotong/anim/sign/06.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-4c9b4bdf-4b71-4105-b13f-c376fad6994d.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      355,
+      231,
+      668,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "fcc308d614ac5fd4befaec8fc5f75514b6697895927ceffd596a18a224ce913d"
+  },
+  {
+    "file": "xiaotong/anim/sign/07.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-54e52023-31c4-4709-bde6-788d08e9a28b.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      357,
+      231,
+      667,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "0e9ff268a69f2f07dcb96c22a31e0b5c86756e456e49bf2d9be9a0695e8d74b1"
+  },
+  {
+    "file": "xiaotong/anim/sign/08.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-92823931-6d52-43bf-a87c-a17b31e82d5d.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      356,
+      231,
+      668,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "144ab393466b188dee1d1a4a611b159ad76e4b917d0066e527221fdc1b649c52"
+  },
+  {
+    "file": "xiaotong/anim/talk/02.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-ab5b0e4a-754d-4e09-b3c1-57878385a72d.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      346,
+      91,
+      678,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "93eb11cbc0c7e71d17cddd96644cbe085949d27b3bad6a991781a29765772198"
+  },
+  {
+    "file": "xiaotong/anim/talk/03.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-3a6d265a-ce8a-4308-a304-63d45a89642f.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      345,
+      91,
+      679,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "54c0f759758460362634a41ca26823d458c481309e047fe60317b0b29602143c"
+  },
+  {
+    "file": "xiaotong/anim/talk/04.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-12f72e48-20a9-4ceb-9bac-309a6f2ddda5.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      346,
+      91,
+      678,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "3dcf23098fdb3f27c9922e33e29f7e3dc937b51e0af8229bb5969c830d4faa46"
+  },
+  {
+    "file": "xiaotong/anim/talk/05.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-04def52c-84f0-427e-9af1-06d72fcdbede.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      343,
+      91,
+      680,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "66adc16962524917b1ed7ca6e6192199c29fca2edfab48f55da3d5ea6be12e77"
+  },
+  {
+    "file": "xiaotong/anim/talk/06.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f1-a39c-7b61-887d-b46f1cb6a0a0/exec-bc84bc2e-6ed9-4bad-9f13-323d875740e5.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt12": [
+      344,
+      91,
+      679,
+      941
+    ],
+    "foot_y": 940,
+    "transform": "uniform resize and translate only",
+    "sha256": "86359baa7dbec01a8617937458b98d750f8d479ae40f3192b96c32accb784f16"
+  }
+]

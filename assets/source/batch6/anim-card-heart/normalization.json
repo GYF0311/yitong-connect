@@ -1,0 +1,344 @@
+[
+  {
+    "source": "give-card-01-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      389,
+      14,
+      867,
+      1236
+    ],
+    "export_scale": 0.6955810147299509,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "give-card-02-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      399,
+      57,
+      856,
+      1186
+    ],
+    "export_scale": 0.7528786536758193,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "give-card-03-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      389,
+      17,
+      866,
+      1203
+    ],
+    "export_scale": 0.7166947723440135,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "give-card-04-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      397,
+      24,
+      863,
+      1188
+    ],
+    "export_scale": 0.7302405498281787,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "give-card-05-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      399,
+      22,
+      860,
+      1178
+    ],
+    "export_scale": 0.7352941176470589,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "give-card-06-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      389,
+      31,
+      869,
+      1212
+    ],
+    "export_scale": 0.7197290431837426,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "give-card-07-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      402,
+      55,
+      861,
+      1189
+    ],
+    "export_scale": 0.7495590828924162,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "give-card-08-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      401,
+      32,
+      864,
+      1191
+    ],
+    "export_scale": 0.7333908541846419,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "give-card-09-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      401,
+      32,
+      864,
+      1194
+    ],
+    "export_scale": 0.7314974182444062,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "give-card-10-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      400,
+      45,
+      862,
+      1190
+    ],
+    "export_scale": 0.74235807860262,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "heart-01-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      420,
+      112,
+      835,
+      1154
+    ],
+    "export_scale": 0.8157389635316699,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "heart-02-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      419,
+      112,
+      835,
+      1152
+    ],
+    "export_scale": 0.8173076923076923,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "heart-03-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      415,
+      111,
+      845,
+      1152
+    ],
+    "export_scale": 0.8165225744476465,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "heart-04-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      413,
+      110,
+      841,
+      1152
+    ],
+    "export_scale": 0.8157389635316699,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "heart-05-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      401,
+      62,
+      858,
+      1185
+    ],
+    "export_scale": 0.7569011576135352,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "heart-06-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      414,
+      111,
+      841,
+      1154
+    ],
+    "export_scale": 0.8149568552253116,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "heart-07-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      403,
+      54,
+      865,
+      1195
+    ],
+    "export_scale": 0.7449605609114811,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  },
+  {
+    "source": "heart-08-native.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bbox_alpha12": [
+      413,
+      106,
+      845,
+      1159
+    ],
+    "export_scale": 0.8072174738841406,
+    "export_method": "uniform subject size normalization + translation; no generated pixels added"
+  }
+]

@@ -265,3 +265,23 @@
 统一飞书档案：https://lcnqs3974j2m.feishu.cn/docx/ZZfkdTmMwoXuZMxswYHcqYRinkd 。第一轮、第二轮、找回的原始过程图及第三轮均在同一文档，包含原图、退回原因、渐进步骤、完整提示词附件；上传队列与逐项回执位于 feishu-archive/。第三轮反向强调照片写实与服装复制的问题，历史说明保留当时观点并注明后续退回。
 
 未执行正式分层、动作、小尺寸或动画；本次没有修改前端文件、chibi/、pet/ 与 rig.json。仍停在选款阶段。
+
+
+## 第六批：小桐定稿 + 肉肉
+
+2026-10-28，内置 image_gen 多线程生成；正式素材共155张PNG，14组10fps动作预览。旧宠物已备份至 source/backup-batch6/pet/；仅本批素材改动，前端接入由 Claude 负责。
+
+| 目录 | 文件清单 |
+|---|---|
+| xiaotong/ | sheet.png（2048×1024）、full.png（1024×1024）、avatar-256.png（256×256） |
+| xiaotong/pose/ | idle、hello、happy、think、read、reply、write、card、listen、mic、heart、cake、gift、shh、sleep、hug-rourou，均.png、1024×1024透明 |
+| xiaotong/bust/ | gaze-c/l/r/u/d/ul/ur/dl/dr、blink-1/2、talk-1/2/3、hello、happy、think、card，均.png、1024×1024透明 |
+| xiaotong/anim/ | idle、wave、happy、heart、sign各01–08.png；think、nod、talk各01–06.png；give-card/01–10.png |
+| pet/ | sheet.png（2048×1024）；idle、wave、think、sleep、cheer、card、listen、mic、heart、lick，各.png和-256.png |
+| pet/anim/ | idle、wag、lick各01–06.png；hop/01–07.png；sleep/01–04.png |
+
+肉肉hop由8减为7帧，其他无缺失。小桐idle与wave复用闭合端点，idle04/06为对称半眨眼，分别6/7幅独立画面。全身接地脚底小桐940、肉肉动画870；跳跃按预定离地10–20px，最终校验无超过4px的非预期偏差。尺寸和真实透明通道检查0问题。
+
+优先复审肉肉hop04–06、wag04，以及小桐idle07、wave03/06、happy05、give-card07–09。半身眨眼/说话的肩胸仍有约2.52%–2.75%像素灰度差>20，尚未达到严格的仅眼嘴像素变化。图像存在轻微生成重绘漂移，不代表人工审美已批准。
+
+检查件：source/batch6/contact-xiaotong-poses.png、contact-xiaotong-bust.png、contact-rourou.png；preview/下14组角色动作GIF。完整文件清单见 source/batch6/delivered-files.json；尺寸/alpha/bbox/脚底/SHA-256见 verification.json；减帧、弱项与复审结论见 delivery-report.md。逐张提示词、原生稿、退回稿和导出过程保留在各线程子目录。

@@ -1,0 +1,8588 @@
+{
+  "generated_at": "2026-10-28T05:31:09.543911+00:00",
+  "scope": "batch6 expected deliverables",
+  "expected_count": 156,
+  "present_count": 155,
+  "missing": [
+    "assets/pet/anim/hop/08.png"
+  ],
+  "issues": [],
+  "files": [
+    {
+      "path": "assets/xiaotong/sheet.png",
+      "status": "technical_pass",
+      "size": [
+        2048,
+        1024
+      ],
+      "expected_size": [
+        2048,
+        1024
+      ],
+      "mode": "RGB",
+      "has_alpha_channel": false,
+      "has_transparent_pixels": false,
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        2048,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          0,
+          2048,
+          1024
+        ],
+        "16": [
+          0,
+          0,
+          2048,
+          1024
+        ],
+        "128": [
+          0,
+          0,
+          2048,
+          1024
+        ]
+      },
+      "foot_y": null,
+      "sha256": "d61eadf4cfe0e64295eeb04efa7362a654ac4d6276b30d7b1647856a6b61d2bd",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/full.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        335,
+        91,
+        689,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          335,
+          91,
+          689,
+          941
+        ],
+        "16": [
+          335,
+          91,
+          689,
+          941
+        ],
+        "128": [
+          335,
+          92,
+          689,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "4d877b6b0310b3d0a407344aac3e2f43cbb667d2bd45b78f061b131e1592e64a",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/avatar-256.png",
+      "status": "technical_pass",
+      "size": [
+        256,
+        256
+      ],
+      "expected_size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        6,
+        0,
+        250,
+        256
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          6,
+          0,
+          250,
+          256
+        ],
+        "16": [
+          6,
+          0,
+          250,
+          256
+        ],
+        "128": [
+          7,
+          1,
+          248,
+          256
+        ]
+      },
+      "foot_y": 255,
+      "sha256": "a4f2823fb617ea9b009d146fdf3175b922a494fdaf5d421235e3f9049ab8fbb5",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/sheet.png",
+      "status": "technical_pass",
+      "size": [
+        2048,
+        1024
+      ],
+      "expected_size": [
+        2048,
+        1024
+      ],
+      "mode": "RGB",
+      "has_alpha_channel": false,
+      "has_transparent_pixels": false,
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        2048,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          0,
+          2048,
+          1024
+        ],
+        "16": [
+          0,
+          0,
+          2048,
+          1024
+        ],
+        "128": [
+          0,
+          0,
+          2048,
+          1024
+        ]
+      },
+      "foot_y": null,
+      "sha256": "925c2ad69aa509eac6ff941878c669446c0da9b490bd0a10dcc7b7724cf12dac",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/idle.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        344,
+        91,
+        679,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          344,
+          91,
+          679,
+          941
+        ],
+        "16": [
+          344,
+          91,
+          679,
+          941
+        ],
+        "128": [
+          344,
+          91,
+          679,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "1df97114793fa289239455f2c2e8aaccfc72d9c5de50b6dab53ee37c35e23ff8",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/hello.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        333,
+        91,
+        690,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          333,
+          91,
+          690,
+          941
+        ],
+        "16": [
+          333,
+          91,
+          690,
+          941
+        ],
+        "128": [
+          334,
+          91,
+          690,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "c546d224e1a66d12fc8d622d7dacec06de5c3e609b1835fa5f0feca1ecbc1b72",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/happy.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        342,
+        91,
+        681,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          342,
+          91,
+          681,
+          941
+        ],
+        "16": [
+          342,
+          91,
+          681,
+          941
+        ],
+        "128": [
+          343,
+          92,
+          681,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "3afea6b9f24a3ce4a27d85e1c2bfb47edfbf9fcb5f1f13a18c2146f04b0c4673",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/think.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        348,
+        91,
+        675,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          348,
+          91,
+          675,
+          941
+        ],
+        "16": [
+          348,
+          91,
+          675,
+          941
+        ],
+        "128": [
+          349,
+          92,
+          674,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "f89afb5895150f09c81451ade922f104b42eeb4ba6884204c26641b72babed8d",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/read.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        358,
+        91,
+        666,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          358,
+          91,
+          666,
+          941
+        ],
+        "16": [
+          358,
+          91,
+          666,
+          941
+        ],
+        "128": [
+          358,
+          91,
+          665,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "33d9a6a10a9ca1af6682f4d5a0367ec183d6a4b458798077e8ea92971d83e392",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/reply.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        350,
+        91,
+        673,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          350,
+          91,
+          673,
+          941
+        ],
+        "16": [
+          350,
+          91,
+          673,
+          941
+        ],
+        "128": [
+          351,
+          91,
+          673,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "b56eb6c585f86a9916096fc3613bde68cba05e5e4395a4dfad469241e2a87918",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/write.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        379,
+        291,
+        645,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          379,
+          291,
+          645,
+          941
+        ],
+        "16": [
+          379,
+          291,
+          645,
+          941
+        ],
+        "128": [
+          380,
+          292,
+          644,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "276690279d89702a1c81468a4f995eac335a71bd36ce7b1fbb53a94700928194",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/card.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        347,
+        91,
+        677,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          347,
+          91,
+          677,
+          941
+        ],
+        "16": [
+          347,
+          91,
+          677,
+          941
+        ],
+        "128": [
+          347,
+          91,
+          677,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "b214586f0de1d4bda280447c398306a57e6e252e28cbbfc38734168b79e3fefb",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/listen.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        327,
+        91,
+        696,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          327,
+          91,
+          696,
+          941
+        ],
+        "16": [
+          327,
+          91,
+          696,
+          941
+        ],
+        "128": [
+          328,
+          92,
+          696,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "6b67ceb0c67402489ef8b2a8b0ee9813167eebdb6529957ff6e320617e6a4106",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/mic.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        326,
+        91,
+        698,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          326,
+          91,
+          698,
+          941
+        ],
+        "16": [
+          326,
+          91,
+          698,
+          941
+        ],
+        "128": [
+          326,
+          91,
+          698,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "a1c5d9a24a7001be3e3be075b99c2245d3b21151a3de13a8cdde4949ecf9e35e",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/heart.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        343,
+        91,
+        681,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          343,
+          91,
+          681,
+          941
+        ],
+        "16": [
+          343,
+          91,
+          681,
+          941
+        ],
+        "128": [
+          343,
+          92,
+          680,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "d2f7de7a5bc8c0dcf0041fafc04d98fe92c8e896f5859b6e52949b81aff13123",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/cake.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        346,
+        91,
+        678,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          346,
+          91,
+          678,
+          941
+        ],
+        "16": [
+          346,
+          91,
+          678,
+          941
+        ],
+        "128": [
+          347,
+          91,
+          678,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "d4bf2251133ddd8bf482aad5f60a1e6afb18ad6f97fe34b7a6fa32ea747ed434",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/gift.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        349,
+        91,
+        675,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          349,
+          91,
+          675,
+          941
+        ],
+        "16": [
+          349,
+          91,
+          675,
+          941
+        ],
+        "128": [
+          349,
+          92,
+          675,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "09bf39126f2f49c563f1a1b593d02e5567ccc52d8cbb0cda0cabe3ece10ede84",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/shh.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        335,
+        91,
+        688,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          335,
+          91,
+          688,
+          941
+        ],
+        "16": [
+          335,
+          91,
+          688,
+          941
+        ],
+        "128": [
+          335,
+          92,
+          687,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "36f63a2b14d6387d101f85cd2686e244a13b9f540b1fc62a8638e233082b0a74",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/sleep.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        352,
+        291,
+        672,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          352,
+          291,
+          672,
+          941
+        ],
+        "16": [
+          352,
+          291,
+          672,
+          941
+        ],
+        "128": [
+          352,
+          291,
+          672,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "9b7f825ce313d7026fa8b79375ab33136c2bf5da8259df537d594b296377d866",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/pose/hug-rourou.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        372,
+        291,
+        651,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          372,
+          291,
+          651,
+          941
+        ],
+        "16": [
+          372,
+          291,
+          651,
+          941
+        ],
+        "128": [
+          372,
+          292,
+          649,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "a8f45c3d8010e1e1268a4d75b6c05df82c39567ae7b66cebcd9a73e529c25557",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/gaze-c.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        17,
+        12,
+        1008,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          10,
+          1013,
+          1024
+        ],
+        "16": [
+          17,
+          12,
+          1008,
+          1024
+        ],
+        "128": [
+          18,
+          14,
+          1005,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "3440884629f11ea5c6bbe41580d9f34a732f3571693f22dcd1a5204fda627349",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/gaze-l.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        14,
+        12,
+        1009,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          12,
+          10,
+          1013,
+          1024
+        ],
+        "16": [
+          14,
+          12,
+          1009,
+          1024
+        ],
+        "128": [
+          17,
+          14,
+          1008,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "4d5ff79f85320a5a730d884144f35575d1aaefc2a55be9bda887ad6d69e7588c",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/gaze-r.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        13,
+        11,
+        1012,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          10,
+          7,
+          1014,
+          1024
+        ],
+        "16": [
+          13,
+          11,
+          1012,
+          1024
+        ],
+        "128": [
+          16,
+          13,
+          1009,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "851f8c069aaecac4f414dd779c170300e8c48670cfcd2defa80c20ba77d0386a",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/gaze-u.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        13,
+        16,
+        1011,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          13,
+          1013,
+          1024
+        ],
+        "16": [
+          13,
+          16,
+          1011,
+          1024
+        ],
+        "128": [
+          15,
+          18,
+          1009,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "d2e927ff975a934383fd6fea7880dc284b983560ebcaaa8f2f2bdbb1ede1e8be",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/gaze-d.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        14,
+        11,
+        1010,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          8,
+          1013,
+          1024
+        ],
+        "16": [
+          14,
+          11,
+          1010,
+          1024
+        ],
+        "128": [
+          16,
+          12,
+          1009,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "a970fe19bb44a8abe27a339b1cd9bacecdd57b711ea87460cb735ac86d1d710b",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/gaze-ul.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        13,
+        16,
+        1014,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          13,
+          1024,
+          1024
+        ],
+        "16": [
+          13,
+          16,
+          1014,
+          1024
+        ],
+        "128": [
+          15,
+          19,
+          1013,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "16deb213a01a33c041422cda0c884b483290983c7d6ecc85c5a27b6ce8aff0f5",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/gaze-ur.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        13,
+        12,
+        1023,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          9,
+          1024,
+          1024
+        ],
+        "16": [
+          13,
+          12,
+          1023,
+          1024
+        ],
+        "128": [
+          15,
+          13,
+          1021,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "e50976b5365ac6acc9bd704410622b361d7f8ab929ff0a32ceaddb7aa976a83f",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/gaze-dl.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        12,
+        13,
+        1013,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          11,
+          1024,
+          1024
+        ],
+        "16": [
+          12,
+          13,
+          1013,
+          1024
+        ],
+        "128": [
+          14,
+          14,
+          1012,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "6065b090b2f2f95efddeda43aafb9efd17450faf91a949ab8707cd7a05ef4eae",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/gaze-dr.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        15,
+        10,
+        1009,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          1,
+          1021,
+          1024
+        ],
+        "16": [
+          15,
+          10,
+          1009,
+          1024
+        ],
+        "128": [
+          17,
+          12,
+          1008,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "df9f15d75c7984c2c152c0f0c53b5b2201c87fa41ba42af359b625afda7de349",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/blink-1.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        14,
+        11,
+        1009,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          8,
+          1013,
+          1024
+        ],
+        "16": [
+          14,
+          11,
+          1009,
+          1024
+        ],
+        "128": [
+          16,
+          13,
+          1008,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "476d3bed4ae7ebbe88dd211c92def40015aad3f36409b9a6afb9a1ff5afc4dc1",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/blink-2.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        13,
+        11,
+        1011,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          11,
+          9,
+          1013,
+          1024
+        ],
+        "16": [
+          13,
+          11,
+          1011,
+          1024
+        ],
+        "128": [
+          16,
+          13,
+          1009,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "3386313cd891a283237cf45885ee70b470573b457e234f731fb096ac52a7ed42",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/talk-1.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        13,
+        12,
+        1009,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          11,
+          10,
+          1013,
+          1024
+        ],
+        "16": [
+          13,
+          12,
+          1009,
+          1024
+        ],
+        "128": [
+          16,
+          13,
+          1008,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "8e3ace30ec1fedeaefd40253a0227ecbdc76b64f6eb34d180ae16db200137587",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/talk-2.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        14,
+        13,
+        1009,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          10,
+          1013,
+          1024
+        ],
+        "16": [
+          14,
+          13,
+          1009,
+          1024
+        ],
+        "128": [
+          17,
+          14,
+          1007,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "4423d4f36fd3d3cf278a470ef3fe77e5cce9ce2580cb22c38351b6d5a89f5e34",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/talk-3.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        14,
+        12,
+        1009,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          9,
+          1012,
+          1024
+        ],
+        "16": [
+          14,
+          12,
+          1009,
+          1024
+        ],
+        "128": [
+          17,
+          13,
+          1008,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "ba9795b02ba303b0952a8fa9881d8ec46ac1703f3773d808dc9c93d2e30dac81",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/hello.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        14,
+        11,
+        1010,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          11,
+          9,
+          1013,
+          1024
+        ],
+        "16": [
+          14,
+          11,
+          1010,
+          1024
+        ],
+        "128": [
+          15,
+          13,
+          1008,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "25bd6bf3b83f3f5a229412decd64150afd1044d06b4cfb334ed7b9ec2e095c71",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/happy.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        11,
+        12,
+        1010,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          8,
+          1013,
+          1024
+        ],
+        "16": [
+          11,
+          12,
+          1010,
+          1024
+        ],
+        "128": [
+          13,
+          14,
+          1009,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "2f9d40c0a74f96a97c6e8264bc6d75b7fe04b7fa31a69a983a27da0e8b3ab6bb",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/think.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        11,
+        9,
+        1013,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          0,
+          1024,
+          1024
+        ],
+        "16": [
+          11,
+          9,
+          1013,
+          1024
+        ],
+        "128": [
+          13,
+          13,
+          1010,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "d140fd3de42c92412685dfa2af055fa7d938a5fae0e6f855f8f08ac5bfe8a907",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/bust/card.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        13,
+        10,
+        1012,
+        1024
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          0,
+          1014,
+          1024
+        ],
+        "16": [
+          13,
+          10,
+          1012,
+          1024
+        ],
+        "128": [
+          15,
+          13,
+          1010,
+          1024
+        ]
+      },
+      "foot_y": 1023,
+      "sha256": "82acf7e650cada50eef388a034809ef7402f5aae08bf597c7e98065275c5472b",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/idle.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        269,
+        170,
+        754,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          269,
+          170,
+          754,
+          870
+        ],
+        "16": [
+          269,
+          170,
+          754,
+          870
+        ],
+        "128": [
+          271,
+          175,
+          752,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "69c2295970a3074e97f54e92008ccbf3e5a3fcb47ad0bece6e7e77fa36e3b0d1",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/idle-256.png",
+      "status": "technical_pass",
+      "size": [
+        256,
+        256
+      ],
+      "expected_size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        67,
+        43,
+        189,
+        218
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          65,
+          41,
+          191,
+          220
+        ],
+        "16": [
+          67,
+          43,
+          189,
+          218
+        ],
+        "128": [
+          68,
+          45,
+          188,
+          217
+        ]
+      },
+      "foot_y": 217,
+      "sha256": "5dc0f9bcf9620d53680b920ad30b89dd19cfed519fe6007f4d13fd3b4c865d0f",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/wave.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        237,
+        171,
+        786,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          237,
+          170,
+          786,
+          870
+        ],
+        "16": [
+          237,
+          171,
+          786,
+          870
+        ],
+        "128": [
+          238,
+          174,
+          784,
+          870
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "9bc6fe0d1511aca9d015b7098c82106afcabddaca7c2e252174ea087d6fcc6fd",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/wave-256.png",
+      "status": "technical_pass",
+      "size": [
+        256,
+        256
+      ],
+      "expected_size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        59,
+        43,
+        197,
+        218
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          57,
+          40,
+          199,
+          220
+        ],
+        "16": [
+          59,
+          43,
+          197,
+          218
+        ],
+        "128": [
+          60,
+          44,
+          196,
+          217
+        ]
+      },
+      "foot_y": 217,
+      "sha256": "183a79da1f1bf525eb5d70e50ffbfef9f887ee413a1414ac2a87729dbad5ebd1",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/think.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        285,
+        170,
+        738,
+        869
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          285,
+          170,
+          738,
+          870
+        ],
+        "16": [
+          285,
+          170,
+          738,
+          869
+        ],
+        "128": [
+          286,
+          171,
+          738,
+          869
+        ]
+      },
+      "foot_y": 868,
+      "sha256": "72f988a03995c6250452b123b44ff64c389aa671683930d4df40d52597298a4e",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/think-256.png",
+      "status": "technical_pass",
+      "size": [
+        256,
+        256
+      ],
+      "expected_size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        71,
+        42,
+        185,
+        218
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          69,
+          40,
+          187,
+          220
+        ],
+        "16": [
+          71,
+          42,
+          185,
+          218
+        ],
+        "128": [
+          72,
+          43,
+          184,
+          217
+        ]
+      },
+      "foot_y": 217,
+      "sha256": "09d064cddd603f2fc3d67bb662bd022c0863ea9f7f12584eda1141fa49d1a8fe",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/sleep.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        162,
+        424,
+        862,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          162,
+          424,
+          862,
+          870
+        ],
+        "16": [
+          162,
+          424,
+          862,
+          870
+        ],
+        "128": [
+          164,
+          427,
+          861,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "4d576f3e92cdf4e32b5d273b1682382452afa4654ca757a9b22b3526b2b0ab5b",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/sleep-256.png",
+      "status": "technical_pass",
+      "size": [
+        256,
+        256
+      ],
+      "expected_size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        40,
+        106,
+        216,
+        218
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          38,
+          104,
+          218,
+          220
+        ],
+        "16": [
+          40,
+          106,
+          216,
+          218
+        ],
+        "128": [
+          41,
+          107,
+          215,
+          217
+        ]
+      },
+      "foot_y": 217,
+      "sha256": "623f18bd568958de4d16d916c92a060df5b96761f79c491ba3d1649e1089f556",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/cheer.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        177,
+        170,
+        846,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          177,
+          170,
+          847,
+          870
+        ],
+        "16": [
+          177,
+          170,
+          846,
+          870
+        ],
+        "128": [
+          180,
+          172,
+          842,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "5d2c6f8a4f10242f7aa219a0ebc2513598074d26fb6c349a9328e3180314980a",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/cheer-256.png",
+      "status": "technical_pass",
+      "size": [
+        256,
+        256
+      ],
+      "expected_size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        44,
+        42,
+        211,
+        218
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          42,
+          40,
+          213,
+          220
+        ],
+        "16": [
+          44,
+          42,
+          211,
+          218
+        ],
+        "128": [
+          45,
+          44,
+          210,
+          217
+        ]
+      },
+      "foot_y": 217,
+      "sha256": "5d81977fc92d3c48537ac514fef751e521e8d4b0adc61e553d39440bb42c71c5",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/card.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        239,
+        170,
+        785,
+        869
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          239,
+          170,
+          785,
+          870
+        ],
+        "16": [
+          239,
+          170,
+          785,
+          869
+        ],
+        "128": [
+          240,
+          173,
+          781,
+          868
+        ]
+      },
+      "foot_y": 868,
+      "sha256": "dadf10e55e707a163b12e10b15ffefd747a984c8f49f10b9e428616dd83d1903",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/card-256.png",
+      "status": "technical_pass",
+      "size": [
+        256,
+        256
+      ],
+      "expected_size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        59,
+        42,
+        196,
+        218
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          57,
+          40,
+          198,
+          220
+        ],
+        "16": [
+          59,
+          42,
+          196,
+          218
+        ],
+        "128": [
+          60,
+          44,
+          195,
+          217
+        ]
+      },
+      "foot_y": 217,
+      "sha256": "185ccbd72cd5952b2f0d74a7c4ad13c43225ab037d423cbc26410feab4d3235c",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/listen.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        236,
+        170,
+        787,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          236,
+          170,
+          787,
+          870
+        ],
+        "16": [
+          236,
+          170,
+          787,
+          870
+        ],
+        "128": [
+          238,
+          170,
+          786,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "2af8bd3c51e6679ece3c8e5112425f4abb0df6f0256fe0ad6646670f8b677aa6",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/listen-256.png",
+      "status": "technical_pass",
+      "size": [
+        256,
+        256
+      ],
+      "expected_size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        59,
+        42,
+        197,
+        218
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          57,
+          40,
+          199,
+          220
+        ],
+        "16": [
+          59,
+          42,
+          197,
+          218
+        ],
+        "128": [
+          59,
+          43,
+          195,
+          217
+        ]
+      },
+      "foot_y": 217,
+      "sha256": "65038c574d5b194c540b27a34f43f151b282a7c0129ae74bb44c7fa3e6fb9b69",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/mic.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        235,
+        171,
+        788,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          235,
+          170,
+          788,
+          870
+        ],
+        "16": [
+          235,
+          171,
+          788,
+          870
+        ],
+        "128": [
+          237,
+          174,
+          786,
+          870
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "8455a5412b036410cdebff12f5000cb57a1090a6e9994a84560fadec4914861a",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/mic-256.png",
+      "status": "technical_pass",
+      "size": [
+        256,
+        256
+      ],
+      "expected_size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        59,
+        43,
+        197,
+        218
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          57,
+          41,
+          199,
+          220
+        ],
+        "16": [
+          59,
+          43,
+          197,
+          218
+        ],
+        "128": [
+          59,
+          44,
+          196,
+          217
+        ]
+      },
+      "foot_y": 217,
+      "sha256": "1a58837aadbd4fe4fbd302bba4798e097e102b11eec5d7475e4d16e6b1cec130",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/heart.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        266,
+        170,
+        757,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          266,
+          170,
+          757,
+          870
+        ],
+        "16": [
+          266,
+          170,
+          757,
+          870
+        ],
+        "128": [
+          269,
+          173,
+          756,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "b12dd2f0d90735c2e2580aa4c14bf7e412416bc8dd41b0976caf775c10231397",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/heart-256.png",
+      "status": "technical_pass",
+      "size": [
+        256,
+        256
+      ],
+      "expected_size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        66,
+        42,
+        190,
+        218
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          64,
+          40,
+          192,
+          220
+        ],
+        "16": [
+          66,
+          42,
+          190,
+          218
+        ],
+        "128": [
+          67,
+          44,
+          189,
+          217
+        ]
+      },
+      "foot_y": 217,
+      "sha256": "55f7bd238520560a6c4044e14850b7a641cbe8e93313e6b8e9072e297fb712cb",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/lick.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        262,
+        171,
+        762,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          262,
+          170,
+          762,
+          870
+        ],
+        "16": [
+          262,
+          171,
+          762,
+          870
+        ],
+        "128": [
+          264,
+          174,
+          757,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "0d8c4061f11713de9d16e9948cff8cf0cc84ebc42b4d692136865cdbcd4eae92",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/lick-256.png",
+      "status": "technical_pass",
+      "size": [
+        256,
+        256
+      ],
+      "expected_size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        65,
+        43,
+        191,
+        218
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          63,
+          41,
+          193,
+          220
+        ],
+        "16": [
+          65,
+          43,
+          191,
+          218
+        ],
+        "128": [
+          66,
+          44,
+          189,
+          217
+        ]
+      },
+      "foot_y": 217,
+      "sha256": "0b7a0be58a1567cfd898ef57741b0ca9476d6691668b885d5ccb883aae08bedb",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/idle/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        317,
+        90,
+        706,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          317,
+          90,
+          706,
+          941
+        ],
+        "16": [
+          317,
+          90,
+          706,
+          941
+        ],
+        "128": [
+          318,
+          91,
+          705,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "bd53d485a297609f4e46753abe9372113b28f45144a5a4e5cfa8e1af4a98432a",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/idle/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        317,
+        90,
+        706,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          317,
+          90,
+          706,
+          941
+        ],
+        "16": [
+          317,
+          90,
+          706,
+          941
+        ],
+        "128": [
+          318,
+          90,
+          706,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "8f6bd6975cdedc9ac144c06a5c09835c38e184471f41febc67a82ee6971c4216",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/idle/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        316,
+        90,
+        708,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          316,
+          90,
+          708,
+          941
+        ],
+        "16": [
+          316,
+          90,
+          708,
+          941
+        ],
+        "128": [
+          317,
+          91,
+          707,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "6cb08de501c5c85cd55bbb046127e4cf2dc513c4d4bdda68b41270a83b4fb166",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/idle/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        316,
+        90,
+        708,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          316,
+          90,
+          708,
+          941
+        ],
+        "16": [
+          316,
+          90,
+          708,
+          941
+        ],
+        "128": [
+          317,
+          91,
+          707,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "4eccc45503716a1569272f0d95701c3a3a6d024d168ab73ff431b4970961e471",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/idle/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        318,
+        90,
+        706,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          318,
+          90,
+          706,
+          941
+        ],
+        "16": [
+          318,
+          90,
+          706,
+          941
+        ],
+        "128": [
+          319,
+          90,
+          705,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "800e27994b12b9f2cfbf24b44303e4f4ec74481a8741dc9ca54d3269e4c3d1be",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/idle/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        316,
+        90,
+        708,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          316,
+          90,
+          708,
+          941
+        ],
+        "16": [
+          316,
+          90,
+          708,
+          941
+        ],
+        "128": [
+          317,
+          91,
+          707,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "4eccc45503716a1569272f0d95701c3a3a6d024d168ab73ff431b4970961e471",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/idle/07.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        314,
+        90,
+        709,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          314,
+          90,
+          709,
+          941
+        ],
+        "16": [
+          314,
+          90,
+          709,
+          941
+        ],
+        "128": [
+          315,
+          91,
+          708,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "73dd7f19bc2a926a5ece05d969163c24658597acf72e5c356213c59fb45591e0",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/idle/08.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        317,
+        90,
+        706,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          317,
+          90,
+          706,
+          941
+        ],
+        "16": [
+          317,
+          90,
+          706,
+          941
+        ],
+        "128": [
+          318,
+          91,
+          705,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "bd53d485a297609f4e46753abe9372113b28f45144a5a4e5cfa8e1af4a98432a",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/wave/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        317,
+        90,
+        706,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          317,
+          90,
+          706,
+          941
+        ],
+        "16": [
+          317,
+          90,
+          706,
+          941
+        ],
+        "128": [
+          318,
+          91,
+          705,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "bd53d485a297609f4e46753abe9372113b28f45144a5a4e5cfa8e1af4a98432a",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/wave/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        318,
+        90,
+        705,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          318,
+          90,
+          705,
+          941
+        ],
+        "16": [
+          318,
+          90,
+          705,
+          941
+        ],
+        "128": [
+          319,
+          90,
+          704,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "e98a50de0e3c5fe20b5bbfddc3699951e56b71f16ae479ed2b1f5c80ba667275",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/wave/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        320,
+        90,
+        703,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          320,
+          90,
+          703,
+          941
+        ],
+        "16": [
+          320,
+          90,
+          703,
+          941
+        ],
+        "128": [
+          321,
+          90,
+          703,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "e7d7bceecf7ac20d49e17b3f1e70b5a774207f57aa91ddcee6f0a154fa110728",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/wave/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        320,
+        90,
+        703,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          320,
+          90,
+          703,
+          941
+        ],
+        "16": [
+          320,
+          90,
+          703,
+          941
+        ],
+        "128": [
+          320,
+          91,
+          702,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "78de01908538af032733edc0a91833dffc063977ebabf215dd8839641e0530ab",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/wave/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        319,
+        90,
+        704,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          319,
+          90,
+          704,
+          941
+        ],
+        "16": [
+          319,
+          90,
+          704,
+          941
+        ],
+        "128": [
+          319,
+          91,
+          704,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "c4d2331f2298af13bbb0eb3e6ce42a320d48cdbfa51c24446645b17f5f2b4bc8",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/wave/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        322,
+        90,
+        702,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          322,
+          90,
+          702,
+          941
+        ],
+        "16": [
+          322,
+          90,
+          702,
+          941
+        ],
+        "128": [
+          323,
+          91,
+          702,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "85908915cf64dfaed72de5e1a987ebb905ba9e6cc52d478aae593a7b3cef8dfb",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/wave/07.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        321,
+        90,
+        703,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          321,
+          90,
+          703,
+          941
+        ],
+        "16": [
+          321,
+          90,
+          703,
+          941
+        ],
+        "128": [
+          322,
+          90,
+          702,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "d14925938b7017360b25262b736487d3128f036defde394dc5e21b026124c979",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/wave/08.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        317,
+        90,
+        706,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          317,
+          90,
+          706,
+          941
+        ],
+        "16": [
+          317,
+          90,
+          706,
+          941
+        ],
+        "128": [
+          318,
+          91,
+          705,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "bd53d485a297609f4e46753abe9372113b28f45144a5a4e5cfa8e1af4a98432a",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/happy/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        334,
+        92,
+        690,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          334,
+          91,
+          690,
+          941
+        ],
+        "16": [
+          334,
+          92,
+          690,
+          941
+        ],
+        "128": [
+          334,
+          93,
+          689,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "a26898a076da4334f6fbeb8b14e391ff385d3f83d1c78693d76d8de0ad31d50a",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/happy/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        330,
+        92,
+        693,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          330,
+          91,
+          693,
+          941
+        ],
+        "16": [
+          330,
+          92,
+          693,
+          941
+        ],
+        "128": [
+          331,
+          93,
+          692,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "54c44e9728203da4e7665eaf02cb9918546762b968b88fd515896495c019916e",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/happy/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        321,
+        91,
+        704,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          320,
+          91,
+          704,
+          941
+        ],
+        "16": [
+          321,
+          91,
+          704,
+          941
+        ],
+        "128": [
+          321,
+          92,
+          703,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "4fc9ec0e22fc44380d972205b843e675cb38fcc5824c85e9d117fc1f126cd8ef",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/happy/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        302,
+        72,
+        722,
+        921
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          302,
+          71,
+          722,
+          921
+        ],
+        "16": [
+          302,
+          72,
+          722,
+          921
+        ],
+        "128": [
+          303,
+          73,
+          721,
+          920
+        ]
+      },
+      "foot_y": 920,
+      "sha256": "6e26e8de891ea8a5775b35a5daed72af8e1c1992ccc13549a187918ee281e949",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/happy/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        285,
+        71,
+        738,
+        920
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          285,
+          71,
+          738,
+          921
+        ],
+        "16": [
+          285,
+          71,
+          738,
+          920
+        ],
+        "128": [
+          285,
+          73,
+          737,
+          920
+        ]
+      },
+      "foot_y": 919,
+      "sha256": "5835709baf5983ae29f886658b94b293d50b2b8a7f07ad0c0ac7711782e0b633",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/happy/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        302,
+        91,
+        722,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          302,
+          91,
+          722,
+          941
+        ],
+        "16": [
+          302,
+          91,
+          722,
+          941
+        ],
+        "128": [
+          303,
+          93,
+          721,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "1305a1ad92399a721b1424d802ed64df7377e3ceaac6f4735a426490ca569d6b",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/happy/07.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        328,
+        91,
+        696,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          328,
+          91,
+          696,
+          941
+        ],
+        "16": [
+          328,
+          91,
+          696,
+          941
+        ],
+        "128": [
+          329,
+          92,
+          695,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "5cbf725f66739e0b549f953e2103515a8cd2e57d173dc4dc41d58b111590d541",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/happy/08.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        329,
+        91,
+        693,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          329,
+          91,
+          694,
+          941
+        ],
+        "16": [
+          329,
+          91,
+          693,
+          941
+        ],
+        "128": [
+          330,
+          93,
+          693,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "9e3fa60d6fc227224bacb609b0ab14154fd40aa9257dbde04d0a2d9a6de722ca",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/think/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        329,
+        91,
+        694,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          329,
+          91,
+          694,
+          941
+        ],
+        "16": [
+          329,
+          91,
+          694,
+          941
+        ],
+        "128": [
+          329,
+          93,
+          693,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "5b4d6ab6b3d5112f94228b582a7f4f53165d18f03e22a293db4e36b3cec837d8",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/think/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        326,
+        91,
+        697,
+        940
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          326,
+          91,
+          697,
+          941
+        ],
+        "16": [
+          326,
+          91,
+          697,
+          940
+        ],
+        "128": [
+          327,
+          92,
+          696,
+          940
+        ]
+      },
+      "foot_y": 939,
+      "sha256": "3fce65f111e3ebf4817b2b7c9c8ed9e5c2d50168329f86f1e1410def5385449f",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/think/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        328,
+        92,
+        696,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          328,
+          91,
+          696,
+          941
+        ],
+        "16": [
+          328,
+          92,
+          696,
+          941
+        ],
+        "128": [
+          328,
+          93,
+          695,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "d31ed90536561891e03a7cdab04ff08b4eeb0c5c4b59d8f3ca2cab497fc7ef6a",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/think/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        326,
+        91,
+        697,
+        940
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          326,
+          91,
+          697,
+          941
+        ],
+        "16": [
+          326,
+          91,
+          697,
+          940
+        ],
+        "128": [
+          327,
+          93,
+          696,
+          940
+        ]
+      },
+      "foot_y": 939,
+      "sha256": "7b71485793c53b610b40e4ac1d915916d3c9182143e6d083813b414ddaedfc00",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/think/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        327,
+        92,
+        697,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          327,
+          91,
+          697,
+          941
+        ],
+        "16": [
+          327,
+          92,
+          697,
+          941
+        ],
+        "128": [
+          327,
+          92,
+          696,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "402131380d64820eedb0ce95fca52edc3444f29217ac878efdc6bcdadd979639",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/think/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        326,
+        92,
+        697,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          326,
+          91,
+          697,
+          941
+        ],
+        "16": [
+          326,
+          92,
+          697,
+          941
+        ],
+        "128": [
+          327,
+          93,
+          696,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "deebb887d1a86b75933ef40964708c3bb8ff8df6c1c5d9980b495ceb174e1e80",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/nod/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        331,
+        91,
+        693,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          331,
+          91,
+          693,
+          941
+        ],
+        "16": [
+          331,
+          91,
+          693,
+          941
+        ],
+        "128": [
+          332,
+          93,
+          692,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "1645add632441cab8cb0e579aa89307cdd08e5002723f81c394a4a31c89a1fcc",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/nod/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        328,
+        91,
+        696,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          328,
+          91,
+          696,
+          941
+        ],
+        "16": [
+          328,
+          91,
+          696,
+          941
+        ],
+        "128": [
+          329,
+          92,
+          696,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "14f3da53a03f5b2ed9c52aa6a567692a84b647e25399e6c6f9a28f46d7eb97ed",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/nod/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        330,
+        91,
+        693,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          330,
+          91,
+          693,
+          941
+        ],
+        "16": [
+          330,
+          91,
+          693,
+          941
+        ],
+        "128": [
+          331,
+          92,
+          693,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "22d1bc7b636b27719e9e28d65f261fef16d01c9ef17d857b48ed5c350906c6a5",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/nod/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        329,
+        92,
+        694,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          329,
+          91,
+          694,
+          941
+        ],
+        "16": [
+          329,
+          92,
+          694,
+          941
+        ],
+        "128": [
+          330,
+          93,
+          693,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "8190b38c5b2b0578aa53e1f870af2e7674c3e84c63f934df4058cf1da80a46af",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/nod/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        330,
+        91,
+        694,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          330,
+          91,
+          694,
+          941
+        ],
+        "16": [
+          330,
+          91,
+          694,
+          941
+        ],
+        "128": [
+          330,
+          92,
+          693,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "02c6bd1c4fa033043b3ef2beb503d921fbe73b9ad9c53d1b900756be2932a6aa",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/nod/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        327,
+        91,
+        696,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          327,
+          91,
+          696,
+          941
+        ],
+        "16": [
+          327,
+          91,
+          696,
+          941
+        ],
+        "128": [
+          327,
+          92,
+          696,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "bf78c1aebbefe18fffe44d2c0b037e20ad390633e8fa7287373a4cb4046f3a3f",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/give-card/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        346,
+        91,
+        678,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          346,
+          91,
+          678,
+          941
+        ],
+        "16": [
+          346,
+          91,
+          678,
+          941
+        ],
+        "128": [
+          346,
+          92,
+          677,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "4f29eca54257b640dc89364d77d43f5cfde689fc3ba64e4c8b3d1419b83c53b8",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/give-card/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        340,
+        91,
+        684,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          340,
+          91,
+          684,
+          941
+        ],
+        "16": [
+          340,
+          91,
+          684,
+          941
+        ],
+        "128": [
+          340,
+          93,
+          683,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "c5c68b86d4b110eb2a604eb83630c57dc5e53ef962246759c37e0ea990b4ddd1",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/give-card/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        341,
+        91,
+        683,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          341,
+          91,
+          683,
+          941
+        ],
+        "16": [
+          341,
+          91,
+          683,
+          941
+        ],
+        "128": [
+          342,
+          92,
+          682,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "2c47d68a1c1ab2166b09f84ad1df5ff0f4f1598655ee06932ba977d54aa30034",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/give-card/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        342,
+        91,
+        682,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          342,
+          91,
+          682,
+          941
+        ],
+        "16": [
+          342,
+          91,
+          682,
+          941
+        ],
+        "128": [
+          342,
+          92,
+          681,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "be083003ddbdd6ea9f580525845935cf9d0d0156a09b576a41a6eb30cdb14717",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/give-card/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        342,
+        91,
+        681,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          342,
+          91,
+          681,
+          941
+        ],
+        "16": [
+          342,
+          91,
+          681,
+          941
+        ],
+        "128": [
+          342,
+          93,
+          680,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "6cbbe3b1563faacb68984c58e421fa69b9c49993f67896b018c501634d62f875",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/give-card/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        339,
+        91,
+        684,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          339,
+          91,
+          684,
+          941
+        ],
+        "16": [
+          339,
+          91,
+          684,
+          941
+        ],
+        "128": [
+          340,
+          92,
+          683,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "45819352b11ef5e15b387da6caef8bf652e58040f59116a9fc105befc9ec9fde",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/give-card/07.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        340,
+        91,
+        684,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          340,
+          91,
+          684,
+          941
+        ],
+        "16": [
+          340,
+          91,
+          684,
+          941
+        ],
+        "128": [
+          340,
+          92,
+          683,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "7cce4164c266442acbd36a98683c674778e1e6c5ec61795234b8990610fc3443",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/give-card/08.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        342,
+        91,
+        682,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          342,
+          91,
+          682,
+          941
+        ],
+        "16": [
+          342,
+          91,
+          682,
+          941
+        ],
+        "128": [
+          342,
+          92,
+          682,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "d1742f19585327e0bd86ac0370f598cfbdbc089f33fde008a8857ac55a1a4f07",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/give-card/09.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        342,
+        91,
+        681,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          342,
+          91,
+          681,
+          941
+        ],
+        "16": [
+          342,
+          91,
+          681,
+          941
+        ],
+        "128": [
+          343,
+          92,
+          680,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "41ab8d2457ac6e2b8e11180b7721294a2fcbaef9dc52dfee2bfd7f2d99935673",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/give-card/10.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        340,
+        91,
+        683,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          340,
+          91,
+          683,
+          941
+        ],
+        "16": [
+          340,
+          91,
+          683,
+          941
+        ],
+        "128": [
+          340,
+          92,
+          682,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "3d6ec9099e6d44d2e3dc17c665ae88f8e444138320af2682528f6ceeafd7f9e1",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/heart/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        342,
+        91,
+        681,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          342,
+          91,
+          681,
+          941
+        ],
+        "16": [
+          342,
+          91,
+          681,
+          941
+        ],
+        "128": [
+          343,
+          91,
+          680,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "c89de02e136a07994c16a0639768e720d537100edcc9fd9939a5f0851835755e",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/heart/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        342,
+        91,
+        682,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          342,
+          91,
+          682,
+          941
+        ],
+        "16": [
+          342,
+          91,
+          682,
+          941
+        ],
+        "128": [
+          342,
+          92,
+          682,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "00af413a867338c35191ea810fa618aacce6e5680962ed22e4aef3d8f1eaceed",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/heart/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        336,
+        91,
+        687,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          336,
+          91,
+          687,
+          941
+        ],
+        "16": [
+          336,
+          91,
+          687,
+          941
+        ],
+        "128": [
+          337,
+          92,
+          687,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "7556b347733ed5fb1261ef962b2de0deb05b1584a79746daacc30d3e6c312ac8",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/heart/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        337,
+        91,
+        686,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          337,
+          91,
+          686,
+          941
+        ],
+        "16": [
+          337,
+          91,
+          686,
+          941
+        ],
+        "128": [
+          338,
+          92,
+          685,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "2533aa40a282d775e951b6cec79880d6eee2c03ba9aa459cb7b844d7fc1eac47",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/heart/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        339,
+        91,
+        685,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          339,
+          91,
+          685,
+          941
+        ],
+        "16": [
+          339,
+          91,
+          685,
+          941
+        ],
+        "128": [
+          340,
+          91,
+          685,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "e28904f290609090a52752149ada4909757ffbdb0c80627dbd24b4605a537d43",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/heart/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        338,
+        91,
+        686,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          338,
+          91,
+          686,
+          941
+        ],
+        "16": [
+          338,
+          91,
+          686,
+          941
+        ],
+        "128": [
+          339,
+          92,
+          685,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "09638781f81143cacaab3a0c0e5a0fafd627d37702351729a5faf04e378a07dc",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/heart/07.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        340,
+        91,
+        684,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          340,
+          91,
+          684,
+          941
+        ],
+        "16": [
+          340,
+          91,
+          684,
+          941
+        ],
+        "128": [
+          341,
+          92,
+          684,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "178b734745584e05e5f897bb1e34e8a56e2daa745d574cfeb1d20445cd093289",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/heart/08.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        337,
+        91,
+        686,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          337,
+          91,
+          686,
+          941
+        ],
+        "16": [
+          337,
+          91,
+          686,
+          941
+        ],
+        "128": [
+          338,
+          92,
+          685,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "a11e35c7616ce4ddb29a8919a07d3c2e8ad7780648949ded8a2e9c6144da7b75",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/talk/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        347,
+        91,
+        676,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          347,
+          91,
+          676,
+          941
+        ],
+        "16": [
+          347,
+          91,
+          676,
+          941
+        ],
+        "128": [
+          347,
+          92,
+          675,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "ee2253ab0656559a23fbbcb57cbe4fb86a04dfa73d85578a5d03261adf9cdf7e",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/talk/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        346,
+        91,
+        678,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          346,
+          91,
+          678,
+          941
+        ],
+        "16": [
+          346,
+          91,
+          678,
+          941
+        ],
+        "128": [
+          347,
+          92,
+          678,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "93eb11cbc0c7e71d17cddd96644cbe085949d27b3bad6a991781a29765772198",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/talk/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        345,
+        91,
+        679,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          345,
+          91,
+          679,
+          941
+        ],
+        "16": [
+          345,
+          91,
+          679,
+          941
+        ],
+        "128": [
+          346,
+          92,
+          678,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "54c0f759758460362634a41ca26823d458c481309e047fe60317b0b29602143c",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/talk/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        346,
+        91,
+        678,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          346,
+          91,
+          678,
+          941
+        ],
+        "16": [
+          346,
+          91,
+          678,
+          941
+        ],
+        "128": [
+          347,
+          91,
+          678,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "3dcf23098fdb3f27c9922e33e29f7e3dc937b51e0af8229bb5969c830d4faa46",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/talk/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        343,
+        91,
+        680,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          343,
+          91,
+          680,
+          941
+        ],
+        "16": [
+          343,
+          91,
+          680,
+          941
+        ],
+        "128": [
+          344,
+          92,
+          679,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "66adc16962524917b1ed7ca6e6192199c29fca2edfab48f55da3d5ea6be12e77",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/talk/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        344,
+        91,
+        679,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          344,
+          91,
+          679,
+          941
+        ],
+        "16": [
+          344,
+          91,
+          679,
+          941
+        ],
+        "128": [
+          344,
+          92,
+          678,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "86359baa7dbec01a8617937458b98d750f8d479ae40f3192b96c32accb784f16",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/sign/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        356,
+        231,
+        667,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          356,
+          231,
+          667,
+          941
+        ],
+        "16": [
+          356,
+          231,
+          667,
+          941
+        ],
+        "128": [
+          357,
+          232,
+          666,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "defff262d0c50fc35342144bbb623a000cfda70c66ad6d75d2bb5c2fc60f2395",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/sign/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        356,
+        231,
+        668,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          356,
+          231,
+          668,
+          941
+        ],
+        "16": [
+          356,
+          231,
+          668,
+          941
+        ],
+        "128": [
+          357,
+          232,
+          667,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "87af1abeb2d4638f9aa6ef2f5d5ba94c156e36fe365a3a6e884c7de3a64f67e8",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/sign/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        356,
+        231,
+        668,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          356,
+          231,
+          668,
+          941
+        ],
+        "16": [
+          356,
+          231,
+          668,
+          941
+        ],
+        "128": [
+          357,
+          232,
+          667,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "0c8c1dc2e3b76cdca8d69536e9c75f7bd36714cbb2e6b7f41df1c82f9a156233",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/sign/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        356,
+        231,
+        667,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          356,
+          231,
+          667,
+          941
+        ],
+        "16": [
+          356,
+          231,
+          667,
+          941
+        ],
+        "128": [
+          357,
+          232,
+          667,
+          941
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "7894b68bd7ac25f58a301af70dc38372596092cf898f55044ab96ea5a79e72f1",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/sign/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        357,
+        231,
+        667,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          357,
+          231,
+          667,
+          941
+        ],
+        "16": [
+          357,
+          231,
+          667,
+          941
+        ],
+        "128": [
+          357,
+          232,
+          667,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "8fa92d6237061d931571d78fc4d471574e53df7703e91dd9ccecf0a97f515bf8",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/sign/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        355,
+        231,
+        668,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          355,
+          231,
+          668,
+          941
+        ],
+        "16": [
+          355,
+          231,
+          668,
+          941
+        ],
+        "128": [
+          356,
+          232,
+          667,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "fcc308d614ac5fd4befaec8fc5f75514b6697895927ceffd596a18a224ce913d",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/sign/07.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        357,
+        231,
+        667,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          357,
+          231,
+          667,
+          941
+        ],
+        "16": [
+          357,
+          231,
+          667,
+          941
+        ],
+        "128": [
+          357,
+          232,
+          667,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "0e9ff268a69f2f07dcb96c22a31e0b5c86756e456e49bf2d9be9a0695e8d74b1",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/xiaotong/anim/sign/08.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        356,
+        231,
+        668,
+        941
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          356,
+          231,
+          668,
+          941
+        ],
+        "16": [
+          356,
+          231,
+          668,
+          941
+        ],
+        "128": [
+          356,
+          232,
+          667,
+          940
+        ]
+      },
+      "foot_y": 940,
+      "sha256": "144ab393466b188dee1d1a4a611b159ad76e4b917d0066e527221fdc1b649c52",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/idle/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        219,
+        156,
+        805,
+        871
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          28,
+          87,
+          916,
+          928
+        ],
+        "16": [
+          219,
+          156,
+          805,
+          871
+        ],
+        "128": [
+          219,
+          159,
+          803,
+          870
+        ]
+      },
+      "foot_y": 870,
+      "sha256": "221e9f834caaba09c26efd798f2f42dbd3ede727519bf59dc84f26cdc845f1f3",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/idle/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        219,
+        157,
+        815,
+        871
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          28,
+          73,
+          881,
+          893
+        ],
+        "16": [
+          219,
+          157,
+          815,
+          871
+        ],
+        "128": [
+          220,
+          159,
+          813,
+          870
+        ]
+      },
+      "foot_y": 870,
+      "sha256": "a3c70f0a7ed358384e073536e1a89d8060361c328d28b7b4b08af3e5a5624bf9",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/idle/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        219,
+        156,
+        797,
+        871
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          28,
+          92,
+          891,
+          914
+        ],
+        "16": [
+          219,
+          156,
+          797,
+          871
+        ],
+        "128": [
+          219,
+          159,
+          795,
+          870
+        ]
+      },
+      "foot_y": 870,
+      "sha256": "20b4ca5d9cfb9bfaac8371de4f1602696b54331a28fa1fb96a09705022dc87f4",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/idle/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        218,
+        157,
+        797,
+        871
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          28,
+          55,
+          901,
+          922
+        ],
+        "16": [
+          218,
+          157,
+          797,
+          871
+        ],
+        "128": [
+          219,
+          158,
+          795,
+          870
+        ]
+      },
+      "foot_y": 870,
+      "sha256": "f0f9883a00c7a26a19bb7c5bcb420f934b140538cd245976ae1d498504d14a27",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/idle/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        219,
+        156,
+        808,
+        871
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          52,
+          154,
+          839,
+          930
+        ],
+        "16": [
+          219,
+          156,
+          808,
+          871
+        ],
+        "128": [
+          220,
+          159,
+          806,
+          870
+        ]
+      },
+      "foot_y": 870,
+      "sha256": "ce60dd37a2ade83ac60dfe30e9f04409be6a29f5e9a9467c26349f7fc2afde90",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/idle/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        219,
+        157,
+        806,
+        871
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          28,
+          74,
+          868,
+          920
+        ],
+        "16": [
+          219,
+          157,
+          806,
+          871
+        ],
+        "128": [
+          220,
+          161,
+          804,
+          870
+        ]
+      },
+      "foot_y": 870,
+      "sha256": "e9a5d79d7bc3d35f7f178f7334b0b69e834a06955b9f03e92095539daefa1c98",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/wag/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        30,
+        190,
+        697,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          89,
+          793,
+          948
+        ],
+        "16": [
+          30,
+          190,
+          697,
+          870
+        ],
+        "128": [
+          31,
+          201,
+          696,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "07f727837861b37d8162182b63e5db0e308c66a8302c7aafcf5e1a400a116ee1",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/wag/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        91,
+        189,
+        701,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          55,
+          106,
+          837,
+          1016
+        ],
+        "16": [
+          91,
+          189,
+          701,
+          870
+        ],
+        "128": [
+          93,
+          198,
+          699,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "4f902c9f570c24949a82636b57aa5f4bd4c2f23970c14b9ce624b9bc5fbabeb2",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/wag/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        212,
+        190,
+        872,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          72,
+          59,
+          901,
+          1009
+        ],
+        "16": [
+          212,
+          190,
+          872,
+          870
+        ],
+        "128": [
+          213,
+          194,
+          870,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "16229d13816aea98a5cac666e6f9302ec72ca654fb736081a155b0d306af400f",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/wag/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        207,
+        190,
+        1002,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          150,
+          53,
+          1014,
+          1003
+        ],
+        "16": [
+          207,
+          190,
+          1002,
+          870
+        ],
+        "128": [
+          209,
+          192,
+          1001,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "dd7625fcaec39dfc7dddb036b74be8016462bc7bc750d96af416aa3642e7ebe3",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/wag/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        194,
+        190,
+        705,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          4,
+          74,
+          871,
+          1017
+        ],
+        "16": [
+          194,
+          190,
+          705,
+          870
+        ],
+        "128": [
+          195,
+          192,
+          704,
+          870
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "785bfb713cb06e83e82b3e0c99802ffca2972cf1bf8ae156e01a5d6217d68b16",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/wag/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        82,
+        189,
+        704,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          11,
+          78,
+          840,
+          1016
+        ],
+        "16": [
+          82,
+          189,
+          704,
+          870
+        ],
+        "128": [
+          84,
+          195,
+          703,
+          870
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "eca1b48a2a5b21166491b750c60f8210e2928f33fc8801d131f438037cb13e98",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/lick/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        210,
+        156,
+        813,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          78,
+          91,
+          886,
+          908
+        ],
+        "16": [
+          210,
+          156,
+          813,
+          870
+        ],
+        "128": [
+          213,
+          159,
+          812,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "8f03d38bab23b89e850cef6e86cd70de670a431ab643237258a4f283955bd81b",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/lick/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        211,
+        155,
+        814,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          29,
+          74,
+          977,
+          1022
+        ],
+        "16": [
+          211,
+          155,
+          814,
+          870
+        ],
+        "128": [
+          213,
+          158,
+          812,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "4c1bdaf06786f3da35b326eb124b231d6cea11ebb4020816eee3b86694083ec5",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/lick/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        210,
+        154,
+        814,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          39,
+          149,
+          919,
+          900
+        ],
+        "16": [
+          210,
+          154,
+          814,
+          870
+        ],
+        "128": [
+          212,
+          157,
+          813,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "c99354759b5f6dc558d07db6a8521b888a76e0eb34ed051d4a0c09d7afb16cf2",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/lick/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        209,
+        155,
+        814,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          2,
+          35,
+          996,
+          1005
+        ],
+        "16": [
+          209,
+          155,
+          814,
+          870
+        ],
+        "128": [
+          212,
+          158,
+          813,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "a69ee235d250f8cb45f41b62e3ddada69a5e8ec4206dda1ad409cfc469239037",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/lick/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        209,
+        154,
+        816,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          13,
+          1013,
+          1022
+        ],
+        "16": [
+          209,
+          154,
+          816,
+          870
+        ],
+        "128": [
+          211,
+          156,
+          814,
+          869
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "5075b7a1f61271268a2656f9d3e5dce149392aeada6dfad910777f00f836d173",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/lick/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        212,
+        155,
+        812,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          30,
+          61,
+          931,
+          939
+        ],
+        "16": [
+          212,
+          155,
+          812,
+          870
+        ],
+        "128": [
+          213,
+          158,
+          810,
+          870
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "074185c678ea05114c43e626c11d567efe2a00227d64a5f370df2ba313b4089c",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/hop/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        246,
+        212,
+        777,
+        871
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          246,
+          211,
+          777,
+          871
+        ],
+        "16": [
+          246,
+          212,
+          777,
+          871
+        ],
+        "128": [
+          247,
+          213,
+          774,
+          870
+        ]
+      },
+      "foot_y": 870,
+      "sha256": "cbbfd94d458ae5932164dd824cde8eca05f2912d8ff7c58a4f103d3586d024bd",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/hop/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        250,
+        229,
+        776,
+        871
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          43,
+          42,
+          1006,
+          1023
+        ],
+        "16": [
+          250,
+          229,
+          776,
+          871
+        ],
+        "128": [
+          251,
+          231,
+          773,
+          870
+        ]
+      },
+      "foot_y": 870,
+      "sha256": "33c0b6d47bd5c6995f3bf8884f424d7d9e67e818e313ef3018ae01227c6081f5",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/hop/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        260,
+        211,
+        777,
+        851
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          33,
+          982,
+          1012
+        ],
+        "16": [
+          260,
+          211,
+          777,
+          851
+        ],
+        "128": [
+          263,
+          212,
+          775,
+          850
+        ]
+      },
+      "foot_y": 850,
+      "sha256": "fd9292e89a089818c6e3241794aae077b02a06f2a186da072beef394e87bb940",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/hop/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        255,
+        187,
+        771,
+        851
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          20,
+          17,
+          1006,
+          1005
+        ],
+        "16": [
+          255,
+          187,
+          771,
+          851
+        ],
+        "128": [
+          259,
+          190,
+          768,
+          849
+        ]
+      },
+      "foot_y": 850,
+      "sha256": "556eb5f982d5a2d277480a07a6d91beadf5402173e3af3e50fcfc1e96e7b5728",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/hop/05.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        278,
+        138,
+        758,
+        851
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          5,
+          1010,
+          1012
+        ],
+        "16": [
+          278,
+          138,
+          758,
+          851
+        ],
+        "128": [
+          280,
+          140,
+          755,
+          849
+        ]
+      },
+      "foot_y": 850,
+      "sha256": "5d6c34dd606a8b3647bcdaa205501fd32a9872a455fe1f5f4a5eb43661ee99fc",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/hop/06.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        217,
+        146,
+        846,
+        861
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          0,
+          1006,
+          1007
+        ],
+        "16": [
+          217,
+          146,
+          846,
+          861
+        ],
+        "128": [
+          219,
+          149,
+          843,
+          860
+        ]
+      },
+      "foot_y": 860,
+      "sha256": "929c46c16a25901c711e1eef2ec3457c1acd0f8f084d2620dc91949a832209ca",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/hop/07.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        264,
+        212,
+        778,
+        871
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          0,
+          16,
+          959,
+          1003
+        ],
+        "16": [
+          264,
+          212,
+          778,
+          871
+        ],
+        "128": [
+          265,
+          215,
+          775,
+          870
+        ]
+      },
+      "foot_y": 870,
+      "sha256": "30367f56302143a59d34ef2438f1cf100c1b137e598e28115b4458c8bbc3a4cd",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/hop/08.png",
+      "status": "missing",
+      "expected_size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "path": "assets/pet/anim/sleep/01.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        169,
+        542,
+        854,
+        871
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          169,
+          541,
+          854,
+          871
+        ],
+        "16": [
+          169,
+          542,
+          854,
+          871
+        ],
+        "128": [
+          171,
+          547,
+          853,
+          870
+        ]
+      },
+      "foot_y": 870,
+      "sha256": "771af13cccfac2cc5dc08bec4d9ee51362f240146571685a739e1cd81a78a593",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/sleep/02.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        170,
+        542,
+        852,
+        870
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          38,
+          28,
+          973,
+          981
+        ],
+        "16": [
+          170,
+          542,
+          852,
+          870
+        ],
+        "128": [
+          171,
+          545,
+          851,
+          870
+        ]
+      },
+      "foot_y": 869,
+      "sha256": "a059991c8aae0895052a95b023fe60d89df5d2a2c8a8c1a9f8dcc670487ff339",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/sleep/03.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        170,
+        543,
+        853,
+        871
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          27,
+          16,
+          960,
+          995
+        ],
+        "16": [
+          170,
+          543,
+          853,
+          871
+        ],
+        "128": [
+          171,
+          545,
+          852,
+          870
+        ]
+      },
+      "foot_y": 870,
+      "sha256": "48b1df6bd8d2bb0b7036c10049a196b2b1914b9a3afdb01687ae39d6cee718ca",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    },
+    {
+      "path": "assets/pet/anim/sleep/04.png",
+      "status": "technical_pass",
+      "size": [
+        1024,
+        1024
+      ],
+      "expected_size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "has_alpha_channel": true,
+      "has_transparent_pixels": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        171,
+        543,
+        853,
+        871
+      ],
+      "bbox_by_threshold": {
+        "1": [
+          168,
+          28,
+          1013,
+          1023
+        ],
+        "16": [
+          171,
+          543,
+          853,
+          871
+        ],
+        "128": [
+          171,
+          547,
+          852,
+          870
+        ]
+      },
+      "foot_y": 870,
+      "sha256": "298f980cf5c0fb2e05fab6103e75f845f838a451cc982dc1695339c2c866e8bb",
+      "issues": [],
+      "visual_approval": "not_assessed"
+    }
+  ],
+  "pose_alignment_deviations_over_4px": [],
+  "animation_alignment": [
+    {
+      "character": "xiaotong",
+      "action": "idle",
+      "expected_frames": 8,
+      "present_frames": 8,
+      "baseline_foot_y": 940,
+      "intentional_foot_targets": {},
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          389,
+          851
+        ],
+        [
+          389,
+          851
+        ],
+        [
+          392,
+          851
+        ],
+        [
+          392,
+          851
+        ],
+        [
+          388,
+          851
+        ],
+        [
+          392,
+          851
+        ],
+        [
+          395,
+          851
+        ],
+        [
+          389,
+          851
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [],
+      "duplicate_file_count": 2,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "xiaotong",
+      "action": "wave",
+      "expected_frames": 8,
+      "present_frames": 8,
+      "baseline_foot_y": 940,
+      "intentional_foot_targets": {},
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          389,
+          851
+        ],
+        [
+          387,
+          851
+        ],
+        [
+          383,
+          851
+        ],
+        [
+          383,
+          851
+        ],
+        [
+          385,
+          851
+        ],
+        [
+          380,
+          851
+        ],
+        [
+          382,
+          851
+        ],
+        [
+          389,
+          851
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [],
+      "duplicate_file_count": 1,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "xiaotong",
+      "action": "happy",
+      "expected_frames": 8,
+      "present_frames": 8,
+      "baseline_foot_y": 940,
+      "intentional_foot_targets": {
+        "04.png": 920,
+        "05.png": 920
+      },
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          356,
+          849
+        ],
+        [
+          363,
+          849
+        ],
+        [
+          383,
+          850
+        ],
+        [
+          420,
+          849
+        ],
+        [
+          453,
+          849
+        ],
+        [
+          420,
+          850
+        ],
+        [
+          368,
+          850
+        ],
+        [
+          364,
+          850
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [],
+      "duplicate_file_count": 0,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "xiaotong",
+      "action": "think",
+      "expected_frames": 6,
+      "present_frames": 6,
+      "baseline_foot_y": 940,
+      "intentional_foot_targets": {},
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          365,
+          850
+        ],
+        [
+          371,
+          849
+        ],
+        [
+          368,
+          849
+        ],
+        [
+          371,
+          849
+        ],
+        [
+          370,
+          849
+        ],
+        [
+          371,
+          849
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [],
+      "duplicate_file_count": 0,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "xiaotong",
+      "action": "nod",
+      "expected_frames": 6,
+      "present_frames": 6,
+      "baseline_foot_y": 940,
+      "intentional_foot_targets": {},
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          362,
+          850
+        ],
+        [
+          368,
+          850
+        ],
+        [
+          363,
+          850
+        ],
+        [
+          365,
+          849
+        ],
+        [
+          364,
+          850
+        ],
+        [
+          369,
+          850
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [],
+      "duplicate_file_count": 0,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "xiaotong",
+      "action": "give-card",
+      "expected_frames": 10,
+      "present_frames": 10,
+      "baseline_foot_y": 940,
+      "intentional_foot_targets": {},
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          332,
+          850
+        ],
+        [
+          344,
+          850
+        ],
+        [
+          342,
+          850
+        ],
+        [
+          340,
+          850
+        ],
+        [
+          339,
+          850
+        ],
+        [
+          345,
+          850
+        ],
+        [
+          344,
+          850
+        ],
+        [
+          340,
+          850
+        ],
+        [
+          339,
+          850
+        ],
+        [
+          343,
+          850
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [],
+      "duplicate_file_count": 0,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "xiaotong",
+      "action": "heart",
+      "expected_frames": 8,
+      "present_frames": 8,
+      "baseline_foot_y": 940,
+      "intentional_foot_targets": {},
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          339,
+          850
+        ],
+        [
+          340,
+          850
+        ],
+        [
+          351,
+          850
+        ],
+        [
+          349,
+          850
+        ],
+        [
+          346,
+          850
+        ],
+        [
+          348,
+          850
+        ],
+        [
+          344,
+          850
+        ],
+        [
+          349,
+          850
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [],
+      "duplicate_file_count": 0,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "xiaotong",
+      "action": "talk",
+      "expected_frames": 6,
+      "present_frames": 6,
+      "baseline_foot_y": 940,
+      "intentional_foot_targets": {},
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          329,
+          850
+        ],
+        [
+          332,
+          850
+        ],
+        [
+          334,
+          850
+        ],
+        [
+          332,
+          850
+        ],
+        [
+          337,
+          850
+        ],
+        [
+          335,
+          850
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [],
+      "duplicate_file_count": 0,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "xiaotong",
+      "action": "sign",
+      "expected_frames": 8,
+      "present_frames": 8,
+      "baseline_foot_y": 940,
+      "intentional_foot_targets": {},
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          311,
+          710
+        ],
+        [
+          312,
+          710
+        ],
+        [
+          312,
+          710
+        ],
+        [
+          311,
+          710
+        ],
+        [
+          310,
+          710
+        ],
+        [
+          313,
+          710
+        ],
+        [
+          310,
+          710
+        ],
+        [
+          312,
+          710
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [],
+      "duplicate_file_count": 0,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "pet",
+      "action": "idle",
+      "expected_frames": 6,
+      "present_frames": 6,
+      "baseline_foot_y": 870,
+      "intentional_foot_targets": {},
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          586,
+          715
+        ],
+        [
+          596,
+          714
+        ],
+        [
+          578,
+          715
+        ],
+        [
+          579,
+          714
+        ],
+        [
+          589,
+          715
+        ],
+        [
+          587,
+          714
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [],
+      "duplicate_file_count": 0,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "pet",
+      "action": "wag",
+      "expected_frames": 6,
+      "present_frames": 6,
+      "baseline_foot_y": 870,
+      "intentional_foot_targets": {},
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          667,
+          680
+        ],
+        [
+          610,
+          681
+        ],
+        [
+          660,
+          680
+        ],
+        [
+          795,
+          680
+        ],
+        [
+          511,
+          680
+        ],
+        [
+          622,
+          681
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [
+        {
+          "previous": "assets/pet/anim/wag/03.png",
+          "current": "assets/pet/anim/wag/04.png",
+          "width_ratio": 1.2045454545454546,
+          "height_ratio": 1.0
+        },
+        {
+          "previous": "assets/pet/anim/wag/04.png",
+          "current": "assets/pet/anim/wag/05.png",
+          "width_ratio": 1.5557729941291585,
+          "height_ratio": 1.0
+        },
+        {
+          "previous": "assets/pet/anim/wag/05.png",
+          "current": "assets/pet/anim/wag/06.png",
+          "width_ratio": 1.2172211350293543,
+          "height_ratio": 1.0014705882352941
+        }
+      ],
+      "duplicate_file_count": 0,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "pet",
+      "action": "lick",
+      "expected_frames": 6,
+      "present_frames": 6,
+      "baseline_foot_y": 870,
+      "intentional_foot_targets": {},
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          603,
+          714
+        ],
+        [
+          603,
+          715
+        ],
+        [
+          604,
+          716
+        ],
+        [
+          605,
+          715
+        ],
+        [
+          607,
+          716
+        ],
+        [
+          600,
+          715
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [],
+      "duplicate_file_count": 0,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "pet",
+      "action": "hop",
+      "expected_frames": 8,
+      "present_frames": 7,
+      "baseline_foot_y": 870,
+      "intentional_foot_targets": {
+        "01.png": 870,
+        "02.png": 870,
+        "03.png": 850,
+        "04.png": 850,
+        "05.png": 850,
+        "06.png": 860,
+        "07.png": 870
+      },
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          531,
+          659
+        ],
+        [
+          526,
+          642
+        ],
+        [
+          517,
+          640
+        ],
+        [
+          516,
+          664
+        ],
+        [
+          480,
+          713
+        ],
+        [
+          629,
+          715
+        ],
+        [
+          514,
+          659
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [
+        {
+          "previous": "assets/pet/anim/hop/05.png",
+          "current": "assets/pet/anim/hop/06.png",
+          "width_ratio": 1.3104166666666666,
+          "height_ratio": 1.002805049088359
+        },
+        {
+          "previous": "assets/pet/anim/hop/06.png",
+          "current": "assets/pet/anim/hop/07.png",
+          "width_ratio": 1.2237354085603114,
+          "height_ratio": 1.0849772382397571
+        }
+      ],
+      "duplicate_file_count": 0,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    },
+    {
+      "character": "pet",
+      "action": "sleep",
+      "expected_frames": 4,
+      "present_frames": 4,
+      "baseline_foot_y": 870,
+      "intentional_foot_targets": {},
+      "deviations_over_4px": [],
+      "bbox_sizes": [
+        [
+          685,
+          329
+        ],
+        [
+          682,
+          328
+        ],
+        [
+          683,
+          328
+        ],
+        [
+          682,
+          328
+        ]
+      ],
+      "adjacent_bbox_changes_over_20_percent": [],
+      "duplicate_file_count": 0,
+      "note": "Foot is alpha silhouette proxy; happy/hop airborne frames intentionally leave ground. Width changes may follow intended gestures. No automatic edits performed."
+    }
+  ],
+  "bust_differences": {
+    "gaze-l": {
+      "threshold": 20,
+      "changed_bbox": [
+        18,
+        14,
+        1007,
+        1024
+      ],
+      "changed_pixels": 153122,
+      "changed_fraction": 0.1460285186767578,
+      "lower_40_percent_changed_pixels": 25437,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "gaze-r": {
+      "threshold": 20,
+      "changed_bbox": [
+        16,
+        16,
+        1009,
+        1024
+      ],
+      "changed_pixels": 302555,
+      "changed_fraction": 0.28853893280029297,
+      "lower_40_percent_changed_pixels": 118906,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "gaze-u": {
+      "threshold": 20,
+      "changed_bbox": [
+        15,
+        14,
+        1008,
+        1024
+      ],
+      "changed_pixels": 153257,
+      "changed_fraction": 0.14615726470947266,
+      "lower_40_percent_changed_pixels": 32596,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "gaze-d": {
+      "threshold": 20,
+      "changed_bbox": [
+        16,
+        12,
+        1009,
+        1024
+      ],
+      "changed_pixels": 119476,
+      "changed_fraction": 0.11394119262695312,
+      "lower_40_percent_changed_pixels": 30260,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "gaze-ul": {
+      "threshold": 20,
+      "changed_bbox": [
+        15,
+        14,
+        1013,
+        1024
+      ],
+      "changed_pixels": 244703,
+      "changed_fraction": 0.2333669662475586,
+      "lower_40_percent_changed_pixels": 82298,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "gaze-ur": {
+      "threshold": 20,
+      "changed_bbox": [
+        15,
+        14,
+        1021,
+        1024
+      ],
+      "changed_pixels": 296443,
+      "changed_fraction": 0.28271007537841797,
+      "lower_40_percent_changed_pixels": 123740,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "gaze-dl": {
+      "threshold": 20,
+      "changed_bbox": [
+        13,
+        14,
+        1013,
+        1024
+      ],
+      "changed_pixels": 218286,
+      "changed_fraction": 0.2081737518310547,
+      "lower_40_percent_changed_pixels": 79859,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "gaze-dr": {
+      "threshold": 20,
+      "changed_bbox": [
+        16,
+        13,
+        1008,
+        1024
+      ],
+      "changed_pixels": 199822,
+      "changed_fraction": 0.1905651092529297,
+      "lower_40_percent_changed_pixels": 66159,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "blink-1": {
+      "threshold": 20,
+      "changed_bbox": [
+        16,
+        16,
+        1007,
+        1024
+      ],
+      "changed_pixels": 52534,
+      "changed_fraction": 0.05010032653808594,
+      "lower_40_percent_changed_pixels": 24048,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "blink-2": {
+      "threshold": 20,
+      "changed_bbox": [
+        15,
+        15,
+        1009,
+        1024
+      ],
+      "changed_pixels": 58228,
+      "changed_fraction": 0.055530548095703125,
+      "lower_40_percent_changed_pixels": 23294,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "talk-1": {
+      "threshold": 20,
+      "changed_bbox": [
+        16,
+        15,
+        1007,
+        1024
+      ],
+      "changed_pixels": 47977,
+      "changed_fraction": 0.045754432678222656,
+      "lower_40_percent_changed_pixels": 22397,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "talk-2": {
+      "threshold": 20,
+      "changed_bbox": [
+        17,
+        16,
+        1007,
+        1024
+      ],
+      "changed_pixels": 48080,
+      "changed_fraction": 0.0458526611328125,
+      "lower_40_percent_changed_pixels": 21113,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "talk-3": {
+      "threshold": 20,
+      "changed_bbox": [
+        16,
+        16,
+        1007,
+        1024
+      ],
+      "changed_pixels": 48129,
+      "changed_fraction": 0.045899391174316406,
+      "lower_40_percent_changed_pixels": 22544,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "hello": {
+      "threshold": 20,
+      "changed_bbox": [
+        14,
+        12,
+        1009,
+        1024
+      ],
+      "changed_pixels": 156608,
+      "changed_fraction": 0.14935302734375,
+      "lower_40_percent_changed_pixels": 96208,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "happy": {
+      "threshold": 20,
+      "changed_bbox": [
+        13,
+        14,
+        1009,
+        1024
+      ],
+      "changed_pixels": 75605,
+      "changed_fraction": 0.07210254669189453,
+      "lower_40_percent_changed_pixels": 31342,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "think": {
+      "threshold": 20,
+      "changed_bbox": [
+        13,
+        14,
+        1010,
+        1024
+      ],
+      "changed_pixels": 240693,
+      "changed_fraction": 0.22954273223876953,
+      "lower_40_percent_changed_pixels": 179129,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    },
+    "card": {
+      "threshold": 20,
+      "changed_bbox": [
+        15,
+        13,
+        1009,
+        1024
+      ],
+      "changed_pixels": 194868,
+      "changed_fraction": 0.18584060668945312,
+      "lower_40_percent_changed_pixels": 152559,
+      "note": "Diagnostic only: assess eyes/mouth localization visually; lower region is a shoulder/body proxy."
+    }
+  },
+  "previews": [
+    {
+      "path": "assets/source/batch6/preview/xiaotong-idle.gif",
+      "frames": 8,
+      "expected_frames": 8,
+      "complete": true,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/xiaotong-wave.gif",
+      "frames": 8,
+      "expected_frames": 8,
+      "complete": true,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/xiaotong-happy.gif",
+      "frames": 8,
+      "expected_frames": 8,
+      "complete": true,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/xiaotong-think.gif",
+      "frames": 6,
+      "expected_frames": 6,
+      "complete": true,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/xiaotong-nod.gif",
+      "frames": 6,
+      "expected_frames": 6,
+      "complete": true,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/xiaotong-give-card.gif",
+      "frames": 10,
+      "expected_frames": 10,
+      "complete": true,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/xiaotong-heart.gif",
+      "frames": 8,
+      "expected_frames": 8,
+      "complete": true,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/xiaotong-talk.gif",
+      "frames": 6,
+      "expected_frames": 6,
+      "complete": true,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/xiaotong-sign.gif",
+      "frames": 8,
+      "expected_frames": 8,
+      "complete": true,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/pet-idle.gif",
+      "frames": 6,
+      "expected_frames": 6,
+      "complete": true,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/pet-wag.gif",
+      "frames": 6,
+      "expected_frames": 6,
+      "complete": true,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/pet-lick.gif",
+      "frames": 6,
+      "expected_frames": 6,
+      "complete": true,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/pet-hop.gif",
+      "frames": 7,
+      "expected_frames": 8,
+      "complete": false,
+      "fps": 10
+    },
+    {
+      "path": "assets/source/batch6/preview/pet-sleep.gif",
+      "frames": 4,
+      "expected_frames": 4,
+      "complete": true,
+      "fps": 10
+    }
+  ],
+  "visual_approval": "not_assessed",
+  "limitations": [
+    "Alpha silhouette bottom is not anatomical foot detection.",
+    "Matching dimensions, alpha, and bounding boxes do not verify identity, clothing, clean edges, or temporal continuity.",
+    "Existing pet files identical to backup are flagged as old assets."
+  ],
+  "intentional_omissions": {
+    "assets/pet/anim/hop/08.png": "8 to 7 frames: rejected distorted/redundant candidates; see rourou-anim-hop-sleep/delivery-status.json"
+  },
+  "unplanned_missing": [],
+  "planned_deliverable_count": 155,
+  "endpoint_reuse": {
+    "xiaotong/idle": [
+      "01=08 loop endpoint",
+      "04=06 symmetric half blink"
+    ],
+    "xiaotong/wave": [
+      "01=08 common idle endpoint"
+    ]
+  }
+}

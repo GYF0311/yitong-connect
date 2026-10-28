@@ -1,0 +1,501 @@
+{
+  "files": [
+    {
+      "file": "xiaotong/anim/give-card/01.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        346,
+        91,
+        678,
+        941
+      ],
+      "bbox_alpha0": [
+        346,
+        91,
+        678,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "4f29eca54257b640dc89364d77d43f5cfde689fc3ba64e4c8b3d1419b83c53b8"
+    },
+    {
+      "file": "xiaotong/anim/give-card/02.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        340,
+        91,
+        684,
+        941
+      ],
+      "bbox_alpha0": [
+        340,
+        91,
+        684,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "c5c68b86d4b110eb2a604eb83630c57dc5e53ef962246759c37e0ea990b4ddd1"
+    },
+    {
+      "file": "xiaotong/anim/give-card/03.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        341,
+        91,
+        683,
+        941
+      ],
+      "bbox_alpha0": [
+        341,
+        91,
+        683,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "2c47d68a1c1ab2166b09f84ad1df5ff0f4f1598655ee06932ba977d54aa30034"
+    },
+    {
+      "file": "xiaotong/anim/give-card/04.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        342,
+        91,
+        682,
+        941
+      ],
+      "bbox_alpha0": [
+        342,
+        91,
+        682,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "be083003ddbdd6ea9f580525845935cf9d0d0156a09b576a41a6eb30cdb14717"
+    },
+    {
+      "file": "xiaotong/anim/give-card/05.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        342,
+        91,
+        681,
+        941
+      ],
+      "bbox_alpha0": [
+        342,
+        91,
+        681,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "6cbbe3b1563faacb68984c58e421fa69b9c49993f67896b018c501634d62f875"
+    },
+    {
+      "file": "xiaotong/anim/give-card/06.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        339,
+        91,
+        684,
+        941
+      ],
+      "bbox_alpha0": [
+        339,
+        91,
+        684,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "45819352b11ef5e15b387da6caef8bf652e58040f59116a9fc105befc9ec9fde"
+    },
+    {
+      "file": "xiaotong/anim/give-card/07.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        340,
+        91,
+        684,
+        941
+      ],
+      "bbox_alpha0": [
+        340,
+        91,
+        684,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "7cce4164c266442acbd36a98683c674778e1e6c5ec61795234b8990610fc3443"
+    },
+    {
+      "file": "xiaotong/anim/give-card/08.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        342,
+        91,
+        682,
+        941
+      ],
+      "bbox_alpha0": [
+        342,
+        91,
+        682,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "d1742f19585327e0bd86ac0370f598cfbdbc089f33fde008a8857ac55a1a4f07"
+    },
+    {
+      "file": "xiaotong/anim/give-card/09.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        342,
+        91,
+        681,
+        941
+      ],
+      "bbox_alpha0": [
+        342,
+        91,
+        681,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "41ab8d2457ac6e2b8e11180b7721294a2fcbaef9dc52dfee2bfd7f2d99935673"
+    },
+    {
+      "file": "xiaotong/anim/give-card/10.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        340,
+        91,
+        683,
+        941
+      ],
+      "bbox_alpha0": [
+        340,
+        91,
+        683,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "3d6ec9099e6d44d2e3dc17c665ae88f8e444138320af2682528f6ceeafd7f9e1"
+    },
+    {
+      "file": "xiaotong/anim/heart/01.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        342,
+        91,
+        681,
+        941
+      ],
+      "bbox_alpha0": [
+        342,
+        91,
+        681,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "c89de02e136a07994c16a0639768e720d537100edcc9fd9939a5f0851835755e"
+    },
+    {
+      "file": "xiaotong/anim/heart/02.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        342,
+        91,
+        682,
+        941
+      ],
+      "bbox_alpha0": [
+        342,
+        91,
+        682,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "00af413a867338c35191ea810fa618aacce6e5680962ed22e4aef3d8f1eaceed"
+    },
+    {
+      "file": "xiaotong/anim/heart/03.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        336,
+        91,
+        687,
+        941
+      ],
+      "bbox_alpha0": [
+        336,
+        91,
+        687,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "7556b347733ed5fb1261ef962b2de0deb05b1584a79746daacc30d3e6c312ac8"
+    },
+    {
+      "file": "xiaotong/anim/heart/04.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        337,
+        91,
+        686,
+        941
+      ],
+      "bbox_alpha0": [
+        337,
+        91,
+        686,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "2533aa40a282d775e951b6cec79880d6eee2c03ba9aa459cb7b844d7fc1eac47"
+    },
+    {
+      "file": "xiaotong/anim/heart/05.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        339,
+        91,
+        685,
+        941
+      ],
+      "bbox_alpha0": [
+        339,
+        91,
+        685,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "e28904f290609090a52752149ada4909757ffbdb0c80627dbd24b4605a537d43"
+    },
+    {
+      "file": "xiaotong/anim/heart/06.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        338,
+        91,
+        686,
+        941
+      ],
+      "bbox_alpha0": [
+        338,
+        91,
+        686,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "09638781f81143cacaab3a0c0e5a0fafd627d37702351729a5faf04e378a07dc"
+    },
+    {
+      "file": "xiaotong/anim/heart/07.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        340,
+        91,
+        684,
+        941
+      ],
+      "bbox_alpha0": [
+        340,
+        91,
+        684,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "178b734745584e05e5f897bb1e34e8a56e2daa745d574cfeb1d20445cd093289"
+    },
+    {
+      "file": "xiaotong/anim/heart/08.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha12": [
+        337,
+        91,
+        686,
+        941
+      ],
+      "bbox_alpha0": [
+        337,
+        91,
+        686,
+        941
+      ],
+      "foot_y": 940,
+      "head_y": 91,
+      "sha256": "a11e35c7616ce4ddb29a8919a07d3c2e8ad7780648949ded8a2e9c6144da7b75"
+    }
+  ],
+  "groups": {
+    "give-card": {
+      "expected": 10,
+      "actual": 10
+    },
+    "heart": {
+      "expected": 8,
+      "actual": 8
+    }
+  },
+  "verification_scope": "technical measurements plus human contact sheet visual review; not user-approved"
+}

@@ -1,0 +1,16 @@
+{
+  "spec": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/codex-图片生成提示词-第六批-小桐定稿与动作-肉肉.md",
+  "generation_mode": "built-in image_gen",
+  "scope": "assets only",
+  "sheet": {
+    "native": "xiaotong-sheet-native.png",
+    "delivery": "../../xiaotong/sheet.png",
+    "export": "proportional resize to 2048x1024",
+    "visual_status": "reviewed against reference; candidate, no user approval implied"
+  },
+  "notes": [
+    "小桐母版保留底座画风和面部，换藏青罗纹套裙。",
+    "母版发夹在画面右侧；各后续帧保持同一侧。",
+    "原仓库.gitignore和并行data.js变动不纳入本批提交。"
+  ]
+}

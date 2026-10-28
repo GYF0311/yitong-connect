@@ -1,0 +1,519 @@
+{
+  "status": "generated_technical_checked_visual_candidate",
+  "counts": {
+    "happy": 8,
+    "think": 6,
+    "nod": 6
+  },
+  "reduced_frames": [],
+  "alignment": "alpha>8 bounding-box floor aligned: 940 except happy04/05=920; 0px error relative intended floors",
+  "normalization": "Native images preserved; delivery alpha>8 bbox cropped and proportionally normalized to850px height, then centered; jump frames translated up20px. No synthetic action drawing or copied duplicate frames.",
+  "visual_limitations": [
+    "happy05: skirt flare and open-mouth smile larger change than adjacent frames; review GIF.",
+    "think05: rightward head tilt/eye direction understated; general thinking motion exists but left/right range is limited.",
+    "nod02/04: intended head down also changes hair silhouette and small collar details.",
+    "Generative edits are not pixel-identical below neck; technical floor alignment does not guarantee rigid shoulder/body contour alignment."
+  ],
+  "files": [
+    {
+      "file": "xiaotong/anim/happy/01.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        334,
+        91,
+        690,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        334,
+        91,
+        690,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "a26898a076da4334f6fbeb8b14e391ff385d3f83d1c78693d76d8de0ad31d50a"
+    },
+    {
+      "file": "xiaotong/anim/happy/02.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        330,
+        91,
+        693,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        330,
+        91,
+        693,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "54c44e9728203da4e7665eaf02cb9918546762b968b88fd515896495c019916e"
+    },
+    {
+      "file": "xiaotong/anim/happy/03.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        320,
+        91,
+        704,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        320,
+        91,
+        704,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "4fc9ec0e22fc44380d972205b843e675cb38fcc5824c85e9d117fc1f126cd8ef"
+    },
+    {
+      "file": "xiaotong/anim/happy/04.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        302,
+        71,
+        722,
+        921
+      ],
+      "bbox_alpha_gt8": [
+        302,
+        71,
+        722,
+        921
+      ],
+      "foot_y": 920,
+      "expected_foot_y": 920,
+      "sha256": "6e26e8de891ea8a5775b35a5daed72af8e1c1992ccc13549a187918ee281e949"
+    },
+    {
+      "file": "xiaotong/anim/happy/05.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        285,
+        71,
+        738,
+        921
+      ],
+      "bbox_alpha_gt8": [
+        285,
+        71,
+        738,
+        921
+      ],
+      "foot_y": 920,
+      "expected_foot_y": 920,
+      "sha256": "5835709baf5983ae29f886658b94b293d50b2b8a7f07ad0c0ac7711782e0b633"
+    },
+    {
+      "file": "xiaotong/anim/happy/06.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        302,
+        91,
+        722,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        302,
+        91,
+        722,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "1305a1ad92399a721b1424d802ed64df7377e3ceaac6f4735a426490ca569d6b"
+    },
+    {
+      "file": "xiaotong/anim/happy/07.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        328,
+        91,
+        696,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        328,
+        91,
+        696,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "5cbf725f66739e0b549f953e2103515a8cd2e57d173dc4dc41d58b111590d541"
+    },
+    {
+      "file": "xiaotong/anim/happy/08.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        329,
+        91,
+        694,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        329,
+        91,
+        694,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "9e3fa60d6fc227224bacb609b0ab14154fd40aa9257dbde04d0a2d9a6de722ca"
+    },
+    {
+      "file": "xiaotong/anim/think/01.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        329,
+        91,
+        694,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        329,
+        91,
+        694,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "5b4d6ab6b3d5112f94228b582a7f4f53165d18f03e22a293db4e36b3cec837d8"
+    },
+    {
+      "file": "xiaotong/anim/think/02.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        326,
+        91,
+        697,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        326,
+        91,
+        697,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "3fce65f111e3ebf4817b2b7c9c8ed9e5c2d50168329f86f1e1410def5385449f"
+    },
+    {
+      "file": "xiaotong/anim/think/03.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        328,
+        91,
+        696,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        328,
+        91,
+        696,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "d31ed90536561891e03a7cdab04ff08b4eeb0c5c4b59d8f3ca2cab497fc7ef6a"
+    },
+    {
+      "file": "xiaotong/anim/think/04.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        326,
+        91,
+        697,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        326,
+        91,
+        697,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "7b71485793c53b610b40e4ac1d915916d3c9182143e6d083813b414ddaedfc00"
+    },
+    {
+      "file": "xiaotong/anim/think/05.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        327,
+        91,
+        697,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        327,
+        91,
+        697,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "402131380d64820eedb0ce95fca52edc3444f29217ac878efdc6bcdadd979639"
+    },
+    {
+      "file": "xiaotong/anim/think/06.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        326,
+        91,
+        697,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        326,
+        91,
+        697,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "deebb887d1a86b75933ef40964708c3bb8ff8df6c1c5d9980b495ceb174e1e80"
+    },
+    {
+      "file": "xiaotong/anim/nod/01.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        331,
+        91,
+        693,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        331,
+        91,
+        693,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "1645add632441cab8cb0e579aa89307cdd08e5002723f81c394a4a31c89a1fcc"
+    },
+    {
+      "file": "xiaotong/anim/nod/02.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        328,
+        91,
+        696,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        328,
+        91,
+        696,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "14f3da53a03f5b2ed9c52aa6a567692a84b647e25399e6c6f9a28f46d7eb97ed"
+    },
+    {
+      "file": "xiaotong/anim/nod/03.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        330,
+        91,
+        693,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        330,
+        91,
+        693,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "22d1bc7b636b27719e9e28d65f261fef16d01c9ef17d857b48ed5c350906c6a5"
+    },
+    {
+      "file": "xiaotong/anim/nod/04.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        329,
+        91,
+        694,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        329,
+        91,
+        694,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "8190b38c5b2b0578aa53e1f870af2e7674c3e84c63f934df4058cf1da80a46af"
+    },
+    {
+      "file": "xiaotong/anim/nod/05.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        330,
+        91,
+        694,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        330,
+        91,
+        694,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "02c6bd1c4fa033043b3ef2beb503d921fbe73b9ad9c53d1b900756be2932a6aa"
+    },
+    {
+      "file": "xiaotong/anim/nod/06.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        327,
+        91,
+        696,
+        941
+      ],
+      "bbox_alpha_gt8": [
+        327,
+        91,
+        696,
+        941
+      ],
+      "foot_y": 940,
+      "expected_foot_y": 940,
+      "sha256": "bf78c1aebbefe18fffe44d2c0b037e20ad390633e8fa7287373a4cb4046f3a3f"
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "hop": {
+    "frames": [
+      {
+        "file": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/pet/anim/hop/01.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "has_alpha": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "bbox_alpha_gt8": [
+          246,
+          211,
+          777,
+          871
+        ],
+        "foot_y": 870,
+        "bbox_height": 660,
+        "bbox_width": 531
+      },
+      {
+        "file": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/pet/anim/hop/02.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "has_alpha": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "bbox_alpha_gt8": [
+          250,
+          229,
+          776,
+          871
+        ],
+        "foot_y": 870,
+        "bbox_height": 642,
+        "bbox_width": 526
+      },
+      {
+        "file": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/pet/anim/hop/03.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "has_alpha": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "bbox_alpha_gt8": [
+          260,
+          210,
+          777,
+          851
+        ],
+        "foot_y": 850,
+        "bbox_height": 641,
+        "bbox_width": 517
+      },
+      {
+        "file": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/pet/anim/hop/04.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "has_alpha": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "bbox_alpha_gt8": [
+          254,
+          186,
+          771,
+          851
+        ],
+        "foot_y": 850,
+        "bbox_height": 665,
+        "bbox_width": 517
+      },
+      {
+        "file": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/pet/anim/hop/05.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "has_alpha": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "bbox_alpha_gt8": [
+          277,
+          137,
+          758,
+          851
+        ],
+        "foot_y": 850,
+        "bbox_height": 714,
+        "bbox_width": 481
+      },
+      {
+        "file": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/pet/anim/hop/06.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "has_alpha": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "bbox_alpha_gt8": [
+          217,
+          146,
+          846,
+          861
+        ],
+        "foot_y": 860,
+        "bbox_height": 715,
+        "bbox_width": 629
+      },
+      {
+        "file": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/pet/anim/hop/07.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "has_alpha": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "bbox_alpha_gt8": [
+          264,
+          212,
+          779,
+          871
+        ],
+        "foot_y": 870,
+        "bbox_height": 659,
+        "bbox_width": 515
+      }
+    ],
+    "target_foot_y": [
+      870,
+      870,
+      850,
+      850,
+      850,
+      860,
+      870
+    ],
+    "status": "generated_candidate_not_approved"
+  },
+  "sleep": {
+    "frames": [
+      {
+        "file": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/pet/anim/sleep/01.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "has_alpha": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "bbox_alpha_gt8": [
+          169,
+          541,
+          854,
+          871
+        ],
+        "foot_y": 870,
+        "bbox_height": 330,
+        "bbox_width": 685
+      },
+      {
+        "file": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/pet/anim/sleep/02.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "has_alpha": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "bbox_alpha_gt8": [
+          170,
+          542,
+          853,
+          871
+        ],
+        "foot_y": 870,
+        "bbox_height": 329,
+        "bbox_width": 683
+      },
+      {
+        "file": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/pet/anim/sleep/03.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "has_alpha": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "bbox_alpha_gt8": [
+          170,
+          542,
+          853,
+          871
+        ],
+        "foot_y": 870,
+        "bbox_height": 329,
+        "bbox_width": 683
+      },
+      {
+        "file": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/pet/anim/sleep/04.png",
+        "size": [
+          1024,
+          1024
+        ],
+        "has_alpha": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "bbox_alpha_gt8": [
+          170,
+          543,
+          853,
+          871
+        ],
+        "foot_y": 870,
+        "bbox_height": 328,
+        "bbox_width": 683
+      }
+    ],
+    "target_foot_y": [
+      870,
+      870,
+      870,
+      870
+    ],
+    "status": "generated_candidate_not_approved"
+  }
+}

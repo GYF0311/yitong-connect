@@ -1,0 +1,488 @@
+[
+  {
+    "file": "xiaotong/full.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-8c46857f-f3ee-4fa4-b164-5147cf9b508c.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      384,
+      22,
+      888,
+      1232
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      335,
+      91,
+      689,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/avatar-256.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-283dc284-7eef-4d60-837b-c67ebc82573a.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      32,
+      1,
+      1226,
+      1254
+    ],
+    "output_size": [
+      256,
+      256
+    ],
+    "bbox": [
+      6,
+      0,
+      250,
+      256
+    ],
+    "foot_y": 255,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/idle.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-c4ad69c5-1a94-4a7e-9e32-4a427bee81f1.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      389,
+      14,
+      871,
+      1238
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      344,
+      91,
+      679,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/hello.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-e57a2f8a-1854-4e31-a666-cdb341c7b5b3.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      405,
+      9,
+      918,
+      1231
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      333,
+      91,
+      690,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/happy.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-3b275a57-4dd7-4dcd-a43f-f03d329999d5.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      382,
+      12,
+      872,
+      1239
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      342,
+      91,
+      681,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/think.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-39c9e4d2-c044-4143-ba6c-951e48ce8849.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      412,
+      7,
+      884,
+      1235
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      348,
+      91,
+      675,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/read.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-8c2a2dda-8a0b-4bad-94b2-a0bd322125f8.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      418,
+      9,
+      862,
+      1236
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      358,
+      91,
+      666,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/reply.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-82b17942-25a6-4aff-862d-07e15a5dd875.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      405,
+      17,
+      866,
+      1230
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      350,
+      91,
+      673,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/write.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-4b3bdec0-32ee-4bf5-8188-af352269895a.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      361,
+      17,
+      858,
+      1233
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      379,
+      291,
+      645,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/card.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-97b6d522-5ff0-4a71-bd13-8ce7261ee42a.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      396,
+      13,
+      869,
+      1233
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      347,
+      91,
+      677,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/listen.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-4235cc95-491b-4882-a9b3-4f65fb66c4d8.png",
+    "native_size": [
+      1244,
+      1265
+    ],
+    "native_robust_bbox": [
+      349,
+      6,
+      891,
+      1255
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      327,
+      91,
+      696,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/mic.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-94eb86dd-1eca-40cc-a8ce-a4f6241a5784.png",
+    "native_size": [
+      1024,
+      1536
+    ],
+    "native_robust_bbox": [
+      229,
+      18,
+      879,
+      1502
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      326,
+      91,
+      698,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/heart.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-b2d5c7b2-6620-4e48-ad1f-fe4367864b12.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      388,
+      10,
+      874,
+      1233
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      343,
+      91,
+      681,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/cake.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-4a5d4576-c9cb-4c06-bb13-c3e47756b914.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      392,
+      15,
+      871,
+      1240
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      346,
+      91,
+      678,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/gift.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-4ef87590-e2e0-4018-a71c-36936a3280fd.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      402,
+      12,
+      870,
+      1232
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      349,
+      91,
+      675,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/shh.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-33103fe8-46d7-4c40-9891-90bcb47de258.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      397,
+      5,
+      910,
+      1239
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      335,
+      91,
+      688,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/sleep.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-af6700dd-ffb5-4ce2-9f01-98cbda0e6380.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      341,
+      23,
+      926,
+      1210
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      352,
+      291,
+      672,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  },
+  {
+    "file": "xiaotong/pose/hug-rourou.png",
+    "native": "/Users/gaoyifan/.codex/generated_images/01a180f0-ed24-79b1-9075-8f229ff4b49d/exec-8c7c16ed-e744-4414-9ba9-9f62ce94d723.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_robust_bbox": [
+      363,
+      11,
+      882,
+      1218
+    ],
+    "output_size": [
+      1024,
+      1024
+    ],
+    "bbox": [
+      372,
+      291,
+      651,
+      941
+    ],
+    "foot_y": 940,
+    "alpha": true,
+    "processing": "alpha>=32 robust subject crop; proportional Lanczos resize; transparent pad; standing850px/seated650px height; bottom y940"
+  }
+]

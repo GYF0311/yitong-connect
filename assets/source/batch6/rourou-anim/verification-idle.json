@@ -1,0 +1,140 @@
+[
+  {
+    "file": "/Users/gaoyifan/Desktop/\u674e\u4f9d\u4f9d\u63d0\u6848/\u7b2c\u4e09\u5c42-\u660e\u661f\u4e0e\u8fde\u63a5/assets/pet/anim/idle/01.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      219,
+      156,
+      805,
+      871
+    ],
+    "foot_y": 870,
+    "translation": [
+      -33,
+      -18
+    ]
+  },
+  {
+    "file": "/Users/gaoyifan/Desktop/\u674e\u4f9d\u4f9d\u63d0\u6848/\u7b2c\u4e09\u5c42-\u660e\u661f\u4e0e\u8fde\u63a5/assets/pet/anim/idle/02.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      219,
+      157,
+      815,
+      871
+    ],
+    "foot_y": 870,
+    "translation": [
+      -33,
+      -18
+    ]
+  },
+  {
+    "file": "/Users/gaoyifan/Desktop/\u674e\u4f9d\u4f9d\u63d0\u6848/\u7b2c\u4e09\u5c42-\u660e\u661f\u4e0e\u8fde\u63a5/assets/pet/anim/idle/03.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      219,
+      156,
+      797,
+      871
+    ],
+    "foot_y": 870,
+    "translation": [
+      -33,
+      -20
+    ]
+  },
+  {
+    "file": "/Users/gaoyifan/Desktop/\u674e\u4f9d\u4f9d\u63d0\u6848/\u7b2c\u4e09\u5c42-\u660e\u661f\u4e0e\u8fde\u63a5/assets/pet/anim/idle/04.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      218,
+      157,
+      797,
+      871
+    ],
+    "foot_y": 870,
+    "translation": [
+      -33,
+      -18
+    ]
+  },
+  {
+    "file": "/Users/gaoyifan/Desktop/\u674e\u4f9d\u4f9d\u63d0\u6848/\u7b2c\u4e09\u5c42-\u660e\u661f\u4e0e\u8fde\u63a5/assets/pet/anim/idle/05.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      219,
+      156,
+      809,
+      871
+    ],
+    "foot_y": 870,
+    "translation": [
+      -33,
+      -20
+    ]
+  },
+  {
+    "file": "/Users/gaoyifan/Desktop/\u674e\u4f9d\u4f9d\u63d0\u6848/\u7b2c\u4e09\u5c42-\u660e\u661f\u4e0e\u8fde\u63a5/assets/pet/anim/idle/06.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      219,
+      157,
+      806,
+      871
+    ],
+    "foot_y": 870,
+    "translation": [
+      -33,
+      -19
+    ]
+  }
+]

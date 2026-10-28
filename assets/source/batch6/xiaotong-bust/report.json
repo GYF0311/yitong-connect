@@ -1,0 +1,41 @@
+{
+  "status": "generated_with_limitations",
+  "delivered": 18,
+  "missing": [],
+  "method": "built-in image_gen, 20 calls including gaze-d and card corrections",
+  "export": "native 1254x1254 RGBA preserved, 1024x1024 LANCZOS export",
+  "visual_review": {
+    "identity_clothes_accessories": "same character and clothing maintained; leaf bell at image right",
+    "card": "v1 extra wrist cuffs corrected by image_gen; final bare wrists with upper-arm short sleeve cuffs",
+    "gaze_d": "v2 corrected to reduced downward head motion and fixed chest framing",
+    "gaze_overlay": "nine gaze shoulder and clothing silhouettes visually basically overlap; some hair and ribbon drift",
+    "alpha_edges": "white grey navy composite inspected; no visible red-yellow contamination; no global alpha removal"
+  },
+  "strict_local_diff_pass": false,
+  "limitation": "blink/talk changes are not pixel-local only: model rerenders hair and clothing details. See threshold20 visible diff and shoulder changed fractions in verification-bust.json. Candidate for frame replacement with fade, not approved pixel-locked animation.",
+  "consistency_weakest": [
+    "gaze-d (downward head motion has most noticeable changed face geometry; revision used)",
+    "gaze-ur (slight head tilt and hair/ribbon drift)",
+    "think (raised arm changes shoulder as expected)"
+  ],
+  "files": [
+    "xiaotong/bust/gaze-c.png",
+    "xiaotong/bust/gaze-l.png",
+    "xiaotong/bust/gaze-r.png",
+    "xiaotong/bust/gaze-u.png",
+    "xiaotong/bust/gaze-d.png",
+    "xiaotong/bust/gaze-ul.png",
+    "xiaotong/bust/gaze-ur.png",
+    "xiaotong/bust/gaze-dl.png",
+    "xiaotong/bust/gaze-dr.png",
+    "xiaotong/bust/blink-1.png",
+    "xiaotong/bust/blink-2.png",
+    "xiaotong/bust/talk-1.png",
+    "xiaotong/bust/talk-2.png",
+    "xiaotong/bust/talk-3.png",
+    "xiaotong/bust/hello.png",
+    "xiaotong/bust/happy.png",
+    "xiaotong/bust/think.png",
+    "xiaotong/bust/card.png"
+  ]
+}

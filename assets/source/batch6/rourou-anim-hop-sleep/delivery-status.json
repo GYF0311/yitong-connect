@@ -1,0 +1,46 @@
+{
+  "tool": "built-in image_gen",
+  "hop": {
+    "requested": 8,
+    "delivered": 7,
+    "files": "assets/pet/anim/hop/01.png–07.png",
+    "foot_y": [
+      870,
+      870,
+      850,
+      850,
+      850,
+      860,
+      870
+    ],
+    "worst_consistency": [
+      "05.png",
+      "04.png→05.png→06.png"
+    ],
+    "status": "candidate_requires_visual_review",
+    "limitations": [
+      "旋转朝向跨度较大",
+      "05背面已修复领结铃铛穿帮并改为腾空收腿，实际bbox高714px，与06的715px接近，较04的665px仍高49px",
+      "已减去压扁体型与重复缓冲帧"
+    ],
+    "repairs": [
+      "05旧稿保留hop-05-rejected-back-bow.png；后颈仅可见水蓝颈带，领结金铃在胸前被遮挡。"
+    ]
+  },
+  "sleep": {
+    "requested": 4,
+    "delivered": 4,
+    "foot_y": [
+      870,
+      870,
+      870,
+      870
+    ],
+    "status": "candidate",
+    "limitations": [
+      "呼吸幅度较小",
+      "毛纹重绘差异"
+    ]
+  },
+  "approved": false
+}

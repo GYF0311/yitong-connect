@@ -1,0 +1,340 @@
+{
+  "generation_tool": "built-in image_gen",
+  "count": 12,
+  "requested": 12,
+  "records": [
+    {
+      "file": "pet/anim/wag/01.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_gt16": [
+        30,
+        190,
+        697,
+        870
+      ],
+      "foot_y": 870,
+      "visual_status": "candidate",
+      "issue": "尾巴宽度变化为动作所需，04尾部体积变化较大，尚非无缝循环"
+    },
+    {
+      "file": "pet/anim/wag/02.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_gt16": [
+        91,
+        189,
+        701,
+        870
+      ],
+      "foot_y": 870,
+      "visual_status": "candidate",
+      "issue": "尾巴宽度变化为动作所需，04尾部体积变化较大，尚非无缝循环"
+    },
+    {
+      "file": "pet/anim/wag/03.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_gt16": [
+        212,
+        190,
+        872,
+        870
+      ],
+      "foot_y": 870,
+      "visual_status": "candidate",
+      "issue": "尾巴宽度变化为动作所需，04尾部体积变化较大，尚非无缝循环"
+    },
+    {
+      "file": "pet/anim/wag/04.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_gt16": [
+        207,
+        190,
+        1002,
+        870
+      ],
+      "foot_y": 870,
+      "visual_status": "candidate",
+      "issue": "尾巴宽度变化为动作所需，04尾部体积变化较大，尚非无缝循环"
+    },
+    {
+      "file": "pet/anim/wag/05.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_gt16": [
+        194,
+        190,
+        705,
+        870
+      ],
+      "foot_y": 870,
+      "visual_status": "candidate",
+      "issue": "尾巴宽度变化为动作所需，04尾部体积变化较大，尚非无缝循环"
+    },
+    {
+      "file": "pet/anim/wag/06.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_gt16": [
+        82,
+        190,
+        704,
+        870
+      ],
+      "foot_y": 870,
+      "visual_status": "candidate",
+      "issue": "尾巴宽度变化为动作所需，04尾部体积变化较大，尚非无缝循环"
+    },
+    {
+      "file": "pet/anim/lick/01.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_gt16": [
+        210,
+        156,
+        813,
+        870
+      ],
+      "foot_y": 870,
+      "visual_status": "candidate",
+      "issue": "06歪头导致头脸局部角度变化，前5帧轮廓稳定"
+    },
+    {
+      "file": "pet/anim/lick/02.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_gt16": [
+        211,
+        155,
+        814,
+        870
+      ],
+      "foot_y": 870,
+      "visual_status": "candidate",
+      "issue": "06歪头导致头脸局部角度变化，前5帧轮廓稳定"
+    },
+    {
+      "file": "pet/anim/lick/03.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_gt16": [
+        210,
+        154,
+        814,
+        870
+      ],
+      "foot_y": 870,
+      "visual_status": "candidate",
+      "issue": "06歪头导致头脸局部角度变化，前5帧轮廓稳定"
+    },
+    {
+      "file": "pet/anim/lick/04.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_gt16": [
+        209,
+        155,
+        814,
+        870
+      ],
+      "foot_y": 870,
+      "visual_status": "candidate",
+      "issue": "06歪头导致头脸局部角度变化，前5帧轮廓稳定"
+    },
+    {
+      "file": "pet/anim/lick/05.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_gt16": [
+        209,
+        154,
+        816,
+        870
+      ],
+      "foot_y": 870,
+      "visual_status": "candidate",
+      "issue": "06歪头导致头脸局部角度变化，前5帧轮廓稳定"
+    },
+    {
+      "file": "pet/anim/lick/06.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox_alpha_gt16": [
+        212,
+        155,
+        812,
+        870
+      ],
+      "foot_y": 870,
+      "visual_status": "candidate",
+      "issue": "06歪头导致头脸局部角度变化，前5帧轮廓稳定"
+    }
+  ],
+  "notes": [
+    "所有帧独立内置生成并保存native原稿，未使用代码造帧",
+    "导出仅做等比例缩放、画布定位；wag鼻头锚点x460，脚底y870，lick脚底y870",
+    "alpha>16包围盒用于定位；极低alpha毛丝会使完整alpha bbox更宽",
+    "wag04尾部体积较大、身体扭转比其他帧明显，连续性最弱；舔鼻子03/04舌形变化正常",
+    "深蓝和浅灰背景真实alpha合成复核：透明view_image所见彩色脚底像素没有在合成图中复现；所有12帧脚底区域y750:950饱和红黄且alpha>16的像素均为0，不认定RGB毛边污染。未启动不必要重画。"
+  ],
+  "edge_review": [
+    {
+      "file": "pet/anim/wag/01.png",
+      "paw_region_y": "750:950",
+      "saturated_red_yellow_rgb_pixels": 33,
+      "alpha_gt16_pixels": 0
+    },
+    {
+      "file": "pet/anim/wag/02.png",
+      "paw_region_y": "750:950",
+      "saturated_red_yellow_rgb_pixels": 225,
+      "alpha_gt16_pixels": 0
+    },
+    {
+      "file": "pet/anim/wag/03.png",
+      "paw_region_y": "750:950",
+      "saturated_red_yellow_rgb_pixels": 276,
+      "alpha_gt16_pixels": 0
+    },
+    {
+      "file": "pet/anim/wag/04.png",
+      "paw_region_y": "750:950",
+      "saturated_red_yellow_rgb_pixels": 495,
+      "alpha_gt16_pixels": 0
+    },
+    {
+      "file": "pet/anim/wag/05.png",
+      "paw_region_y": "750:950",
+      "saturated_red_yellow_rgb_pixels": 165,
+      "alpha_gt16_pixels": 0
+    },
+    {
+      "file": "pet/anim/wag/06.png",
+      "paw_region_y": "750:950",
+      "saturated_red_yellow_rgb_pixels": 93,
+      "alpha_gt16_pixels": 0
+    },
+    {
+      "file": "pet/anim/lick/01.png",
+      "paw_region_y": "750:950",
+      "saturated_red_yellow_rgb_pixels": 29,
+      "alpha_gt16_pixels": 0
+    },
+    {
+      "file": "pet/anim/lick/02.png",
+      "paw_region_y": "750:950",
+      "saturated_red_yellow_rgb_pixels": 33,
+      "alpha_gt16_pixels": 0
+    },
+    {
+      "file": "pet/anim/lick/03.png",
+      "paw_region_y": "750:950",
+      "saturated_red_yellow_rgb_pixels": 49,
+      "alpha_gt16_pixels": 0
+    },
+    {
+      "file": "pet/anim/lick/04.png",
+      "paw_region_y": "750:950",
+      "saturated_red_yellow_rgb_pixels": 60,
+      "alpha_gt16_pixels": 0
+    },
+    {
+      "file": "pet/anim/lick/05.png",
+      "paw_region_y": "750:950",
+      "saturated_red_yellow_rgb_pixels": 135,
+      "alpha_gt16_pixels": 0
+    },
+    {
+      "file": "pet/anim/lick/06.png",
+      "paw_region_y": "750:950",
+      "saturated_red_yellow_rgb_pixels": 95,
+      "alpha_gt16_pixels": 0
+    }
+  ]
+}

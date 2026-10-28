@@ -1,0 +1,272 @@
+[
+  {
+    "file": "xiaotong/full.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      335,
+      91,
+      689,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/avatar-256.png",
+    "size": [
+      256,
+      256
+    ],
+    "alpha": true,
+    "bbox": [
+      6,
+      0,
+      250,
+      256
+    ],
+    "foot_y": 255
+  },
+  {
+    "file": "xiaotong/pose/cake.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      346,
+      91,
+      678,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/card.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      347,
+      91,
+      677,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/gift.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      349,
+      91,
+      675,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/happy.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      342,
+      91,
+      681,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/heart.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      343,
+      91,
+      681,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/hello.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      333,
+      91,
+      690,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/hug-rourou.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      372,
+      291,
+      651,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/idle.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      344,
+      91,
+      679,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/listen.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      327,
+      91,
+      696,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/mic.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      326,
+      91,
+      698,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/read.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      358,
+      91,
+      666,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/reply.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      350,
+      91,
+      673,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/shh.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      335,
+      91,
+      688,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/sleep.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      352,
+      291,
+      672,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/think.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      348,
+      91,
+      675,
+      941
+    ],
+    "foot_y": 940
+  },
+  {
+    "file": "xiaotong/pose/write.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "bbox": [
+      379,
+      291,
+      645,
+      941
+    ],
+    "foot_y": 940
+  }
+]

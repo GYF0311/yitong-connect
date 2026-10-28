@@ -1,0 +1,35 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "assets/xiaotong/sheet.png",
+  "groups": {
+    "give-card": 10,
+    "heart": 8
+  },
+  "policy": "individual generated frames; no interpolation or duplicated fake frames",
+  "export": "preserve native PNG; scale subject uniformly to 850px high and center at y91..940; retain true alpha",
+  "status": "completed",
+  "generated_frames": 18,
+  "reduced_frames": 0,
+  "missing_frames": [],
+  "visual_notes": [
+    "give-card07-09卡片透视和宽度有轻微非单调变化，手部透视连续性是该组弱项。",
+    "heart03-04手形从弯曲食指过渡至合心，仍存在生成式指节差异。",
+    "同脸、衣服、发夹位置和整体比例可辨一致；不代表人工approved。"
+  ],
+  "alignment": {
+    "output_size": [
+      1024,
+      1024
+    ],
+    "alpha": true,
+    "threshold": 12,
+    "head_y": 91,
+    "foot_y": 940,
+    "max_foot_delta": 0,
+    "subject_height": 850
+  },
+  "previews": [
+    "source/batch6/preview/xiaotong-give-card.gif",
+    "source/batch6/preview/xiaotong-heart.gif"
+  ]
+}

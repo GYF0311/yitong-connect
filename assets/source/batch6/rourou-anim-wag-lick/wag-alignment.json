@@ -1,0 +1,98 @@
+[
+  {
+    "file": "pet/anim/wag/01.png",
+    "scale": 0.951048951048951,
+    "nose_x_anchor": 460,
+    "translate": [
+      -123,
+      42
+    ],
+    "bbox_alpha_gt16": [
+      30,
+      190,
+      697,
+      870
+    ],
+    "foot_y": 870
+  },
+  {
+    "file": "pet/anim/wag/02.png",
+    "scale": 0.951048951048951,
+    "nose_x_anchor": 460,
+    "translate": [
+      -91,
+      42
+    ],
+    "bbox_alpha_gt16": [
+      91,
+      189,
+      701,
+      870
+    ],
+    "foot_y": 870
+  },
+  {
+    "file": "pet/anim/wag/03.png",
+    "scale": 0.951048951048951,
+    "nose_x_anchor": 460,
+    "translate": [
+      55,
+      43
+    ],
+    "bbox_alpha_gt16": [
+      212,
+      190,
+      872,
+      870
+    ],
+    "foot_y": 870
+  },
+  {
+    "file": "pet/anim/wag/04.png",
+    "scale": 0.951048951048951,
+    "nose_x_anchor": 460,
+    "translate": [
+      118,
+      42
+    ],
+    "bbox_alpha_gt16": [
+      207,
+      190,
+      1002,
+      870
+    ],
+    "foot_y": 870
+  },
+  {
+    "file": "pet/anim/wag/05.png",
+    "scale": 0.951048951048951,
+    "nose_x_anchor": 460,
+    "translate": [
+      -37,
+      43
+    ],
+    "bbox_alpha_gt16": [
+      194,
+      190,
+      705,
+      870
+    ],
+    "foot_y": 870
+  },
+  {
+    "file": "pet/anim/wag/06.png",
+    "scale": 0.951048951048951,
+    "nose_x_anchor": 460,
+    "translate": [
+      -94,
+      43
+    ],
+    "bbox_alpha_gt16": [
+      82,
+      190,
+      704,
+      870
+    ],
+    "foot_y": 870
+  }
+]

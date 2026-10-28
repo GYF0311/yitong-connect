@@ -1,0 +1,482 @@
+[
+  {
+    "file": "xiaotong/anim/idle/01.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      389,
+      110,
+      866,
+      1154
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      317,
+      90,
+      706,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/idle/02.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      390,
+      110,
+      866,
+      1152
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      317,
+      90,
+      706,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/idle/03.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      399,
+      110,
+      880,
+      1154
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      316,
+      90,
+      708,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/idle/04.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      387,
+      111,
+      867,
+      1154
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      316,
+      90,
+      708,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/idle/05.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      389,
+      111,
+      864,
+      1153
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      318,
+      90,
+      706,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/idle/06.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      387,
+      111,
+      867,
+      1154
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      316,
+      90,
+      708,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/idle/07.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      385,
+      61,
+      905,
+      1182
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      314,
+      90,
+      709,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/idle/08.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      389,
+      110,
+      866,
+      1154
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      317,
+      90,
+      706,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/wave/01.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      389,
+      110,
+      866,
+      1154
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      317,
+      90,
+      706,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/wave/02.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      390,
+      111,
+      864,
+      1153
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      318,
+      90,
+      705,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/wave/03.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      388,
+      68,
+      890,
+      1182
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      320,
+      90,
+      703,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/wave/04.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      391,
+      110,
+      861,
+      1153
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      320,
+      90,
+      703,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/wave/05.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      391,
+      110,
+      863,
+      1153
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      319,
+      90,
+      704,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/wave/06.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      395,
+      111,
+      860,
+      1153
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      322,
+      90,
+      702,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/wave/07.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      396,
+      110,
+      864,
+      1153
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      321,
+      90,
+      703,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  },
+  {
+    "file": "xiaotong/anim/wave/08.png",
+    "native_size": [
+      1254,
+      1254
+    ],
+    "native_bbox_alpha_gt16": [
+      389,
+      110,
+      866,
+      1154
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox": [
+      317,
+      90,
+      706,
+      941
+    ],
+    "foot_y": 940,
+    "note": "Uniform scale to 851px standing subject, centered, foot y940. Native retained."
+  }
+]

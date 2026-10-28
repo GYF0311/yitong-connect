@@ -1,0 +1,434 @@
+[
+  {
+    "file": "pet/sheet.png",
+    "size": [
+      2048,
+      1024
+    ],
+    "has_alpha": false,
+    "bbox_alpha_gt_8": null,
+    "foot_y": null,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/idle.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      269,
+      170,
+      754,
+      870
+    ],
+    "foot_y": 869,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/idle-256.png",
+    "size": [
+      256,
+      256
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      67,
+      42,
+      189,
+      218
+    ],
+    "foot_y": 217,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/wave.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      237,
+      170,
+      786,
+      870
+    ],
+    "foot_y": 869,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/wave-256.png",
+    "size": [
+      256,
+      256
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      59,
+      42,
+      197,
+      218
+    ],
+    "foot_y": 217,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/think.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      285,
+      170,
+      738,
+      869
+    ],
+    "foot_y": 868,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/think-256.png",
+    "size": [
+      256,
+      256
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      71,
+      42,
+      185,
+      218
+    ],
+    "foot_y": 217,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/sleep.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      162,
+      424,
+      862,
+      870
+    ],
+    "foot_y": 869,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/sleep-256.png",
+    "size": [
+      256,
+      256
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      40,
+      106,
+      216,
+      218
+    ],
+    "foot_y": 217,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/cheer.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      177,
+      170,
+      847,
+      870
+    ],
+    "foot_y": 869,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/cheer-256.png",
+    "size": [
+      256,
+      256
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      44,
+      42,
+      212,
+      218
+    ],
+    "foot_y": 217,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/card.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      239,
+      170,
+      785,
+      869
+    ],
+    "foot_y": 868,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/card-256.png",
+    "size": [
+      256,
+      256
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      59,
+      42,
+      196,
+      218
+    ],
+    "foot_y": 217,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/listen.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      236,
+      170,
+      787,
+      870
+    ],
+    "foot_y": 869,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/listen-256.png",
+    "size": [
+      256,
+      256
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      59,
+      42,
+      197,
+      218
+    ],
+    "foot_y": 217,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/mic.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      235,
+      170,
+      788,
+      870
+    ],
+    "foot_y": 869,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/mic-256.png",
+    "size": [
+      256,
+      256
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      59,
+      42,
+      197,
+      218
+    ],
+    "foot_y": 217,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/heart.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      266,
+      170,
+      757,
+      870
+    ],
+    "foot_y": 869,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/heart-256.png",
+    "size": [
+      256,
+      256
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      66,
+      42,
+      190,
+      218
+    ],
+    "foot_y": 217,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/lick.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      262,
+      170,
+      762,
+      870
+    ],
+    "foot_y": 869,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  },
+  {
+    "file": "pet/lick-256.png",
+    "size": [
+      256,
+      256
+    ],
+    "has_alpha": true,
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "bbox_alpha_gt_8": [
+      65,
+      42,
+      191,
+      218
+    ],
+    "foot_y": 217,
+    "visual_status": "candidate_reviewed",
+    "approved": false
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "method": "built-in image_gen; one call per asset; edits reference gaze-c and sheet",
+  "status": "generated_with_limitations",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "transparent": true,
+  "invariants": "同一脸型、五官、发型、发量、服装、配饰与光照；胸口以上，身体肩膀位置大小固定；不文字水印logo；不可更写实或变Q",
+  "assets": {
+    "gaze-c": "正视镜头微笑，作为所有半身基准",
+    "gaze-l": "头微转10度，眼睛明确看画面左边",
+    "gaze-r": "头微转10度，眼睛明确看画面右边",
+    "gaze-u": "微抬头看上方",
+    "gaze-d": "微低头看下方",
+    "gaze-ul": "微抬头，头与眼睛看画面左上",
+    "gaze-ur": "微抬头，头与眼睛看画面右上",
+    "gaze-dl": "微低头，头与眼睛看画面左下",
+    "gaze-dr": "微低头，头与眼睛看画面右下",
+    "blink-1": "仅眼部变化：双眼半闭",
+    "blink-2": "仅眼部变化：双眼全闭",
+    "talk-1": "仅嘴部变化：嘴微张",
+    "talk-2": "仅嘴部变化：嘴张开",
+    "talk-3": "仅嘴部变化：嘴型哦",
+    "hello": "半身挥手打招呼，微笑",
+    "happy": "半身月牙眼开心",
+    "think": "半身托腮思考",
+    "card": "半身手里举空白小卡"
+  }
+}
