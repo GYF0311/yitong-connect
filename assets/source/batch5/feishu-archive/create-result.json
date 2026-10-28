@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "document_id": "ZZfkdTmMwoXuZMxswYHcqYRinkd",
+      "revision_id": 3,
+      "url": "https://lcnqs3974j2m.feishu.cn/docx/ZZfkdTmMwoXuZMxswYHcqYRinkd"
+    }
+  },
+  "_notice": {
+    "update": {
+      "command": "lark-cli update",
+      "current": "1.0.65",
+      "latest": "1.0.96",
+      "message": "lark-cli 1.0.96 available, current 1.0.65, run: lark-cli update"
+    }
+  }
+}

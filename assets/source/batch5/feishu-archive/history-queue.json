@@ -1,0 +1,263 @@
+[
+  {
+    "kind": "text",
+    "content": "<h1>第一轮：Q版材质探索</h1><p>目标为约2.5头身的小桐四种质感和肉肉两种质感。过程先去除当时任务禁止的蝴蝶装饰，保留桐叶铃铛；潮玩修正版成为赤足。扁平初稿偏精细二次元，重画为干净大色块与少量硬边阴影。随后用户反馈：整体太Q，03的质感最好；狗两版过像。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/overview.png",
+    "caption": "第一轮｜overview"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/xiaotong-1-vinyl.png",
+    "caption": "第一轮｜xiaotong-1-vinyl"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/xiaotong-2-plush.png",
+    "caption": "第一轮｜xiaotong-2-plush"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/xiaotong-3-clay.png",
+    "caption": "第一轮｜xiaotong-3-clay"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/xiaotong-4-flat.png",
+    "caption": "第一轮｜xiaotong-4-flat"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/rourou-1-vinyl.png",
+    "caption": "第一轮｜rourou-1-vinyl"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/rourou-2-plush.png",
+    "caption": "第一轮｜rourou-2-plush"
+  },
+  {
+    "kind": "text",
+    "content": "<p><b>渐进修正：扁平风。</b>初稿出现细发丝、精细针织和二次元柔和阴影，不符合扁平；随后减少材质纹理，换成整块发形和硬边色块，最终图已列于上文。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/rejected/xiaotong-4-flat-initial.png",
+    "caption": "第一轮过程｜扁平初稿：偏二次元，已被替换"
+  },
+  {
+    "kind": "text",
+    "content": "<h2>桐铃logo交付</h2><p>三份纯路径SVG（实心/线稿/反白）与512透明PNG。已检查24px和40px可读性，旧文件有备份。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/logo-preview.png",
+    "caption": "桐铃logo三版本与小尺寸预览"
+  },
+  {
+    "kind": "image",
+    "file": "assets/logo/logo-a-512.png",
+    "caption": "主logo｜512×512透明PNG"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/xiaotong-prompts.json"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/xiaotong-flat-rework-prompt.txt"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/rourou-generation.md"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/verification.json"
+  },
+  {
+    "kind": "file",
+    "file": "assets/logo/logo-a.svg"
+  },
+  {
+    "kind": "file",
+    "file": "assets/logo/logo-c.svg"
+  },
+  {
+    "kind": "file",
+    "file": "assets/logo/logo-b.svg"
+  },
+  {
+    "kind": "text",
+    "content": "<h1>第二轮：修长手办与照片参考</h1><p>目标变为人物5款、肉肉4款，保留第一轮。开始时指定参考目录未见图片，通用设定任务被中断且未得到可保存结果；用户补充6张手办与7张脸图后，实际看图并传入参考重新生成。没有虚构-generic成品。</p><p>参考职责：figure01对应黏土，02对应PVC比V，03对应侧身机能，05对应街头；04仅比例光影，06只材质。照片提取脸型、眉眼、鼻唇和笑容。后续问题表明照片权重过强，应进一步降级为三个辨识点。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/overview-2.png",
+    "caption": "第二轮历史候选｜overview-2"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/pairs-2.png",
+    "caption": "第二轮历史候选｜pairs-2"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/rejected/xiaotong-5-pvc-rejected.png",
+    "caption": "第二轮历史候选｜xiaotong-5-pvc（后续被用户退回）"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/xiaotong-6-clay-slim.png",
+    "caption": "第二轮历史候选｜xiaotong-6-clay-slim"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/rejected/xiaotong-7-street-rejected.png",
+    "caption": "第二轮历史候选｜xiaotong-7-street（后续被用户退回）"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/xiaotong-8-toon3d.png",
+    "caption": "第二轮历史候选｜xiaotong-8-toon3d"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/xiaotong-9-film.png",
+    "caption": "第二轮历史候选｜xiaotong-9-film"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/rourou-3-figure.png",
+    "caption": "第二轮历史候选｜rourou-3-figure"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/rourou-4-clay.png",
+    "caption": "第二轮历史候选｜rourou-4-clay"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/rourou-5-toon.png",
+    "caption": "第二轮历史候选｜rourou-5-toon"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/rourou-6-line.png",
+    "caption": "第二轮历史候选｜rourou-6-line"
+  },
+  {
+    "kind": "text",
+    "content": "<h2>第二轮渐进过程：先识别漂移，再定点修正</h2><p>以下是实际保留的过程稿，不作为合格交付。每次仅针对暴露的问题修正，保留原图以便比较。</p>"
+  },
+  {
+    "kind": "text",
+    "content": "<p>5初稿：照片权重过高，偏真人棚拍；下一步将手办参考置前，要求雕塑发束、无毛孔喷涂皮肤与6.5头身。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/intermediate/xiaotong-5-overreal.png",
+    "caption": "第二轮过程｜xiaotong-5-overreal"
+  },
+  {
+    "kind": "text",
+    "content": "<p>6初稿：黏土方向变成写实皮肤与衣料；下一步加强哑光粗发束和简化鼻嘴。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/intermediate/xiaotong-6-overreal.png",
+    "caption": "第二轮过程｜xiaotong-6-overreal"
+  },
+  {
+    "kind": "text",
+    "content": "<p>6中间稿：眼型偏通用动漫且刘海擦眼；下一步用正脸与笑脸重新约束平眉杏眼、卧蚕圆下巴，并露出眼睛。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/intermediate/xiaotong-6-pre-identity-correction.png",
+    "caption": "第二轮过程｜xiaotong-6-pre-identity-correction"
+  },
+  {
+    "kind": "text",
+    "content": "<p>7初稿：潮玩变为真人时装；下一步改为哑光软胶雕塑与约4.8头身。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/intermediate/xiaotong-7-overreal.png",
+    "caption": "第二轮过程｜xiaotong-7-overreal"
+  },
+  {
+    "kind": "text",
+    "content": "<p>7中间稿：多出视图、比例仍偏长；下一步限制为仅左全身右特写，缩回约5头身。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/intermediate/xiaotong-7-extra-views.png",
+    "caption": "第二轮过程｜xiaotong-7-extra-views"
+  },
+  {
+    "kind": "text",
+    "content": "<p>8初稿：偏半写实3D；下一步改为两三档硬边色块和细描边，保留侧身姿态。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/rejected/xiaotong-8-initial-semireal.png",
+    "caption": "第二轮过程｜xiaotong-8-initial-semireal"
+  },
+  {
+    "kind": "text",
+    "content": "<p>9初稿：偏半写实；下一步改为动画雕塑发束与无毛孔皮肤，保留脸部几何。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/rejected/xiaotong-9-initial-semireal.png",
+    "caption": "第二轮过程｜xiaotong-9-initial-semireal"
+  },
+  {
+    "kind": "text",
+    "content": "<h2>第二轮复核与用户退回</h2><p>自检时已发现：5眼睛偏大、6黏土简化不足、7通用潮玩脸、8下颌偏利落、9理想化动画脸；五款月牙笑眼都不突出。当时报告未声称身份相似度获批准。</p><p>用户进一步指出两项关键失败：脸仍是写实皮肤、鼻唇、睫毛和妆容；5和7的服装与参考过近。因此5和7现已从候选目录移动至rejected，原文件追加-rejected后缀。上文是历史图档，不是当前推荐。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/rejected/round2-too-realistic-feedback.png",
+    "caption": "用户提供的第二轮反面例子｜写实脸与服装复制问题"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/round2-a.json"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/round2-a-clay-final.json"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/round2-b.json"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/round2-dog.json"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/round2-review.md"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/round2-verification.json"
+  },
+  {
+    "kind": "file",
+    "file": "codex-图片生成提示词-第五批-桐铃logo-Q版小桐-肉肉.md"
+  },
+  {
+    "kind": "text",
+    "content": "<h1>第三轮：风格化优先与原创服装</h1><p>接下来按第三轮补充任务生成6张小桐、2张肉肉，另做总览及2组配对。脸参考优先使用style-face01/02/03，只保留照片的三个辨识点；禁止西装、格纹裙、领带、堆堆袜、乐福鞋和卫衣加工装裤。每张头特写须对照手办脸参考，出现写实脸即重画。生成过程与最终候选将在本节继续追加。</p>"
+  },
+  {
+    "kind": "file",
+    "file": "codex-图片生成提示词-第五批补充-小桐手办风第三轮.md"
+  }
+]

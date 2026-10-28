@@ -1,0 +1,35 @@
+[
+  {
+    "kind": "text",
+    "content": "<h2>补充找回的原始过程输出</h2><p>从本次生成工具的原始输出目录补回以下图片。1是扁平定稿的原始编码副本；2/3为第一轮毛绒与软胶修正前原稿；4为第二轮街头比例修正前稿；5为黏土眼型与身份修正前稿。保留原图与源路径，不冒充新增合格候选。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/recovered-process/recovered-1.png",
+    "caption": "找回的过程原图 1｜未作为新增候选"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/recovered-process/recovered-2.png",
+    "caption": "找回的过程原图 2｜未作为新增候选"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/recovered-process/recovered-3.png",
+    "caption": "找回的过程原图 3｜未作为新增候选"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/recovered-process/recovered-4.png",
+    "caption": "找回的过程原图 4｜未作为新增候选"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/recovered-process/recovered-5.png",
+    "caption": "找回的过程原图 5｜未作为新增候选"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/recovered-process/sources.json"
+  }
+]

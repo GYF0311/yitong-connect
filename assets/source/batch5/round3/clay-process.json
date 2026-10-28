@@ -1,0 +1,122 @@
+{
+  "task": "round3 xiaotong10/11",
+  "policy": "stylization over identity resemblance; candidates only",
+  "reference_views": [
+    "style-face02",
+    "style-face03",
+    "style-body04",
+    "face05",
+    "face01",
+    "round2-too-realistic-feedback"
+  ],
+  "items": [
+    {
+      "file": "assets/source/batch5/options/xiaotong-10-clay-a.png",
+      "mode": "built-in image_gen",
+      "stages": [
+        {
+          "step": 1,
+          "image": "assets/source/batch5/round3/clay-steps/xiaotong-10-initial.png",
+          "prompt": "Use case: stylized-concept。制作小桐原创黏土手办设定图，1536×1024横向。仅左边一位完整全身角色、右边同一个头部特写，两视图，完整脚部与头顶不裁切，无任何其他小图。浅灰白无缝背景，柔和棚拍光，脚下淡投影，无底座无铭牌。参考图1和2只用于脸的风格画法：一眼可见是手工捏制黏土玩具，不是人；参考图3只提取三个辨识点：月牙笑眼与卧蚕、小巧鹅蛋脸圆下巴、长黑发。严禁转移照片皮肤、妆容、睫毛、写实鼻唇与原服装，照片不能出现在结果。优先级风格化>神似。脸是无毛孔无纹理的均匀哑光黏土，眼睛为简化平涂眼形，厚上眼睑、粗上眼线，鼻子仅一个圆润小凸点，小嘴仅短弧线，无立体写实嘴唇，不画一根根睫毛。头发纯黑大块圆润雕塑发束，每束像手捏出来，没有逐根发丝。成年女性修长5.5头身，有态度不甜腻萌系。水蓝#3B9AE1与白主色、极少浅灰。小铃铛与掌状三裂桐叶饰品。只有原创新穿搭，不要西装、格纹裙、领带、堆堆袜、乐福鞋、卫衣、工装裤，不露腰不短裙不腿环不仰拍。无文字、数字、logo、校徽、水印、签名。本款清冷半眯杏眼，带很淡的俏皮笑，眼尾轻扬，眼下用圆润黏土弧线暗示卧蚕。身体微前倾，双手背在身后，歪头看镜头。原创白色宽松衬衫裙，裙摆必须过膝到小腿上部，水蓝细腰带；水蓝发带系低马尾，马尾为长黑发粗块，白色帆布鞋。桐叶发夹，小铃铛在发带上。衣料仅简化大褶皱，无织物微纹理。右边特写同样是清冷半眯眼，不要写实脸。",
+          "inputs": [
+            {
+              "path": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/style-face-02-clay-girl.png",
+              "role": "style-face reference; style priority"
+            },
+            {
+              "path": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/style-face-03-clay-closeup.png",
+              "role": "style-face reference; style priority"
+            },
+            {
+              "path": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-05-smile-close.jpg",
+              "role": "face reference; only three recognition traits"
+            }
+          ],
+          "assessment": "手办脸画法已明确，哑光粗块发束、简化平涂眼与小凸鼻小嘴；发夹却呈蝴蝶形，缺明确桐叶"
+        },
+        {
+          "step": 2,
+          "image": "assets/source/batch5/options/xiaotong-10-clay-a.png",
+          "source": "/Users/gaoyifan/.codex/generated_images/01a180bb-638c-7e33-9d2c-f5361db50075/exec-a6eca54d-659d-42c0-963b-9916ea8290f4.png",
+          "prompt": "精确编辑这张手办候选图，只改一个小饰品：将左右两视图中耳边那个浅蓝色蝴蝶发夹改成一片明显的梧桐叶发夹，梧桐叶是掌状三到五裂的一整片叶子，有中央叶脉，不是四瓣对称蝴蝶、不像花。保留低马尾水蓝发带与铃铛、全身姿态、白色过膝衬衫裙、水蓝腰带、白帆布鞋、头身比、右侧头特写的清冷半眯手办眼、鼻子小凸点、小嘴、所有脸部风格。输出1536×1024原构图，无字。不要改变其他内容。",
+          "inputs": [
+            {
+              "path": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/round3/clay-steps/xiaotong-10-initial.png",
+              "role": "edit target; preserve doll face and clothing"
+            }
+          ],
+          "reason": "只修正发夹为桐叶",
+          "effect": "发夹改为掌状叶片；其他内容与清冷神态保留"
+        }
+      ],
+      "verification": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "14609829142c6c1e95cd7a90ed37dbca776b3ddc756edccbc3c3e14b396f710b",
+        "no_text": true,
+        "original_clothing_no_banned_items": true,
+        "compared_to_style_face": "脸更接近style-face02/03的黏土平涂眼、块面发束、小鼻小嘴，明显不是照片皮肤",
+        "stylization": "high",
+        "likeness": "保留长黑发、圆润小脸；清冷眼不是月牙笑，因此照片辨识较弱，重点为风格化",
+        "remaining": "半眯表情偏冷，人物身份辨识弱；左全身处于5头身下限附近，视觉估计而非精密骨架测量"
+      }
+    },
+    {
+      "file": "assets/source/batch5/options/xiaotong-11-clay-b.png",
+      "mode": "built-in image_gen",
+      "stages": [
+        {
+          "step": 1,
+          "image": "assets/source/batch5/round3/clay-steps/xiaotong-11-initial.png",
+          "prompt": "Use case: stylized-concept。制作小桐原创黏土手办设定图，1536×1024横向。仅左边一位完整全身角色、右边同一个头部特写，两视图，完整脚部与头顶不裁切，无任何其他小图。浅灰白无缝背景，柔和棚拍光，脚下淡投影，无底座无铭牌。参考图1和2只用于脸的风格画法：一眼可见是手工捏制黏土玩具，不是人；参考图3只提取三个辨识点：月牙笑眼与卧蚕、小巧鹅蛋脸圆下巴、长黑发。严禁转移照片皮肤、妆容、睫毛、写实鼻唇与原服装，照片不能出现在结果。优先级风格化>神似。脸是无毛孔无纹理的均匀哑光黏土，眼睛为简化平涂眼形，厚上眼睑、粗上眼线，鼻子仅一个圆润小凸点，小嘴仅短弧线，无立体写实嘴唇，不画一根根睫毛。头发纯黑大块圆润雕塑发束，每束像手捏出来，没有逐根发丝。成年女性修长5.5头身，有态度不甜腻萌系。水蓝#3B9AE1与白主色、极少浅灰。小铃铛与掌状三裂桐叶饰品。只有原创新穿搭，不要西装、格纹裙、领带、堆堆袜、乐福鞋、卫衣、工装裤，不露腰不短裙不腿环不仰拍。无文字、数字、logo、校徽、水印、签名。本款月牙眼笑：两眼简化成清楚上弯的月牙眼形，眼下圆润卧蚕弧线；柔和小嘴微笑，不露写实牙齿。双手捧一个小圆铃铛在胸前，姿态轻微侧倾，有温柔自信。原创水蓝色圆领毛衣，只有简化针织浮雕不逐针；白色长百褶裙到脚踝上方，白色短靴。长纯黑发散开为圆润粗块发束，自然中分，别水蓝桐叶夹。右边头特写必须保持同样月牙笑眼。",
+          "inputs": [
+            {
+              "path": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/style-face-02-clay-girl.png",
+              "role": "style-face reference; style priority"
+            },
+            {
+              "path": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/style-face-03-clay-closeup.png",
+              "role": "style-face reference; style priority"
+            },
+            {
+              "path": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-05-smile-close.jpg",
+              "role": "face reference; only three recognition traits"
+            }
+          ],
+          "assessment": "手办脸画法已明确，哑光粗块发束、简化平涂眼与小凸鼻小嘴；发夹却呈蝴蝶形，缺明确桐叶；全身约4.5头身偏短"
+        },
+        {
+          "step": 2,
+          "image": "assets/source/batch5/options/xiaotong-11-clay-b.png",
+          "source": "/Users/gaoyifan/.codex/generated_images/01a180bb-638c-7e33-9d2c-f5361db50075/exec-d6ecb9e1-0604-467f-a7e5-d4f8a946e47c.png",
+          "prompt": "精确编辑这张哑光黏土手办设定图：保留右侧月牙笑眼、粗眼线小凸鼻短弧小嘴、长黑发粗块、无写实皮肤、捧铃铛的双手、浅灰白底以及两视图构图。只做两点修正：1）把头侧蓝色四瓣蝴蝶夹改成一片明确的梧桐叶发夹，掌状三到五裂的一整片叶子，有中央叶脉，不是四瓣对称蝴蝶或花，左右视图一致。2）只把左边全身头部尺寸适当减小、躯干和白色长裙延长一点，达到5.5头身，修长成年手办比例，不是儿童大头娃娃；保持全身完整露脚，裙至踝上、白短靴、双手胸前捧铃铛。保持其他内容不变，1536×1024，不写任何字。",
+          "inputs": [
+            {
+              "path": "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/round3/clay-steps/xiaotong-11-initial.png",
+              "role": "edit target; preserve doll face and clothing"
+            }
+          ],
+          "reason": "只修正发夹为桐叶并修正左全身比例",
+          "effect": "发夹改为掌状叶片；左全身头部缩小、长裙躯干延长，约5–6头身"
+        }
+      ],
+      "verification": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "b0d64fe73166dd5151b56bfabd646cbe4d0f959f591ed2a6ebe17971ac99c5bf",
+        "no_text": true,
+        "original_clothing_no_banned_items": true,
+        "compared_to_style_face": "脸更接近style-face02/03的黏土平涂眼、块面发束、小鼻小嘴，明显不是照片皮肤",
+        "stylization": "high",
+        "likeness": "月牙眼笑、卧蚕暗示、圆润脸与长黑发；简化程度高，不能当作真人身份肖像一致性已通过",
+        "remaining": "月牙眼闭合使杏眼眼尾无法比较；不复制真人五官，神似程度仍待先生选择"
+      }
+    }
+  ]
+}

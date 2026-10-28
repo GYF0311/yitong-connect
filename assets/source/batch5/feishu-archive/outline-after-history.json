@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "content": "<fragment mode=\"outline\"><outline><h1 id=\"doxcn9OfkxFqyauKhCjh1HB9cFJ\">阅读说明与迭代主线</h1><h1 id=\"doxcnE676S5dqyh2Js0h6sT2epf\">第一轮：Q版材质探索</h1><h2 id=\"doxcnfcUOpfsPQmJNoW61WwcBMg\">桐铃logo交付</h2><h1 id=\"doxcnfqsfABg75LxquypSNyIxVg\">第二轮：修长手办与照片参考</h1><h2 id=\"doxcnyXgzDG7eXOKhlwkmItGwYc\">第二轮渐进过程：先识别漂移，再定点修正</h2><h2 id=\"doxcnogFQL655qGqpimSaf6Fa0e\">第二轮复核与用户退回</h2><h1 id=\"doxcnSeNHWspAPJk4pgHoD04hMd\">第三轮：风格化优先与原创服装</h1><h2 id=\"doxcnksO4uDduUbzCwyGfTTHFrf\">补充找回的原始过程输出</h2></outline></fragment>",
+      "document_id": "ZZfkdTmMwoXuZMxswYHcqYRinkd",
+      "revision_id": 110
+    }
+  },
+  "_notice": {
+    "update": {
+      "command": "lark-cli update",
+      "current": "1.0.65",
+      "latest": "1.0.98",
+      "message": "lark-cli 1.0.98 available, current 1.0.65, run: lark-cli update"
+    }
+  }
+}

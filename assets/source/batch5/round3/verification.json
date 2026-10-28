@@ -1,0 +1,106 @@
+{
+  "stage": "round3 style candidates only",
+  "files": [
+    {
+      "file": "options/xiaotong-10-clay-a.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1746704,
+      "sha256": "14609829142c6c1e95cd7a90ed37dbca776b3ddc756edccbc3c3e14b396f710b"
+    },
+    {
+      "file": "options/xiaotong-11-clay-b.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1908589,
+      "sha256": "b0d64fe73166dd5151b56bfabd646cbe4d0f959f591ed2a6ebe17971ac99c5bf"
+    },
+    {
+      "file": "options/xiaotong-12-pvc-a.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 2018452,
+      "sha256": "b7cc7c58282f0051e08da374cbd9377476501f992934e42b0a6478984984a069"
+    },
+    {
+      "file": "options/xiaotong-13-pvc-b.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1982563,
+      "sha256": "044f76283bf7ba8b46af6d65f387d47de8a3a33287f4eb6a8bf12a1969d9aa2d"
+    },
+    {
+      "file": "options/xiaotong-14-street.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1872799,
+      "sha256": "8a9d2eca87460052501ade6a99fb17c417b0a08c37d7e01c2c69d768b5bf7a69"
+    },
+    {
+      "file": "options/xiaotong-15-toon3d.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1847985,
+      "sha256": "67b55568dd54a8744c1c32ca36d6df29e73df28c87399d8e46ad5e0803956b2a"
+    },
+    {
+      "file": "options/rourou-7-clay.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1642625,
+      "sha256": "2a9e696471fb97657a411a8899d8c317e4b09b8a57e72e49324d243deb04ba74"
+    },
+    {
+      "file": "options/rourou-8-pvc.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "bytes": 1457387,
+      "sha256": "e755d19b57468989de78bda7a9ec9ea6f5fdc88230975b9426fa075da829143f"
+    },
+    {
+      "file": "options/overview-3.png",
+      "size": [
+        3600,
+        900
+      ],
+      "mode": "RGB",
+      "bytes": 2249533,
+      "sha256": "7756d883a6a13ec9d49882db013cde4115669e150009bd23d7199c6cbc0034a5"
+    },
+    {
+      "file": "options/pairs-3.png",
+      "size": [
+        1800,
+        1320
+      ],
+      "mode": "RGB",
+      "bytes": 2205572,
+      "sha256": "b29143db662061e4527e4bd35a3a809c055f5ef4760f8f32fc3c770bc3e84f13"
+    }
+  ],
+  "approval": "pending user choice"
+}

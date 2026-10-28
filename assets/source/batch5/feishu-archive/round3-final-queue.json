@@ -1,0 +1,112 @@
+[
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/xiaotong-15-toon3d.png",
+    "caption": "第三轮候选与对比｜xiaotong-15-toon3d"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/overview-3.png",
+    "caption": "第三轮候选与对比｜overview-3"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/options/pairs-3.png",
+    "caption": "第三轮候选与对比｜pairs-3"
+  },
+  {
+    "kind": "text",
+    "content": "<h2>第三轮逐步修正图档</h2><p>下面按版本与步骤保存首稿和中间稿。与最终候选完全相同的修正版不重复插图，已在上文展示；每一次生成和编辑的完整提示词、参考路径、原因、效果与不足都保存在本节附件中。</p>"
+  },
+  {
+    "kind": "text",
+    "content": "<p>10初稿：黏土脸通过，饰品误成蝴蝶；随后只换成桐叶。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/round3/clay-steps/xiaotong-10-initial.png",
+    "caption": "第三轮过程｜xiaotong-10-initial"
+  },
+  {
+    "kind": "text",
+    "content": "<p>11初稿：月牙眼通过，但比例偏短且叶饰不明确；随后修正全身比例及桐叶。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/round3/clay-steps/xiaotong-11-initial.png",
+    "caption": "第三轮过程｜xiaotong-11-initial"
+  },
+  {
+    "kind": "text",
+    "content": "<p>12初稿：PVC脸通过，身形偏短、叶饰偏花；随后拉长比例并修桐叶。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/round3/process/xiaotong-12-pvc-a-initial.png",
+    "caption": "第三轮过程｜xiaotong-12-pvc-a-initial"
+  },
+  {
+    "kind": "text",
+    "content": "<p>13初稿：PVC脸通过，整体约5–5.5头身；随后仅修全身至更接近6–7。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/round3/process/xiaotong-13-pvc-b-initial.png",
+    "caption": "第三轮过程｜xiaotong-13-pvc-b-initial"
+  },
+  {
+    "kind": "text",
+    "content": "<p>14首稿：原创夹克牛仔裤与潮玩脸通过，发饰是蝴蝶；随后仅将发饰改为掌状叶。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/round3/process/xiaotong-14-step1.png",
+    "caption": "第三轮过程｜xiaotong-14-step1"
+  },
+  {
+    "kind": "text",
+    "content": "<p>15首稿：错误长裙且三渲二不足；随后换灰色长裤并加强分级色块细描边。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/round3/process/xiaotong-15-step1.png",
+    "caption": "第三轮过程｜xiaotong-15-step1"
+  },
+  {
+    "kind": "text",
+    "content": "<p>15中间稿：长裤和三渲二已修好，但胸针仍为花形；随后仅换掌状桐叶，最终见上文。</p>"
+  },
+  {
+    "kind": "image",
+    "file": "assets/source/batch5/round3/process/xiaotong-15-step2.png",
+    "caption": "第三轮过程｜xiaotong-15-step2"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/round3/clay-process.json"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/round3/pvc-process.json"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/round3/street-toon-process.json"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/round3/street-toon-correction-prompts.json"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/round3/dogs-process.json"
+  },
+  {
+    "kind": "file",
+    "file": "assets/source/batch5/round3/verification.json"
+  },
+  {
+    "kind": "text",
+    "content": "<h2>交付边界与下一步</h2><p>三轮候选、现存过程稿、logo、任务依据与提示词记录均归档在本篇。当前停在选款阶段；正式图层、动作、头像、小尺寸和动画未制作。前端保持本轮开始时内容；第二轮5与7已依要求退回。先生选定后再进入下一步资产制作。</p>"
+  }
+]
