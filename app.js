@@ -28,7 +28,7 @@
   const pet = (n, cls = '') => `<img class="pet ${cls}" src="assets/pet/${n}-256.png" alt="" loading="lazy">`;
   const ic3 = (n, cls = '') => `<img class="ic3 ${cls}" src="assets/icons3d/${n}.png" alt="" loading="lazy">`;
   const askBtn = (q) => `<button class="ask" data-ask="${esc(q)}" title="问一问">${I.spark}</button>`;
-  const platTag = (p) => `<span class="plat" style="background:${P[p].color}">${P[p].short}</span>`;
+  const platTag = (p) => `<span class="plat plat-${p}" title="${P[p].name}"><img src="assets/platform/${p}.svg" alt="${P[p].name}"></span>`;
   const av = (t, big) => `<span class="av"${big ? ' style="width:54px;height:54px"' : ''}>${esc(t)}</span>`;
 
   // ---------- Q 版占位人偶（Codex 素材到位后替换为分层 PNG） ----------
@@ -114,6 +114,25 @@
     return `C${c1[0].toFixed(1)} ${c1[1].toFixed(1)} ${c2[0].toFixed(1)} ${c2[1].toFixed(1)} ${p[0].toFixed(1)} ${p[1].toFixed(1)}`;
   }).join(' ');
   let gid = 0;
+  // 字号：默认随屏幕宽度自动放大（1280 宽 = 100%，1920 宽 ≈ 112%），也可以手动拖滑杆，选择会记住
+  const FS_KEY = 'yt-ui-scale';
+  const autoScale = () => innerWidth <= 860 ? 1 : Math.min(1.12, Math.max(1, 1 + (innerWidth - 1280) / 640 * 0.12));
+  function applyScale() {
+    let v = null; try { v = parseFloat(localStorage.getItem(FS_KEY)); } catch (e) {}
+    const z = v > 0 ? v : autoScale();
+    document.documentElement.style.setProperty('--z', z.toFixed(3));
+    const r = document.getElementById('fsRange'), t = document.getElementById('fsVal');
+    if (r) r.value = Math.round(z * 100); if (t) t.textContent = v > 0 ? Math.round(z * 100) + '%' : '自动 · ' + Math.round(z * 100) + '%';
+    fitSoon();
+  }
+  window.addEventListener('resize', applyScale);
+  document.addEventListener('input', (e) => { if (e.target.id === 'fsRange') { try { localStorage.setItem(FS_KEY, e.target.value / 100); } catch (_) {} applyScale(); } });
+  document.addEventListener('click', (e) => {
+    const pop = document.getElementById('fsPop'); if (!pop) return;
+    if (e.target.closest('#fsBtn')) { pop.classList.toggle('on'); return; }
+    if (e.target.closest('#fsAuto')) { try { localStorage.removeItem(FS_KEY); } catch (_) {} applyScale(); return; }
+    if (!e.target.closest('#fsPop')) pop.classList.remove('on');
+  });
   // 状态卡配图：优先用 assets/status/ 新图，没有时退回现有图标
   const stImg = (n, fb) => `<img class="st-img" src="assets/status/${n}.webp" alt="" onerror="this.onerror=null;this.src='assets/${fb}'">`;
   // 图表按容器真实宽度绘制，避免被拉伸变形
@@ -126,6 +145,7 @@
     });
   }
   let fitRaf = 0; const fitSoon = () => { cancelAnimationFrame(fitRaf); fitRaf = requestAnimationFrame(fitCharts); };
+  applyScale();
   window.addEventListener('resize', fitSoon);
   new MutationObserver(fitSoon).observe(document.body, { childList: true, subtree: true });
   // 数据点很多时做轻度平滑（3 点滑动平均），只影响曲线形状
@@ -224,21 +244,22 @@
   document.addEventListener('pointerdown', (e) => {
     const st = e.target.closest('.pet-stage'); if (!st || e.button > 0) return;
     const par = st.offsetParent || st.parentElement, r0 = st.getBoundingClientRect();
-    const ox = e.clientX - r0.left, oy = e.clientY - r0.top, sx = e.clientX, sy = e.clientY;
+    const z = r0.width / st.offsetWidth || 1;
+    const ox = (e.clientX - r0.left) / z, oy = (e.clientY - r0.top) / z, sx = e.clientX, sy = e.clientY;
     petDragged = false;
     const move = (ev) => {
       if (!petDragged && Math.hypot(ev.clientX - sx, ev.clientY - sy) < 6) return;
       if (!petDragged) { petDragged = true; st.classList.add('dragging'); try { st.setPointerCapture(e.pointerId); } catch (_) {} }
       ev.preventDefault();
       const pr2 = par.getBoundingClientRect();
-      const x = Math.min(Math.max(ev.clientX - pr2.left - ox, -20), pr2.width - st.offsetWidth + 20);
-      const y = Math.min(Math.max(ev.clientY - pr2.top - oy, -40), pr2.height - st.offsetHeight + 40);
+      const x = Math.min(Math.max((ev.clientX - pr2.left) / z - ox, -20), par.offsetWidth - st.offsetWidth + 20);
+      const y = Math.min(Math.max((ev.clientY - pr2.top) / z - oy, -40), par.offsetHeight - st.offsetHeight + 40);
       st.style.left = x + 'px'; st.style.top = y + 'px'; st.style.right = 'auto';
     };
     const up = () => {
       document.removeEventListener('pointermove', move); document.removeEventListener('pointerup', up); document.removeEventListener('pointercancel', up);
       st.classList.remove('dragging');
-      if (petDragged) { const w = par.getBoundingClientRect().width; try { localStorage.setItem(PET_KEY, JSON.stringify({ x: st.offsetLeft / w, y: st.offsetTop })); } catch (_) {} }
+      if (petDragged) { const w = par.offsetWidth; try { localStorage.setItem(PET_KEY, JSON.stringify({ x: st.offsetLeft / w, y: st.offsetTop })); } catch (_) {} }
     };
     document.addEventListener('pointermove', move, { passive: false }); document.addEventListener('pointerup', up); document.addEventListener('pointercancel', up);
   });

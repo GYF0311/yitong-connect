@@ -39,6 +39,10 @@
   <header class="top">
     <div class="crumb">粉丝连接 / <b id="crumb">今日</b></div>
     <button class="ask-bar" id="askBar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>问一问：今天粉丝在聊什么？<kbd>/</kbd></button>
+    <div class="fs-wrap"><button class="icon-btn fs-btn" id="fsBtn" aria-label="调整字号" title="调整字号"><span>Aa</span></button>
+      <div class="fs-pop" id="fsPop"><div class="fs-top"><b>字号</b><span id="fsVal">自动</span></div>
+        <div class="fs-row"><small>A</small><input type="range" id="fsRange" min="90" max="130" step="5" value="100" aria-label="字号"><big>A</big></div>
+        <button class="fs-auto" id="fsAuto">跟随屏幕自动调整</button></div></div>
     <button class="icon-btn" id="bell" aria-label="提醒"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="pip"></span></button>
     <div class="me">桐</div>
     <div class="notif" id="notif"></div>
