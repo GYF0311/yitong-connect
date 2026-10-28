@@ -298,7 +298,8 @@
   ];
   let petI = 0;
   // 肉肉支持拖动：按住拖到任意位置，松手后记住；轻点仍是换动作
-  const PET_KEY = 'yt-pet-pos';
+  const PET_KEY = 'yt-pet-pos-v2'; // 换成双人舞台后作废旧位置
+  try { localStorage.removeItem('yt-pet-pos'); } catch (_) {}
   let petDragged = false;
   function placePet(st) {
     if (!st || st.dataset.placed) return; st.dataset.placed = 1;
@@ -312,7 +313,7 @@
     const ox = (e.clientX - r0.left) / z, oy = (e.clientY - r0.top) / z, sx = e.clientX, sy = e.clientY;
     petDragged = false;
     const move = (ev) => {
-      if (!petDragged && Math.hypot(ev.clientX - sx, ev.clientY - sy) < 6) return;
+      if (!petDragged && Math.hypot(ev.clientX - sx, ev.clientY - sy) < 12) return;
       if (!petDragged) { petDragged = true; st.classList.add('dragging'); try { st.setPointerCapture(e.pointerId); } catch (_) {} }
       ev.preventDefault();
       const pr2 = par.getBoundingClientRect();
@@ -328,7 +329,7 @@
     document.addEventListener('pointermove', move, { passive: false }); document.addEventListener('pointerup', up); document.addEventListener('pointercancel', up);
   });
   // 拖动结束时不触发"换动作"
-  document.addEventListener('click', (e) => { if (petDragged && e.target.closest('.pet-stage')) { e.stopImmediatePropagation(); e.preventDefault(); petDragged = false; } }, true);
+  document.addEventListener('click', (e) => { if (petDragged && e.target.closest('.pet-stage')) { e.stopImmediatePropagation(); e.preventDefault(); } petDragged = false; }, true);
   function petNext() {
     const img = $('#petBig'), bub = $('#petBubble'); if (!img) return;
     petI = (petI + 1) % PET_LINES.length; const [n, line] = PET_LINES[petI];
