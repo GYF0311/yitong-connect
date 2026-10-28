@@ -1179,7 +1179,7 @@
       ph.style.transform = `scale(${k})`; $('#pvStage').style.height = ((h + 24) * k) + 'px';
     }
     function open() {
-      if (!fr.getAttribute('src')) fr.src = 'index.html?embed=1&nosplash=1';
+      if (!fr.getAttribute('src')) fr.src = 'index.html?embed=1&nosplash=1&t=' + Date.now();
       document.body.classList.add('pv-on'); pv.setAttribute('aria-hidden', 'false'); fit();
     }
     function close() { document.body.classList.remove('pv-on'); pv.setAttribute('aria-hidden', 'true'); }
