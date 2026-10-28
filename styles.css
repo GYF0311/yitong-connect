@@ -1439,3 +1439,10 @@ html{background:#F4F8FD!important}
 .head-xt{position:absolute;left:calc(100% + 10px);bottom:-8px;height:74px;width:auto;pointer-events:none;filter:drop-shadow(0 10px 12px rgba(42,123,191,.16));animation:xtIn .6s cubic-bezier(.2,1.2,.4,1) both}
 @keyframes xtIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media (max-width:860px){.head-xt{height:56px;bottom:-6px}}
+/* v17 生图成片小卡 */
+.ycard.gen-card{background:#F4EFE6;padding:0}
+.ycard.gen-card .gen-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.ycard.gen-card .no{top:auto;bottom:2.6%;left:auto;right:6%;height:auto;width:auto;background:rgba(255,255,255,.78);border-radius:6px;padding:0 6px}
+.ycard.gen-card .ai{top:3%;right:4%;bottom:auto;left:auto;height:auto;width:auto;background:rgba(25,25,25,.5);border-radius:6px;padding:0 6px;line-height:1.6}
+.gen-meta{font-size:12px;color:var(--muted);margin:0 0 10px;text-align:center}
+.lay-btn .lay-sw{width:30px;height:40px;border-radius:6px}

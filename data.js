@@ -243,10 +243,10 @@
   const cardLayouts = [
     { id: 'classic', name: '经典', desc: '留白 + 寄语', sw: ['#EAF4FC', '#A1CFF0'] },
     { id: 'aqua', name: '桐铃水蓝', desc: '应援色 · 雪花', sw: ['#EAF4FC', '#3B9AE1'] },
-    { id: 'mist', name: '雾蓝花信', desc: '干花 · 薰衣草', sw: ['#E7EAF2', '#7F8FB5'] },
-    { id: 'cafe', name: '午后绿', desc: '街角 · 胶片', sw: ['#EFEBDD', '#8FA27F'] },
-    { id: 'daisy', name: '夏日雏菊', desc: '阳光 · 雏菊', sw: ['#EEF2E4', '#7FA37A'] },
-    { id: 'race', name: '赛道橙', desc: '棋盘格 · 23 号', sw: ['#F2E9DC', '#E2662C'] }
+    { id: 'mist', gen: 'assets/cards/gen/gen-4.webp', name: '雾蓝花信', desc: '干花 · 薰衣草', sw: ['#E7EAF2', '#7F8FB5'] },
+    { id: 'cafe', gen: 'assets/cards/gen/gen-2.webp', name: '午后绿', desc: '街角 · 胶片', sw: ['#EFEBDD', '#8FA27F'] },
+    { id: 'daisy', gen: 'assets/cards/gen/gen-3.webp', name: '夏日雏菊', desc: '阳光 · 雏菊', sw: ['#EEF2E4', '#7FA37A'] },
+    { id: 'race', gen: 'assets/cards/gen/gen-1.webp', name: '赛道橙', desc: '棋盘格 · 23 号', sw: ['#F2E9DC', '#E2662C'] }
   ];
 
   // 平台新发图：小卡 Agent 监听她自己账号的新发布，挑出适合做卡的图并给出建议

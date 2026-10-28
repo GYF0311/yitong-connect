@@ -561,7 +561,7 @@
   }
 
   // ---------- 小卡工坊 ----------
-  const W = { src: 'tpl', style: 'watercolor', photo: null, photo2: null, layout: 'aqua', theme: 'changqing', to: 'c1', tier: '', hand: '谢谢你，一直在。', ai: true, n: 128, series: '' };
+  const W = { src: 'tpl', style: 'watercolor', photo: null, photo2: null, layout: 'cafe', theme: 'changqing', to: 'c1', tier: '', hand: '谢谢你，一直在。', ai: true, n: 128, series: '' };
   const ISS = { on: Object.fromEntries(D.cardIssue.rules.map((r) => [r.id, r.on])) };
   const wanN = (n) => n >= 10000 ? (n / 10000).toFixed(1).replace(/\.0$/, '') + '万' : fmt(n);
   let camStream = null;
@@ -579,7 +579,7 @@
           <div class="style-row">${D.portraitStyles.map((s) => `<button class="chip ${W.style === s.id ? 'active' : ''}" data-style="${s.id}">${s.name}</button>`).join('')}</div>
           <div class="muted" style="font-size:12px;margin-top:10px">AI 处理过的照片会自动加上「AI 生成」标识</div></div>
         <div class="step"><h3><i>3</i>选一个版式</h3>
-          <div class="lay-row">${D.cardLayouts.map((l) => `<button class="lay-btn ${W.layout === l.id ? 'on' : ''}" data-layout="${l.id}"><span class="lay-sw" style="background:linear-gradient(135deg,${l.sw[0]} 0 45%,${l.sw[1]} 45%)"></span>${l.name}<small>${l.desc}</small></button>`).join('')}</div>
+          <div class="lay-row">${D.cardLayouts.map((l) => `<button class="lay-btn ${W.layout === l.id ? 'on' : ''}" data-layout="${l.id}"><span class="lay-sw" style="background:${l.gen ? `url(${l.gen}) center 30%/cover` : `linear-gradient(135deg,${l.sw[0]} 0 45%,${l.sw[1]} 45%)`}"></span>${l.name}<small>${l.desc}</small></button>`).join('')}</div>
           <div class="muted" style="font-size:12px;margin-top:10px">拼贴手账系列：撕纸边、胶片框、胶带、金属心和手写签名，每个配色一套</div></div>
         <div class="step"><h3><i>4</i>选纪念主题，写一句话</h3>
           <div class="theme-row">${D.cardThemes.map((t) => `<button class="theme-btn ${W.theme === t.id ? 'on' : ''}" data-theme="${t.id}">${t.name}<small>${tierName(t.id) && D.tiers.find((x) => x.id === t.id).desc}</small></button>`).join('')}</div>
@@ -619,7 +619,7 @@
   function stopCam() { if (camStream) { camStream.getTracks().forEach((t) => t.stop()); camStream = null; } }
   function generate() {
     renderPreview(true); chibiAct(document.body, 'think', 0);
-    setTimeout(() => { $$('.chibi').forEach((c) => c.classList.remove('think')); renderPreview(); toast('风格已生成，可以继续调整'); }, 1500);
+    setTimeout(() => { $$('.chibi').forEach((c) => c.classList.remove('think')); renderPreview(); toast('小卡已生成，可以继续调整'); }, 1500);
   }
   // 撕纸边：确定性锯齿多边形，用 clip-path 裁出照片窗口和签名纸条
   function torn(seed, amp = 1.6, step = 3.2) {
@@ -639,8 +639,15 @@
     flake: '<svg viewBox="0 0 40 40" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"><path d="M20 3v34M5 11.5l30 17M5 28.5l30-17"/><path d="M16 6l4 4 4-4M16 34l4-4 4 4"/></svg>',
     bow: '<svg viewBox="0 0 60 44" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M30 16C24 6 8 2 6 12c-2 9 14 10 24 4zM30 16c6-10 22-14 24-4 2 9-14 10-24 4z" fill="currentColor" fill-opacity=".35"/><path d="M28 19l-9 21M32 19l9 21"/><circle cx="30" cy="16.5" r="3.5" fill="currentColor"/></svg>'
   };
+  // 接入生图模型后的最终成片：有成品图的版式直接展示生成结果
+  function genCardHTML(k, small, src) {
+    return `<div class="ycard col gen-card${small ? ' sm' : ''}"><img class="gen-img" src="${src}" alt="AI 生成小卡" draggable="false" onerror="this.onerror=null;this.src='${XT}pose/hug-rourou.webp';this.style.objectFit='contain'">
+      <div class="no">No. ${String(k.n).padStart(4, '0')}</div>${k.ai ? '<span class="ai">AI 生成</span>' : ''}</div>`;
+  }
   function collageHTML(k, small) {
     const lay = k.layout, seed = (k.n || 1) % 97 + 3;
+    const L = D.cardLayouts.find((l) => l.id === lay);
+    if (L && L.gen) return genCardHTML(k, small, L.gen);
     const ph = k.photo ? `<img src="${k.photo}" onerror="this.remove()">` : '';
     const ph2 = k.photo2 || 'assets/portraits/portrait-film.webp';
     const deco = {
@@ -678,7 +685,8 @@
   }
   function renderPreview(loading) {
     const el = $('#cardPreview'); if (!el) return;
-    el.innerHTML = `<div style="position:relative">${cardHTML(currentCard())}${loading ? `<div class="gen"><div class="g"><div class="orbx"><img class="orbimg" src="assets/orb/orb-1.png" alt=""><img class="orbimg b" src="assets/orb/orb-3.png" alt=""><span class="bub">${esc((D.portraitStyles.find((s) => s.id === W.style) || {}).name || '风格')}</span><span class="bub">${esc((D.cardThemes.find((t) => t.id === W.theme) || {}).name || '主题')}</span><span class="bub">${esc(W.hand)}</span></div>正在把它们揉进一张小卡…</div></div>` : ''}</div>`;
+    const k0 = currentCard(), L0 = D.cardLayouts.find((l) => l.id === k0.layout);
+    el.innerHTML = `${L0 && L0.gen ? `<div class="gen-meta">✦ 生图模型成片 · 「${L0.name}」 · 致 ${esc(k0.toName)}${k0.series ? ' · ' + esc(k0.series) : ''}</div>` : ''}<div style="position:relative">${cardHTML(k0)}${loading ? `<div class="gen"><div class="g"><div class="orbx"><img class="orbimg" src="assets/orb/orb-1.png" alt=""><img class="orbimg b" src="assets/orb/orb-3.png" alt=""><span class="bub">${esc((D.portraitStyles.find((s) => s.id === W.style) || {}).name || '风格')}</span><span class="bub">${esc((D.cardThemes.find((t) => t.id === W.theme) || {}).name || '主题')}</span><span class="bub">${esc(W.hand)}</span></div>生图模型正在出卡…</div></div>` : ''}</div>`;
     
   }
   function phonePreview() {
@@ -711,7 +719,7 @@
     renderCards(); $('#cardPreview').scrollIntoView({ behavior: 'smooth', block: 'center' }); generate();
   }
   function batchNewPost(id) {
-    const p = D.newPosts.find((x) => x.id === id), lays = [p.ai.layout, ...D.cardLayouts.filter((l) => l.id !== 'classic' && l.id !== p.ai.layout).map((l) => l.id)].slice(0, 3);
+    const p = D.newPosts.find((x) => x.id === id), lays = [p.ai.layout, ...D.cardLayouts.filter((l) => l.gen && l.id !== p.ai.layout).map((l) => l.id)].slice(0, 3);
     const ks = lays.map((lay, i) => ({ layout: lay, photo: p.imgs[i % p.imgs.length], photo2: p.imgs[(i + 1) % p.imgs.length], hand: p.ai.hand, n: W.n + i, ai: true, toName: p.ai.who, daysText: p.time + '发布', series: p.ai.series }));
     openDrawer('整组出卡 · ' + p.ai.series, `<div class="muted" style="font-size:12px;margin-bottom:14px">从「${esc(p.text)}」这组图里出了 ${ks.length} 个版本，第一张是推荐</div>
       <div class="np-batch">${ks.map((k) => `<div>${cardHTML(k, true)}<small>${D.cardLayouts.find((l) => l.id === k.layout).name}</small></div>`).join('')}</div>
