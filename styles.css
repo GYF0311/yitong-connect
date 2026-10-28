@@ -1493,3 +1493,9 @@ html.embed .foot{display:none}
 html.embed .tabbar{padding-bottom:18px}
 .stack-labels{line-height:1.45;padding-bottom:2px}
 .pv-bar{position:fixed;top:18px;right:22px;z-index:2}
+/* v20 肉肉默认待在右侧状态卡下方 */
+@media (min-width:1281px){
+  .greet{min-height:440px}
+  .pet-stage{left:auto;right:24px;top:226px;width:180px}
+  .pet-bubble{right:calc(100% - 10px);top:56px;left:auto}
+}

@@ -302,7 +302,7 @@
   ];
   let petI = 0;
   // 肉肉支持拖动：按住拖到任意位置，松手后记住；轻点仍是换动作
-  const PET_KEY = 'yt-pet-pos-v3'; // 换成双人舞台后作废旧位置
+  const PET_KEY = 'yt-pet-pos-v4'; // 换成双人舞台后作废旧位置
   try { localStorage.removeItem('yt-pet-pos'); } catch (_) {}
   let petDragged = false;
   function placePet(st) {
