@@ -1402,3 +1402,40 @@ html{background:#F4F8FD!important}
 .ycard.col .ai{top:auto;bottom:29%;right:12%}
 /* Codex 交付拼贴背景纸后自动叠上（assets/cards/collage-*.webp），没有时用 CSS 纸纹兜底 */
 .ycard.col::before{content:"";position:absolute;inset:0;z-index:0;background:var(--bgimg) center/cover no-repeat;pointer-events:none}
+
+/* ===== v16 小桐定稿形象（逐帧动画）+ 肉肉 ===== */
+.chibi.xt{display:block;width:100%;height:100%;position:relative}
+.chibi.xt .xt-img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom;pointer-events:none;user-select:none;-webkit-user-drag:none}
+.chibi.xt .q-think{display:none}
+.agent-fab .chibi.xt,.tabbar .qbtn .chibi.xt,.np-av .chibi.xt{overflow:hidden;border-radius:50%;background:linear-gradient(170deg,#F3F9FE,#D6EAF8)}
+.agent-fab .chibi.xt .xt-img,.tabbar .qbtn .chibi.xt .xt-img,.np-av .chibi.xt .xt-img{object-fit:cover;object-position:50% 0;transform:scale(1.9);transform-origin:50% 8%}
+.np-av>*{width:100%;margin:0}
+.agent-hero .chibi-big .chibi.xt .xt-img{filter:drop-shadow(0 14px 18px rgba(42,123,191,.18))}
+.pet-stage.duo{width:330px}
+.duo-xt{position:absolute;left:0;bottom:4px;width:142px;height:266px;z-index:1;pointer-events:auto;filter:drop-shadow(0 16px 18px rgba(42,123,191,.18))}
+.pet-stage.duo .pet-big{position:relative;z-index:2;margin-left:116px;margin-top:84px;width:200px;height:auto;aspect-ratio:682/520}
+.pet-stage.duo .pet-shadow{left:auto;right:30px}
+.pet-stage.duo .pet-bubble{left:150px}
+.ycard .photo .xt-pose{position:absolute;inset:6% 0 0;width:100%;height:94%;object-fit:contain;object-position:bottom}
+.c-main .c-fb img{width:100%;height:100%;object-fit:contain;object-position:bottom}
+.live-xt{height:230px;width:auto;object-fit:contain;position:relative;z-index:1}
+@media (min-width:1281px){.pet-stage.duo{left:calc(49% - 150px);top:110px}}
+@media (max-width:1280px){.pet-stage.duo{width:250px;top:-90px}.duo-xt{width:104px;height:196px}.pet-stage.duo .pet-big{margin-left:86px;margin-top:66px;width:150px}}
+@media (max-width:860px){.pet-stage.duo{width:190px;top:-40px}.duo-xt{width:78px;height:146px}.pet-stage.duo .pet-big{margin-left:64px;margin-top:50px;width:118px}}
+@media (min-width:1281px){
+  .pet-stage.duo{left:calc(34% + 14px);top:150px;width:270px}
+  .duo-xt{width:116px;height:218px}
+  .pet-stage.duo .pet-big{margin-left:92px;margin-top:92px;width:168px}
+  .pet-stage.duo .pet-bubble{left:auto;right:calc(100% - 6px);top:120px;border-radius:18px 18px 4px 18px}
+  .greet{min-height:390px}
+}
+@media (max-width:1280px){
+  .duo-xt{display:none}
+  .pet-stage.duo{width:150px;top:-70px}
+  .pet-stage.duo .pet-big{margin:0;width:150px}
+}
+@media (max-width:860px){.pet-stage.duo{width:120px;top:-24px}.pet-stage.duo .pet-big{width:120px}}
+.sec-head h2{position:relative}
+.head-xt{position:absolute;left:calc(100% + 10px);bottom:-8px;height:74px;width:auto;pointer-events:none;filter:drop-shadow(0 10px 12px rgba(42,123,191,.16));animation:xtIn .6s cubic-bezier(.2,1.2,.4,1) both}
+@keyframes xtIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (max-width:860px){.head-xt{height:56px;bottom:-6px}}

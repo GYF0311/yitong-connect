@@ -31,37 +31,100 @@
   const platTag = (p) => `<span class="plat plat-${p}" title="${P[p].name}"><img src="assets/platform/${p}.svg" alt="${P[p].name}"></span>`;
   const av = (t, big) => `<span class="av"${big ? ' style="width:54px;height:54px"' : ''}>${esc(t)}</span>`;
 
-  // ---------- Q 版占位人偶（Codex 素材到位后替换为分层 PNG） ----------
-  // Q 版人偶：Codex 交付的分层 PNG（assets/chibi/layers），眼睛跟随鼠标、眨眼、换口型
-  const L = (n) => `assets/chibi/layers/${n}.png`;
-  function chibi(bust) {
-    const eye = (side) => `<div class="m eye-${side}" style="-webkit-mask-image:url(${L('eye-white-' + side)});mask-image:url(${L('eye-white-' + side)})"><img class="pupil" src="${L('pupil-' + side)}" alt=""></div>`;
-    return `<div class="chibi rig ${bust ? 'bust' : ''}" aria-hidden="true"><div class="rig-in">
-      <img src="${L('hair-back')}" alt=""><img class="body" src="${L('body')}" alt=""><img src="${L('head')}" alt=""><img src="${L('hair-front')}" alt="">
-      <img class="ear" src="${L('earrings')}" alt=""><img class="ew" src="${L('eye-white-left')}" alt=""><img class="ew" src="${L('eye-white-right')}" alt="">
-      ${eye('left')}${eye('right')}<img class="closed" src="${L('eyes-closed')}" alt="">
-      <img src="${L('blush')}" alt=""><img class="mo mo-smile" src="${L('mouth-smile')}" alt=""><img class="mo mo-open" src="${L('mouth-open')}" alt=""><img class="mo mo-o" src="${L('mouth-o')}" alt="">
-      <img class="bfly" src="${L('butterfly')}" alt=""><span class="q-think"><i></i><i></i><i></i></span></div></div>`;
+  // ---------- 小桐 / 肉肉：逐帧动画播放器 ----------
+  // 素材：assets/xiaotong/web（全身动作帧 + 半身注视帧）、assets/pet/web（肉肉动作帧）
+  const XT = 'assets/xiaotong/web/', RR = 'assets/pet/web/';
+  const f2 = (n) => String(n).padStart(2, '0');
+  // [帧数, 是否循环, fps]
+  const XSEQ = { idle: [8, 1, 7], wave: [8, 0, 10], happy: [8, 0, 10], think: [6, 1, 6], heart: [8, 0, 9], 'give-card': [10, 0, 9], nod: [6, 0, 9], talk: [6, 1, 8], sign: [8, 1, 6] };
+  const PSEQ = { idle: [6, 1, 6], wag: [6, 1, 10], lick: [6, 0, 8], hop: [7, 0, 9], sleep: [4, 1, 3] };
+  const ACT = { wave: 'wave', happy: 'happy', give: 'give-card', heart: 'heart', nod: 'nod' };
+  const BUST_EXPR = { wave: 'hello', happy: 'happy', give: 'card', heart: 'happy', nod: 'happy' };
+  const xf = (a, i) => `${XT}anim/${a}/${f2(i)}.webp`, pf = (a, i) => `${RR}anim/${a}/${f2(i)}.webp`;
+  const preloaded = new Set();
+  function preload(list) { list.forEach((u) => { if (preloaded.has(u)) return; preloaded.add(u); const im = new Image(); im.src = u; }); }
+  function preloadAll() {
+    const l = [];
+    Object.entries(XSEQ).forEach(([a, [n]]) => { for (let i = 1; i <= n; i++) l.push(xf(a, i)); });
+    ['c', 'l', 'r', 'u', 'd', 'ul', 'ur', 'dl', 'dr'].forEach((g) => l.push(`${XT}bust/gaze-${g}.webp`));
+    ['blink-1', 'blink-2', 'talk-1', 'talk-2', 'talk-3', 'hello', 'happy', 'think', 'card'].forEach((g) => l.push(`${XT}bust/${g}.webp`));
+    Object.entries(PSEQ).forEach(([a, [n]]) => { for (let i = 1; i <= n; i++) l.push(pf(a, i)); });
+    preload(l);
   }
+  setTimeout(preloadAll, 1200);
+  function chibi(bust) {
+    return `<div class="chibi xt ${bust ? 'bust' : 'full'}" aria-hidden="true"><img class="xt-img" src="${bust ? XT + 'bust/gaze-c.webp' : xf('idle', 1)}" alt="" draggable="false"><span class="q-think"><i></i><i></i><i></i></span></div>`;
+  }
+  const XS = new WeakMap();
+  const xst = (el) => { let s = XS.get(el); if (!s) { s = { a: 'idle', i: 1, t: 0, hold: 0, gaze: 'c', expr: null, exprUntil: 0, blink: 0 }; XS.set(el, s); } return s; };
   function chibiAct(el, cls, ms = 1600) {
     $$('.chibi', el).concat(el.classList && el.classList.contains('chibi') ? [el] : []).forEach((c) => {
       c.classList.remove(cls); void c.offsetWidth; c.classList.add(cls);
       if (ms) setTimeout(() => c.classList.remove(cls), ms);
+      const s = xst(c);
+      if (c.classList.contains('full') && ACT[cls]) { s.a = ACT[cls]; s.i = 1; s.t = 0; s.hold = 0; }
+      if (c.classList.contains('bust') && BUST_EXPR[cls]) { s.expr = BUST_EXPR[cls]; s.exprUntil = performance.now() + Math.max(ms || 1600, 1200); }
     });
   }
-  // 眼睛跟随鼠标
-  document.addEventListener('mousemove', (e) => {
-    $$('.chibi').forEach((el) => {
-      const r = el.getBoundingClientRect();
-      if (!r.width || r.bottom < 0 || r.top > innerHeight) return;
-      const cx = r.left + r.width / 2, cy = r.top + r.height * (el.classList.contains('bust') ? 0.45 : 0.32);
-      const dx = e.clientX - cx, dy = e.clientY - cy, d = Math.hypot(dx, dy) || 1, k = Math.min(1, d / 260) * 1.6;
-      $$('.pupil', el).forEach((p) => (p.style.transform = `translate(${(dx / d) * k}%,${(dy / d) * k * 0.8}%)`));
+  // 鼠标方向 → 9 个注视帧
+  let mx = innerWidth / 2, my = innerHeight / 2;
+  document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+  function gazeOf(el) {
+    const r = el.getBoundingClientRect(); const cx = r.left + r.width / 2, cy = r.top + r.height * 0.38;
+    const dx = mx - cx, dy = my - cy, T = Math.max(50, r.width * 0.45);
+    const h = dx < -T ? 'l' : dx > T ? 'r' : '', v = dy < -T ? 'u' : dy > T * 1.2 ? 'd' : '';
+    return (v + h) || 'c';
+  }
+  let lastTick = performance.now();
+  function tick(now) {
+    const dt = now - lastTick; lastTick = now;
+    $$('.chibi.xt').forEach((el) => {
+      const r = el.getBoundingClientRect(); if (!r.width || r.bottom < 0 || r.top > innerHeight) return;
+      const img = el.firstElementChild, s = xst(el); let src;
+      if (el.classList.contains('bust')) {
+        if (now > s.blink + 3600 + Math.random() * 400) s.blink = now;
+        const bt = now - s.blink;
+        if (s.expr && now < s.exprUntil) src = s.expr;
+        else if (el.classList.contains('think')) src = 'think';
+        else if (el.classList.contains('talk')) src = 'talk-' + (1 + Math.floor(now / 120) % 3);
+        else if (bt < 70) src = 'blink-1'; else if (bt < 160) src = 'blink-2'; else if (bt < 230) src = 'blink-1';
+        else src = 'gaze-' + gazeOf(el);
+        src = `${XT}bust/${src}.webp`;
+      } else {
+        if (el.classList.contains('think') && s.a === 'idle') { s.a = 'think'; s.i = 1; }
+        if (!el.classList.contains('think') && s.a === 'think') { s.a = 'idle'; s.i = 1; }
+        const [n, loop, fps] = XSEQ[s.a];
+        if (s.hold > 0) s.hold -= dt;
+        else if ((s.t += dt) >= 1000 / fps) {
+          s.t = 0; s.i++;
+          if (s.i > n) {
+            if (loop) { s.i = 1; if (s.a === 'idle') s.hold = 900 + Math.random() * 1600; }
+            else { s.a = el.classList.contains('think') ? 'think' : 'idle'; s.i = 1; }
+          }
+        }
+        src = xf(s.a, s.i);
+      }
+      if (img.getAttribute('src') !== src) img.setAttribute('src', src);
     });
-  });
-  // 眨眼
-  setInterval(() => $$('.chibi').forEach((c) => { c.classList.add('blink'); setTimeout(() => c.classList.remove('blink'), 140); }), 3800);
-  document.addEventListener('click', (e) => { const c = e.target.closest('.chibi'); if (c && !e.target.closest('.agent-fab,.qbtn')) { chibiAct(c, 'wave'); chibiAct(c, 'happy', 1000); } });
+    petTick(now, dt);
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  document.addEventListener('click', (e) => { const c = e.target.closest('.chibi'); if (c && !e.target.closest('.agent-fab,.qbtn')) { chibiAct(c, Math.random() < .5 ? 'wave' : 'heart'); } });
+
+  // 肉肉：首页大图默认待机帧循环，点击切换动作 / 姿势
+  const PS = { mode: 'anim', a: 'idle', i: 1, t: 0, hold: 0, until: 0 };
+  function petTick(now, dt) {
+    const img = $('#petBig'); if (!img) return;
+    if (PS.mode === 'pose') { if (now > PS.until) { PS.mode = 'anim'; PS.a = 'idle'; PS.i = 1; } else return; }
+    const [n, loop, fps] = PSEQ[PS.a];
+    if (PS.hold > 0) PS.hold -= dt;
+    else if ((PS.t += dt) >= 1000 / fps) {
+      PS.t = 0; PS.i++;
+      if (PS.i > n) { if (loop) { PS.i = 1; if (PS.a === 'idle') PS.hold = 1200 + Math.random() * 1800; } else { PS.a = 'idle'; PS.i = 1; } }
+    }
+    const src = pf(PS.a, PS.i); if (img.getAttribute('src') !== src) img.setAttribute('src', src);
+  }
 
   // ---------- 导航 ----------
   const VIEWS = [
@@ -221,19 +284,20 @@
     { cls: 's2', big: 'YUNXIU', sub: '《云秀行》下周首播 · 312 位粉丝在期待' },
     { cls: 's3', big: 'THANK YOU', sub: '本周收到 12 件粉丝创作' }
   ];
-  // 首页大号宠物「雾蝶」：点一下换动作，并说一句今天的提醒
+  // 首页肉肉：点一下换动作，并说一句今天的提醒（anim: 开头的是动作帧，其余是单张姿势）
   const PET_LINES = [
-    ['wave', '早上好，一桐！今天有 3 条留言值得你看～'],
+    ['anim:wag', '早上好，一桐！今天有 3 条留言值得你看～'],
     ['heart', '晚风来信今天生日，记得给 TA 写几句哦'],
-    ['cheer', '今天新增 1.23 万位粉丝，抖音涨得最快！'],
+    ['anim:hop', '今天新增 1.23 万位粉丝，抖音涨得最快！'],
     ['card', '还有 1 张小卡等你送出'],
+    ['anim:lick', '舔舔鼻子～今天也要好好吃饭'],
     ['mic', '《云秀行》首播夜，要不要开一场直播？'],
     ['listen', '想知道粉丝在聊什么？问问小桐吧'],
     ['think', '我在想……下周发什么内容好呢'],
-    ['sleep', 'Zzz……（偷偷打了个盹）']
+    ['anim:sleep', 'Zzz……（偷偷打了个盹）']
   ];
   let petI = 0;
-  // 雾蝶支持拖动：按住拖到任意位置，松手后记住；轻点仍是换动作
+  // 肉肉支持拖动：按住拖到任意位置，松手后记住；轻点仍是换动作
   const PET_KEY = 'yt-pet-pos';
   let petDragged = false;
   function placePet(st) {
@@ -268,7 +332,9 @@
   function petNext() {
     const img = $('#petBig'), bub = $('#petBubble'); if (!img) return;
     petI = (petI + 1) % PET_LINES.length; const [n, line] = PET_LINES[petI];
-    img.classList.remove('pop'); void img.offsetWidth; img.src = `assets/pet/${n}.png`; img.classList.add('pop');
+    img.classList.remove('pop'); void img.offsetWidth; img.classList.add('pop');
+    if (n.startsWith('anim:')) { Object.assign(PS, { mode: 'anim', a: n.slice(5), i: 1, t: 0, hold: 0 }); }
+    else { Object.assign(PS, { mode: 'pose', until: performance.now() + 3200 }); img.src = `${RR}${n}.webp`; }
     bub.classList.remove('show'); void bub.offsetWidth; bub.textContent = line; bub.classList.add('show'); clearTimeout(bub._t); bub._t = setTimeout(() => { if (innerWidth <= 860) bub.classList.remove('show'); }, 3200);
   }
   let slideI = 0, slideT;
@@ -299,9 +365,10 @@
           <div class="pill" role="button" tabindex="0" data-view="more" data-tab="bday"><div class="thumb">${stImg('birthday','icons3d/birthday.png')}</div><div class="lbl"><b class="num">2</b>今日生日</div>${askBtn('今天谁过生日？')}</div>
           <div class="pill" role="button" tabindex="0" data-view="cards"><div class="thumb">${stImg('card','icons3d/card.png')}</div><div class="lbl"><b class="num">1</b>待送小卡</div>${askBtn('帮我做一张长情小卡')}</div>
         </div>
-        <div class="pet-stage" role="button" tabindex="0" data-pet title="点我换个动作">
+        <div class="pet-stage duo" role="button" tabindex="0" data-pet title="点我换个动作">
+          <div class="duo-xt">${chibi()}</div>
           <div class="pet-bubble" id="petBubble">${PET_LINES[0][1]}</div>
-          <img class="pet-big" id="petBig" src="assets/pet/${PET_LINES[0][0]}.png" alt="雾蝶">
+          <img class="pet-big" id="petBig" src="${pf('idle', 1)}" alt="肉肉" draggable="false">
           <div class="pet-shadow"></div>
         </div>
         <div class="ghost-word">Yitong</div>
@@ -383,7 +450,7 @@
     if (opts.kw !== undefined) { replyKw = opts.kw; replyCat = '全部'; }
     if (opts.cat) replyCat = opts.cat;
     const v = $('#v-reply');
-    v.innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>REPLY</em>留言与回应</h2><span class="muted" style="font-size:12px">AI 已从 1,286 条中按主题整理</span></div>
+    v.innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>REPLY</em>留言与回应<img class="head-xt" src="${XT}pose/reply.webp" alt=""></h2><span class="muted" style="font-size:12px">AI 已从 1,286 条中按主题整理</span></div>
       <div class="filters">${CATS.map((c) => `<button class="chip ${c === replyCat ? 'active' : ''}" data-cat="${c}">${c}${c === '需谨慎' ? ` · ${D.risky.length}` : ''}</button>`).join('')}
         ${replyKw ? `<button class="chip active" data-kwclear>关键词：${esc(replyKw)} ✕</button>` : ''}
         <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="replyQ" placeholder="搜索昵称或内容" value="${esc(replyQ)}"></label></div>
@@ -501,7 +568,7 @@
     if (opts.for) { const c = api.getComment(opts.for); W.to = c.id; W.theme = c.tier; W.tier = ''; }
     if (opts.tier) { W.tier = opts.tier; W.theme = opts.tier; }
     const v = $('#v-cards');
-    v.innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>CARDS</em>小卡工坊</h2><span class="muted" style="font-size:12px">一张只属于 TA 的纪念</span></div>
+    v.innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>CARDS</em>小卡工坊<img class="head-xt" src="${XT}pose/write.webp" alt=""></h2><span class="muted" style="font-size:12px">一张只属于 TA 的纪念</span></div>
       ${newPostsHTML()}
       <div class="workshop"><div>
         <div class="step"><h3><i>1</i>选一张照片</h3>
@@ -586,7 +653,7 @@
       <div class="c-patch p1"></div><div class="c-patch p2"></div><div class="c-patch p3"></div>
       ${lay === 'race' ? '<div class="c-num">23</div>' : ''}
       <div class="c-film"><img src="${ph2}" onerror="this.remove()"></div>
-      <div class="c-main" style="${torn(seed, 1.4, 2.6)}"><div class="c-fb">${chibi()}</div>${ph}</div>
+      <div class="c-main" style="${torn(seed, 1.4, 2.6)}"><div class="c-fb"><img src="${XT}pose/hug-rourou.webp" alt=""></div>${ph}</div>
       <div class="c-tape t1"></div><div class="c-tape t2"></div>
       ${deco.map((d) => { const [n, c] = d.split(' '); return `<i class="c-deco ${n} ${c}">${DECO[n]}</i>`; }).join('')}
       <div class="no">No. ${String(k.n).padStart(4, '0')}</div>
@@ -600,7 +667,7 @@
     const photo = k.photo ? `<img src="${k.photo}" style="filter:${k.photo.startsWith('data:') ? st.filter : 'none'}" onerror="this.remove()">` : '';
     return `<div class="ycard t-${k.theme}">
       <div class="no">No. ${String(k.n).padStart(4, '0')}</div>
-      <div class="photo"><div style="width:80%;height:80%">${chibi()}</div>${photo}</div>${k.photo && k.ai ? '<span class="ai">AI 生成</span>' : ''}
+      <div class="photo"><img class="xt-pose" src="${XT}pose/card.webp" alt="">${photo}</div>${k.photo && k.ai ? '<span class="ai">AI 生成</span>' : ''}
       ${small ? '' : `<div class="meta"><div class="theme">${th.id.toUpperCase()}</div><div class="tname">${th.name}</div><div class="line">${th.line}</div>
       <div class="to">致 ${esc(k.toName)}</div><div class="days">${esc(k.daysText)}</div><div class="hand">${esc(k.hand)}</div><div class="sign">— 一桐</div></div>`}</div>`;
   }
@@ -678,7 +745,7 @@
   }
   function renderInsight() {
     const fans = [...D.comments].sort((a, b) => b.days - a.days);
-    $('#v-insight').innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>INSIGHT</em>粉丝洞察</h2><span class="internal">${I.shield.replace('<svg', '<svg width="14" height="14"')}仅你和团队可见，不对外展示</span></div>
+    $('#v-insight').innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>INSIGHT</em>粉丝洞察<img class="head-xt" src="${XT}pose/read.webp" alt=""></h2><span class="internal">${I.shield.replace('<svg', '<svg width="14" height="14"')}仅你和团队可见，不对外展示</span></div>
       <div class="three reveal">
         <div class="panel">${askBtn('各分层粉丝该怎么维护？')}<h3>陪伴分层 <small class="muted" style="font-weight:400;font-size:11px">对应纪念卡</small></h3><div class="donut-wrap">${donut(D.tiers)}<div class="legend">${D.tiers.map((t) => `<div><i style="background:${t.color}"></i>${t.name}<span class="num">${t.pct}%</span></div>`).join('')}</div></div></div>
         <div class="panel"><h3>性别</h3>${bars(D.audience.gender, 100)}<h3 style="margin-top:22px">年龄</h3>${bars(D.audience.age, 45)}</div>
@@ -872,7 +939,7 @@
     if (moreTab === 'lucky') body = renderLucky();
     if (moreTab === 'review') body = `<div class="panel white"><div class="muted" style="font-size:12px;margin-bottom:6px">新注册需要答题，AI 先给出风险判断，最后由团队决定</div>${D.applicants.map((a) => `<div class="apply"><div><b style="font-weight:500">${esc(a.name)}</b><small>${esc(a.note)}</small></div><span class="score num">${a.score}<small class="muted" style="font-size:11px"> 分</small></span><span class="tag ${a.risk === '高' ? 'rose' : ''}">风险 ${a.risk}</span>
       <div style="display:flex;gap:8px">${S.approved[a.id] ? `<span class="tag">${S.approved[a.id] === 'ok' ? '已通过' : '已驳回'}</span>` : `<button class="btn sm" data-approve="${a.id}" data-ok="1">通过</button><button class="btn danger sm" data-approve="${a.id}" data-ok="0">驳回</button>`}</div></div>`).join('')}</div>`;
-    if (moreTab === 'live') body = `<div class="live"><div class="live-cover"><span class="onair">PRIVATE LIVE</span><div style="width:200px;height:220px">${chibi()}</div>${pet('mic', 'live-pet')}</div>
+    if (moreTab === 'live') body = `<div class="live"><div class="live-cover"><span class="onair">PRIVATE LIVE</span><img class="live-xt" src="${XT}pose/mic.webp" alt="">${pet('mic', 'live-pet')}</div>
       <div class="panel"><h3>开一场私域直播</h3><div class="muted" style="font-size:12px">只对小程序里通过审核的粉丝开放</div>
         <label class="field">主题<input value="《云秀行》首播夜 · 一起看"></label><label class="field">时间<input value="11 月 3 日 20:00"></label>
         <label class="field">形式<select><option>线上小会（30 人连麦）</option><option>线上签售</option><option>公开直播</option></select></label>
@@ -884,7 +951,7 @@
         <div class="panel" style="margin-top:18px"><h3>一份内容，多个平台</h3><div class="muted" style="font-size:12px">输入一个想法，自动改写成各平台的版本</div>
           <label class="field"><input id="ideaIn" value="分享《云秀行》定妆那天的小故事"></label><button class="btn soft sm" style="margin-top:12px" id="multiBtn">${I.spark}生成三个版本</button><div class="multi" id="multiOut"></div></div>`;
     }
-    $('#v-more').innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>MORE</em>更多</h2></div><div class="more-tabs">${tabs.map(([k, n, ic]) => `<button class="chip mtab ${moreTab === k ? 'active' : ''}" data-mtab="${k}">${ic3(ic)}${n}</button>`).join('')}</div>${body}`;
+    $('#v-more').innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>MORE</em>更多<img class="head-xt" src="${XT}pose/${({ bday: 'cake', lucky: 'gift', review: 'shh', live: 'mic', cal: 'read' })[moreTab]}.webp" alt=""></h2></div><div class="more-tabs">${tabs.map(([k, n, ic]) => `<button class="chip mtab ${moreTab === k ? 'active' : ''}" data-mtab="${k}">${ic3(ic)}${n}</button>`).join('')}</div>${body}`;
     if (moreTab === 'bday') bindBday();
     if (moreTab === 'lucky') bindLucky();
     const mb = $('#multiBtn'); if (mb) mb.onclick = () => {
@@ -898,7 +965,7 @@
   let agentOpen = false, ctxComment = null, greeted = false;
   function openAgent(q) {
     agentOpen = true; if ($('#drawer').classList.contains('on') && innerWidth >= 1100) $('#drawer').classList.add('beside'); $('#agent').classList.add('on'); $('#fab').classList.add('hidden');
-    if (!$('#agentChibi').innerHTML) $('#agentChibi').innerHTML = chibi();
+    if (!$('#agentChibi').innerHTML) $('#agentChibi').innerHTML = chibi(1);
     if (!greeted) { greeted = true; botSay(`早上好，一桐。我读完了今天的 1,286 条留言：\n<ol><li>3 条值得你亲自回</li><li>2 条棘手消息，我已经先帮你模糊处理</li><li>2 位粉丝今天生日</li></ol>想先看哪个？`, [['看值得回的留言', 'drawer:pending'], ['看棘手消息', 'drawer:risky']]); chibiAct($('#agent'), 'wave'); }
     setSugs();
     if (q) setTimeout(() => ask(q), greeted ? 200 : 900);
