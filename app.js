@@ -29,9 +29,10 @@
   const ic3 = (n, cls = '') => `<img class="ic3 ${cls}" src="assets/icons3d/${n}.png" alt="" loading="lazy">`;
   const askBtn = (q) => `<button class="ask" data-ask="${esc(q)}" title="问一问">${I.spark}</button>`;
   const platTag = (p) => `<span class="plat plat-${p}" title="${P[p].name}"><img src="assets/platform/${p}.svg" alt="${P[p].name}"></span>`;
-  // 粉丝头像：assets/avatars/<首字 Unicode>.svg（DiceBear Lorelei，CC0），缺图时退回首字
-  const avSrc = (t) => `assets/avatars/${(t || '·').codePointAt(0).toString(16)}.svg`;
-  const avImg = (t) => `<img src="${avSrc(t)}" alt="" loading="lazy" onerror="this.remove()">`;
+  // 粉丝头像：assets/avatars/<首字 Unicode>.webp|.svg
+  // 优先读第九批写实社交头像 .webp，没有时退回插画 .svg，再没有就显示首字
+  const avKey = (t) => (t || '·').codePointAt(0).toString(16);
+  const avImg = (t) => `<img src="assets/avatars/${avKey(t)}.webp" alt="" loading="lazy" onerror="if(this.dataset.f){this.remove()}else{this.dataset.f=1;this.src='assets/avatars/${avKey(t)}.svg'}">`;
   const av = (t, big) => `<span class="av has-img"${big ? ' style="width:54px;height:54px"' : ''}>${esc((t || '·')[0])}${avImg(t)}</span>`;
 
   // ---------- 小桐 / 肉肉：逐帧动画播放器 ----------
