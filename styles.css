@@ -1499,3 +1499,5 @@ html.embed .tabbar{padding-bottom:18px}
   .pet-stage{left:auto;right:24px;top:226px;width:180px}
   .pet-bubble{right:calc(100% - 10px);top:56px;left:auto}
 }
+.m-only{display:none!important}
+@media (max-width:860px){.m-only{display:inline-flex!important}.more-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.more-tabs::-webkit-scrollbar{display:none}.more-tabs .chip{flex:none}}

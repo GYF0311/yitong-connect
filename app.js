@@ -141,8 +141,8 @@
   let current = 'today';
   function renderNav() {
     $('#nav').innerHTML = VIEWS.map((v) => { const b = v.badge ? v.badge() : 0; return `<button data-view="${v.id}" class="${v.id === current ? 'active' : ''}">${v.icon}<span>${v.name}</span>${b ? `<span class="badge">${b}</span>` : ''}</button>`; }).join('');
-    const tb = VIEWS.slice(0, 2).concat([null], VIEWS.slice(2, 4));
-    $('#tabbar').innerHTML = tb.map((v) => v ? `<button data-view="${v.id}" class="${v.id === current ? 'active' : ''}">${v.icon}<span>${v.name}</span></button>` : `<button class="qbtn" data-agent aria-label="打开助手">${chibi(1)}</button>`).join('');
+    const tb = VIEWS.slice(0, 2).concat([null], [VIEWS[2], VIEWS[4]]); // 手机底栏：洞察放进「更多」
+    $('#tabbar').innerHTML = tb.map((v) => v ? `<button data-view="${v.id}" class="${v.id === current || (v.id === 'more' && current === 'insight') ? 'active' : ''}">${v.icon}<span>${v.name}</span></button>` : `<button class="qbtn" data-agent aria-label="打开助手">${chibi(1)}</button>`).join('');
   }
   function go(id, opts = {}) {
     current = id;
@@ -966,7 +966,7 @@
         <div class="panel" style="margin-top:18px"><h3>一份内容，多个平台</h3><div class="muted" style="font-size:12px">输入一个想法，自动改写成各平台的版本</div>
           <label class="field"><input id="ideaIn" value="分享《金枝》定妆那天的小故事"></label><button class="btn soft sm" style="margin-top:12px" id="multiBtn">${I.spark}生成三个版本</button><div class="multi" id="multiOut"></div></div>`;
     }
-    $('#v-more').innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>MORE</em>更多<img class="head-xt" src="${XT}pose/${({ bday: 'cake', lucky: 'gift', review: 'shh', live: 'mic', cal: 'read' })[moreTab]}.webp" alt=""></h2></div><div class="more-tabs">${tabs.map(([k, n, ic]) => `<button class="chip mtab ${moreTab === k ? 'active' : ''}" data-mtab="${k}">${ic3(ic)}${n}</button>`).join('')}</div>${body}`;
+    $('#v-more').innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>MORE</em>更多<img class="head-xt" src="${XT}pose/${({ bday: 'cake', lucky: 'gift', review: 'shh', live: 'mic', cal: 'read' })[moreTab]}.webp" alt=""></h2></div><div class="more-tabs"><button class="chip mtab m-only" data-view="insight">${ic3('insight')}粉丝洞察</button>${tabs.map(([k, n, ic]) => `<button class="chip mtab ${moreTab === k ? 'active' : ''}" data-mtab="${k}">${ic3(ic)}${n}</button>`).join('')}</div>${body}`;
     if (moreTab === 'bday') bindBday();
     if (moreTab === 'lucky') bindLucky();
     const mb = $('#multiBtn'); if (mb) mb.onclick = () => {
