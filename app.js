@@ -575,6 +575,19 @@
   }
 
   // ---------- 洞察 ----------
+  const O = D.fanOps, OPS = { type: 'new', done: {} };
+  function otypeHTML() {
+    const t = O.types.find((x) => x.id === OPS.type);
+    return `<div class="ot panel">
+      <div class="ot-l"><div class="ot-n"><i style="background:${t.color}"></i><b>${t.name}</b><span class="num">${t.n}</span><small class="muted">占 ${t.pct}%</small></div>
+        <small class="ot-k">识别信号</small><div class="ot-sig">${t.signals.map((x) => `<span class="tag">${x}</span>`).join('')}</div>
+        <small class="ot-k">TA 需要什么</small><p class="ot-need">${t.need}</p>
+        <div class="ot-kpi">${t.kpi.map(([k, v, g]) => `<div><small>${k}</small><b class="num">${v}</b><span class="muted">${g}</span></div>`).join('')}</div></div>
+      <div class="ot-r"><small class="ot-k">怎么做</small><ol class="ot-do">${t.do.map((x) => `<li>${x}</li>`).join('')}</ol>
+        <div class="ot-self">${I.spark.replace('<svg', '<svg width="14" height="14"')}<span><b>她可以亲自做的一件事：</b>${t.self}</span></div>
+        <div class="ot-avoid">${I.shield.replace('<svg', '<svg width="14" height="14"')}<span><b>避免：</b>${t.avoid}</span></div>
+        <div class="ot-btns"><button class="btn soft" data-ask="${t.ask}">${I.spark}${t.ask.replace('帮我', '让助手')}</button><button class="btn" data-octa="${t.cta[1]}">${t.cta[0]}</button></div></div></div>`;
+  }
   function renderInsight() {
     const fans = [...D.comments].sort((a, b) => b.days - a.days);
     $('#v-insight').innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>INSIGHT</em>粉丝洞察</h2><span class="internal">${I.shield.replace('<svg', '<svg width="14" height="14"')}仅你和团队可见，不对外展示</span></div>
@@ -583,23 +596,38 @@
         <div class="panel"><h3>性别</h3>${bars(D.audience.gender, 100)}<h3 style="margin-top:22px">年龄</h3>${bars(D.audience.age, 45)}</div>
         <div class="panel"><h3>地域 Top 5</h3>${bars(D.audience.region, 15)}</div>
       </div>
-      <div class="sec reveal"><div class="sec-head"><h2><em>01</em>成长与留存路径</h2><span class="muted" style="font-size:12px">新粉 → 活跃粉 → 核心粉 → 稳固</span></div>
+      <div class="sec reveal"><div class="sec-head"><h2><em>01</em>成长与留存体系</h2><span class="muted" style="font-size:12px">新粉 → 活跃粉 → 核心粉 → 稳固</span></div>
         ${stepper(D.funnel.map((f) => ({ name: f.stage, sub: wan(f.n) })), 2, 0.45, '成长路径 · 当前重点：稳住核心粉')}
         <div class="funnel">${D.funnel.map((f, i) => `<div class="fstage" style="--w:${100 - i * 12}%"><div class="fbar"><b>${f.stage}</b><span class="num">${wan(f.n)}</span></div><small>${f.desc}</small>${f.next ? `<div class="fnext">${f.next}</div>` : ''}</div>`).join('')}</div>
-        <div class="moves">${D.moves.map((m) => `<div class="move"><div class="mv-h">${m.from} <span>→</span> ${m.to}</div><ul>${m.acts.map((a) => `<li>${a}</li>`).join('')}</ul></div>`).join('')}</div>
-        <div class="churn panel"><div><div class="muted" style="font-size:12px">流失预警</div><div class="ch-n"><span class="num">${fmt(D.churn.core)}</span> ${D.churn.desc}</div>
-          <div class="ch-r">${D.churn.reasons.map((r) => `<span class="tag">${r}</span>`).join('')}</div></div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn soft" data-ask="帮我给近 30 天没回访的核心粉写一段关怀">${I.spark}让助手起草关怀</button><button class="btn" data-view="cards" data-tier="changqing">批量送「长情」卡</button></div></div></div>
+        <h3 class="ops-h">转化引擎 <small>每一步：什么时候触发 · 做什么 · 看什么指标</small></h3>
+        <div class="engine">${O.engine.map((e, i) => `<div class="eng panel">
+          <div class="eng-h"><span class="tag">${e.from}</span><i>→</i><span class="tag on">${e.to}</span><span class="eng-pool muted">候选 <b class="num">${fmt(e.pool)}</b> 人</span></div>
+          <div class="eng-t"><small>触发条件</small><p>${e.trigger}</p></div>
+          <ol class="eng-steps">${e.steps.map(([k, v]) => `<li><b>${k}</b><span>${v}</span></li>`).join('')}</ol>
+          <div class="eng-kpi"><div><small>${e.metric}</small><span class="num">${e.rate}%</span></div><div class="eng-bar"><i style="width:${Math.min(100, e.rate / e.goal * 100)}%"></i></div><small class="muted">目标 ${e.goal}%</small></div>
+          <button class="btn ${OPS.done[i] ? 'ghost' : ''}" data-orun="${i}" ${OPS.done[i] ? 'disabled' : ''}>${OPS.done[i] ? '已加入今日待办' : e.run}</button></div>`).join('')}</div></div>
 
-      <div class="sec reveal"><div class="sec-head"><h2><em>02</em>分类运营策略</h2><span class="muted" style="font-size:12px">不同粉丝，需求完全不一样</span></div>
-        <div class="segs">${D.segments.map((g) => `<div class="segc">${askBtn('「' + g.name + '」该怎么运营？')}<div class="sg-top"><i style="background:${g.color}"></i><b>${g.name}</b><span class="num">${g.pct}%</span></div>
-          <dl><dt>需要什么</dt><dd>${g.need}</dd><dt>怎么做</dt><dd>${g.strategy}</dd><dt>看什么指标</dt><dd>${g.metric}</dd></dl></div>`).join('')}</div></div>
+      <div class="sec reveal"><div class="sec-head"><h2><em>02</em>五类粉丝分层运营</h2><span class="muted" style="font-size:12px">AI 根据行为打标签，同一个人可以同时属于几类</span></div>
+        <div class="otabs">${O.types.map((t) => `<button class="chip ${OPS.type === t.id ? 'active' : ''}" data-otype="${t.id}"><i style="background:${t.color}"></i>${t.name}<span class="num">${t.pct}%</span></button>`).join('')}</div>
+        <div id="otype">${otypeHTML()}</div></div>
 
-      <div class="sec reveal"><div class="sec-head"><h2><em>03</em>四种粉丝画像</h2></div>
-        <div class="persona-grid">${D.personas.map((p) => `<div class="persona"><div class="pct num">${p.pct}%</div><b>${p.name}</b><p>${p.want}</p><div class="tip">${I.bulb.replace('<svg', '<svg width="13" height="13" style="vertical-align:-2px"')} ${p.tip}</div></div>`).join('')}</div></div>
-      <div class="sec reveal"><div class="sec-head"><h2><em>04</em>本周建议</h2></div>
+      <div class="sec reveal"><div class="sec-head"><h2><em>03</em>陪伴值成长体系</h2><span class="muted" style="font-size:12px">只看陪伴，不看消费</span></div>
+        <div class="two">
+          <div class="panel"><h3>怎么获得陪伴值</h3><table class="pts">${O.points.map(([a, b, c]) => `<tr class="${b === '0' ? 'zero' : ''}"><td>${a}</td><td class="num">${b}</td><td class="muted">${c}</td></tr>`).join('')}</table></div>
+          <div class="panel"><h3>分层与对应的回应</h3><div class="lvls">${O.levels.map(([n, r, g], i) => `<div class="lvl"><span class="lv-i num">${i + 1}</span><div><b>${n}</b><small class="num">${r}</small></div><p>${g}</p></div>`).join('')}</div>
+            <div class="note">${I.bulb.replace('<svg', '<svg width="14" height="14"')}<span>60 天没有互动，陪伴值冻结不清零；回来后继续累计。</span></div></div>
+        </div></div>
+
+      <div class="sec reveal"><div class="sec-head"><h2><em>04</em>流失预警与召回</h2><span class="rfd">${O.rfd.map(([a, b]) => `<span title="${b}">${a}</span>`).join('')}</span></div>
+        <div class="panel risks">${O.risk.map((r, i) => `<div class="rk"><span class="rk-lv ${r.tone}">${r.lv}风险</span><div class="rk-m"><b><span class="num">${fmt(r.n)}</span> 位${r.who}</b><small>${r.sig}</small></div><div class="rk-a muted">${r.act}</div>
+          <button class="btn ${i ? 'ghost' : ''} sm" ${i === 0 ? 'data-ask="帮我给近 30 天没回访的核心粉写一段关怀"' : i === 1 ? 'data-ask="帮我给互动变少的活跃粉推荐一条内容"' : 'data-view="reply"'}>${r.btn}</button></div>`).join('')}
+          <div class="ch-r" style="margin-top:14px"><span class="muted" style="font-size:12px;margin-right:6px">常见原因</span>${D.churn.reasons.map((r) => `<span class="tag">${r}</span>`).join('')}</div></div></div>
+
+      <div class="sec reveal"><div class="sec-head"><h2><em>05</em>运营护栏</h2><span class="muted" style="font-size:12px">参考网信办「饭圈」乱象治理要求</span></div>
+        <div class="guard">${O.guard.map((g) => `<div>${I.shield.replace('<svg', '<svg width="16" height="16"')}<span>${g}</span></div>`).join('')}</div></div>
+      <div class="sec reveal"><div class="sec-head"><h2><em>06</em>本周建议</h2></div>
         <div class="panel"><div class="tips">${D.insightsTips.map((t) => `<div>${I.bulb}<span>${t}</span></div>`).join('')}</div></div></div>
-      <div class="sec reveal"><div class="sec-head"><h2><em>05</em>粉丝列表</h2><div class="filters">${['全部'].concat(D.tiers.map((t) => t.name)).map((n, i) => `<button class="chip ${i === 0 ? 'active' : ''}" data-ftier="${n}">${n}</button>`).join('')}</div></div>
+      <div class="sec reveal"><div class="sec-head"><h2><em>07</em>粉丝列表</h2><div class="filters">${['全部'].concat(D.tiers.map((t) => t.name)).map((n, i) => `<button class="chip ${i === 0 ? 'active' : ''}" data-ftier="${n}">${n}</button>`).join('')}</div></div>
         <div class="panel white" style="overflow:auto"><table class="ftable"><thead><tr><th>粉丝</th><th>分层</th><th>陪伴</th><th>累计留言</th><th>来源</th><th></th></tr></thead><tbody id="ftbody">${fanRows(fans)}</tbody></table></div></div>`;
   }
   const fanRows = (fans) => fans.map((c) => `<tr><td>${av(c.av)}${esc(c.fan)}</td><td><span class="tag">${tierName(c.tier)}</span></td><td class="num">${c.days} 天</td><td class="num">${c.total}</td><td>${platTag(c.p)}</td><td><button class="btn ghost sm" data-comment="${c.id}">查看</button></td></tr>`).join('');
@@ -902,6 +930,9 @@
     if (d.style) { W.style = d.style; $$('[data-style]').forEach((x) => x.classList.toggle('active', x === t)); if (W.src === 'tpl') { W.photo = D.portraitStyles.find((s) => s.id === d.style).img; renderSrc(); } generate(); return; }
     if (d.theme) { W.theme = d.theme; $$('[data-theme]').forEach((x) => x.classList.toggle('on', x === t)); renderPreview(); return; }
     if (d.close !== undefined) { $('#modal').classList.remove('on'); return; }
+    if (d.otype) { OPS.type = d.otype; $$('[data-otype]').forEach((x) => x.classList.toggle('active', x === t)); $('#otype').innerHTML = otypeHTML(); return; }
+    if (d.orun !== undefined) { OPS.done[d.orun] = 1; t.className = 'btn ghost'; t.disabled = true; t.textContent = '已加入今日待办'; toast('已加入今日待办，发出前会逐条给你确认'); return; }
+    if (d.octa) { const m = { reply: () => go('reply'), cards: () => go('cards', { tier: 'changqing' }), lucky: () => go('more', { tab: 'lucky' }), today: () => go('today') }; (m[d.octa] || m.today)(); return; }
     if (d.mtab) { go('more', { tab: d.mtab }); return; }
     if (d.bless) { await api.bless(d.bless, d.mode); toast(d.mode === 'self' ? '已录制并发送亲自祝福' : '已发送统一祝福'); celebrate('happy'); renderMore(); return; }
     if (d.bsel) { BD.sel = d.bsel; stopRec(); renderMore(); return; }
