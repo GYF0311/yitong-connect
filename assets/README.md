@@ -200,3 +200,38 @@
 候选图按第一步特别要求使用浅灰白不透明背景；原文通用透明 PNG 要求留待第二步执行。候选由内置 image_gen 逐款生成；各款脸型、服饰细节有自然差异，肉肉软胶款毛发较多，均未获得最终审美批准。第4款初版偏二次元，已重做为扁平色块风格，初版保留于 source/batch5/rejected/。
 
 替换前 logo 与 README 已按目录结构备份到 `source/backup-batch5/`。SVG 仅用 path，无文字、位图、渐变或滤镜；已检查24/40px预览，见 `source/batch5/logo-preview.png`。提示词见 `source/batch5/xiaotong-prompts.json`、`source/batch5/rourou-generation.md`；文件尺寸与 SHA-256 见 `source/batch5/verification.json`。
+
+
+## 第五批第二轮：修长手办风格候选
+
+2026-10-28，按提示词末节与先生追加的参考映射执行，内置 image_gen 多路生成。已实际查看并输入本地脸部照片及对应手办参考。参考照片没有拼入交付图。此前通用设定调用被中断，未获得可保存的 generic 成品；因此没有虚构 -generic 文件。已返回的参考版过程稿保留在 source/batch5/intermediate/ 与 rejected/。第一轮文件完整保留。
+
+所有下列单张均1536×1024，浅灰白/白色不透明背景（本阶段特定要求）：
+
+| 文件（位于 source/batch5/options/） | 风格 |
+|---|---|
+| xiaotong-5-pvc.png | PVC 手办，叉腰比V |
+| xiaotong-6-clay-slim.png | 哑光雕塑/黏土方向，低马尾 |
+| xiaotong-7-street.png | 街头潮玩，白卫衣与水蓝工装裤 |
+| xiaotong-8-toon3d.png | 三渲二，侧身回头 |
+| xiaotong-9-film.png | 动画电影风格化3D |
+| rourou-3-figure.png | 长毛雕塑手办 |
+| rourou-4-clay.png | 圆块面黏土 |
+| rourou-5-toon.png | 色块与细描边 |
+| rourou-6-line.png | 蓝色线稿与少量填色 |
+
+另有 overview-2.png（3000×900，上排小桐5–9，下排肉肉3–6）及 pairs-2.png（2700×1320，5+3、6+4、8+5三组完整图对比）。配对图为候选图排版，未重新生成合照。
+
+视觉评估：
+
+| 小桐 | 接近参考的部分 | 仍有差异的部分 |
+|---|---|---|
+| 5 PVC | 杏眼卧蚕、笑嘴弧度、柔和脸型 | 眼睛偏动漫放大，下巴偏收，月牙笑眼不足 |
+| 6 黏土 | 重画后平眉、杏眼、卧蚕、圆润下巴、微笑更接近 | 仍是精致雕塑材质，衣料细节较多，未达到粗块手捏黏土的强简化；笑眼不够弯 |
+| 7 街头 | 上扬嘴角、杏眼、圆润脸型 | 眼睛稍大，表情仍偏通用潮玩脸，五官辨识被风格化削弱 |
+| 8 三渲二 | 眼尾走向、眉形、鼻唇轮廓 | 下颌鼻唇较利落，笑容克制，月牙笑眼弱 |
+| 9 电影3D | 鹅蛋脸与柔和鼻唇、眼形 | 眼睛略大，脸偏理想化动画角色，苹果肌和笑眼弧度不足 |
+
+以上为对照参考后的主观判断，属于候选，不是先生已批准的身份/审美验收。第6已针对身份、遮眼与材质多次重画后采用当前版，并明确保留剩余差异。
+
+未执行第二步分层、动作、小尺寸、动画，未替换正式 chibi/、pet/ 或 logo，前端未改。提示词和输入路径：round2-a.json、round2-a-clay-final.json、round2-b.json、round2-dog.json；尺寸及SHA-256：round2-verification.json（均位于 source/batch5/）。

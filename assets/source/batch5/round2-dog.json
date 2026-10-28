@@ -1,0 +1,85 @@
+{
+  "mode": "built-in image_gen",
+  "stage": "round2 style candidates",
+  "references_inspected": [
+    "figure-01-clay-schoolgirl.png",
+    "figure-02-blue-blazer.png",
+    "figure-03-techwear-side.png",
+    "figure-06-plush-material-only.png",
+    "refs/应援色-速来发帖.png"
+  ],
+  "reference_roles": "01黏土/02PVC/03三渲二仅作为质感和光照参考，不复制人物、服饰和姿态；06仅检视材质对比未输入生成；速来发帖仅参考线稿气质。",
+  "generic_outputs": "none",
+  "prompts": [
+    {
+      "name": "rourou-3-figure",
+      "ref": "figure-02-blue-blazer.png",
+      "prompt": "Use case: stylized-concept。生成原创宠物IP肉肉的第二轮风格候选图，1536×1024横版，纯白或浅灰白无缝背景。左边完整正面坐姿、右边同一只狗完整侧面坐姿，两视图同大小同地面，柔和棚拍光，脚下淡投影。白色马尔济斯犬、黑鼻黑眼、垂耳，脖系水蓝#3B9AE1丝带和一枚精致小铃铛。只要狗，不出现任何人类、衣服、底座、铭牌、文字、品牌、水印或数字。风格：写实一点的收藏级PVC手办，比例接近真狗而不是圆球，身躯修长、自然小型犬骨骼，长毛做成精细有光泽的雕塑分束块面，没有真实散乱毛丝，没有毛绒纤维。参考图只参考PVC表面材质、雕塑块面与柔光，不要复制人物、衣服、颜色和姿势。",
+      "output_hint": "Generated images are saved to /Users/gaoyifan/.codex/generated_images/01a18092-293f-7ac1-a236-31fa099b9e40 as /Users/gaoyifan/.codex/generated_images/01a18092-293f-7ac1-a236-31fa099b9e40/exec-5e1c627c-e349-4700-ab0d-0f5f8cd72550.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "name": "rourou-4-clay",
+      "ref": "figure-01-clay-schoolgirl.png",
+      "prompt": "Use case: stylized-concept。生成原创宠物IP肉肉的第二轮风格候选图，1536×1024横版，纯白或浅灰白无缝背景。左边完整正面坐姿、右边同一只狗完整侧面坐姿，两视图同大小同地面，柔和棚拍光，脚下淡投影。白色马尔济斯犬、黑鼻黑眼、垂耳，脖系水蓝#3B9AE1丝带和一枚精致小铃铛。只要狗，不出现任何人类、衣服、底座、铭牌、文字、品牌、水印或数字。风格：全哑光手捏黏土小狗，毛发只有几大块圆润干净块面，表面磨砂细腻，圆润的手工塑形痕迹，黑色眼睛鼻头也以黏土形成。不要逼真毛丝、不要针织毛绒、不要光亮塑料。参考图只参考哑光黏土质感、块面语言与柔光，不要人物衣服姿态。",
+      "output_hint": "Generated images are saved to /Users/gaoyifan/.codex/generated_images/01a18092-293f-7ac1-a236-31fa099b9e40 as /Users/gaoyifan/.codex/generated_images/01a18092-293f-7ac1-a236-31fa099b9e40/exec-0c3c3c7b-2cdc-4151-b050-41e431ec6eba.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "name": "rourou-5-toon",
+      "ref": "figure-03-techwear-side.png",
+      "prompt": "Use case: stylized-concept。生成原创宠物IP肉肉的第二轮风格候选图，1536×1024横版，纯白或浅灰白无缝背景。左边完整正面坐姿、右边同一只狗完整侧面坐姿，两视图同大小同地面，柔和棚拍光，脚下淡投影。白色马尔济斯犬、黑鼻黑眼、垂耳，脖系水蓝#3B9AE1丝带和一枚精致小铃铛。只要狗，不出现任何人类、衣服、底座、铭牌、文字、品牌、水印或数字。风格：3D卡通渲染三渲二，明确的2-3阶硬边色块明暗、细细的深蓝灰描边，游戏角色立绘感，白毛用几何化流线型毛束描绘，正面微笑吐一点粉舌，侧面同一只狗。不要摄影真实毛丝、不要毛绒。参考图只参考清晰边线、渲染块面与角色质感，不要人物或机甲与服装。",
+      "output_hint": "Generated images are saved to /Users/gaoyifan/.codex/generated_images/01a18092-293f-7ac1-a236-31fa099b9e40 as /Users/gaoyifan/.codex/generated_images/01a18092-293f-7ac1-a236-31fa099b9e40/exec-ac56a6e9-2188-4372-aecb-54d0b8083d08.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "name": "rourou-6-line",
+      "prompt": "Use case: illustration-story。为原创宠物IP肉肉绘制极简线稿图标风格候选。1536×1024横向纯白背景，左边白色马尔济斯小狗正面端坐，右边同一小狗侧面坐姿，完整显示脚和尾巴，同一地面同大小，两图均居中留白。水蓝#3B9AE1单线，线条统一、圆头、极简、轻盈、少量浅蓝#CFE7F8填色。只以几笔表现垂耳、柔软头毛、黑色小圆眼和鼻头，水蓝丝带加小铃铛；保留马尔济斯识别性，禁止逼真毛丝。参考图只参考角落小狗图标的轻盈单线与浅色气质，不要参考文字、版式或背景装饰。不要3D、不要真实投影、不要复杂阴影、不要文字数字品牌水印，不要任何人物。",
+      "ref": "refs/应援色-速来发帖.png",
+      "output_hint": "Generated images are saved to /Users/gaoyifan/.codex/generated_images/01a18092-293f-7ac1-a236-31fa099b9e40 as /Users/gaoyifan/.codex/generated_images/01a18092-293f-7ac1-a236-31fa099b9e40/exec-932f51fc-c781-4739-87fa-245ad83fa544.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ],
+  "visual_check": {
+    "all": "已逐张回读：左正坐右侧坐、完整脚尾、白色马尔济斯犬、水蓝丝带铃铛，无人物文字底座。",
+    "figure": "有光泽雕塑分束长毛、修长身躯，接近真狗而非圆球。",
+    "clay": "哑光大块圆润毛发，与figure明显区分。",
+    "toon": "细描边和硬边色块，吐舌表情；比其他款更卡通。",
+    "line": "水蓝线条和少量浅蓝填色；模型线条部分存在轻微深浅变化。",
+    "approval": "candidate only, not user approved"
+  },
+  "files": [
+    {
+      "path": "assets/source/batch5/options/rourou-3-figure.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "293a42669bd52c87b83642f43d8b85128fe9807b6b35d9ded73ef7693fd8de90"
+    },
+    {
+      "path": "assets/source/batch5/options/rourou-4-clay.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "89ebe05fa55578b9b5c866fd7146759b0758fde4cf8dae53a26c919f1927c55d"
+    },
+    {
+      "path": "assets/source/batch5/options/rourou-5-toon.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "865610c18e3228944a47fff03e3bb8c65bb9e3e9dace9830418e92e9265152fc"
+    },
+    {
+      "path": "assets/source/batch5/options/rourou-6-line.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "73585c084c88bdf9704d0102b77f946f6140b70c98367b655c53bacbc12079e6"
+    }
+  ]
+}

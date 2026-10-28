@@ -1,0 +1,66 @@
+{
+  "mode": "built-in image_gen",
+  "reference_review": "已人工查看全部7张脸与figure01/02/04/05/06；工具最多5张输入，初轮4脸+1figure，修正轮对应figure+face04。初轮过写实不交付，保留intermediate。",
+  "jobs": [
+    {
+      "name": "xiaotong-5-pvc.png",
+      "initial_prompt": "Use case: stylized-concept。生成原创小桐AI助手的风格候选设定图1536×1024横幅，左半全身含完整脚底右半同一人物头部特写。浅灰白无缝棚拍，平视柔光淡投影，无底座铭牌。输入前4张照片只作为同一位成年女性李一桐的人脸身份参考，必须将她的辨识特征转译成手办脸：小鹅蛋脸、圆润下巴，杏眼眼尾微扬、清晰双眼皮与卧蚕，眼睛不要过大；平直细眉、小巧鼻头、饱满唇、苹果肌，笑时眼睛月牙和嘴角弧度尤其重要。不能贴照片脸，照片和原照片背景不能出现在交付图内。最后手办图片只参考材质、比例、姿态、光影，不能复制原角色脸型、服装校徽品牌、配色。长黑发，水蓝#3B9AE1与白为主，少量浅灰，小铃铛和掌状三裂桐叶饰品，脸干净刘海不遮眼，修长年轻成年女性有态度不甜腻。服装克制无露腰无超短裙无腿环无低角度。无字无数字无品牌logo无校徽无水印。二次元PVC手办：日系动画脸但保留照片五官比例，皮肤光滑，头发有光泽雕塑块面。6.5头身，头高是全身1/6.5，肩宽约2个头宽，修长腿。原创水蓝西装外套、白衬衫、水蓝白格纹及膝百褶裙、白堆堆袜、乐福鞋，水蓝发带系小铃铛和小桐叶。一手叉腰另一手比V，自信微笑，右侧头特写笑眼轻弯，参考照片嘴角形状。",
+      "initial_refs": [
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-01-front.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-04-smile-hand.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-05-smile-close.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-07-profile.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/figure-02-blue-blazer.png"
+      ],
+      "final_prompt": "创建实体收藏手办的棚拍设定图，必须看起来是雕塑模型而非真人照片。第1张reference仅借手办材质与比例姿态，第2张照片只借五官辨识点，在风格化脸上表达，不生成真人脸。横幅1536x1024，仅两个视图：左侧一位完整全身角色，右侧同一角色头部特写，禁止第三第四个人物。小桐是年轻成年女性，长纯黑发，眉眼杏眼微扬、双眼皮卧蚕、平直细眉、小鹅蛋脸圆下巴、小巧鼻头、饱满唇、微笑眼弯月牙。头发仅大块面雕塑发束，不要真实发丝；皮肤无毛孔、手绘喷涂平滑材质，不是真人摄影。水蓝白原创服饰，桐叶铃铛，浅灰白背景柔光，无底座无字无logo无水印。二次元PVC手办：日系动画脸但保留照片五官比例，皮肤光滑，头发有光泽雕塑块面。6.5头身，头高是全身1/6.5，肩宽约2个头宽，修长腿。原创水蓝西装外套、白衬衫、水蓝白格纹及膝百褶裙、白堆堆袜、乐福鞋，水蓝发带系小铃铛和小桐叶。一手叉腰另一手比V，自信微笑，右侧头特写笑眼轻弯，参考照片嘴角形状。",
+      "final_refs": [
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/figure-02-blue-blazer.png",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-04-smile-hand.jpg"
+      ],
+      "source": "Generated images are saved to /Users/gaoyifan/.codex/generated_images/01a18092-05e1-7b81-a39d-524d00478c84 as /Users/gaoyifan/.codex/generated_images/01a18092-05e1-7b81-a39d-524d00478c84/exec-5f899a1b-a0a0-4ccf-9216-a5a65928a830.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "name": "xiaotong-6-clay-slim.png",
+      "initial_prompt": "Use case: stylized-concept。生成原创小桐AI助手的风格候选设定图1536×1024横幅，左半全身含完整脚底右半同一人物头部特写。浅灰白无缝棚拍，平视柔光淡投影，无底座铭牌。输入前4张照片只作为同一位成年女性李一桐的人脸身份参考，必须将她的辨识特征转译成手办脸：小鹅蛋脸、圆润下巴，杏眼眼尾微扬、清晰双眼皮与卧蚕，眼睛不要过大；平直细眉、小巧鼻头、饱满唇、苹果肌，笑时眼睛月牙和嘴角弧度尤其重要。不能贴照片脸，照片和原照片背景不能出现在交付图内。最后手办图片只参考材质、比例、姿态、光影，不能复制原角色脸型、服装校徽品牌、配色。长黑发，水蓝#3B9AE1与白为主，少量浅灰，小铃铛和掌状三裂桐叶饰品，脸干净刘海不遮眼，修长年轻成年女性有态度不甜腻。服装克制无露腰无超短裙无腿环无低角度。无字无数字无品牌logo无校徽无水印。哑光黏土手办：大块面头发、整体干净哑光柔和，非毛绒非皮肤写实。5.5头身修长成年女性，清冷但有轻微笑意，杏眼稍半眯而非困倦下垂。白衬衫、水蓝针织背心、浅灰及膝百褶裙、白色乐福鞋，长黑发低马尾，领口小铃铛桐叶胸针。微微前倾，单手叉腰。",
+      "initial_refs": [
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-01-front.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-04-smile-hand.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-05-smile-close.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-07-profile.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/figure-01-clay-schoolgirl.png"
+      ],
+      "final_prompt": "创建实体收藏手办的棚拍设定图，必须看起来是雕塑模型而非真人照片。第1张reference仅借手办材质与比例姿态，第2张照片只借五官辨识点，在风格化脸上表达，不生成真人脸。横幅1536x1024，仅两个视图：左侧一位完整全身角色，右侧同一角色头部特写，禁止第三第四个人物。小桐是年轻成年女性，长纯黑发，眉眼杏眼微扬、双眼皮卧蚕、平直细眉、小鹅蛋脸圆下巴、小巧鼻头、饱满唇、微笑眼弯月牙。头发仅大块面雕塑发束，不要真实发丝；皮肤无毛孔、手绘喷涂平滑材质，不是真人摄影。水蓝白原创服饰，桐叶铃铛，浅灰白背景柔光，无底座无字无logo无水印。哑光黏土手办：大块面头发、整体干净哑光柔和，非毛绒非皮肤写实。5.5头身修长成年女性，清冷但有轻微笑意，杏眼稍半眯而非困倦下垂。白衬衫、水蓝针织背心、浅灰及膝百褶裙、白色乐福鞋，长黑发低马尾，领口小铃铛桐叶胸针。微微前倾，单手叉腰。",
+      "final_refs": [
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/figure-01-clay-schoolgirl.png",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-04-smile-hand.jpg"
+      ],
+      "source": "Generated images are saved to /Users/gaoyifan/.codex/generated_images/01a18092-05e1-7b81-a39d-524d00478c84 as /Users/gaoyifan/.codex/generated_images/01a18092-05e1-7b81-a39d-524d00478c84/exec-df0a316c-775b-48be-b011-827b89d81035.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "name": "xiaotong-7-street.png",
+      "initial_prompt": "Use case: stylized-concept。生成原创小桐AI助手的风格候选设定图1536×1024横幅，左半全身含完整脚底右半同一人物头部特写。浅灰白无缝棚拍，平视柔光淡投影，无底座铭牌。输入前4张照片只作为同一位成年女性李一桐的人脸身份参考，必须将她的辨识特征转译成手办脸：小鹅蛋脸、圆润下巴，杏眼眼尾微扬、清晰双眼皮与卧蚕，眼睛不要过大；平直细眉、小巧鼻头、饱满唇、苹果肌，笑时眼睛月牙和嘴角弧度尤其重要。不能贴照片脸，照片和原照片背景不能出现在交付图内。最后手办图片只参考材质、比例、姿态、光影，不能复制原角色脸型、服装校徽品牌、配色。长黑发，水蓝#3B9AE1与白为主，少量浅灰，小铃铛和掌状三裂桐叶饰品，脸干净刘海不遮眼，修长年轻成年女性有态度不甜腻。服装克制无露腰无超短裙无腿环无低角度。无字无数字无品牌logo无校徽无水印。街头设计师潮玩手办：高级哑光软胶，4.8头身，修长腿有态度，非儿童娃娃。宽松白色连帽卫衣，帽绳挂小铃铛，水蓝工装阔腿长裤、白蓝运动鞋，长黑发耳边小桐叶发饰。双手插裤兜、歪头，自信俏皮微笑带月牙笑眼。",
+      "initial_refs": [
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-01-front.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-04-smile-hand.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-05-smile-close.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-07-profile.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/figure-05-white-hoodie.png"
+      ],
+      "final_prompt": "创建实体收藏手办的棚拍设定图，必须看起来是雕塑模型而非真人照片。第1张reference仅借手办材质与比例姿态，第2张照片只借五官辨识点，在风格化脸上表达，不生成真人脸。横幅1536x1024，仅两个视图：左侧一位完整全身角色，右侧同一角色头部特写，禁止第三第四个人物。小桐是年轻成年女性，长纯黑发，眉眼杏眼微扬、双眼皮卧蚕、平直细眉、小鹅蛋脸圆下巴、小巧鼻头、饱满唇、微笑眼弯月牙。头发仅大块面雕塑发束，不要真实发丝；皮肤无毛孔、手绘喷涂平滑材质，不是真人摄影。水蓝白原创服饰，桐叶铃铛，浅灰白背景柔光，无底座无字无logo无水印。街头设计师潮玩手办：高级哑光软胶，4.8头身，修长腿有态度，非儿童娃娃。宽松白色连帽卫衣，帽绳挂小铃铛，水蓝工装阔腿长裤、白蓝运动鞋，长黑发耳边小桐叶发饰。双手插裤兜、歪头，自信俏皮微笑带月牙笑眼。",
+      "final_refs": [
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/figure-05-white-hoodie.png",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-04-smile-hand.jpg"
+      ],
+      "source": "Generated images are saved to /Users/gaoyifan/.codex/generated_images/01a18092-05e1-7b81-a39d-524d00478c84 as /Users/gaoyifan/.codex/generated_images/01a18092-05e1-7b81-a39d-524d00478c84/exec-eb2d4c18-9ca8-4112-877b-078923cb8261.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ],
+  "notes": [
+    "5：杏眼、卧蚕、平眉、嘴角弧度有参考倾向；PVC转译后眼睛稍大、鼻唇更简化，神似需要用户最终判断。",
+    "6：黏土块面明确，小鹅蛋轮廓和平眉有所保留；清冷眼型仍偏通用动漫，身份相似度较弱，不应标已通过神似验收；刘海仍在眉眼内侧有擦边。",
+    "7：微笑嘴角、杏眼、圆下巴有参考倾向，五官仍为风格化；末次修正头部比例后约5头身，接近4.5–5目标。"
+  ],
+  "last_correction_sources": {
+    "clay": "Generated images are saved to /Users/gaoyifan/.codex/generated_images/01a18092-05e1-7b81-a39d-524d00478c84 as /Users/gaoyifan/.codex/generated_images/01a18092-05e1-7b81-a39d-524d00478c84/exec-9f23ef60-7658-460e-9351-b9e3a22ee47d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+    "street": "Generated images are saved to /Users/gaoyifan/.codex/generated_images/01a18092-05e1-7b81-a39d-524d00478c84 as /Users/gaoyifan/.codex/generated_images/01a18092-05e1-7b81-a39d-524d00478c84/exec-2a2fd942-a70a-4667-8907-007cfd498590.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+  }
+}

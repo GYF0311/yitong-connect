@@ -1,0 +1,66 @@
+{
+  "mode": "built-in image_gen",
+  "date": "2026-10-28",
+  "references_checked": [
+    "face-01-front.jpg",
+    "face-02-front-soft.jpg",
+    "face-05-smile-close.jpg",
+    "face-07-profile.jpg",
+    "figure-03-techwear-side.png"
+  ],
+  "initial_prompts": [
+    {
+      "file": "xiaotong-8-toon3d.png",
+      "prompt": "Use case: stylized-concept。生成成年女性助手IP小桐的风格参考设定图，横向1536×1024。左半完整全身从头到鞋都保留并留白，右半同一人的头部特写，脸型五官发型服装完全一致。参考照片只作身份形貌依据，严禁照片拼贴、严禁照片出现在成图。重点保留脸部辨识：小鹅蛋脸、圆润下巴，平直细眉，杏眼微扬眼尾、清楚双眼皮和卧蚕，微笑时眼睛有月牙弧度，小挺鼻、饱满自然唇、轻柔苹果肌；眼睛不要放大成萌系。长黑发发尾微卷，刘海不遮住眼睛。修长成人身形，小头、正常成人肩腰与腿长，不能儿童大头娃娃。水蓝#3B9AE1与白色为主、少量浅灰，一枚小圆铃铛和一片梧桐叶发饰。纯白/浅灰白无缝背景，平视机位，柔和棚拍光、脚下淡投影，无底座。不要任何文字、品牌logo、数字、校徽、水印、铭牌；衣服得体，不露腰，不腿环，无过短裙，无低角度仰拍。本张是3D卡通三渲二，游戏动画角色立绘感，干净明暗色块、细描边；面部在保持上述照片特征的基础上转译成3D卡通，不能泛化成普通动漫脸。第一张参考图只参考修长6-7头身的侧身回头姿态及风格块面，完全不沿用参考图机甲零件、文字、红色、白发和露腰。水蓝白拼色轻机能短外套（遮盖腰腹）、水蓝修身长裤、白色厚底靴，单手自然垂放，侧身回头看镜头，自信清冷中带一点含蓄笑意。其余三张参考为脸部身份与五官特征。",
+      "refs": [
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/figure-03-techwear-side.png",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-01-front.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-05-smile-close.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-07-profile.jpg"
+      ]
+    },
+    {
+      "file": "xiaotong-9-film.png",
+      "prompt": "Use case: stylized-concept。生成成年女性助手IP小桐的风格参考设定图，横向1536×1024。左半完整全身从头到鞋都保留并留白，右半同一人的头部特写，脸型五官发型服装完全一致。参考照片只作身份形貌依据，严禁照片拼贴、严禁照片出现在成图。重点保留脸部辨识：小鹅蛋脸、圆润下巴，平直细眉，杏眼微扬眼尾、清楚双眼皮和卧蚕，微笑时眼睛有月牙弧度，小挺鼻、饱满自然唇、轻柔苹果肌；眼睛不要放大成萌系。长黑发发尾微卷，刘海不遮住眼睛。修长成人身形，小头、正常成人肩腰与腿长，不能儿童大头娃娃。水蓝#3B9AE1与白色为主、少量浅灰，一枚小圆铃铛和一片梧桐叶发饰。纯白/浅灰白无缝背景，平视机位，柔和棚拍光、脚下淡投影，无底座。不要任何文字、品牌logo、数字、校徽、水印、铭牌；衣服得体，不露腰，不腿环，无过短裙，无低角度仰拍。本张是电影感风格化3D：动画电影角色质感，脸接近成人真实比例但清楚是精致3D动画角色，不要照片写实，不要皮肤照片贴图。皮肤有柔和次表面散射，头发柔和雕塑束感，水蓝针织开衫与白色及踝长裙，白色简洁鞋。严格7头身，单手优雅撩头发，身体重心轻偏，温柔清冷且含蓄微笑，杏眼笑弧必须保留，嘴唇厚度和圆下巴沿用照片。三张参考都只作为同一人的脸部特征来源，不沿用照片服装与背景。",
+      "refs": [
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-01-front.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-05-smile-close.jpg",
+        "/Users/gaoyifan/Desktop/李依依提案/第三层-明星与连接/assets/source/batch5/refs/face/face-07-profile.jpg"
+      ]
+    }
+  ],
+  "generic_status": "此前通用生成被用户中断；无返回结果或可确认文件，未声称已生成。",
+  "status": "两图完成；仅风格候选，未获先生审美批准",
+  "files": [
+    {
+      "file": "assets/source/batch5/options/xiaotong-8-toon3d.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "2b29f8cdcec25ba00aa6ad8e90b5a2b976a15ac7ddb6a93d84620558fc28a684",
+      "visual_checked": "左全身右头特写、白灰背景、完整脚部、无文字、无底座、非照片拼贴",
+      "source": "/Users/gaoyifan/.codex/generated_images/01a18092-17f9-7031-8021-62184899b5a0/exec-8015d82a-0e0a-4e5e-a2e2-d2c7a4831421.png",
+      "likeness": "保留小鹅蛋脸、杏眼外眼尾微扬、双眼皮卧蚕、平直眉、小挺鼻与饱满唇；头部有参考照片的五官关系",
+      "limitations": "三渲二转译使鼻唇与下颌线更利落，未表现大笑月牙眼，神似程度需先生判断；全身比例为目视修长成人，未作骨骼测量"
+    },
+    {
+      "file": "assets/source/batch5/options/xiaotong-9-film.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "sha256": "3c79ba72bbee400fe926bb390c356d1b5911a809b5889273fa346509d9e4033b",
+      "visual_checked": "左全身右头特写、白灰背景、完整脚部、无文字、无底座、非照片拼贴",
+      "source": "/Users/gaoyifan/.codex/generated_images/01a18092-17f9-7031-8021-62184899b5a0/exec-9a366978-9259-4ec9-9705-2b09643fb7e6.png",
+      "likeness": "小鹅蛋脸圆下巴、平直细眉、杏眼外眼尾微扬、卧蚕、小挺鼻和饱满唇沿用参考；含蓄微笑与苹果肌呼应笑脸照片",
+      "limitations": "动画化眼睛比照片略大；微笑较克制，月牙笑眼不如笑脸参考强，神似程度需先生判断；7头身为目视接近而非精密骨骼测量"
+    }
+  ],
+  "intermediates": [
+    "assets/source/batch5/rejected/xiaotong-8-initial-semireal.png",
+    "assets/source/batch5/rejected/xiaotong-9-initial-semireal.png"
+  ]
+}
