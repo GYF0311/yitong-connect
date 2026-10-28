@@ -285,3 +285,20 @@
 优先复审肉肉hop04–06、wag04，以及小桐idle07、wave03/06、happy05、give-card07–09。半身眨眼/说话的肩胸仍有约2.52%–2.75%像素灰度差>20，尚未达到严格的仅眼嘴像素变化。图像存在轻微生成重绘漂移，不代表人工审美已批准。
 
 检查件：source/batch6/contact-xiaotong-poses.png、contact-xiaotong-bust.png、contact-rourou.png；preview/下14组角色动作GIF。完整文件清单见 source/batch6/delivered-files.json；尺寸/alpha/bbox/脚底/SHA-256见 verification.json；减帧、弱项与复审结论见 delivery-report.md。逐张提示词、原生稿、退回稿和导出过程保留在各线程子目录。
+
+
+## 第七批：拼贴小卡素材
+
+2026-10-28，按第七批提示词使用内置 image_gen 三路并行生成，共18张。仅参考 card-ref-1～4 的纸张、胶带和饰物质感，没有复制人物、可读文字或品牌。背景留出中央照片区与底部签名区；race保留允许的号码23。
+
+| 目录 | 文件清单 | 尺寸与格式 |
+|---|---|---|
+| cards/ | collage-aqua.webp、collage-mist.webp、collage-cafe.webp、collage-daisy.webp、collage-race.webp | 各1200×1600，WebP质量85 |
+| cards/stickers/ | heart-chrome.png、star-chrome.png、bow-blue.png、bow-green.png、bow-check.png、daisy.png、sprig-lavender.png、sprig-white.png | 各512×512，透明PNG |
+| cards/stickers/ | tape-blue.png、tape-green.png、tape-orange.png | 各1024×256，透明PNG |
+| cards/stickers/ | film-frame.png | 1024×768，透明PNG，中央及齿孔透明 |
+| cards/stickers/ | paper-label.png | 1600×480，透明PNG，撕边米白纸条与淡横线 |
+
+已核验全部尺寸、格式、13张PNG真实alpha，并视觉检查主体、留白和透明边缘。胶带首稿有杂色边缘，已重新生成后选用；原图和退回稿保留。素材通过本轮自检，尚未经先生人工审美验收。没有修改页面代码或接入素材。
+
+检查总览：source/batch7/overview.jpg；尺寸、alpha和SHA-256：source/batch7/verification.json。实际提示词、源图和来源映射分别保存在source/batch7/backgrounds/generation.json、object-stickers/manifest.json、paper-stickers/manifest.json；这些source文件按仓库现有规则仅本地保留。
