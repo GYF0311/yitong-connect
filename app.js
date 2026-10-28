@@ -493,13 +493,16 @@
   }
 
   // ---------- 小卡工坊 ----------
-  const W = { src: 'tpl', style: 'watercolor', photo: null, theme: 'changqing', to: 'c1', tier: '', hand: '谢谢你，一直在。', ai: true, n: 128 };
+  const W = { src: 'tpl', style: 'watercolor', photo: null, photo2: null, layout: 'aqua', theme: 'changqing', to: 'c1', tier: '', hand: '谢谢你，一直在。', ai: true, n: 128, series: '' };
+  const ISS = { on: Object.fromEntries(D.cardIssue.rules.map((r) => [r.id, r.on])) };
+  const wanN = (n) => n >= 10000 ? (n / 10000).toFixed(1).replace(/\.0$/, '') + '万' : fmt(n);
   let camStream = null;
   function renderCards(opts = {}) {
     if (opts.for) { const c = api.getComment(opts.for); W.to = c.id; W.theme = c.tier; W.tier = ''; }
     if (opts.tier) { W.tier = opts.tier; W.theme = opts.tier; }
     const v = $('#v-cards');
     v.innerHTML = `<div class="sec-head" style="margin-top:20px"><h2><em>CARDS</em>小卡工坊</h2><span class="muted" style="font-size:12px">一张只属于 TA 的纪念</span></div>
+      ${newPostsHTML()}
       <div class="workshop"><div>
         <div class="step"><h3><i>1</i>选一张照片</h3>
           <div class="src-tabs">${[['tpl', '模板'], ['upload', '上传照片'], ['cam', '现场自拍']].map(([k, n]) => `<button class="chip ${W.src === k ? 'active' : ''}" data-src="${k}">${n}</button>`).join('')}</div>
@@ -507,16 +510,20 @@
         <div class="step"><h3><i>2</i>让模型套一层风格</h3>
           <div class="style-row">${D.portraitStyles.map((s) => `<button class="chip ${W.style === s.id ? 'active' : ''}" data-style="${s.id}">${s.name}</button>`).join('')}</div>
           <div class="muted" style="font-size:12px;margin-top:10px">AI 处理过的照片会自动加上「AI 生成」标识</div></div>
-        <div class="step"><h3><i>3</i>选纪念主题，写一句话</h3>
+        <div class="step"><h3><i>3</i>选一个版式</h3>
+          <div class="lay-row">${D.cardLayouts.map((l) => `<button class="lay-btn ${W.layout === l.id ? 'on' : ''}" data-layout="${l.id}"><span class="lay-sw" style="background:linear-gradient(135deg,${l.sw[0]} 0 45%,${l.sw[1]} 45%)"></span>${l.name}<small>${l.desc}</small></button>`).join('')}</div>
+          <div class="muted" style="font-size:12px;margin-top:10px">拼贴手账系列：撕纸边、胶片框、胶带、金属心和手写签名，每个配色一套</div></div>
+        <div class="step"><h3><i>4</i>选纪念主题，写一句话</h3>
           <div class="theme-row">${D.cardThemes.map((t) => `<button class="theme-btn ${W.theme === t.id ? 'on' : ''}" data-theme="${t.id}">${t.name}<small>${tierName(t.id) && D.tiers.find((x) => x.id === t.id).desc}</small></button>`).join('')}</div>
           <label class="field">手写寄语<input id="handIn" maxlength="20" value="${esc(W.hand)}"></label></div>
-        <div class="step"><h3><i>4</i>送给谁</h3>
+        <div class="step"><h3><i>5</i>送给谁</h3>
           <label class="field">单个粉丝<select id="toSel">${D.comments.map((c) => `<option value="${c.id}" ${W.to === c.id ? 'selected' : ''}>${esc(c.fan)} · ${tierName(c.tier)} · 陪伴 ${c.days} 天</option>`).join('')}</select></label>
           <label class="field">或者送给一整层粉丝<select id="tierSel"><option value="">不批量</option>${D.tiers.map((t) => `<option value="${t.id}" ${W.tier === t.id ? 'selected' : ''}>全部「${t.name}」粉丝（约 ${t.pct}%）</option>`).join('')}</select></label>
           <div style="display:flex;gap:10px;margin-top:18px"><button class="btn ghost" id="previewBtn">看看 TA 收到的样子</button><button class="btn" id="giveBtn">${I.gift}送出小卡</button></div></div>
       </div>
       <div class="preview-col"><div id="cardPreview"></div>
-        ${S.cards.length ? `<div class="muted" style="font-size:12px;margin-top:22px">已送出 ${S.cards.length} 张</div><div class="sent-cards">${S.cards.slice(0, 6).map((k) => cardHTML(k, true)).join('')}</div>` : ''}</div></div>`;
+        ${S.cards.length ? `<div class="muted" style="font-size:12px;margin-top:22px">已送出 ${S.cards.length} 张</div><div class="sent-cards">${S.cards.slice(0, 6).map((k) => cardHTML(k, true)).join('')}</div>` : ''}</div></div>
+      ${issueHTML()}`;
     renderSrc(); renderPreview();
     $('#handIn').addEventListener('input', (e) => { W.hand = e.target.value; renderPreview(); });
     $('#toSel').addEventListener('change', (e) => { W.to = e.target.value; renderPreview(); });
@@ -546,7 +553,49 @@
     renderPreview(true); chibiAct(document.body, 'think', 0);
     setTimeout(() => { $$('.chibi').forEach((c) => c.classList.remove('think')); renderPreview(); toast('风格已生成，可以继续调整'); }, 1500);
   }
+  // 撕纸边：确定性锯齿多边形，用 clip-path 裁出照片窗口和签名纸条
+  function torn(seed, amp = 1.6, step = 3.2) {
+    let x = seed * 9301 + 49297; const r = () => ((x = (x * 9301 + 49297) % 233280) / 233280);
+    const pts = [];
+    for (let i = 0; i <= 100; i += step) pts.push(`${i}% ${(r() * amp).toFixed(2)}%`);
+    for (let i = 0; i <= 100; i += step) pts.push(`${(100 - r() * amp).toFixed(2)}% ${i}%`);
+    for (let i = 100; i >= 0; i -= step) pts.push(`${i}% ${(100 - r() * amp).toFixed(2)}%`);
+    for (let i = 100; i >= 0; i -= step) pts.push(`${(r() * amp).toFixed(2)}% ${i}%`);
+    return `clip-path:polygon(${pts.join(',')})`;
+  }
+  const DECO = {
+    heart: '<svg viewBox="0 0 40 36"><defs><linearGradient id="chg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".35" stop-color="#C9CED6"/><stop offset=".6" stop-color="#F4F6F9"/><stop offset="1" stop-color="#8E96A3"/></linearGradient></defs><path d="M20 34C8 25 2 18 2 11 2 5.5 6.5 2 11 2c4 0 7 2.4 9 6 2-3.6 5-6 9-6 4.5 0 9 3.5 9 9 0 7-6 14-18 23z" fill="url(#chg)" stroke="#7D8592" stroke-width="1.2"/><path d="M9 8c2-2 5-2 6 0" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',
+    star: '<svg viewBox="0 0 40 40"><path d="M20 2l4.5 13.5L38 20l-13.5 4.5L20 38l-4.5-13.5L2 20l13.5-4.5z" fill="url(#chg)" stroke="#7D8592" stroke-width="1"/></svg>',
+    daisy: '<svg viewBox="0 0 40 40">' + Array.from({ length: 12 }, (_, i) => `<ellipse cx="20" cy="9" rx="3.2" ry="8" fill="#fff" stroke="#E5E2D6" stroke-width=".6" transform="rotate(${i * 30} 20 20)"/>`).join('') + '<circle cx="20" cy="20" r="5" fill="#E9B949"/></svg>',
+    sprig: '<svg viewBox="0 0 30 60"><path d="M15 58C15 40 14 22 16 4" stroke="currentColor" stroke-width="1.2" fill="none"/>' + [10, 20, 30, 40].map((y, i) => `<ellipse cx="${i % 2 ? 21 : 9}" cy="${y}" rx="5" ry="2.6" fill="currentColor" opacity=".75" transform="rotate(${i % 2 ? -30 : 30} ${i % 2 ? 21 : 9} ${y})"/>`).join('') + '</svg>',
+    flake: '<svg viewBox="0 0 40 40" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"><path d="M20 3v34M5 11.5l30 17M5 28.5l30-17"/><path d="M16 6l4 4 4-4M16 34l4-4 4 4"/></svg>',
+    bow: '<svg viewBox="0 0 60 44" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M30 16C24 6 8 2 6 12c-2 9 14 10 24 4zM30 16c6-10 22-14 24-4 2 9-14 10-24 4z" fill="currentColor" fill-opacity=".35"/><path d="M28 19l-9 21M32 19l9 21"/><circle cx="30" cy="16.5" r="3.5" fill="currentColor"/></svg>'
+  };
+  function collageHTML(k, small) {
+    const lay = k.layout, seed = (k.n || 1) % 97 + 3;
+    const ph = k.photo ? `<img src="${k.photo}" onerror="this.remove()">` : '';
+    const ph2 = k.photo2 || 'assets/portraits/portrait-film.webp';
+    const deco = {
+      aqua: ['flake f1', 'flake f2', 'heart h1', 'star s1', 'bow b1'],
+      mist: ['sprig f1', 'sprig f2', 'heart h1', 'star s1', 'bow b1'],
+      cafe: ['sprig f1', 'sprig f2', 'heart h1', 'star s1'],
+      daisy: ['daisy f1', 'daisy f2', 'daisy f3', 'heart h1', 'bow b1'],
+      race: ['heart h1', 'star s1', 'bow b1']
+    }[lay] || [];
+    return `<div class="ycard col c-${lay}${small ? ' sm' : ''}">
+      <div class="c-patch p1"></div><div class="c-patch p2"></div><div class="c-patch p3"></div>
+      ${lay === 'race' ? '<div class="c-num">23</div>' : ''}
+      <div class="c-film"><img src="${ph2}" onerror="this.remove()"></div>
+      <div class="c-main" style="${torn(seed, 1.4, 2.6)}"><div class="c-fb">${chibi()}</div>${ph}</div>
+      <div class="c-tape t1"></div><div class="c-tape t2"></div>
+      ${deco.map((d) => { const [n, c] = d.split(' '); return `<i class="c-deco ${n} ${c}">${DECO[n]}</i>`; }).join('')}
+      <div class="no">No. ${String(k.n).padStart(4, '0')}</div>
+      ${k.photo && k.ai ? '<span class="ai">AI 生成</span>' : ''}
+      <div class="c-label" style="${torn(seed + 7, 5, 4)}"><div class="c-sign">${esc(k.hand || '一桐')}<span>♡</span></div>${small ? '' : `<div class="c-to">致 ${esc(k.toName)} · ${esc(k.daysText)}</div><div class="c-by">Yitong ${k.series ? '· ' + esc(k.series) : ''}</div>`}</div>
+    </div>`;
+  }
   function cardHTML(k, small) {
+    if (k.layout && k.layout !== 'classic') return collageHTML(k, small);
     const th = D.cardThemes.find((t) => t.id === k.theme), st = D.portraitStyles.find((s) => s.id === k.style);
     const photo = k.photo ? `<img src="${k.photo}" style="filter:${k.photo.startsWith('data:') ? st.filter : 'none'}" onerror="this.remove()">` : '';
     return `<div class="ycard t-${k.theme}">
@@ -557,7 +606,7 @@
   }
   function currentCard() {
     const c = api.getComment(W.to), t = W.tier && D.tiers.find((x) => x.id === W.tier);
-    return { theme: W.theme, style: W.style, photo: W.photo, ai: true, hand: W.hand, n: W.n, toName: t ? `每一位「${t.name}」的你` : c.fan, daysText: t ? '谢谢你们一路同行' : `一起走过的第 ${fmt(c.days)} 天` };
+    return { theme: W.theme, style: W.style, layout: W.layout, photo: W.photo, photo2: W.photo2, series: W.series, ai: true, hand: W.hand, n: W.n, toName: t ? `每一位「${t.name}」的你` : c.fan, daysText: t ? '谢谢你们一路同行' : `一起走过的第 ${fmt(c.days)} 天` };
   }
   function renderPreview(loading) {
     const el = $('#cardPreview'); if (!el) return;
@@ -572,6 +621,45 @@
   async function giveCard() {
     const k = currentCard(); await api.saveCard(k); W.n++;
     toast(`小卡已送给 ${k.toName}`); celebrate('give'); renderCards();
+  }
+
+  // 小卡 Agent：平台新发图 → 挑图、配版式、写寄语、建议发给谁
+  function newPostsHTML() {
+    const L = (id) => D.cardLayouts.find((l) => l.id === id).name;
+    return `<div class="np-wrap">
+      <div class="np-head"><div class="np-av">${chibi(1)}</div><div><b>小卡 Agent · 你刚发的图</b><div class="muted" style="font-size:12px">监听你在微博、小红书、抖音的新发布，挑出适合做卡的图，配好版式和寄语，发不发由你定</div></div></div>
+      <div class="np-list">${D.newPosts.map((p) => `<div class="np">
+        <div class="np-imgs">${p.imgs.map((src, i) => `<span class="${i === p.ai.pick ? 'pick' : ''}" style="background-image:url(${src})">${i === p.ai.pick ? '<em>推荐</em>' : ''}</span>`).join('')}</div>
+        <div class="np-meta">${platTag(p.p)}<span>${p.time}</span><span>赞 ${wanN(p.likes)}</span><span>评 ${wanN(p.cmts)}</span></div>
+        <p class="np-text">${esc(p.text)}</p>
+        <div class="np-ai">✦ ${esc(p.ai.why)}</div>
+        <div class="np-tags"><span>版式 · ${L(p.ai.layout)}</span><span>系列 · ${esc(p.ai.series)} · 限 ${p.ai.limit} 张</span><span>发给 · ${esc(p.ai.who)}</span></div>
+        <div class="np-acts"><button class="btn ghost sm" data-npbatch="${p.id}">整组出卡</button><button class="btn sm" data-npuse="${p.id}">用这张做卡</button></div>
+      </div>`).join('')}</div></div>`;
+  }
+  function useNewPost(id) {
+    const p = D.newPosts.find((x) => x.id === id);
+    Object.assign(W, { src: 'tpl', photo: p.imgs[p.ai.pick], photo2: p.imgs[(p.ai.pick + 1) % p.imgs.length], layout: p.ai.layout, hand: p.ai.hand, series: p.ai.series, tier: '' });
+    renderCards(); $('#cardPreview').scrollIntoView({ behavior: 'smooth', block: 'center' }); generate();
+  }
+  function batchNewPost(id) {
+    const p = D.newPosts.find((x) => x.id === id), lays = [p.ai.layout, ...D.cardLayouts.filter((l) => l.id !== 'classic' && l.id !== p.ai.layout).map((l) => l.id)].slice(0, 3);
+    const ks = lays.map((lay, i) => ({ layout: lay, photo: p.imgs[i % p.imgs.length], photo2: p.imgs[(i + 1) % p.imgs.length], hand: p.ai.hand, n: W.n + i, ai: true, toName: p.ai.who, daysText: p.time + '发布', series: p.ai.series }));
+    openDrawer('整组出卡 · ' + p.ai.series, `<div class="muted" style="font-size:12px;margin-bottom:14px">从「${esc(p.text)}」这组图里出了 ${ks.length} 个版本，第一张是推荐</div>
+      <div class="np-batch">${ks.map((k) => `<div>${cardHTML(k, true)}<small>${D.cardLayouts.find((l) => l.id === k.layout).name}</small></div>`).join('')}</div>
+      <div class="np-plan"><div><b>发放计划</b></div><div>系列：${esc(p.ai.series)} · 限量 ${p.ai.limit} 张，编号 No.${String(W.n).padStart(4, '0')} 起</div><div>对象：${esc(p.ai.who)}</div><div>时间：发图后 24 小时内，逐张由你确认</div></div>
+      <div class="send-row"><span class="muted" style="font-size:12px">加入后会出现在今日待办</span><button class="btn" id="npPlan">${I.gift}加入发卡计划</button></div>`);
+    $('#npPlan').onclick = () => { closeDrawer(); toast('已加入发卡计划，发出前逐张给你确认'); celebrate('give'); };
+  }
+  function issueHTML() {
+    const C = D.cardIssue;
+    return `<div class="sec-head" style="margin-top:34px"><h2><em>ISSUE</em>发卡系统</h2><span class="muted" style="font-size:12px">什么时候发、发多少、粉丝怎么收藏</span></div>
+      <div class="issue">
+        <div class="panel"><h3>发放场景</h3>${C.rules.map((r) => `<div class="iss-rule"><div><b>${r.name}</b><small>${r.desc}</small></div><span class="muted">本月 ${r.n} 张</span><label class="sw"><input type="checkbox" data-rule="${r.id}" ${ISS.on[r.id] ? 'checked' : ''}><i></i></label></div>`).join('')}</div>
+        <div class="panel"><h3>编号与限量</h3>${C.series.map((s) => `<div class="iss-ser"><span class="lay-sw" style="background:linear-gradient(135deg,${D.cardLayouts.find((l) => l.id === s.layout).sw.join(' 0 45%,')} 45%)"></span><div style="flex:1"><b>${s.name}</b><div class="bar"><i style="width:${Math.max(2, s.sent / s.limit * 100)}%"></i></div><small>已发 ${fmt(s.sent)} / ${fmt(s.limit)} · 下一张 No.${String(s.sent + 1).padStart(4, '0')}</small></div></div>`).join('')}
+          <div class="iss-month"><div><b>${fmt(C.month.sent)}</b><small>本月发出</small></div><div><b>${C.month.open}%</b><small>打开率</small></div><div><b>${C.month.keep}%</b><small>存进纪念册</small></div></div></div>
+        <div class="panel"><h3>规则与护栏</h3><ul class="iss-guard">${C.guard.map((g) => `<li>${g}</li>`).join('')}</ul></div>
+      </div>`;
   }
 
   // ---------- 洞察 ----------
@@ -821,7 +909,7 @@
     const map = {
       today: ['今天粉丝在聊什么？', '最近涨粉主要来自哪里？', '今天谁过生日？'],
       reply: ctxComment && $('#drawer').classList.contains('on') ? [`帮我回复「${ctxComment.fan}」`, '这位粉丝是谁？', '语气再轻松一点'] : ['哪些留言最值得回？', '棘手消息怎么处理？', '大家最常问什么？'],
-      cards: ['帮我做一张长情小卡', '这周送了几张卡？', '推荐几位该送卡的粉丝'],
+      cards: ['最近新发的图能做什么卡？', '帮我做一张长情小卡', '推荐几位该送卡的粉丝'],
       insight: ['新粉怎么变成核心粉？', '哪些核心粉快流失了？', '数据粉该怎么运营？'],
       more: ['今天谁过生日？', '帮我抽 10 位幸运粉丝', '审核里有可疑的人吗？']
     };
@@ -857,6 +945,7 @@
     if (has('涨粉', '数据', '大白话', '为什么上涨')) return [`用大白话说：\n今天新增 ${fmt(D.overview.todayNew)} 位粉丝，比昨天多 18%，主要来自抖音上宋一梦切换那场戏的片段（单条 2,341 赞）。\n建议：趁热度再发一条这场戏的幕后，效果会比平时好。`, [['看那条高赞留言', 'comment:c3']]];
     if (has('抽奖', '幸运')) return [`可以从这 3 个活动里抽：\n<ol>${D.lottery.sources.map((x) => `<li>${esc(x.title)}（${fmt(x.total)} 人）</li>`).join('')}</ol>我会先排除机器号、营销号和有越界记录的账号，再随机抽取，并生成可核验的公示编号。`, [['去幸运抽奖', 'more:lucky']]];
     if (has('生日')) return [`今天有 2 位粉丝过生日：\n<ol><li>晚风来信 · 长情 · 陪伴 1,286 天（可以亲自祝福）。我记得她去年搬到新城市，最近常加班。</li><li>橘子汽水 · 常伴（发送统一祝福）</li></ol>另外还有 ${fmt(D.bdayAuto.today)} 位粉丝会收到统一祝福。要不要给晚风来信录一段语音？`, [['去写生日祝福', 'more:bday']]];
+    if (has('新发', '发的图', '做什么卡', '小卡 agent', '出卡')) return [`你最近发的 3 组图，我挑好了适合做卡的：\n<ol>${D.newPosts.map((p) => `<li>${esc(p.text)} → 「${D.cardLayouts.find((l) => l.id === p.ai.layout).name}」版式，发给${esc(p.ai.who)}</li>`).join('')}</ol>每组都可以一键出卡，发出前逐张给你确认。`, [['去小卡工坊', 'view:cards']]];
     if (has('小卡', '送卡', '该送')) return [`推荐这几位：\n<ol><li>晚风来信 · 今天生日，陪伴 1,286 天 → 「长情」</li><li>小岛放映室 · 刚投稿插画 → 「共创」</li><li>春天的回声 · 第一次来 → 「初遇」</li></ol>`, [['给晚风来信做一张', 'card:c1'], ['给小岛放映室做一张', 'card:c4']]];
     if (has('分层', '维护')) return [`四类粉丝各有侧重：\n<ol><li>初遇（34%）：欢迎和被看见最重要</li><li>常伴（38%）：保持回应节奏</li><li>长情（21%）：记得重要节点，比如生日</li><li>共创（7%）：贡献了 41% 的高赞内容，每周固定点评几件</li></ol>`, [['打开洞察', 'view:insight']]];
     if (has('策划', '规划', '内容', 'vlog')) return [`可以这样安排下周：\n<ol><li>周一：首播前预热，发角色海报</li><li>周三：《云秀行》首播当晚，开私域直播一起看</li><li>周五：「片场的一天」vlog，顺便回应想看日常的留言</li></ol>`, [['看内容日历', 'more:cal'], ['创建直播', 'more:live']]];
@@ -907,6 +996,11 @@
     if (e.target.closest('#agent,#fab,#askBar,[data-ask],[data-agent],#modal,#drawer,#toast,#notif,#bell')) return;
     closeAgent();
   });
+  document.addEventListener('change', (e) => {
+    const r = e.target.dataset && e.target.dataset.rule; if (!r) return;
+    ISS.on[r] = e.target.checked; const rule = D.cardIssue.rules.find((x) => x.id === r);
+    toast(`「${rule.name}」${e.target.checked ? '已开启，符合条件时会先放进待办给你确认' : '已关闭'}`);
+  });
   document.addEventListener('click', async (e) => {
     const t = e.target.closest('button,[data-agent],a,[role=button]'); if (!t) { if (!e.target.closest('#notif,#bell')) $('#notif').classList.remove('on'); return; }
     const d = t.dataset;
@@ -928,6 +1022,9 @@
     if (d.src) { W.src = d.src; $$('[data-src]').forEach((x) => x.classList.toggle('active', x === t)); renderSrc(); return; }
     if (d.tpl) { W.photo = d.tpl; $$('[data-tpl]').forEach((x) => x.classList.toggle('on', x === t)); const st = D.portraitStyles.find((s) => s.img === d.tpl); if (st) { W.style = st.id; $$('[data-style]').forEach((x) => x.classList.toggle('active', x.dataset.style === st.id)); } generate(); return; }
     if (d.style) { W.style = d.style; $$('[data-style]').forEach((x) => x.classList.toggle('active', x === t)); if (W.src === 'tpl') { W.photo = D.portraitStyles.find((s) => s.id === d.style).img; renderSrc(); } generate(); return; }
+    if (d.layout) { W.layout = d.layout; W.series = ''; $$('[data-layout]').forEach((x) => x.classList.toggle('on', x === t)); renderPreview(); return; }
+    if (d.npuse) { useNewPost(d.npuse); return; }
+    if (d.npbatch) { batchNewPost(d.npbatch); return; }
     if (d.theme) { W.theme = d.theme; $$('[data-theme]').forEach((x) => x.classList.toggle('on', x === t)); renderPreview(); return; }
     if (d.close !== undefined) { $('#modal').classList.remove('on'); return; }
     if (d.otype) { OPS.type = d.otype; $$('[data-otype]').forEach((x) => x.classList.toggle('active', x === t)); $('#otype').innerHTML = otypeHTML(); return; }

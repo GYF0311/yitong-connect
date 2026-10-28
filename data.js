@@ -239,6 +239,44 @@
     { id: 'costume', name: '剧集妆造', img: 'assets/portraits/portrait-costume.webp', filter: 'saturate(.85) brightness(1.04)' }
   ];
 
+  // 小卡版式：拼贴手账系列（撕纸边 + 胶片框 + 胶带 + 金属心 + 手写签名），每个配色一套
+  const cardLayouts = [
+    { id: 'classic', name: '经典', desc: '留白 + 寄语', sw: ['#EAF4FC', '#A1CFF0'] },
+    { id: 'aqua', name: '桐铃水蓝', desc: '应援色 · 雪花', sw: ['#EAF4FC', '#3B9AE1'] },
+    { id: 'mist', name: '雾蓝花信', desc: '干花 · 薰衣草', sw: ['#E7EAF2', '#7F8FB5'] },
+    { id: 'cafe', name: '午后绿', desc: '街角 · 胶片', sw: ['#EFEBDD', '#8FA27F'] },
+    { id: 'daisy', name: '夏日雏菊', desc: '阳光 · 雏菊', sw: ['#EEF2E4', '#7FA37A'] },
+    { id: 'race', name: '赛道橙', desc: '棋盘格 · 23 号', sw: ['#F2E9DC', '#E2662C'] }
+  ];
+
+  // 平台新发图：小卡 Agent 监听她自己账号的新发布，挑出适合做卡的图并给出建议
+  const newPosts = [
+    { id: 'np1', p: 'wb', time: '2 小时前', text: '周末和肉肉晒太阳，今天的风是甜的。', imgs: ['assets/portraits/portrait-watercolor.webp', 'assets/portraits/portrait-film.webp', 'assets/cards/card-changban.webp'], likes: 186000, cmts: 12800,
+      ai: { pick: 0, layout: 'cafe', hand: '周末快乐呀', series: '午后绿 · 周末', limit: 500, who: '评论过这条的粉丝中随机 50 位', why: '户外暖光、画面偏绿，适合「午后绿」版式；肉肉出镜，收藏意愿高' } },
+    { id: 'np2', p: 'xhs', time: '昨天', text: '《云秀行》定妆，第一次穿这么多层的衣服。', imgs: ['assets/portraits/portrait-costume.webp', 'assets/cards/card-chuyu.webp'], likes: 92000, cmts: 6100,
+      ai: { pick: 0, layout: 'mist', hand: '首播见', series: '雾蓝花信 · 定妆', limit: 300, who: '首播当晚线上观影的粉丝', why: '剧集妆造 + 冷色调，配「雾蓝花信」；建议首播当天作为观影纪念发放' } },
+    { id: 'np3', p: 'dy', time: '3 天前', text: '片场的夏天，西瓜管够。', imgs: ['assets/portraits/portrait-film.webp', 'assets/cards/card-changqing.webp'], likes: 240000, cmts: 18500,
+      ai: { pick: 0, layout: 'daisy', hand: '夏天快乐', series: '夏日雏菊 · 片场', limit: 800, who: '本周第一次评论的新粉', why: '笑容明亮、氛围轻松，适合给新粉做「初遇」纪念' } }
+  ];
+
+  // 发卡系统：在什么场景发、怎么编号限量、粉丝端怎么收藏，以及护栏
+  const cardIssue = {
+    rules: [
+      { id: 'bday', name: '粉丝生日当天', desc: '生日祝福自动附一张卡', on: true, n: 23 },
+      { id: 'anniv', name: '陪伴纪念日', desc: '关注满 100 / 365 / 1000 天', on: true, n: 41 },
+      { id: 'reply', name: '回复留言时附卡', desc: '高优留言回复可附卡', on: true, n: 36 },
+      { id: 'post', name: '新发图联动', desc: '发图后 24 小时内互动的粉丝中抽取', on: true, n: 50 },
+      { id: 'lucky', name: '幸运儿抽奖', desc: '抽中即得限定编号卡', on: false, n: 10 }
+    ],
+    series: [
+      { name: '午后绿 · 周末', layout: 'cafe', limit: 500, sent: 128 },
+      { name: '雾蓝花信 · 定妆', layout: 'mist', limit: 300, sent: 0 },
+      { name: '桐铃水蓝 · 常驻', layout: 'aqua', limit: 2000, sent: 1264 }
+    ],
+    month: { sent: 1392, open: 91, keep: 78 },
+    guard: ['每张卡都有唯一编号，粉丝存进「我的纪念册」', '不可交易、不可转卖，平台不提供二级市场', '发放不看消费：不和购买、打榜、充值挂钩', 'AI 处理过的照片自动标「AI 生成」', '每次发出前由你确认，不会自动群发']
+  };
+
   // 涨粉看板：按天生成各平台新增粉丝（确定性的演示数据）
   function series(days, base, wave, seed) {
     const out = [];
@@ -352,7 +390,7 @@
     guard: ['不设任何消费门槛，抽奖、回应、纪念卡都与消费金额无关', '不组织打榜、刷量、集资，数据粉引导到作品口碑', '未成年人不做付费引导、不参与投票类活动', '分层只用于内部安排回应优先级，不对外展示等级', '所有私信、回应都由她本人确认后再发出']
   };
 
-  const DATA = { PLATFORMS, growth, funnel, moves, segments, churn, fanOps, overview, keywords, tiers, audience, personas, insightsTips, comments, risky, dms, birthdays, bdayAuto, lottery, applicants, ideas, calendar, cardThemes, portraitStyles };
+  const DATA = { PLATFORMS, growth, funnel, moves, segments, churn, fanOps, overview, keywords, tiers, audience, personas, insightsTips, comments, risky, dms, birthdays, bdayAuto, lottery, applicants, ideas, calendar, cardThemes, portraitStyles, cardLayouts, newPosts, cardIssue };
 
   // —— 本地状态（仅当前浏览器，演示用）——
   const KEY = 'yt-connect-demo-v1';
