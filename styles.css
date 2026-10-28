@@ -1492,3 +1492,4 @@ html.embed #phoneBtn{display:none}
 html.embed .foot{display:none}
 html.embed .tabbar{padding-bottom:18px}
 .stack-labels{line-height:1.45;padding-bottom:2px}
+.pv-bar{position:fixed;top:18px;right:22px;z-index:2}
