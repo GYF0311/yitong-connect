@@ -470,12 +470,14 @@
       <div class="who">${av(c.av)}<div><b>${esc(c.fan)}</b><div class="muted" style="font-size:11px">${tierName(c.tier)} · 陪伴 ${c.days} 天</div></div><span class="time">${c.time}</span></div>
       <p>${esc(c.text)}</p><div class="why">✦ ${esc(c.why)}</div>
       <div class="meta">${platTag(c.p)}<span class="tag">${c.cat}</span>${c.prio ? '<span class="tag rose">高优</span>' : ''}<span class="likes">♡ ${fmt(c.likes)}</span></div></button>`).join('')
-      : '<div class="muted" style="padding:40px;text-align:center">没有匹配的留言</div>';
+      : emptyHTML('no-data', '这里还没有匹配的留言', '换个分类或关键词试试');
   }
+  // 空状态插画（第八批）
+  const emptyHTML = (kind, title, sub = '') => `<div class="empty-st"><img src="assets/empty/${kind}.webp" alt="" draggable="false"><b>${title}</b>${sub ? `<small>${sub}</small>` : ''}</div>`;
   function renderSentLog() {
     const el = $('#sentLog'); if (!el) return;
     el.innerHTML = S.sent.length ? S.sent.slice(0, 8).map((s) => { const c = api.getComment(s.id) || {}; return `<div class="sent-row">${av(c.av || '·')}<b style="font-weight:500">${esc(c.fan || '')}</b><span class="t">${s.voice ? '🎙 语音 · ' : ''}${esc(s.text || '')}</span><span class="tag">${esc(s.channel)}</span>${s.card ? '<span class="tag">附小卡</span>' : ''}</div>`; }).join('')
-      : '<div class="muted" style="font-size:13px">还没有发送记录。挑一条留言开始吧。</div>';
+      : emptyHTML('waiting', '还没有发送记录', '挑一条留言，回一句就会出现在这里');
   }
 
   // ---------- 抽屉：留言详情与回复 ----------
@@ -557,7 +559,7 @@
   }
   function stopRec() { if (rec && rec.state === 'recording') rec.stop(); }
   function openList(title, list) {
-    openDrawer(title, list.length ? `<div class="clist" style="grid-template-columns:1fr;margin-top:0">${list.map((c) => `<button class="citem ${S.replied[c.id] ? 'replied' : ''}" data-comment="${c.id}"><div class="who">${av(c.av)}<div><b>${esc(c.fan)}</b><div class="muted" style="font-size:11px">${tierName(c.tier)} · ${P[c.p].name}</div></div><span class="time">${c.time}</span></div><p>${esc(c.text)}</p><div class="why">✦ ${esc(c.why)}</div></button>`).join('')}</div>` : '<div class="muted">暂无相关留言</div>');
+    openDrawer(title, list.length ? `<div class="clist" style="grid-template-columns:1fr;margin-top:0">${list.map((c) => `<button class="citem ${S.replied[c.id] ? 'replied' : ''}" data-comment="${c.id}"><div class="who">${av(c.av)}<div><b>${esc(c.fan)}</b><div class="muted" style="font-size:11px">${tierName(c.tier)} · ${P[c.p].name}</div></div><span class="time">${c.time}</span></div><p>${esc(c.text)}</p><div class="why">✦ ${esc(c.why)}</div></button>`).join('')}</div>` : emptyHTML('all-done', '这里的留言都处理完啦', '新的留言进来时会提醒你'));
   }
 
   // ---------- 小卡工坊 ----------
@@ -657,7 +659,7 @@
       daisy: ['daisy f1', 'daisy f2', 'daisy f3', 'heart h1', 'bow b1'],
       race: ['heart h1', 'star s1', 'bow b1']
     }[lay] || [];
-    return `<div class="ycard col c-${lay}${small ? ' sm' : ''}">
+    return `<div class="ycard col c-${lay}${small ? ' sm' : ''}" style="--bgimg:url(assets/cards/collage-${lay}.webp)">
       <div class="c-patch p1"></div><div class="c-patch p2"></div><div class="c-patch p3"></div>
       ${lay === 'race' ? '<div class="c-num">23</div>' : ''}
       <div class="c-film"><img src="${ph2}" onerror="this.remove()"></div>
@@ -946,13 +948,14 @@
     let body = '';
     if (moreTab === 'bday') body = renderBday();
     if (moreTab === 'lucky') body = renderLucky();
-    if (moreTab === 'review') body = `<div class="panel white"><div class="muted" style="font-size:12px;margin-bottom:6px">新注册需要答题，AI 先给出风险判断，最后由团队决定</div>${D.applicants.map((a) => `<div class="apply"><div><b style="font-weight:500">${esc(a.name)}</b><small>${esc(a.note)}</small></div><span class="score num">${a.score}<small class="muted" style="font-size:11px"> 分</small></span><span class="tag ${a.risk === '高' ? 'rose' : ''}">风险 ${a.risk}</span>
+    if (moreTab === 'review') body = `<div class="panel white"><div class="muted" style="font-size:12px;margin-bottom:6px">新注册需要答题，AI 先给出风险判断，最后由团队决定</div>${D.applicants.every((a) => S.approved[a.id]) ? emptyHTML('all-done', '今天的注册申请都审完啦', '新申请会先由 AI 打分，再交给团队') : ''}${D.applicants.map((a) => `<div class="apply"><div><b style="font-weight:500">${esc(a.name)}</b><small>${esc(a.note)}</small></div><span class="score num">${a.score}<small class="muted" style="font-size:11px"> 分</small></span><span class="tag ${a.risk === '高' ? 'rose' : ''}">风险 ${a.risk}</span>
       <div style="display:flex;gap:8px">${S.approved[a.id] ? `<span class="tag">${S.approved[a.id] === 'ok' ? '已通过' : '已驳回'}</span>` : `<button class="btn sm" data-approve="${a.id}" data-ok="1">通过</button><button class="btn danger sm" data-approve="${a.id}" data-ok="0">驳回</button>`}</div></div>`).join('')}</div>`;
-    if (moreTab === 'live') body = `<div class="live"><div class="live-cover"><span class="onair">PRIVATE LIVE</span><img class="live-xt" src="${XT}pose/mic.webp" alt="">${pet('mic', 'live-pet')}</div>
+    if (moreTab === 'live') body = `<div class="live"><div class="live-cover"><span class="onair">PRIVATE LIVE</span><div class="live-title"><em>私享直播</em><b>《云秀行》首播夜</b><small>11 月 3 日 20:00 · 2,318 人已预约</small></div></div>
       <div class="panel"><h3>开一场私域直播</h3><div class="muted" style="font-size:12px">只对小程序里通过审核的粉丝开放</div>
         <label class="field">主题<input value="《云秀行》首播夜 · 一起看"></label><label class="field">时间<input value="11 月 3 日 20:00"></label>
         <label class="field">形式<select><option>线上小会（30 人连麦）</option><option>线上签售</option><option>公开直播</option></select></label>
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px"><span class="muted" style="font-size:12px">已有 <b class="num" style="color:var(--blue)">2,318</b> 人预约</span><button class="btn" data-toast="直播已创建，将提醒预约的粉丝">创建直播</button></div></div></div>`;
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px"><span class="muted" style="font-size:12px">已有 <b class="num" style="color:var(--blue)">2,318</b> 人预约</span><button class="btn" data-toast="直播已创建，将提醒预约的粉丝">创建直播</button></div></div></div>
+      <div class="panel" style="margin-top:18px"><h3>直播回放</h3>${emptyHTML('offline', '暂时还没有回放', '首播夜结束后，回放和高光片段会自动整理到这里')}</div>`;
     if (moreTab === 'cal') {
       const days = Array.from({ length: 35 }, (_, i) => i - 5);
       body = `<div class="panel"><h3>11 月内容日历</h3><div class="muted" style="font-size:12px;margin-bottom:14px">按播出节点，AI 给出的发布建议</div>
