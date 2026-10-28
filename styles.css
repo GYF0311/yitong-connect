@@ -1501,3 +1501,10 @@ html.embed .tabbar{padding-bottom:18px}
 }
 .m-only{display:none!important}
 @media (max-width:860px){.m-only{display:inline-flex!important}.more-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.more-tabs::-webkit-scrollbar{display:none}.more-tabs .chip{flex:none}}
+/* v21 手机端：洞察三栏改为纵向堆叠，标题小人在手机上隐藏 */
+@media (max-width:860px){
+  #v-insight .three{display:grid;grid-template-columns:1fr;overflow:visible;gap:14px}
+  #v-insight .three>.panel{width:auto;min-width:0;flex:none}
+  .head-xt{display:none}
+  .content{padding-bottom:110px}
+}
