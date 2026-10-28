@@ -177,3 +177,26 @@
 文件清单、SHA-256、尺寸和校验结果：`source/batch3/verification.json`。新版总览：`source/batch3/preview.jpg`。原有 `verification.json` 和 `preview.jpg` 是旧批次记录，不代表本批最新状态。
 
 视觉检查未见明显发灰、发脏或人物肤色偏移。胶片人物图按原图保留较深背景，仅调整蓝色色相；未对人物图整体提亮。最终审美及白字在实际页面上的可读性仍由页面接入后确认，本次未修改页面或宣称完成浏览器接入验收。
+
+
+## 第五批：桐铃 logo / 新小桐 / 肉肉
+
+2026-10-28，仅完成第一步：logo 正式交付，角色仅为待先生选择的风格候选。未执行第二步的分层、动作、小尺寸及动画；现有 chibi/、pet/ 与 rig.json 未替换。前端四个代码文件未修改。
+
+| 文件 | 尺寸与说明 |
+|---|---|
+| `logo/logo-a.svg` | 256×256，正方形 viewBox，水蓝实心桐叶与深蓝铃铛 |
+| `logo/logo-b.svg` | 256×256，深蓝线稿版 |
+| `logo/logo-c.svg` | 256×256，反白版 |
+| `logo/logo-a-512.png` | 512×512，RGBA 真实透明 |
+| `source/batch5/options/xiaotong-1-vinyl.png` | 1536×1024，潮玩软胶候选 |
+| `source/batch5/options/xiaotong-2-plush.png` | 1536×1024，毛绒候选 |
+| `source/batch5/options/xiaotong-3-clay.png` | 1536×1024，柔和动画电影候选 |
+| `source/batch5/options/xiaotong-4-flat.png` | 1536×1024，扁平色块插画候选 |
+| `source/batch5/options/rourou-1-vinyl.png` | 1536×1024，软胶与毛发候选 |
+| `source/batch5/options/rourou-2-plush.png` | 1536×1024，毛绒候选 |
+| `source/batch5/options/overview.png` | 1800×920，六款编号对比 |
+
+候选图按第一步特别要求使用浅灰白不透明背景；原文通用透明 PNG 要求留待第二步执行。候选由内置 image_gen 逐款生成；各款脸型、服饰细节有自然差异，肉肉软胶款毛发较多，均未获得最终审美批准。第4款初版偏二次元，已重做为扁平色块风格，初版保留于 source/batch5/rejected/。
+
+替换前 logo 与 README 已按目录结构备份到 `source/backup-batch5/`。SVG 仅用 path，无文字、位图、渐变或滤镜；已检查24/40px预览，见 `source/batch5/logo-preview.png`。提示词见 `source/batch5/xiaotong-prompts.json`、`source/batch5/rourou-generation.md`；文件尺寸与 SHA-256 见 `source/batch5/verification.json`。

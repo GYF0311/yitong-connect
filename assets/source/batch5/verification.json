@@ -1,0 +1,113 @@
+{
+  "stage": "step1 only",
+  "files": [
+    {
+      "path": "assets/source/batch5/options/xiaotong-1-vinyl.png",
+      "sha256": "1ab44b8c6fca1406b8a4140a33bf01c31d3e0cdff046d86356b34cce67d4e86f",
+      "bytes": 2225926,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/source/batch5/options/xiaotong-2-plush.png",
+      "sha256": "fdc192b22b086521e6e9efd889e3db3a6101a545b25a0de5c7f76b94bd15d429",
+      "bytes": 2536375,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/source/batch5/options/xiaotong-3-clay.png",
+      "sha256": "a63b7dddf59792b8468713eeeb817e18a81e32d0c3ab71d85ae0ec434150f65e",
+      "bytes": 2561091,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/source/batch5/options/xiaotong-4-flat.png",
+      "sha256": "1edb32210ab9385149b9ebac1e5b445d0b52ac298e55a5acc23b684db191a666",
+      "bytes": 1523743,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/source/batch5/options/rourou-1-vinyl.png",
+      "sha256": "cfa58dd6c82d8cc135630640ae9aac2e367d8f83eb108608304b37776ddcc37f",
+      "bytes": 1837476,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/source/batch5/options/rourou-2-plush.png",
+      "sha256": "ab358f184792192c4178e9e230736ecf7d7afbe2b76f3f5bdbe987e3ad4e7a8a",
+      "bytes": 1825831,
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/source/batch5/options/overview.png",
+      "sha256": "9b7161e8d833ae44e5715ceb5b7cc2df8f4a7a2aa7e2cee0f13eca00d969129f",
+      "bytes": 1839732,
+      "size": [
+        1800,
+        920
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/logo/logo-a.svg",
+      "sha256": "f9a4ca1aeb590d7ff6d6addcc914753b29657a158517a84978abd77158ac76c5",
+      "bytes": 502,
+      "viewBox": "0 0 64 64"
+    },
+    {
+      "path": "assets/logo/logo-c.svg",
+      "sha256": "0f2ac751d6cdcfd144d1ef9690715a9615a22136d643e88b69cf8b561bf585c8",
+      "bytes": 502,
+      "viewBox": "0 0 64 64"
+    },
+    {
+      "path": "assets/logo/logo-b.svg",
+      "sha256": "2831ac875e7b5fcca155cfa02b0867e2730c3b1d0c03ecd75e446532fc03b581",
+      "bytes": 372,
+      "viewBox": "0 0 64 64"
+    },
+    {
+      "path": "assets/logo/logo-a-512.png",
+      "sha256": "e977d0b2fa8bf41e45ceaed2a65938ca1910ead233d3be0e3d336bb4f0f58ebd",
+      "bytes": 11805,
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ]
+    }
+  ],
+  "visual_notes": [
+    "小桐各风格服饰与脸型有细节差异，仍为风格候选",
+    "肉肉软胶版毛发占比较大",
+    "候选依第一步要求为浅灰白不透明背景",
+    "第二步分层、动作和小尺寸未执行"
+  ]
+}
